@@ -3,13 +3,13 @@
   "title": "Meus Feitiços Personalizados",
   "description": "Um módulo com feitiços customizados.",
   "version": "1.0.0",
-  "author": "Seu Nome",
+  "author": "Money, Kirlian",
   "minimumCoreVersion": "11",
   "compatibleCoreVersion": "11",
   "system": "dnd5e",
   "packs": [
     {
-      "name": "meus-feiticos",
+      "name": "Feiticos-5e",
       "label": "Feitiços Personalizados",
       "system": "dnd5e",
       "path": "pack/meus-feiticos.db",
