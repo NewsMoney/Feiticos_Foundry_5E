@@ -1,0 +1,24 @@
+{
+  "name": "meu-modulo-feiticos",
+  "title": "Meus Feitiços Personalizados",
+  "description": "Um módulo com feitiços customizados.",
+  "version": "1.0.0",
+  "author": "Seu Nome",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "11",
+  "system": "dnd5e",
+  "packs": [
+    {
+      "name": "meus-feiticos",
+      "label": "Feitiços Personalizados",
+      "system": "dnd5e",
+      "path": "pack/meus-feiticos.db",
+      "type": "Item",
+      "private": false
+    }
+  ],
+  "manifest": "URL ou caminho local para este module.json",
+  "download": "URL para download (pode deixar em branco se for local)",
+  "url": "URL com mais informações (GitHub ou outro)",
+  "flags": {}
+}
