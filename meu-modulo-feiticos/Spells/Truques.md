@@ -1,196 +1,193 @@
-## **Truques livro do jogador**
+# Truques (Cantrips) - D&D 5E Completo
+
+## **Truques do Livro do Jogador (PHB)**
 
 ### Acid Splash
-- **Nível**: 0 (Truque)
-- **Escola**: Conjuração
-- **Descrição**: Você arremessa uma bolha de ácido. Escolha uma ou duas criaturas dentro do alcance que estejam a até 1,5 metro uma da outra. Cada alvo deve ser bem-sucedido em uma salvaguarda de Destreza ou sofrerá 1d6 de dano ácido.
+**Escola:** Conjuração  
+**Descrição:** Lança uma bolha de ácido causando dano ácido.
 
 ### Blade Ward
-- **Nível**: 0 (Truque)
-- **Escola**: Abjuração
-- **Descrição**: Você estende sua mão e traça um símbolo de proteção no ar. Até o final do seu próximo turno, você tem resistência contra dano de concussão, cortante e perfurante causado por armas.
+**Escola:** Abjuração  
+**Descrição:** Concede resistência contra danos físicos de armas até seu próximo turno.
 
 ### Chill Touch
-- **Nível**: 0 (Truque)
-- **Escola**: Necromancia
-- **Descrição**: Você cria uma mão esquelética fantasmagórica no espaço de uma criatura dentro do alcance. Faça um ataque à distância com magia contra a criatura para atingi-la com o toque frio da morte.
+**Escola:** Necromancia  
+**Descrição:** Uma mão espectral causa dano necrótico e impede cura.
 
 ### Dancing Lights
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você cria até quatro luzes flutuantes que se parecem com lanternas ou tochas, cada uma lançando uma luz fraca em um raio de 3 metros.
+**Escola:** Evocação  
+**Descrição:** Cria luzes flutuantes para iluminar a área.
 
 ### Druidcraft
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você sussurra para os espíritos da natureza e cria um dos seguintes efeitos: prever o tempo, fazer uma flor desabrochar, criar sons naturais, entre outros.
+**Escola:** Transmutação  
+**Descrição:** Pequenos efeitos naturais como prever o tempo ou fazer flores desabrocharem.
 
 ### Eldritch Blast
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Um feixe de energia crepitante atinge uma criatura à sua escolha dentro do alcance. Faça um ataque à distância com magia contra o alvo. Em um acerto, o alvo sofre 1d10 de dano de força.
+**Escola:** Evocação  
+**Descrição:** Um raio de energia causando dano de força.
 
 ### Fire Bolt
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você lança um raio de fogo contra uma criatura ou objeto. Faça um ataque à distância com magia. Em um acerto, o alvo sofre 1d10 de dano de fogo.
+**Escola:** Evocação  
+**Descrição:** Raio de fogo causando dano de fogo.
+
+### Friends
+**Escola:** Encantamento  
+**Descrição:** Vantagem em testes de Carisma contra um alvo temporariamente.
 
 ### Guidance
-- **Nível**: 0 (Truque)
-- **Escola**: Adivinhação
-- **Descrição**: Você toca uma criatura voluntária. Uma vez antes da magia acabar, o alvo pode rolar um d4 e adicionar o número rolado a um teste de habilidade de sua escolha.
+**Escola:** Adivinhação  
+**Descrição:** Adiciona 1d4 a um teste de habilidade.
 
 ### Light
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você toca um objeto e faz com que ele brilhe, iluminando em um raio de 6 metros (luz plena) e mais 6 metros de penumbra.
+**Escola:** Evocação  
+**Descrição:** Faz um objeto emitir luz brilhante.
 
 ### Mage Hand
-- **Nível**: 0 (Truque)
-- **Escola**: Conjuração
-- **Descrição**: Uma mão espectral flutuante aparece no espaço de uma criatura à sua escolha dentro do alcance. A mão pode manipular e interagir com objetos.
+**Escola:** Conjuração  
+**Descrição:** Uma mão mágica flutuante manipula objetos.
 
 ### Mending
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Esta magia conserta uma quebra ou rasgo em um objeto que você toca, como uma corrente quebrada, uma capa rasgada ou uma roda trincada.
+**Escola:** Transmutação  
+**Descrição:** Conserta pequenos danos em objetos.
 
 ### Message
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você aponta o dedo para uma criatura dentro do alcance e sussurra uma mensagem. O alvo (e somente ele) ouve a mensagem e pode responder.
+**Escola:** Transmutação  
+**Descrição:** Sussurra uma mensagem para alguém distante.
 
 ### Minor Illusion
-- **Nível**: 0 (Truque)
-- **Escola**: Ilusão
-- **Descrição**: Você cria um som ou uma imagem de um objeto no alcance. A ilusão persiste por até 1 minuto, ou até você dissipá-la.
+**Escola:** Ilusão  
+**Descrição:** Cria uma imagem ou som ilusório.
+
+### Poison Spray
+**Escola:** Conjuração  
+**Descrição:** Esguicho de veneno causando dano venenoso.
 
 ### Prestidigitation
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Pequenos truques mágicos: acender ou apagar uma vela, esfriar ou aquecer algo, criar cheiros ou marcas, etc.
+**Escola:** Transmutação  
+**Descrição:** Pequenos truques mágicos simples.
+
+### Produce Flame
+**Escola:** Conjuração  
+**Descrição:** Chama em sua mão que ilumina e pode ser arremessada.
 
 ### Ray of Frost
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Um raio gelado atinge uma criatura causando 1d8 de dano de frio e reduzindo sua velocidade em 3 metros até o início do seu próximo turno.
+**Escola:** Evocação  
+**Descrição:** Raio gelado reduzindo a velocidade e causando dano de frio.
 
 ### Resistance
-- **Nível**: 0 (Truque)
-- **Escola**: Abjuração
-- **Descrição**: Você toca uma criatura voluntária. Uma vez antes da magia acabar, o alvo pode adicionar 1d4 em um teste de resistência à sua escolha.
+**Escola:** Abjuração  
+**Descrição:** Adiciona 1d4 a um teste de resistência.
 
 ### Sacred Flame
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Chama radiante desce sobre uma criatura. O alvo deve fazer um teste de resistência de Destreza. Se falhar, sofre 1d8 de dano radiante.
+**Escola:** Evocação  
+**Descrição:** Chama radiante causando dano radiante.
 
 ### Shillelagh
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Transforma um bastão ou clava que você está segurando em uma arma mágica que usa seu modificador de Sabedoria no dano e acerto.
+**Escola:** Transmutação  
+**Descrição:** Encanta um bastão ou clava causando dano mágico.
+
+### Shocking Grasp
+**Escola:** Evocação  
+**Descrição:** Toque elétrico que impede reações.
+
+### Spare the Dying
+**Escola:** Necromancia  
+**Descrição:** Estabiliza uma criatura moribunda.
 
 ### Thaumaturgy
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você manifesta pequenos milagres sobrenaturais — sua voz ecoa, chamas tremulam, portas se abrem ou janelas batem.
+**Escola:** Transmutação  
+**Descrição:** Pequenos efeitos sobrenaturais.
 
 ### Thorn Whip
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você cria um cipó coberto de espinhos que chicoteia a criatura. Em um acerto, ela sofre dano de perfuração e é puxada 3 metros para você.
+**Escola:** Transmutação  
+**Descrição:** Chicote de espinhos que puxa o alvo.
 
 ### True Strike
-- **Nível**: 0 (Truque)
-- **Escola**: Adivinhação
-- **Descrição**: Você aponta o dedo para um alvo e ganha um breve insight sobre suas defesas. Na sua próxima rodada, você tem vantagem no primeiro ataque.
+**Escola:** Adivinhação  
+**Descrição:** Concede vantagem em seu próximo ataque.
+
+### Vicious Mockery
+**Escola:** Encantamento  
+**Descrição:** Zomba causando dano psíquico e desvantagem no ataque.
 
 ## **Truques de Xanathar's Guide to Everything (XGE)**
 
 ### Control Flames
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você escolhe uma área de fogo não mágico que você pode ver dentro do alcance e manipula-a de uma das várias formas possíveis.
+**Escola:** Transmutação  
+**Descrição:** Manipula chamas existentes.
 
 ### Create Bonfire
-- **Nível**: 0 (Truque)
-- **Escola**: Conjuração
-- **Descrição**: Você cria uma pequena fogueira mágica em um espaço desocupado que pode causar dano a criaturas que terminam o turno lá.
+**Escola:** Conjuração  
+**Descrição:** Cria uma fogueira mágica causando dano.
 
 ### Frostbite
-- **Nível**: 0 (Truque)
-- **Escola**: Conjuração
-- **Descrição**: Você causa dormência gélida em uma criatura, causando dano de frio e desvantagem no próximo ataque com arma.
+**Escola:** Evocação  
+**Descrição:** Causa dano de frio e desvantagem no próximo ataque.
 
 ### Gust
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você cria uma rajada de vento leve capaz de empurrar objetos, abrir portas ou mover criaturas pequenas.
+**Escola:** Transmutação  
+**Descrição:** Cria uma rajada leve de vento.
 
 ### Infestation
-- **Nível**: 0 (Truque)
-- **Escola**: Conjuração
-- **Descrição**: Você conjura um enxame de parasitas que causam dano e forçam a criatura a se mover aleatoriamente.
+**Escola:** Conjuração  
+**Descrição:** Parasitas causam dano e movimento involuntário.
 
 ### Magic Stone
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você encanta até três pequenas pedras, que podem ser usadas como munição mágica causando dano adicional.
+**Escola:** Transmutação  
+**Descrição:** Encanta pedras para causar dano mágico.
 
 ### Mold Earth
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você escava, move ou muda a aparência da terra em uma área pequena dentro do alcance.
+**Escola:** Transmutação  
+**Descrição:** Manipula ou escava terra.
 
 ### Primal Savagery
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Seus dentes ou unhas se tornam afiados e venenosos, permitindo um ataque corpo a corpo que causa dano ácido.
+**Escola:** Transmutação  
+**Descrição:** Ataque corpo a corpo mágico que causa dano ácido.
 
 ### Shape Water
-- **Nível**: 0 (Truque)
-- **Escola**: Transmutação
-- **Descrição**: Você manipula água não mágica em uma área pequena, podendo moldar ou congelar temporariamente.
+**Escola:** Transmutação  
+**Descrição:** Manipula água não mágica.
 
 ### Thunderclap
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você cria um estrondo de trovão que atinge todas as criaturas adjacentes, causando dano de trovão.
+**Escola:** Evocação  
+**Descrição:** Causa dano de trovão ao redor.
 
 ### Toll the Dead
-- **Nível**: 0 (Truque)
-- **Escola**: Necromancia
-- **Descrição**: Você aponta para uma criatura e o som de um sino fúnebre ecoa, causando dano necrótico (mais dano se estiver ferida).
+**Escola:** Necromancia  
+**Descrição:** Dano necrótico com sino fúnebre.
 
 ### Word of Radiance
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você profere uma palavra divina, causando dano radiante a todas as criaturas que escolher ao seu redor.
+**Escola:** Evocação  
+**Descrição:** Dano radiante em área próxima.
 
 ## **Truques de Tasha's Cauldron of Everything (TCE)**
 
 ### Booming Blade
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você conjura esta magia como parte de um ataque corpo a corpo. O alvo sofre dano adicional se se mover voluntariamente depois.
+**Escola:** Evocação  
+**Descrição:** Ataque que causa dano se o alvo se mover.
 
-### Green-Flame Blade
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você conjura esta magia com um ataque corpo a corpo, fazendo com que chamas verdes saltem para outro inimigo próximo.
+### Green Flame Blade
+**Escola:** Evocação  
+**Descrição:** Ataque que espalha dano de fogo.
 
 ### Lightning Lure
-- **Nível**: 0 (Truque)
-- **Escola**: Evocação
-- **Descrição**: Você atrai uma criatura até você com um laço de relâmpago, causando dano elétrico se ela estiver próxima no fim.
+**Escola:** Evocação  
+**Descrição:** Atrai com eletricidade causando dano.
 
 ### Mind Sliver
-- **Nível**: 0 (Truque)
-- **Escola**: Encantamento
-- **Descrição**: Você enfraquece mentalmente uma criatura com um ataque psíquico, causando dano e penalidade em sua próxima resistência.
+**Escola:** Encantamento  
+**Descrição:** Ataque psíquico reduzindo resistências.
 
 ### Sword Burst
-- **Nível**: 0 (Truque)
-- **Escola**: Conjuração
-- **Descrição**: Lâminas mágicas giram ao seu redor, atingindo todas as criaturas próximas com dano de força.
+**Escola:** Conjuração  
+**Descrição:** Lâminas mágicas causando dano ao redor.
 
+## **Outras Fontes**
+
+### Encode Thoughts
+**Escola:** Encantamento  
+**Descrição:** Transforma uma memória ou pensamento em um fio tangível que pode ser lido por outros.
+
+### Sapping Sting
+**Escola:** Necromancia  
+**Descrição:** Causa dano necrótico e pode derrubar o alvo se ele falhar no teste de resistência.
