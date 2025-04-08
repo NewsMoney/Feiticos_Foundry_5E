@@ -18,6 +18,13 @@
     "duration": {
       "units": "inst"
     },
+    "preparation": {
+      "mode": "atwill",
+      "prepared": false
+    },
+    "properties": [
+      "vocal"
+    ],
     "target": {
       "template": {
         "contiguous": false,
@@ -36,6 +43,97 @@
     "description": {
       "value": "<article class=\"text-token-text-primary w-full\" dir=\"auto\" data-testid=\"conversation-turn-92\" data-scroll-anchor=\"true\"><div class=\"text-base my-auto mx-auto py-5 px-6\"><div class=\"mx-auto flex flex-1 text-base gap-4 md:gap-5 lg:gap-6 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] group/turn-messages focus-visible:outline-hidden\" tabindex=\"-1\"><div class=\"group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn @xs/thread:px-0 @sm/thread:px-1.5 @md/thread:px-4\"><div class=\"relative flex-col gap-1 md:gap-3\"><div class=\"flex max-w-full flex-col grow\"><div data-message-author-role=\"assistant\" data-message-id=\"d99d9709-7f51-4cb8-8830-ef046e1a35ef\" dir=\"auto\" class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" data-message-model-slug=\"gpt-4o\"><div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[3px]\"><div class=\"markdown prose dark:prose-invert w-full break-words dark\"><p data-start=\"0\" data-end=\"246\">Você cria uma explosão de som trovejante, que pode ser ouvida a 30 metros de distância. Cada criatura, exceto você, em um raio de 1,5 metro deve fazer um teste de resistência de Constituição. Em uma falha, a criatura sofre 1d6 de dano trovejante.</p><p data-start=\"248\" data-end=\"372\">Em Níveis Superiores. O dano da magia aumenta em 1d6 quando você atinge o 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).</p><p></p></div></div></div></div></div><p></p></div></div></div></article>",
       "chat": ""
+    },
+    "activities": {
+      "4KGuv2dVxzh9cRE6": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "circle",
+            "size": "5",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "any",
+            "special": ""
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false,
+            "bonus": "1d6"
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
     }
   },
   "flags": {
@@ -44,10 +142,10 @@
         "name": "Thunderclap",
         "type": "script",
         "scope": "global",
-        "command": "// Criar e reproduzir sequência com áudio e efeitos visuais\nnew Sequence()\n    // Efeito visual\n    .effect()\n    .file(\"jb2a.thunderwave.center.blue\") // Caminho do efeito visual\n    .atLocation(token) // Localização do token\n    .scale(0.5) // Ajuste o tamanho do efeito visual\n    .fadeIn(300)\n    .fadeOut(300)\n    .duration(1043)\n    \n    // Efeito de áudio\n    .sound()\n    .file(\"modules/dnd5e-animations/assets/sounds/Damage/Explosion/explosion-echo-1.mp3\") // Caminho do arquivo de áudio\n    .volume(0.5) // Volume do som\n    .playIf(true) // Certifica que o som será reproduzido\n    .waitUntilFinished() // Aguarda o término do som antes de prosseguir\n    .play(); // Inicia a sequência\n// Criar mensagem no chat\nawait ChatMessage.create({\n    speaker: ChatMessage.getSpeaker({ token }),\n    content: `<strong>Thunderclap lançado!</strong> Uma explosão sonora poderosa emanou de ${token.name}.`\n});",
+        "command": "// Sequência com efeito visual e som\nawait new Sequence()\n  .effect()\n  .file(\"jb2a.thunderwave.center.blue\")\n  .atLocation(token)\n  .scale(0.5)\n  .fadeIn(300)\n  .fadeOut(300)\n  .duration(1043)\n  .sound()\n  .file(\"modules/dnd5e-animations/assets/sounds/Damage/Explosion/explosion-echo-1.mp3\")\n  .volume(0.5)\n  .playIf(true)\n  .waitUntilFinished()\n  .play();",
         "author": "mHVqWXrUNXvBrJAZ",
         "_id": null,
-        "img": "Thunderclap-5e-Guide-950x650.png",
+        "img": "Thunder%20Clap.png",
         "folder": null,
         "sort": 0,
         "ownership": {
@@ -57,7 +155,7 @@
         "_stats": {
           "coreVersion": "12.331",
           "systemId": "dnd5e",
-          "systemVersion": "4.1.2",
+          "systemVersion": "4.3.8",
           "createdTime": null,
           "modifiedTime": null,
           "lastModifiedBy": null,
@@ -66,11 +164,23 @@
         }
       }
     },
-    "autoanimations": {
-      "isEnabled": false
-    },
     "midi-qol": {
-      "onUseMacroName": "ItemMacro"
+      "onUseMacroName": "ItemMacro",
+      "autoTarget": "default",
+      "AoETargetType": "ally",
+      "AoETargetTypeIncludeSelf": false
+    },
+    "autoanimations": {
+      "id": "5e986222-1ba4-407d-a3de-c5c29e72883f",
+      "label": "Thunderclap",
+      "menu": "aura",
+      "primary": {
+        "enable": false
+      },
+      "isEnabled": false,
+      "isCustomized": true,
+      "fromAmmo": false,
+      "version": 5
     }
   }
 }
