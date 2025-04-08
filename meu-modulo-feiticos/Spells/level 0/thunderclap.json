@@ -142,7 +142,7 @@
         "name": "Thunderclap",
         "type": "script",
         "scope": "global",
-        "command": "// Sequência com efeito visual e som\nawait new Sequence()\n  .effect()\n  .file(\"jb2a.thunderwave.center.blue\")\n  .atLocation(token)\n  .scale(0.5)\n  .fadeIn(300)\n  .fadeOut(300)\n  .duration(1043)\n  .sound()\n  .file(\"modules/dnd5e-animations/assets/sounds/Damage/Explosion/explosion-echo-1.mp3\")\n  .volume(0.5)\n  .playIf(true)\n  .waitUntilFinished()\n  .play();",
+        "command": "// Sequência com efeito visual e som\nawait new Sequence()\n  .effect()\n .file(\"jb2a.impact.boulder.01\")\n .atLocation(token) \n .scale(1) \n .belowTokens() \n .fadeIn(300) \n .fadeOut(300) \n .duration(2000) \n .effect()\n  .file(\"jb2a.thunderwave.center.blue\")\n  .atLocation(token)\n  .scale(0.5)\n  .fadeIn(300)\n  .fadeOut(300)\n  .duration(1043)\n  .sound()\n  .file(\"modules/dnd5e-animations/assets/sounds/Damage/Explosion/explosion-echo-1.mp3\")\n  .volume(0.5)\n  .playIf(true)\n  .waitUntilFinished()\n  .play();",
         "author": "mHVqWXrUNXvBrJAZ",
         "_id": null,
         "img": "Thunder%20Clap.png",
