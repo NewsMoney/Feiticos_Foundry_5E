@@ -1,0 +1,184 @@
+{
+  "name": "Acid Splash",
+  "type": "spell",
+  "img": "systems/Acid%20Splash.png",
+  "system": {
+    "level": 0,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "60"
+    },
+    "duration": {
+      "units": "inst"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "count": "2",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "description": {
+      "value": "<p>Você arremessa uma bolha de ácido. Escolha uma criatura que você possa ver dentro do alcance, ou escolha duas criaturas que você possa ver dentro do alcance que estejam a até 1,5 metro uma da outra. Um alvo deve ser bem-sucedido em um teste de resistência de Destreza ou sofrerá 1d6 de dano ácido.</p><p></p><p><strong data-start=\"48\" data-end=\"73\">Em Níveis Superiores.</strong> O dano desta magia aumenta em 1d6 quando você alcança o 5º nível (2d6), o 11º nível (3d6) e o 17º nível (4d6).</p><p></p><p></p>",
+      "chat": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
+    "activities": {
+      "Y8WECeVX4ZmfZ9Qg": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "flags": {
+    "itemacro": {
+      "macro": {
+        "command": "const caster = token;\nlet targets = Array.from(game.user.targets);\n\nif (targets.length === 0) {\n  ui.notifications.warn(\"Selecione pelo menos um alvo!\");\n  return;\n}\n\n// Limita no máximo a 2 alvos\nif (targets.length > 2) {\n  ui.notifications.warn(\"Só é possível atingir no máximo 2 alvos!\");\n  targets = targets.slice(0, 2);\n}\n\nlet origin = caster.center;  // Posição inicial: centro do conjurador\n\nfor (let target of targets) {\n  // Calcula a distância em pés usando a função de medição do canvas.\n  // Atenção: isso depende da sua configuração de grid no Foundry.\n  let distance = canvas.grid.measureDistance(origin, target.center);\n  \n  // Supondo que para 50ft o projétil demora 1000ms, escalonamos linearmente.\n  // Assim, se a distância for 60ft, o delay será de (60/50)*800.\n  let soundDelay = (distance / 50) * 800;\n  \n  await new Sequence()\n    // Animação do projétil (fire bolt)\n    .effect()\n      .file(\"jb2a.fire_bolt.green\")\n      .atLocation(origin)\n      .stretchTo(target.center)\n      .scale(1)\n      .fadeIn(300)\n      .fadeOut(300)\n      .duration(1000)\n    // Som de impacto - com delay calculado\n    .sound()\n      .file(\"modules/dnd5e-animations/assets/sounds/Spells/Elemental/spell-water-1.mp3\")\n      .volume(0.2)\n      .delay(soundDelay)\n      .playIf(true)\n      .duration(300)\n      .waitUntilFinished()\n    // Efeito final (splash) no alvo\n    .effect()\n      .file(\"jb2a.liquid.splash.bright_green\")\n      .atLocation(target.center)\n      .scale(0.5)\n      .fadeIn(100)\n      .fadeOut(500)\n      .duration(800)\n      .waitUntilFinished() // Aguarda o efeito splash finalizar antes de seguir\n    .play();\n\n  // Atualiza a origem para que, se houver mais de um alvo, o próximo disparo saia do último alvo atingido\n  origin = target.center;\n}",
+        "name": "Acid Splash",
+        "img": "systems/Acid%20Splash.png",
+        "type": "script",
+        "scope": "global",
+        "author": "mHVqWXrUNXvBrJAZ",
+        "ownership": {
+          "default": 3
+        },
+        "_id": null,
+        "folder": null,
+        "sort": 0,
+        "flags": {},
+        "_stats": {
+          "coreVersion": "12.331",
+          "systemId": "dnd5e",
+          "systemVersion": "4.3.8",
+          "createdTime": null,
+          "modifiedTime": null,
+          "lastModifiedBy": null,
+          "compendiumSource": null,
+          "duplicateSource": null
+        }
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro",
+      "autoTarget": "default",
+      "AoETargetType": "any",
+      "AoETargetTypeIncludeSelf": true
+    },
+    "autoanimations": {
+      "id": "35edf9ac-1b4f-4f57-aa25-3769bcc512c5",
+      "label": "Acid Splash",
+      "menu": "range",
+      "primary": {
+        "enable": false
+      },
+      "isEnabled": false,
+      "isCustomized": true,
+      "fromAmmo": false,
+      "version": 5
+    }
+  }
+}
