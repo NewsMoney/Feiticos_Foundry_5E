@@ -1,0 +1,188 @@
+{
+  "name": "Word of Radiance",
+  "type": "spell",
+  "img": "Word%20of%20Radience.png",
+  "system": {
+    "level": 0,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "5"
+    },
+    "duration": {
+      "units": "inst"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "emanationNoTemplate",
+        "size": "5",
+        "count": ""
+      },
+      "affects": {
+        "choice": true,
+        "count": "",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "description": {
+      "value": "<article class=\"text-token-text-primary w-full\" dir=\"auto\" data-testid=\"conversation-turn-100\" data-scroll-anchor=\"true\"><div class=\"text-base my-auto mx-auto py-5 px-6\"><div class=\"mx-auto flex flex-1 text-base gap-4 md:gap-5 lg:gap-6 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] group/turn-messages focus-visible:outline-hidden\" tabindex=\"-1\"><div class=\"group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn @xs/thread:px-0 @sm/thread:px-1.5 @md/thread:px-4\"><div class=\"relative flex-col gap-1 md:gap-3\"><div class=\"flex max-w-full flex-col grow\"><div data-message-author-role=\"assistant\" data-message-id=\"68000a81-16b9-474c-a3a6-285c6c0db5f2\" dir=\"auto\" class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" data-message-model-slug=\"gpt-4o\"><div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[3px]\"><div class=\"markdown prose dark:prose-invert w-full break-words dark\"><p data-start=\"0\" data-end=\"231\">Você profere uma palavra divina, e uma radiância flamejante irrompe de você. Cada criatura à sua escolha que você puder ver dentro do alcance deve ser bem-sucedida em uma salvaguarda de Constituição ou sofrerá 1d6 de dano radiante.</p><p data-start=\"233\" data-end=\"360\">Em Níveis Superiores. O dano dessa magia aumenta em 1d6 quando você atinge o 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).</p></div></div></div><div class=\"touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex items-center p-1 select-none -mt-1 duration-[1.5s] focus-within:transition-none hover:transition-none pointer-events-none [mask-image:linear-gradient(to_right,black_33%,transparent_66%)] [mask-position:100%_0%] [mask-size:300%_100%] motion-safe:transition-[mask-position] group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:[mask-position:0_0] group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:[mask-position:0_0] has-data-[state=open]:pointer-events-auto has-data-[state=open]:[mask-position:0_0]\"><p></p></div></div></div><div class=\"absolute\"><div class=\"flex items-center justify-center\"><p></p></div></div></div></div></div></article><div aria-hidden=\"true\" data-edge=\"true\" class=\"pointer-events-none h-px w-px\"><p></p></div>",
+      "chat": ""
+    },
+    "preparation": {
+      "mode": "always",
+      "prepared": false
+    },
+    "materials": {
+      "value": "A holy symbol",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "properties": [
+      "vocal",
+      "material"
+    ],
+    "activities": {
+      "jOGIhH448A6Xg1c9": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "critical": {
+            "allow": false,
+            "bonus": "(floor((@details.level + 1) / 6))d6"
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "flags": {
+    "itemacro": {
+      "macro": {
+        "command": "// Criar e reproduzir sequência com áudio e efeitos visuais\nnew Sequence()\n    .effect()\n    .file(\"jb2a.toll_the_dead.yellow.shockwave\")\n    .atLocation(token)\n    .scale(1) // Ajuste o tamanho do efeito visual\n    .fadeIn(300)\n    .fadeOut(300)\n    .duration(1667)\n    // Efeito de áudio\n    .sound()\n    .file(\"modules/dnd5e-animations/assets/sounds/Damage/Radiant/radiant-impact-1.mp3\") // Caminho do arquivo de áudio\n    .volume(0.2) // Volume do som\n    .playIf(true) // Certifica que o som será reproduzido\n    .waitUntilFinished() // Aguarda o término do som antes de prosseguir\n    .play(); // Inicia a sequência",
+        "name": "Word of Radiance",
+        "img": "Word%20of%20Radience.png",
+        "type": "script",
+        "scope": "global",
+        "author": "mHVqWXrUNXvBrJAZ",
+        "ownership": {
+          "default": 3
+        },
+        "_id": null,
+        "folder": null,
+        "sort": 0,
+        "flags": {},
+        "_stats": {
+          "coreVersion": "12.331",
+          "systemId": "dnd5e",
+          "systemVersion": "4.3.8",
+          "createdTime": null,
+          "modifiedTime": null,
+          "lastModifiedBy": null,
+          "compendiumSource": null,
+          "duplicateSource": null
+        }
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro",
+      "autoTarget": "default",
+      "AoETargetType": "any",
+      "AoETargetTypeIncludeSelf": false
+    },
+    "autoanimations": {
+      "id": "755c188c-31bd-4f7f-8ad3-d1edcaf4f531",
+      "label": "Word of Radiance",
+      "menu": "melee",
+      "primary": {
+        "enable": false
+      },
+      "isEnabled": false,
+      "isCustomized": true,
+      "fromAmmo": false,
+      "version": 5
+    }
+  }
+}
