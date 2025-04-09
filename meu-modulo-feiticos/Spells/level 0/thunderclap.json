@@ -107,8 +107,9 @@
                 "thunder"
               ],
               "scaling": {
-                "mode": "",
-                "number": 1
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
               }
             }
           ],
