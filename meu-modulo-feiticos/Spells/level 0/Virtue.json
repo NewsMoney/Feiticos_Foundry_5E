@@ -1,0 +1,111 @@
+{
+  "name": "Virtue (UA)",
+  "type": "spell",
+  "img": "Virtue.png",
+  "system": {
+    "level": 0,
+    "school": "abj",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "range": {
+      "units": "touch",
+      "special": ""
+    },
+    "duration": {
+      "units": "round",
+      "value": "1"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "type": "any",
+        "count": "1",
+        "special": ""
+      }
+    },
+    "description": {
+      "value": "<p>Você toca uma criatura, imbuindo-a com vitalidade. Se o alvo tiver ao menos 1 ponto de vida, ele recebe uma quantidade de pontos de vida temporários igual a 1d4 + seu modificador de habilidade de conjuração. Os pontos de vida temporários são perdidos quando a magia termina.</p>",
+      "chat": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
+    "activities": {
+      "VBkynTkoLZPkY467": {
+        "type": "heal",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": true,
+          "condition": "target && target.actor && target.actor.system.attributes.hp.value >= 1"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "round",
+          "concentration": false,
+          "override": true,
+          "value": "1"
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "touch",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "flags": {
+    "midi-qol": {}
+  }
+}

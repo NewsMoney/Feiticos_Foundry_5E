@@ -1,0 +1,131 @@
+{
+  "name": "Control Flames",
+  "type": "spell",
+  "img": "Control%20Flames.png",
+  "system": {
+    "level": 0,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "120"
+    },
+    "duration": {
+      "units": "hour",
+      "value": "1"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "type": ""
+      }
+    },
+    "description": {
+      "value": "<p>Você escolhe uma chama não mágica que possa ver dentro do alcance e que caiba em um cubo de 1,5 metro de lado. Você a afeta de uma das seguintes maneiras:</p><ul data-start=\"217\" data-end=\"730\"><li data-start=\"217\" data-end=\"355\"><p data-start=\"219\" data-end=\"355\">Você expande instantaneamente a chama em 1,5 metro em uma direção, desde que haja madeira ou outro combustível presente no novo local.</p></li><li data-start=\"356\" data-end=\"413\"><p data-start=\"358\" data-end=\"413\">Você apaga instantaneamente as chamas dentro do cubo.</p></li><li data-start=\"414\" data-end=\"554\"><p data-start=\"416\" data-end=\"554\">Você dobra ou reduz pela metade a área de luz brilhante e luz suave emitida pela chama, muda sua cor, ou ambos. A alteração dura 1 hora.</p></li><li data-start=\"555\" data-end=\"730\"><p data-start=\"557\" data-end=\"730\">Você faz formas simples — como a forma vaga de uma criatura, um objeto inanimado ou um local — aparecerem dentro das chamas e se moverem como quiser. As formas duram 1 hora.</p></li></ul><p data-start=\"732\" data-end=\"899\">Se você conjurar essa magia várias vezes, pode manter até três de seus efeitos não instantâneos ativos ao mesmo tempo, e pode encerrar qualquer um deles como uma ação.</p>",
+      "chat": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "properties": [
+      "somatic"
+    ],
+    "activities": {
+      "5aOxP7LI7MuHvpu0": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "flags": {
+    "itemacro": {
+      "macro": {
+        "command": "const caster = token;\n\nawait new Sequence()\n  // Som no início da sequência\n  .sound()\n    .file(\"modules/dnd5e-animations/assets/sounds/Spells/Elemental/spell-air-moving-1.mp3\")\n    .volume(0.5)\n    .playIf(true)\n\n  // Primeira fireflies laranja\n  .effect()\n    .file(\"jb2a.fireflies.few.01.orange\")\n    .atLocation(caster)\n    .scale(0.8)\n    .fadeIn(300)\n    .fadeOut(500)\n    .duration(2900)\n\n  // Segunda fireflies laranja\n  .effect()\n    .file(\"jb2a.fireflies.few.01.orange\")\n    .atLocation(caster)\n    .scale(0.8)\n    .fadeIn(300)\n    .fadeOut(500)\n    .duration(2900)\n\n  // Fireflies vermelha\n  .effect()\n    .file(\"jb2a.fireflies.few.02.red\")\n    .atLocation(caster)\n    .scale(0.8)\n    .fadeIn(300)\n    .fadeOut(500)\n    .duration(2900)\n\n  // Anel de fogo diminuindo\n  .effect()\n    .file(\"jb2a.cast_generic.fire.01\")\n    .atLocation(caster)\n    .scale(0.7)\n    .belowTokens()\n    .duration(2000)\n    .scaleIn(0, 1100, { ease: \"easeInOutCubic\" })\n    .fadeOut(500)\n    .waitUntilFinished()\n\n  .play();",
+        "name": "Control Flames",
+        "img": "Control%20Flames.png",
+        "type": "script",
+        "scope": "global",
+        "author": "wX81lL9qjZUWyQMF",
+        "ownership": {
+          "default": 3
+        },
+        "_id": null,
+        "folder": null,
+        "sort": 0,
+        "flags": {},
+        "_stats": {
+          "coreVersion": "12.331",
+          "systemId": "dnd5e",
+          "systemVersion": "4.3.8",
+          "createdTime": null,
+          "modifiedTime": null,
+          "lastModifiedBy": null,
+          "compendiumSource": null,
+          "duplicateSource": null
+        }
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}
