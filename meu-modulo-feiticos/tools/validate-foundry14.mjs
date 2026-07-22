@@ -1,5 +1,5 @@
 import { extractPack } from "@foundryvtt/foundryvtt-cli";
-import { access, mkdtemp, readFile, readdir, rm } from "node:fs/promises";
+import { access, cp, mkdir, mkdtemp, readFile, readdir, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,6 +12,13 @@ if (manifest.id !== "meu-modulo-feiticos" || manifest.type !== "module") errors.
 if (manifest.compatibility?.minimum !== "14" || manifest.compatibility?.verified !== "14") errors.push("compatibilidade do Foundry não está fixada em V14");
 const dnd5e = manifest.relationships?.systems?.find(entry => entry.id === "dnd5e");
 if (!dnd5e || dnd5e.compatibility?.minimum !== "5.3.0") errors.push("dependência do D&D5e 5.3+ ausente");
+const requiredModules = new Map((manifest.relationships?.requires ?? []).map(entry => [entry.id, entry]));
+for (const id of ["sequencer", "JB2A_DnD5e", "midi-qol", "dae", "itemacro"]) {
+  const dependency = requiredModules.get(id);
+  if (!dependency || dependency.type !== "module" || !dependency.manifest || !dependency.compatibility?.minimum) {
+    errors.push(`dependência obrigatória ${id} ausente ou incompleta`);
+  }
+}
 const pack = manifest.packs?.find(entry => entry.name === "feiticos-5e");
 if (!pack || pack.path !== "packs/feiticos-5e" || pack.type !== "Item" || pack.system !== "dnd5e") errors.push("definição do compêndio V14 inválida");
 if (manifest.scripts?.length || manifest.minimumCoreVersion || manifest.compatibleCoreVersion || manifest.name) errors.push("manifesto contém chaves legadas");
@@ -19,9 +26,13 @@ for (const script of manifest.esmodules ?? []) await access(path.join(root, scri
 
 const temporaryDir = await mkdtemp(path.join(os.tmpdir(), "foundry-spells-v14-"));
 try {
-  await extractPack(path.join(root, pack.path), temporaryDir);
-  const files = (await readdir(temporaryDir)).filter(file => file.endsWith(".json"));
-  const documents = await Promise.all(files.map(async file => JSON.parse(await readFile(path.join(temporaryDir, file), "utf8"))));
+  const temporaryPack = path.join(temporaryDir, "pack");
+  const extractedPack = path.join(temporaryDir, "extracted");
+  await cp(path.join(root, pack.path), temporaryPack, { recursive: true });
+  await mkdir(extractedPack);
+  await extractPack(temporaryPack, extractedPack);
+  const files = (await readdir(extractedPack)).filter(file => file.endsWith(".json"));
+  const documents = await Promise.all(files.map(async file => JSON.parse(await readFile(path.join(extractedPack, file), "utf8"))));
   const items = documents.filter(document => document._key?.startsWith("!items!"));
   const folders = documents.filter(document => document._key?.startsWith("!folders!"));
   if (items.length !== 517) errors.push(`LevelDB contém ${items.length} itens em vez de 517`);

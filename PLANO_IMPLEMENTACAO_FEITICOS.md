@@ -41,6 +41,7 @@ O catálogo foi consolidado a partir do índice oficial de magias do D&D Beyond,
 - [x] Catálogo principal com 517 magias, do nível 0 ao 9, gerado e validado estruturalmente.
 - [x] Compêndio LevelDB funcional com 517 entradas únicas em `packs/feiticos-5e`.
 - [x] Organizar o compêndio em dez pastas internas, separando truques e cada círculo de magia.
+- [x] Declarar no manifesto as dependências de animação e automação, com instalação assistida pelo Foundry.
 - [x] Todas as 517 entradas possuem descrição detalhada em português: 240 revisadas manualmente e 277 com revisão técnica.
 - [x] Os 46 truques possuem atividade, animação configurada e automações especiais quando aplicáveis.
 - [x] Alinhar `module.json` com Foundry 14 e D&D5e 5.3.x, usando o schema moderno do manifesto.
