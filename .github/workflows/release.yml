@@ -1,0 +1,48 @@
+name: Release Foundry module
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: meu-modulo-feiticos/package-lock.json
+
+      - name: Install dependencies
+        working-directory: meu-modulo-feiticos
+        run: npm ci
+
+      - name: Build and validate
+        working-directory: meu-modulo-feiticos
+        run: |
+          npm run generate:all
+          npm run validate:all
+
+      - name: Build installable archive
+        run: |
+          zip -r "meu-modulo-feiticos-${GITHUB_REF_NAME}.zip" meu-modulo-feiticos \
+            -x "meu-modulo-feiticos/node_modules/*" \
+               "meu-modulo-feiticos/Spells/*" \
+               "meu-modulo-feiticos/data/*" \
+               "meu-modulo-feiticos/tools/*" \
+               "meu-modulo-feiticos/packs/_source/*" \
+               "meu-modulo-feiticos/package.json" \
+               "meu-modulo-feiticos/package-lock.json" \
+               "meu-modulo-feiticos/.gitignore"
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "meu-modulo-feiticos-${GITHUB_REF_NAME}.zip" --generate-notes

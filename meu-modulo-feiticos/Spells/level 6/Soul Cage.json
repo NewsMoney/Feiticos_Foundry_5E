@@ -1,0 +1,167 @@
+{
+  "_id": "3tKE6E8lzK0jfQjG",
+  "name": "Soul Cage",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Como reação à morte de um humanoide próximo, você aprisiona sua alma numa pequena jaula por 8 horas. Pode consumir um dos seis usos para recuperar PV, obter vantagem, fazer uma pergunta à alma ou enxergar um local conhecido por ela. Libertar ou esgotar os usos encerra a magia.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "XGE"
+    },
+    "level": 6,
+    "school": "nec",
+    "activation": {
+      "type": "reaction",
+      "value": 1,
+      "condition": "which you take when a humanoid you can see within 60 feet of you dies"
+    },
+    "duration": {
+      "value": 8,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a tiny silver cage worth 100 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "L-B7geQRXOH7mHLV": {
+        "type": "heal",
+        "activation": {
+          "type": "reaction",
+          "value": 1,
+          "override": false,
+          "condition": "which you take when a humanoid you can see within 60 feet of you dies"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "healing": {
+          "number": 2,
+          "denomination": 8,
+          "bonus": "@mod",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": 1
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "fallbacks": [
+          "jb2a.energy_strands.in.dark_purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Soul Cage",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

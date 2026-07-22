@@ -1,0 +1,151 @@
+{
+  "_id": "Snx3rQTMaX7BWSQ8",
+  "name": "Etherealness",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você entra nas regiões fronteiriças do Plano Etéreo, na área onde ele se sobrepõe ao seu plano atual. Você permanece na Fronteira Etérea enquanto durar ou até usar sua ação para anular a magia. Durante esse tempo, você pode se mover em qualquer direção. Se você subir ou descer, cada metro de movimento custará um metro extra. Você pode ver e ouvir o plano de onde veio, mas tudo lá parece cinza e você não consegue ver nada a mais de 18 metros de distância.</p><p>Enquanto estiver no Plano Etéreo, você só pode afetar e ser afetado por outras criaturas naquele plano. Criaturas que não estão no Plano Etéreo não podem perceber você e não podem interagir com você, a menos que uma habilidade especial ou magia tenha dado a elas a habilidade de fazer isso.</p><p>Você ignora todos os objetos e efeitos que não estão no Plano Etéreo, permitindo que você se mova através de objetos que você percebe no plano de onde você se originou.</p><p>Quando a magia termina, você retorna imediatamente ao plano de origem no local que você ocupa atualmente.  Se você ocupar o mesmo lugar que um objeto sólido ou criatura quando isso acontecer, você será imediatamente desviado para o espaço desocupado mais próximo que você pode ocupar e sofrerá 6 pontos de dano de força para cada metro pelo qual foi deslocado.</p><p>Esta magia não tem efeito se você o lançar enquanto estiver no Plano Etéreo ou em um plano que não o faça fronteira, como um dos Planos Externos.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando uma magia espaço de 8º nível ou superior, você pode escolher até três criaturas voluntárias (incluindo você) para cada nível de espaço acima do 7º. As criaturas devem estar a até 3 metros de você quando você lança a magia.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 8,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "uVL8COYB1hzdrUmN": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Etherealness",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "_key": "!items!0LvbWA4VK-Lxtx_n",
+  "_id": "0LvbWA4VK-Lxtx_n",
+  "name": "Plane Shift",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você e até oito criaturas voluntárias que dão as mãos em um círculo são transportados para um plano de existência diferente. Você pode especificar um destino alvo em termos gerais, como a Cidade de Bronze no Plano Elemental do Fogo ou o palácio de Dispater no segundo nível dos Nove Infernos, e você aparece dentro ou próximo desse destino. Se você está tentando chegar à Cidade de Bronze, por exemplo, você pode chegar na Rua de Aço, antes de seu Portão de Cinzas, ou olhar para a cidade do outro lado do Mar de Fogo, a critério do Mestre.</p><p>Alternativamente, se você conhece a sequência de sigilos de um círculo de teletransporte em outro plano de existência, esta magia pode levá-lo a esse círculo. Se o círculo de teletransporte for muito pequeno para conter todas as criaturas que você transportou, elas aparecerão nos espaços desocupados mais próximos ao círculo.</p><p>Você pode usar esta magia para banir uma criatura involuntária para outro plano.  Escolha uma criatura ao seu alcance e faça um ataque mágico corpo a corpo contra ela. Se acertar, a criatura deve fazer um teste de resistência de Carisma. Se a criatura falhar neste teste, ela será transportada para um local aleatório no plano de existência que você especificar. Uma criatura assim transportada deve encontrar seu próprio caminho de volta ao seu atual plano de existência.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "9A00tfA4UWIahDEZ": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
+        "fallbacks": [
+          "jb2a.portals.vertical.vortex.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Plane Shift",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

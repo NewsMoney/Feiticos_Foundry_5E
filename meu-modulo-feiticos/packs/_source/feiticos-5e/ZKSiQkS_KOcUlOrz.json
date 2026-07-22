@@ -1,0 +1,152 @@
+{
+  "_key": "!items!ZKSiQkS_KOcUlOrz",
+  "_id": "ZKSiQkS_KOcUlOrz",
+  "name": "True Resurrection",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você toca uma criatura que não está morta há mais de 200 anos e que morreu por qualquer motivo, exceto velhice. Se a alma da criatura estiver livre e disposta, a criatura volta à vida com todos os seus pontos de vida.</p><p>Esta magia fecha todos os ferimentos, neutraliza qualquer veneno, cura todas as doenças e elimina quaisquer maldições que afetassem a criatura quando ela morresse. A magia substitui órgãos e membros danificados ou ausentes. Se a criatura era morta-viva, ela é restaurada à sua forma não-morta.</p><p>A magia pode até fornecer um novo corpo se o original não existir mais, caso em que você deve falar o nome da criatura. A criatura então aparece em um espaço desocupado, à sua escolha, a até 3 metros de você.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "nec",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "q7BQDCxjbLtm_pXg": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "fallbacks": [
+          "jb2a.energy_strands.in.dark_purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "True Resurrection",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

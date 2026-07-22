@@ -1,0 +1,151 @@
+{
+  "_id": "MN-h3V0SCYS0P6fX",
+  "name": "Daylight",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Uma esfera de luz com 18 metros de raio se espalha a partir de um ponto que você escolher dentro do alcance. A esfera é luz brilhante e emite luz fraca por mais 18 metros.</p><p>Se você escolher um ponto em um objeto que está segurando ou que não esteja sendo usado ou carregado, a luz brilhará no objeto e se moverá com ele. Cobrir completamente o objeto afetado com um objeto opaco, como uma tigela ou um elmo, bloqueia a luz.</p><p>Se alguma área desta magia se sobrepõe a uma área de escuridão criada por uma magia de 3º nível ou inferior, a magia que criou a escuridão é dissipada.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "L6I3ppGBb_hj1xLQ": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
+        "fallbacks": [
+          "jb2a.impact.004.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Daylight",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

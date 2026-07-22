@@ -1,0 +1,178 @@
+{
+  "_key": "!items!v8RS9cKOQiDt8RHN",
+  "_id": "v8RS9cKOQiDt8RHN",
+  "name": "Create Bonfire",
+  "type": "spell",
+  "img": "modules/meu-modulo-feiticos/icons/Create%20Bonfire.png",
+  "system": {
+    "description": {
+      "value": "<p>Uma fogueira mágica ocupa um cubo de 1,5 metro a até 18 metros por até 1 minuto de concentração. Criaturas no espaço fazem resistência de Destreza ao surgir, entrar ou terminar o turno ali, sofrendo 1d8 de fogo em falha. O dano escala nos níveis 5, 11 e 17.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "EE/XGE"
+    },
+    "level": 0,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "duration": {
+      "units": "minute",
+      "value": "1"
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
+    "materials": {
+      "value": "Consulte a fonte indicada.",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "QFnjvFI0p5WFqIai": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "value": "1",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.bonfire.01.orange",
+        "targeted": true,
+        "fallbacks": [
+          "jb2a.fire_trap.02.single.orange"
+        ]
+      },
+      "description": {
+        "quality": "reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runCantrip({ item, token, workflow });",
+        "name": "Create Bonfire",
+        "img": "modules/meu-modulo-feiticos/icons/Create%20Bonfire.png",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

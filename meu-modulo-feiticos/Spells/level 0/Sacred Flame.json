@@ -1,0 +1,175 @@
+{
+  "_id": "Vg1hbH3mKK-IC6VI",
+  "name": "Sacred Flame",
+  "type": "spell",
+  "img": "modules/meu-modulo-feiticos/icons/Sacred%20Flame.png",
+  "system": {
+    "description": {
+      "value": "<p>Chamas radiantes descem sobre uma criatura a até 18 metros. Ela faz resistência de Destreza sem benefício de cobertura, sofrendo 1d8 radiante em falha. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 0,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "duration": {
+      "units": "inst"
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
+    "materials": {
+      "value": "Consulte a fonte indicada.",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "iqq0JoJ6XlNawKN2": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "value": "",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.sacred_flame.target.yellow",
+        "targeted": true,
+        "fallbacks": [
+          "jb2a.impact.010.yellow"
+        ]
+      },
+      "description": {
+        "quality": "reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runCantrip({ item, token, workflow });",
+        "name": "Sacred Flame",
+        "img": "modules/meu-modulo-feiticos/icons/Sacred%20Flame.png",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

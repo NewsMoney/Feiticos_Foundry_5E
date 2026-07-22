@@ -1,0 +1,161 @@
+{
+  "_id": "jlM7uvBjEd_JURDD",
+  "name": "Enlarge/Reduce",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você faz com que uma criatura ou objeto que você pode ver dentro do alcance fique maior ou menor durante a duração. Escolha uma criatura ou um objeto que não seja usado nem carregado. Se o alvo não estiver disposto, ele pode realizar um teste de resistência de Constituição. Caso obtenha sucesso, a magia não tem efeito. Se o alvo for uma criatura, tudo o que ele estiver vestindo e carregando muda de tamanho junto com ele. Qualquer item largado por uma criatura afetada retorna ao tamanho normal imediatamente.</p><p><strong>Ampliar.</strong> O tamanho do alvo dobra em todas as dimensões e seu peso é multiplicado por oito. Este crescimento aumenta o seu tamanho em uma categoria – de Médio a Grande, por exemplo. Se não houver espaço suficiente para o alvo dobrar de tamanho, a criatura ou objeto atinge o tamanho máximo possível no espaço disponível. Até a magia terminar, o alvo também tem vantagem em testes de Força e testes de resistência de Força. As armas do alvo também crescem para corresponder ao seu novo tamanho. Embora essas armas sejam ampliadas, o ataque do alvo com elas causa 1d4 de dano extra.</p><p><strong>Reduzir.</strong> O tamanho do alvo é reduzido pela metade em todas as dimensões e seu peso é reduzido para um oitavo do normal. Esta redução diminui o seu tamanho em uma categoria – de Médio para Pequeno, por exemplo. Até a magia terminar, o alvo também terá desvantagem em testes de Força e testes de resistência de Força. As armas do alvo também encolhem para corresponder ao seu novo tamanho. Embora essas armas sejam reduzidas, os ataques do alvo com elas causam 1d4 a menos de dano (isso não pode reduzir o dano abaixo de 1).</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 2,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a pinch of powdered iron",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "-w4qDVHJrgYqC9tj": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Enlarge/Reduce",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

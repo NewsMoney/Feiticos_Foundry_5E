@@ -1,0 +1,161 @@
+{
+  "_key": "!items!uqr5nJvi90pyQXUD",
+  "_id": "uqr5nJvi90pyQXUD",
+  "name": "Imprisonment",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria uma restrição mágica para manter uma criatura que você pode ver dentro do alcance. O alvo deve ser bem sucedido em um teste de resistência de Sabedoria ou ficará vinculado ao magia; se tiver sucesso, ele ficará imune a esta magia se você lançá-la novamente. Enquanto afetada por esta magia, a criatura não precisa respirar, comer ou beber e não envelhece. magias de adivinhação não conseguem localizar ou perceber o alvo.</p><p>Quando você lança a magia, você escolhe uma das seguintes formas de aprisionamento.</p><p><strong>Enterro.</strong> O alvo é sepultado bem abaixo da terra em uma esfera de força magia que é grande o suficiente para conter o alvo. Nada pode passar pela esfera, nem qualquer criatura pode se teletransportar ou usar viagens planas para entrar ou sair dela.</p><p>O componente especial para esta versão da magia é um pequeno orbe de mithral.</p><p><strong>Acorrentamento.</strong> Correntes pesadas, firmemente enraizadas no chão, mantêm o alvo no lugar. O alvo fica restringido até o fim da magia e não pode se mover ou ser movido de qualquer maneira até então.</p><p>O componente especial para esta versão da magia é uma fina corrente de metal precioso.</p><p><strong>Prisão protegida.</strong> a magia transporta o alvo para um pequeno semiplano que é protegido contra teletransporte e viagens planas. O semiplano pode ser um labirinto, uma gaiola, uma torre ou qualquer estrutura ou área confinada semelhante de sua escolha.</p><p>O componente especial para esta versão da magia é uma representação em miniatura da prisão feita de jade.</p><p><strong>Contenção Mínima.</strong> O alvo encolhe até uma altura de 2,5 cm e é aprisionado dentro de uma pedra preciosa ou objeto semelhante. A luz pode passar através da gema normalmente (permitindo que o alvo veja para fora e outras criaturas vejam para dentro), mas nada mais pode passar, mesmo por meio de teletransporte ou viagem plana. A pedra preciosa não pode ser cortada ou quebrada enquanto a magia permanecer em vigor.</p><p>O componente especial para esta versão da magia é uma pedra preciosa grande e transparente, como um corindo, diamante ou rubi.</p><p><strong>Sono.</strong> O alvo adormece e não pode ser acordado. O componente especial para esta versão da magia consiste em ervas soporíficas raras.</p><p><strong>Terminando a magia.</strong> Durante o lançamento da magia, em qualquer uma de suas versões, você pode especificar uma condição que fará com que a magia termine e libere o alvo. A condição pode ser tão específica ou elaborada quanto você escolher, mas o Mestre deve concordar que a condição é razoável e tem probabilidade de se concretizar. As condições podem ser baseadas no nome, identidade ou divindade de uma criatura, mas de outra forma devem ser baseadas em ações ou qualidades observáveis e não baseadas em intangíveis como nível, classe ou pontos de vida.</p><p>uma magia <em>Dispel Magic</em> pode encerrar a magia apenas se for lançado como uma magia de 9º nível, tendo como alvo a prisão ou o componente especial usado para criá-lo.</p><p>Você pode usar um componente especial específico para criar apenas uma prisão de cada vez. Se você lançar a magia novamente usando o mesmo componente, o alvo do primeiro lançamento será imediatamente libertado de sua ligação.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "abj",
+    "activation": {
+      "type": "minute",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "perm",
+      "concentration": false
+    },
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per Hit Die of the target",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "JlfkBkQjZZZBPfyv": {
+        "type": "save",
+        "activation": {
+          "type": "minute",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "perm",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Imprisonment",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "_key": "!items!kyMi6p5ZRhDbwpbH",
+  "_id": "kyMi6p5ZRhDbwpbH",
+  "name": "Clairvoyance",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria um sensor invisível dentro do alcance em um local familiar para você (um lugar que você visitou ou viu antes) ou em um local óbvio que não é familiar para você (como atrás de uma porta, em uma esquina ou em um bosque). O sensor permanece no lugar durante todo o período e não pode ser atacado ou interagir de outra forma.</p><p>Ao lançar a magia, você escolhe ver ou ouvir. Você pode usar o sentido escolhido através do sensor como se estivesse em seu espaço. Como sua ação, você pode alternar entre ver e ouvir.</p><p>Uma criatura que pode ver o sensor (como uma criatura que se beneficia de <em>Ver Invisibilidade</em> ou <em>Ver Verdadeira</em> vê um orbe luminoso e intangível do tamanho do seu punho.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "div",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 1,
+      "units": "mi",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a focus worth at least 100gp, either a jeweled horn for hearing or a glass eye for seeing",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "_R7IidopQN9ntqMV": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.detect_magic.circle.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.divination.intro.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Clairvoyance",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

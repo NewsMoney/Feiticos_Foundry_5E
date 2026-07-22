@@ -1,0 +1,177 @@
+{
+  "_id": "nxPXfSUSozkhMEex",
+  "name": "Antipathy/Sympathy",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia atrai ou repele criaturas de sua escolha. Você tem como alvo algo dentro do alcance, seja um objeto ou criatura Enorme ou menor ou uma área que não seja maior que um cubo de 60 metros. Em seguida, especifique um tipo de criatura inteligente, como dragões vermelhos, goblins ou vampiros. Você investe no alvo uma aura que atrai ou repele as criaturas especificadas durante o período. Escolha antipatia ou simpatia como efeito da aura.</p><p><strong>Antipatia.</strong> O encantamento faz com que criaturas do tipo que você designou sintam um desejo intenso de deixar a área e evitar o alvo. Quando tal criatura puder ver o alvo ou chegar a até 18 metros dele, a criatura deve ser bem sucedida em um teste de resistência de Sabedoria ou ficará assustada. A criatura permanece assustada enquanto puder ver o alvo ou estiver a até 18 metros dele. Enquanto estiver assustada com o alvo, a criatura deve usar seu movimento para se mover para o local seguro mais próximo, de onde não possa ver o alvo. Se a criatura se mover a mais de 18 metros do alvo e não puder vê-lo, a criatura não ficará mais assustada, mas ficará assustada novamente se recuperar a visão do alvo ou se mover a até 18 metros dele.</p><p><strong>Simpatia.</strong> O encantamento faz com que as criaturas especificadas sintam um desejo intenso de se aproximar do alvo enquanto estiverem a 18 metros dele ou forem capazes de vê-lo.  Quando tal criatura puder ver o alvo ou chegar a até 18 metros dele, a criatura deve ser bem sucedida em um teste de resistência de Sabedoria ou usar seu movimento em cada um de seus turnos para entrar na área ou se mover ao alcance do alvo. Quando a criatura fizer isso, ela não poderá se afastar voluntariamente do alvo.</p><p>Se o alvo causar dano ou de outra forma prejudicar uma criatura afetada, a criatura afetada pode fazer um teste de resistência de Sabedoria para encerrar o efeito, conforme descrito abaixo.</p><p><strong>Terminar o Efeito.</strong> Se uma criatura afetada terminar seu turno enquanto não estiver a 18 metros do alvo ou não for capaz de vê-lo, a criatura faz um teste de resistência de Sabedoria. Se obtiver sucesso, a criatura não é mais afetada pelo alvo e reconhece o sentimento de repugnância ou atração como mágico. Além disso, uma criatura afetada pela magia pode fazer outro teste de resistência de Sabedoria a cada 24 horas enquanto a magia persistir.</p><p>Uma criatura que obtiver sucesso no teste de resistência contra esse efeito fica imune a ele por 1 minuto, após o qual ela pode ser afetada novamente.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 8,
+    "school": "enc",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "day",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "either a hump of alum soaked in vinegar for the *antipathy* effect or a drop of honey for the *sympathy* effect",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "7KH6zbsF0fOu-Elv": {
+        "type": "save",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "day",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "frightened"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "frightened",
+        "ids": [
+          "frightened"
+        ],
+        "label": "frightened",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 10,
+          "units": "day",
+          "concentration": false
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Antipathy/Sympathy",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

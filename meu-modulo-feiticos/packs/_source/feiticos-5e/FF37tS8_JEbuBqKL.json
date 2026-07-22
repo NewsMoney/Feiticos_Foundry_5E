@@ -1,0 +1,152 @@
+{
+  "_key": "!items!FF37tS8_JEbuBqKL",
+  "_id": "FF37tS8_JEbuBqKL",
+  "name": "Plant Growth",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia canaliza vitalidade para plantas dentro de uma área específica. Existem dois usos possíveis para a magia, garantindo benefícios imediatos ou de longo prazo.</p><p>Se você lançar esta magia usando 1 ação, escolha um ponto dentro do alcance. Todas as plantas normais em um raio de 30 metros centrado nesse ponto tornam-se densas e cobertas de vegetação. Uma criatura que se move pela área deve gastar 1,2 metro de movimento para cada 30 centímetros que ela se mover.</p><p>Você pode excluir uma ou mais áreas de qualquer tamanho dentro da área da magia de serem afetadas.</p><p>Se você lançar esta magia durante 8 horas, você enriquece o terreno. Todas as plantas em um raio de oitocentos metros centradas em um ponto dentro do alcance ficam enriquecidas por 1 ano. As plantas produzem o dobro da quantidade normal de alimento quando colhidas.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "trs",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": 150,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "Jav-H_jCZAG4lmZ5": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Plant Growth",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

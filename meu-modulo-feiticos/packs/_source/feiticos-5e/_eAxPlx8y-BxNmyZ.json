@@ -1,0 +1,153 @@
+{
+  "_key": "!items!_eAxPlx8y-BxNmyZ",
+  "_id": "_eAxPlx8y-BxNmyZ",
+  "name": "Locate Creature",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Descreva ou nomeie uma criatura que lhe seja familiar. Você sente a direção da localização da criatura, desde que ela esteja a até 300 metros de você. Se a criatura estiver se movendo, você sabe a direção de seu movimento.</p><p>A magia pode localizar uma criatura específica conhecida por você, ou a criatura mais próxima de um tipo específico (como um humano ou um unicórnio), desde que você tenha visto tal criatura de perto — dentro de 9 metros — pelo menos uma vez. Se a criatura que você descreveu ou nomeou estiver em uma forma diferente, como sob os efeitos de uma magia <em>Polimorfo</em>, esta magia não localiza a criatura.</p><p>Esta magia não pode localizar uma criatura se água corrente com pelo menos 3 metros de largura bloquear um caminho direto entre você e a criatura.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 4,
+    "school": "div",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a bit of fur from a bloodhound",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "AU4gi_mUOsirBW3U": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.detect_magic.circle.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.divination.intro.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Locate Creature",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

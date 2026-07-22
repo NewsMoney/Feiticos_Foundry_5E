@@ -1,0 +1,150 @@
+{
+  "_key": "!items!roV1YgGTIKBHEU_M",
+  "_id": "roV1YgGTIKBHEU_M",
+  "name": "Booming Blade",
+  "type": "spell",
+  "img": "modules/meu-modulo-feiticos/icons/Booming%20Blade.png",
+  "system": {
+    "description": {
+      "value": "<p>Você realiza um ataque corpo a corpo com a arma usada como componente. Em acerto, o alvo sofre os efeitos normais e fica envolto em energia até seu próximo turno; se mover voluntariamente antes disso, sofre dano trovejante. O dano inicial e o de movimento aumentam nos níveis 5, 11 e 17.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "SCAG/TCE"
+    },
+    "level": 0,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": null,
+      "condition": ""
+    },
+    "duration": {
+      "units": "inst"
+    },
+    "range": {
+      "value": 5,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "somatic",
+      "material"
+    ],
+    "materials": {
+      "value": "Consulte a fonte indicada.",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "TeqXBzua-IGHnz4b": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "value": "",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.melee_generic.sword.one_handed",
+        "targeted": true,
+        "fallbacks": [
+          "jb2a.static_electricity.03.blue"
+        ]
+      },
+      "description": {
+        "quality": "reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "booming-blade",
+        "label": "Energia trovejante",
+        "specialDuration": [
+          "turnStartSource"
+        ]
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runCantrip({ item, token, workflow });",
+        "name": "Booming Blade",
+        "img": "modules/meu-modulo-feiticos/icons/Booming%20Blade.png",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "_key": "!items!HzgEwWHDh_5cj_2k",
+  "_id": "HzgEwWHDh_5cj_2k",
+  "name": "Hypnotic Pattern",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria um padrão retorcido de cores que serpenteia pelo ar dentro de um cubo de 9 metros dentro do alcance. O padrão aparece por um momento e desaparece. Cada criatura na área que vir o padrão deve fazer um teste de resistência de Sabedoria. Se falhar na resistência, a criatura fica encantada enquanto durar. Enquanto enfeitiçada por esta magia, a criatura fica incapacitada e tem velocidade 0.</p><p>A magia termina para uma criatura afetada se ela sofrer algum dano ou se outra pessoa usar uma ação para tirar a criatura de seu estupor.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "ill",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "somatic",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a glowing stick of incense or a crystal vial filled with phosphorescent material",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "22Az6Mq71-5bJ7O2": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.illusion.intro.purple",
+        "fallbacks": [
+          "jb2a.smoke.puff.centered.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "charmed",
+          "incapacitated"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "charmed",
+        "ids": [
+          "charmed",
+          "incapacitated"
+        ],
+        "label": "charmed + incapacitated",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Hypnotic Pattern",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

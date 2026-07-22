@@ -1,0 +1,161 @@
+{
+  "_id": "Un9ryFetGE4XhJ4R",
+  "name": "Suggestion",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você sugere um curso de atividade (limitado a uma frase ou duas) e influencia magicamente uma criatura que você pode ver dentro do alcance e que pode ouvir e compreender você. Criaturas que não podem ser enfeitiçadas são imunes a este efeito. A sugestão deve ser formulada de forma a fazer com que o curso de ação pareça razoável. Pedir à criatura para se esfaquear, se atirar em uma lança, se imolar ou fazer algum outro ato obviamente prejudicial encerra a magia.</p><p>O alvo deve fazer um teste de resistência de Sabedoria. Se falhar, ele segue o curso de ação que você descreveu da melhor maneira possível. O curso de ação sugerido pode continuar durante todo o período. Se a atividade sugerida puder ser concluída em um tempo mais curto, a magia termina quando o alvo terminar o que foi solicitado.</p><p>Você também pode especificar condições que desencadearão uma atividade especial durante a duração. Por exemplo, você pode sugerir que um cavaleiro dê seu cavalo de guerra ao primeiro mendigo que encontrar. Se a condição não for atendida antes que a magia expire, a atividade não será realizada.</p><p>Se você ou algum de seus companheiros causar dano ao alvo, a magia termina.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 2,
+    "school": "enc",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 8,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a snake’s tongue and either a bit of honeycomb or a drop of sweet oil",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "PzcKfAoNJJsS2r04": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Suggestion",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

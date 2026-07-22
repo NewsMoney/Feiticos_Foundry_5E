@@ -1,0 +1,153 @@
+{
+  "_key": "!items!nEzFc80F2JG9p5zM",
+  "_id": "nEzFc80F2JG9p5zM",
+  "name": "Forbiddance",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria uma proteção contra viagens mágicas que protege até 3.600 metros quadrados de espaço a uma altura de 9 metros acima do chão. Durante esse período, as criaturas não podem se teletransportar para a área ou usar portais, como aqueles criados pela magia <em>Portão</em>, para entrar na área. A magia protege a área contra viagens planares e, portanto, evita que criaturas acessem a área por meio do Plano Astral, Plano Etéreo, Agrestia das Fadas, Pendor das Sombras ou a magia <em>Mudança de Plano</em>.</p><p>Além disso, a magia causa danos a tipos de criaturas que você escolhe ao conjurá-la. Escolha um ou mais dos seguintes: celestiais, elementais, feéricos, demônios e mortos-vivos. Quando uma criatura escolhida entra na área da magia pela primeira vez em um turno ou começa seu turno lá, a criatura sofre 5d10 de dano radiante ou necrótico (sua escolha ao lançar esta magia).</p><p>Ao lançar esta magia, você pode designar uma senha. Uma criatura que fala a senha ao entrar na área não sofre dano da magia.</p><p>A área da magia não pode se sobrepor à área de outra magia <em>Proibição</em>. Se você lançar <em>Forbiddance</em> todos os dias durante 30 dias no mesmo local, a magia durará até ser dissipado e os componentes materiais serão consumidos no último lançamento.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "abj",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "day",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "ritual"
+    ],
+    "materials": {
+      "value": "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1000 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "CJU7eE-CcsBItxnn": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "day",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Forbiddance",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

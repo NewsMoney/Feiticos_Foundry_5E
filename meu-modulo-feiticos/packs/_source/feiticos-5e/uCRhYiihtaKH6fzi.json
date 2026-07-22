@@ -1,0 +1,153 @@
+{
+  "_key": "!items!uCRhYiihtaKH6fzi",
+  "_id": "uCRhYiihtaKH6fzi",
+  "name": "Major Image",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria a imagem de um objeto, uma criatura ou algum outro fenômeno visível que não seja maior que um cubo de 6 metros. A imagem aparece em um local que você pode ver dentro do alcance e dura enquanto durar. Parece completamente real, incluindo sons, cheiros e temperatura apropriados à coisa retratada. Você não pode criar calor ou frio suficiente para causar dano, um som alto o suficiente para causar dano trovejante ou ensurdecer uma criatura, ou um cheiro que possa enjoar uma criatura (como o fedor de um troglodita).</p><p>Enquanto você estiver dentro do alcance da ilusão, você pode usar sua ação para fazer com que a imagem se mova para qualquer outro local dentro do alcance. À medida que a imagem muda de local, você pode alterar sua aparência para que seus movimentos pareçam naturais para a imagem. Por exemplo, se você criar a imagem de uma criatura e movê-la, poderá alterar a imagem para que ela pareça estar andando. Da mesma forma, você pode fazer com que a ilusão emita sons diferentes em momentos diferentes, até mesmo fazendo com que ela continue uma conversa, por exemplo.</p><p>A interação física com a imagem revela que ela é uma ilusão, porque coisas podem passar por ela. Uma criatura que usa sua ação para examinar a imagem pode determinar que ela é uma ilusão com um teste bem sucedido de Inteligência (Investigação) contra sua CD de resistência de magia. Se uma criatura discernir a ilusão pelo que ela é, a criatura poderá ver através da imagem, e suas outras qualidades sensoriais se tornarão fracas para a criatura.</p><p><strong>Em níveis mais altos.</strong> Quando você conjura esta magia usando um espaço de magia de 6º nível ou superior, a magia dura até ser dissipada, sem exigir sua concentração.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "ill",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a bit of fleece",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "8dHL6kDVNBRPWnAc": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.illusion.intro.purple",
+        "fallbacks": [
+          "jb2a.smoke.puff.centered.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Major Image",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

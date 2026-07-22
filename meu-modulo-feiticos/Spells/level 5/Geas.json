@@ -1,0 +1,201 @@
+{
+  "_id": "rqTiqKxpdvIjUdkV",
+  "name": "Geas",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você coloca um comando mágico em uma criatura que você pode ver dentro do alcance, forçando-a a realizar algum serviço ou abster-se de alguma ação ou curso de atividade conforme você decidir. Se a criatura puder entendê-lo, ela deverá ser bem sucedida em um teste de resistência de Sabedoria ou ficará encantada por você enquanto durar o efeito. Enquanto a criatura estiver encantada por você, ela sofrerá 5d10 de dano psíquico cada vez que agir de maneira diretamente contrária às suas instruções, mas não mais do que uma vez por dia. Uma criatura que não consegue entender você não é afetada pela magia.</p><p>Você pode emitir qualquer comando que escolher, exceto uma atividade que resultaria em morte certa. Se você emitir um comando suicida, a magia termina.</p><p>Você pode encerrar a magia mais cedo usando uma ação para descartá-lo. uma magia <em>Remover Maldição</em>, <em>Restauração Maior</em> ou <em>Desejo</em> também o encerra.</p><p><strong>Em Níveis Superiores.</strong> Quando você lança esta magia usando um espaço de magia de 7º ou 8º nível, a duração é de 1 ano. Quando você lança esta magia usando um espaço de magia de 9º nível, a magia dura até ser encerrada por uma das magias mencionadas acima.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "enc",
+    "activation": {
+      "type": "minute",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 30,
+      "units": "day",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "c4QxmRqgKBocmFvg": {
+        "type": "save",
+        "activation": {
+          "type": "minute",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 30,
+          "units": "day",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.mind_sliver.pink",
+        "fallbacks": [
+          "jb2a.impact.004.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "charmed"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "charmed",
+        "ids": [
+          "charmed"
+        ],
+        "label": "charmed",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 30,
+          "units": "day",
+          "concentration": false
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Geas",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

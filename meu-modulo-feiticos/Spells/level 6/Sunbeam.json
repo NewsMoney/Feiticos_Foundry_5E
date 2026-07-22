@@ -1,0 +1,202 @@
+{
+  "_id": "7uijXN26WCZ8FHaJ",
+  "name": "Sunbeam",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Um feixe de luz brilhante sai de sua mão em uma linha de 1,5 metro de largura e 18 metros de comprimento. Cada criatura na linha deve fazer um teste de resistência de Constituição. Se falhar na resistência, uma criatura sofre 6d8 de dano radiante e fica cega até seu próximo turno. Em um teste bem sucedido, ele sofre metade do dano e não fica cego por esta magia. Mortos-vivos e limos têm desvantagem neste teste de resistência.</p><p>Você pode criar uma nova linha de brilho como sua ação em qualquer turno até a magia terminar.</p><p>Enquanto durar, um grão de brilho brilhante brilha em sua mão. Ele emite luz brilhante em um raio de 9 metros e luz fraca por mais 9 metros adicionais. Esta luz é a luz solar.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (60-foot line)"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "line",
+        "size": 60
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a magnifying glass",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "TxvSXoG_zBA96c-_": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "line",
+            "size": 60
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 6,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.guiding_bolt.01.yellow",
+        "fallbacks": [
+          "jb2a.impact.010.yellow"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "blinded"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "blinded",
+        "ids": [
+          "blinded"
+        ],
+        "label": "blinded",
+        "core": true,
+        "target": "self",
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Sunbeam",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

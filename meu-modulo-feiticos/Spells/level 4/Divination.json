@@ -1,0 +1,152 @@
+{
+  "_id": "yAxJiS4mq3z0L_Wo",
+  "name": "Divination",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Sua magia e uma oferenda colocam você em contato com um deus ou com os servos de um deus. Você faz uma única pergunta sobre uma meta, evento ou atividade específica que ocorrerá dentro de 7 dias. O Mestre oferece uma resposta verdadeira. A resposta pode ser uma frase curta, uma rima enigmática ou um presságio.</p><p>A magia não leva em consideração quaisquer possíveis circunstâncias que possam alterar o resultado, como o lançamento de magias adicionais ou a perda ou ganho de um companheiro.</p><p>Se você lançar esta magia duas ou mais vezes antes de terminar seu próximo descanso longo, há uma chance cumulativa de 25 por cento para cada lançamento após o primeiro de você obter uma leitura aleatória. O Mestre faz essa rolagem em segredo.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 4,
+    "school": "div",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "ritual"
+    ],
+    "materials": {
+      "value": "incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "csycbEx0-xoZmhYl": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.detect_magic.circle.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.divination.intro.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Divination",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

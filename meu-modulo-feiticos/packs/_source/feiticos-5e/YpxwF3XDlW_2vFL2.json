@@ -1,0 +1,161 @@
+{
+  "_key": "!items!YpxwF3XDlW_2vFL2",
+  "_id": "YpxwF3XDlW_2vFL2",
+  "name": "Mass Suggestion",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você sugere um curso de atividade (limitado a uma frase ou duas) e influencia magicamente até doze criaturas de sua escolha que você pode ver dentro do alcance e que podem ouvir e compreender você. Criaturas que não podem ser enfeitiçadas são imunes a este efeito. A sugestão deve ser formulada de forma a fazer com que o curso de ação pareça razoável. Pedir à criatura para se esfaquear, se atirar em uma lança, se imolar ou fazer algum outro ato obviamente prejudicial anula automaticamente o efeito da magia.</p><p>Cada alvo deve fazer um teste de resistência de Sabedoria. Se falhar, ele segue o curso de ação que você descreveu da melhor maneira possível. O curso de ação sugerido pode continuar durante todo o período. Se a atividade sugerida puder ser concluída em um tempo mais curto, a magia termina quando o alvo terminar o que foi solicitado.</p><p>Você também pode especificar condições que desencadearão uma atividade especial durante a duração. Por exemplo, você pode sugerir que um grupo de soldados dê todo o seu dinheiro ao primeiro mendigo que encontrar. Se a condição não for atendida antes da magia terminar, a atividade não será realizada.</p><p>Se você ou qualquer um de seus companheiros causar dano a uma criatura afetada por esta magia, a magia termina para essa criatura.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 7º nível, a duração é de 10 dias. Quando você usa um espaço de magia de 8º nível, a duração é de 30 dias. Quando você usa um espaço de magia de 9º nível, a duração é de um ano e um dia.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "enc",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 24,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a snake’s tongue and either a bit of honeycomb or a drop of sweet oil",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "GfFRdIXOCfmG_wrw": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 24,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Mass Suggestion",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

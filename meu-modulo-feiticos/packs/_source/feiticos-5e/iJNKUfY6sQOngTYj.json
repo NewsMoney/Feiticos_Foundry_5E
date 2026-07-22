@@ -1,0 +1,161 @@
+{
+  "_key": "!items!iJNKUfY6sQOngTYj",
+  "_id": "iJNKUfY6sQOngTYj",
+  "name": "Glyph of Warding",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Ao lançar esta magia, você inscreve um glifo que afeta outras criaturas (o efeito não precisa ser prejudicial), seja sobre uma superfície (como uma mesa ou uma seção do chão ou parede) ou dentro de um objeto que pode ser fechado (como um livro, um pergaminho ou um baú de tesouro) para ocultar o glifo. O glifo pode cobrir uma área de até 3 metros de diâmetro. Se a superfície ou objeto for movido a mais de 3 metros de onde você lançou esta magia, o glifo será quebrado e a magia terminará sem ser acionada.</p><p>O glifo é quase invisível e requer um teste bem sucedido de Inteligência (Investigação) contra sua CD para resistir às suas magias para ser encontrado.</p><p>Você decide o que aciona o glifo quando você lança a magia. Para glifos inscritos em uma superfície, os gatilhos mais típicos incluem tocar ou ficar sobre o glifo, remover outro objeto que cobre o glifo, aproximar-se a uma certa distância do glifo ou manipular o objeto no qual o glifo está inscrito. Para glifos inscritos em um objeto, os gatilhos mais comuns incluem abrir esse objeto, aproximar-se a uma certa distância do objeto ou ver ou ler o glifo. Uma vez que um glifo é ativado, esta magia termina.</p><p>Você pode refinar ainda mais o gatilho para que a seja ativada apenas sob certas circunstâncias ou de acordo com características físicas (como altura ou peso), tipo de criatura (por exemplo, a proteção pode ser configurada para afetar aberrações ou drow) ou alinhamento. Você também pode definir condições para criaturas que não acionam o glifo, como aquelas que dizem uma determinada senha.</p><p>Ao inscrever o glifo, escolha <em>runas explosivas</em> ou um <em>glifo de magia</em>.</p><p><strong>Runas explosivas.</strong> Quando acionado, o glifo irrompe com energia mágica em uma esfera de 6 metros de raio centrada no glifo. A esfera se espalha pelos cantos. Cada criatura na área deve fazer um teste de resistência de Destreza. Uma criatura sofre 5d8 de dano de ácido, frio, fogo, raio ou trovão se falhar no teste de resistência (sua escolha quando você cria o glifo), ou metade desse dano se obtiver sucesso.</p><p><strong>Glifo de magia.</strong> Você pode armazenar uma magia preparada de 3º nível ou inferior no glifo, lançando-o como parte da criação do glifo. A magia deve ter como alvo uma única criatura ou uma área. A magia armazenada não tem efeito imediato quando lançado desta forma. Quando o glifo é acionado, a magia armazenada é lançada. Se a magia tiver um alvo, ela terá como alvo a criatura que acionou o glifo. Se a magia afetar uma área, a área será centrada naquela criatura. Se a magia invocar criaturas hostis ou criar objetos ou armadilhas prejudiciais, elas aparecem o mais próximo possível do intruso e o atacam. Se a magia exigir concentração, ele durará até o final de sua duração total.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, o dano de um glifo de <em>runas explosivas</em> aumenta em 1d8 para cada nível do espaço acima do 3º. Se você criar um <em>glifo de magia</em>, poderá armazenar qualquer magia até o mesmo nível do espaço usado para o <em>glifo de proteção</em>.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "abj",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "perm",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "incense and powdered diamond worth at least 200 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "DO4nujtVGy-IvrVr": {
+        "type": "save",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "perm",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Glyph of Warding",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

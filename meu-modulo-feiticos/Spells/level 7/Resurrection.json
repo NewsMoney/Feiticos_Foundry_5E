@@ -1,0 +1,151 @@
+{
+  "_id": "f2XmbXuZLwDjm9CT",
+  "name": "Resurrection",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você toca uma criatura morta que não está morta há mais de um século, que não morreu de velhice e que não é morta-viva. Se sua alma estiver livre e voluntária, o alvo retorna à vida com todos os seus pontos de vida.</p><p>Esta magia neutraliza quaisquer venenos e cura doenças normais que afligiam a criatura quando ela morreu. No entanto, não remove doenças mágicas, maldições e coisas do gênero; se tais efeitos não forem removidos antes de lançar a magia, eles afligem o alvo quando ele retornar à vida.</p><p>Esta magia fecha todos os ferimentos mortais e restaura quaisquer partes perdidas do corpo.</p><p>Voltar dos mortos é uma provação. O alvo sofre uma penalidade de -4 em todas as jogadas de ataque, testes de resistência e testes de habilidade. Cada vez que o alvo termina um descanso longo, a penalidade é reduzida em 1 até que desapareça.</p><p>Conjurar esta magia para restaurar a vida de uma criatura que está morta há um ano ou mais exige muito de você. Até terminar um descanso longo, você não poderá lançar magias novamente e terá desvantagem em todas as jogadas de ataque, testes de habilidade e testes de resistência.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "nec",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a diamond worth at least 1,000 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "ZNszaaVYXHkHyvvA": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "fallbacks": [
+          "jb2a.energy_strands.in.dark_purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Resurrection",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

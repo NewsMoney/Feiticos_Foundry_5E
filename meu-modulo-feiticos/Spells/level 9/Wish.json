@@ -1,0 +1,175 @@
+{
+  "_id": "OriogRSWBV9SD8X_",
+  "name": "Wish",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p><em>Desejo</em> é a magia mais poderosa que uma criatura mortal pode lançar. Simplesmente falando em voz alta, você pode alterar os fundamentos da realidade de acordo com seus desejos.</p><p>O uso básico desta magia é duplicar qualquer outra magia de 8º nível ou inferior. Você não precisa atender a nenhum requisito dessa magia, incluindo componentes caros. A magia simplesmente entra em vigor.</p><p>Como alternativa, você pode criar um dos seguintes efeitos de sua escolha:</p><p>* Você cria um objeto de valor de até 25.000 PO que não seja um item mágico. O objeto não pode ter mais de 90 metros em qualquer dimensão e aparece em um espaço desocupado que você pode ver no chão.</p><p>* Você permite que até vinte criaturas que você pode ver recuperem todos os pontos de vida e encerra todos os efeitos sobre elas descritos na magia <em>Restauração Maior</em>.</p><p>* Você concede até dez criaturas que você pode ver resistência a um tipo de dano que você escolha.</p><p>* Você concede a até dez criaturas que você pode ver imunidade a uma única magia ou outro efeito mágico por 8 horas. Por exemplo, você pode tornar você e todos os seus companheiros imunes ao ataque de drenagem de vida de um lich.</p><p>* Você desfaz um único evento recente forçando uma nova jogada de qualquer jogada feita na última rodada (incluindo seu último turno). A realidade se remodela para acomodar o novo resultado. Por exemplo, uma magia <em>Desejo</em> pode desfazer um teste de resistência bem-sucedido de um oponente, um acerto crítico de um inimigo ou uma falha no teste de resistência de um amigo. Você pode forçar a nova rolagem a ser feita com vantagem ou desvantagem e pode escolher se deseja usar a nova rolagem ou a rolagem original.</p><p>Você pode conseguir algo além do escopo dos exemplos acima. Declare seu desejo ao Mestre com a maior precisão possível. O Mestre tem grande liberdade para decidir o que ocorre em tal caso; quanto maior o desejo, maior a probabilidade de algo dar errado. Esta magia pode simplesmente falhar, o efeito que você deseja pode ser alcançado apenas parcialmente ou você pode sofrer alguma consequência imprevista como resultado de como formulou o desejo. Por exemplo, desejar que um vilão estivesse morto pode impulsioná-lo para um período em que esse vilão não esteja mais vivo, removendo-o efetivamente do jogo. Da mesma forma, desejar um item mágico ou artefato lendário pode transportá-lo instantaneamente para a presença do atual proprietário do item.</p><p>O estresse de lançar esta magia para produzir qualquer efeito que não seja duplicar outra magia enfraquece você. Depois de suportar esse estresse, cada vez que você conjurar uma magia até terminar um descanso longo, você sofre 1d10 de dano necrótico por nível daquela magia. Este dano não pode ser reduzido ou evitado de forma alguma. Além disso, sua Força cai para 3, se ainda não for 3 ou menos, por 2d4 dias. Para cada um dos dias que você passa descansando e não fazendo nada além de atividades leves, o tempo restante de recuperação diminui em 2 dias. Finalmente, há 33% de chance de você não conseguir lançar <em>Wish</em> novamente se sofrer esse estresse.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "6HS9hKwBiLR07YZ0": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.energy_strands.range.standard.dark_purple",
+        "fallbacks": [
+          "jb2a.impact.004.dark_purple"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Wish",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

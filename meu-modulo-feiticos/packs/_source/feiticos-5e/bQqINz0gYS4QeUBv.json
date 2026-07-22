@@ -1,0 +1,152 @@
+{
+  "_key": "!items!bQqINz0gYS4QeUBv",
+  "_id": "bQqINz0gYS4QeUBv",
+  "name": "Creation",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você puxa fragmentos de material sombreado do Pendor das Sombras para criar um objeto inanimado de matéria vegetal dentro do alcance: produtos leves, corda, madeira ou algo semelhante. Você também pode usar esta magia para criar objetos minerais como pedra, cristal ou metal. O objeto criado não deve ser maior que um cubo de 1,5 metro e deve ter uma forma e material que você já tenha visto antes.</p><p>A duração depende do material do objeto. Se o objeto for composto por vários materiais, use o de menor duração.</p><pre>| Materiais | Duração |<br>| --------------------- |:----------:|<br>| Matéria vegetal | 1 dia |<br>| Pedra ou cristal | 12 horas |<br>| Metais preciosos | 1 hora |<br>| Gemas | 10 minutos |<br>| Adamantino ou mitral | 1 minuto |</pre><p>Usar qualquer material criado por esta magia como componente material de outra magia faz com que a magia falhe.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 6º nível ou superior, o cubo aumenta em 1,5 metro para cada nível de espaço acima do 5º.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "ill",
+    "activation": {
+      "type": "minute",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "spec",
+      "concentration": false
+    },
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a tiny piece of matter of the same type of the item you plan to create",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "y_mnMtoEprzKmAqp": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "spec",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.illusion.intro.purple",
+        "fallbacks": [
+          "jb2a.smoke.puff.centered.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Creation",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

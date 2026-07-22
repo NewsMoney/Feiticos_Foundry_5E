@@ -1,0 +1,169 @@
+{
+  "_key": "!items!1Ga89S62khsedH5R",
+  "_id": "1Ga89S62khsedH5R",
+  "name": "Sleep",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia coloca as criaturas em um sono mágico. Role 5d8; o total é quantos pontos de vida das criaturas que esta magia pode afetar. Criaturas a até 6 metros de um ponto que você escolher dentro do alcance são afetadas em ordem crescente de seus pontos de vida atuais (ignorando criaturas inconscientes).</p><p>Começando com a criatura que tem os pontos de vida atuais mais baixos, cada criatura afetada por esta magia fica inconsciente até que a magia termine, o adormecido sofra dano ou alguém use uma ação para sacudir ou dar um tapa no adormecido para acordá-lo. Subtraia os pontos de vida de cada criatura do total antes de passar para a criatura com os próximos pontos de vida mais baixos. Os pontos de vida de uma criatura devem ser iguais ou menores que o total restante para que essa criatura seja afetada.</p><p>Mortos-vivos e criaturas imunes a serem encantadas não são afetados por esta magia.</p><p><strong>Em níveis mais altos.</strong> Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, role 2d8 adicionais para cada nível de espaço acima do 1º.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 1,
+    "school": "enc",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": false
+    },
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a pinch of fine sand, rose petals, or a cricket",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "5j1lENtkWkuIN_nT": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "unconscious"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "unconscious",
+        "ids": [
+          "unconscious"
+        ],
+        "label": "unconscious",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": false
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Sleep",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

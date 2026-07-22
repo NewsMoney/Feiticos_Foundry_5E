@@ -1,0 +1,151 @@
+{
+  "_id": "M6x_T3SPHG8hW-xd",
+  "name": "Contingency",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Escolha uma magia de 5º nível ou inferior que você possa lançar, que tenha um tempo de lançamento de 1 ação e que possa atingir você. Você conjura essa magia – chamado de magia contingente – como parte do lançamento de <em>Contingência</em>, gastando espaços de magia para ambos, mas a magia contingente não entra em vigor. Em vez disso, entra em vigor quando ocorre uma determinada circunstância. Você descreve essa circunstância quando lança os dois magias. Por exemplo, um lançamento de <em>Contingência</em> com <em>Respiração na Água</em> pode estipular que <em>Respiração na Água</em> entra em vigor quando você é engolfado por água ou um líquido semelhante.</p><p>A magia contingente entra em vigor imediatamente após a circunstância ser encontrada pela primeira vez, quer você queira ou não. e então a contingência termina.</p><p>A magia contingente tem efeito apenas em você, mesmo que normalmente possa atingir outras pessoas. Você pode usar apenas uma magia <em>Contingência</em> por vez. Se você lançar esta magia novamente, o efeito de outra magia <em>Contingência</em> em você termina. Além disso, a <em>Contingência</em> termina com você se seu componente material não estiver com você.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "evo",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "day",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "kq0N51bE3dE71gZ7": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "day",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
+        "fallbacks": [
+          "jb2a.impact.004.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Contingency",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

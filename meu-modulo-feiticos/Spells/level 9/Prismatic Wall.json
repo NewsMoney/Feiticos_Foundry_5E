@@ -1,0 +1,200 @@
+{
+  "_id": "BhwGicxTlr9jF9dp",
+  "name": "Prismatic Wall",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Um plano de luz brilhante e multicolorido forma uma parede vertical opaca – de até 27 metros de comprimento, 9 metros de altura e 2,5 centímetros de espessura – centralizada em um ponto que você pode ver dentro do alcance. Alternativamente, você pode moldar a parede em uma esfera de até 9 metros de diâmetro centrada em um ponto que você escolher dentro do alcance. A parede permanece no lugar durante todo o período. Se você posicionar a parede de forma que ela passe por um espaço ocupado por uma criatura, a magia falha e sua ação e o espaço de magia são desperdiçados.</p><p>A parede emite luz brilhante até um alcance de 30 metros e luz fraca por mais 30 metros adicionais. Você e as criaturas que você designar no momento em que lançou a magia podem passar e permanecer perto da parede sem danos. Se outra criatura que possa ver a parede se mover para até 6 metros dela ou começar seu turno lá, a criatura deve ser bem sucedida em um teste de resistência de Constituição ou ficará cega por 1 minuto.</p><p>A parede consiste em sete camadas, cada uma com uma cor diferente. Quando uma criatura tenta alcançar ou atravessar a parede, ela o faz, uma camada por vez, através de todas as camadas da parede. À medida que passa ou alcança cada camada, a criatura deve fazer um teste de resistência de Destreza ou será afetada pelas propriedades daquela camada conforme descrito abaixo.</p><p>A parede pode ser destruída, também uma camada por vez, na ordem do vermelho ao violeta, por meios específicos para cada camada. Uma vez que uma camada é destruída, ela permanece assim durante a duração da magia. Um <em>Campo Antimágico</em> não tem efeito em uma <em>Parede Prismática</em>, e <em>Dissipar Magia</em> só pode dissipar a camada violeta.</p><p>1. <strong>Vermelho.</strong> A criatura sofre 10d6 de dano de fogo se falhar na resistência, ou metade desse dano se obtiver sucesso. Enquanto esta camada estiver no lugar, ataques de longo alcance não mágicos não poderão atravessar a parede. A camada pode ser destruída causando pelo menos 25 de dano de frio.</p><p>2. <strong>Laranja.</strong> A criatura sofre 10d6 de dano de ácido se falhar na resistência, ou metade desse dano se obtiver sucesso. Enquanto esta camada estiver no lugar, ataques mágicos de longo alcance não podem atravessar a parede. A camada é destruída por um vento forte.</p><p>3. <strong>Amarelo.</strong> A criatura sofre 10d6 de dano elétrico se falhar na resistência, ou metade desse dano se obtiver sucesso. Esta camada pode ser destruída causando pelo menos 60 de dano de força a ela.</p><p>4. <strong>Verde.</strong> A criatura sofre 10d6 de dano de veneno se falhar na resistência, ou metade desse dano se obtiver sucesso. uma magia <em>Passwall</em>, ou outra magia de nível igual ou superior que possa abrir um portal em uma superfície sólida, destrói esta camada.</p><p>5. <strong>Azul.</strong> A criatura sofre 10d6 de dano de frio se falhar na resistência, ou metade desse dano se obtiver sucesso. Esta camada pode ser destruída causando pelo menos 25 de dano de fogo a ela.</p><p>6. <strong>Índigo.</strong> Se falhar no teste, a criatura fica impedida. Ele deve então fazer um teste de resistência de Constituição no final de cada um de seus turnos. Se salvar com sucesso três vezes, a magia termina. Se falhar três vezes, ele se transforma permanentemente em pedra e fica sujeito à condição petrificada. Os sucessos e fracassos não precisam ser consecutivos; acompanhe ambos até que a criatura colete uma trinca. Enquanto esta camada estiver no lugar, os magias não podem ser lançadas através da parede. A camada é destruída pela luz brilhante emitida por uma magia <em>Daylight</em> ou uma magia semelhante de nível igual ou superior.</p><p>7. <strong>Violeta.</strong> Se falhar no teste, a criatura fica cega. Ele deve então fazer um teste de resistência de Sabedoria no início do seu próximo turno. Uma defesa bem-sucedida acaba com a cegueira. Se falhar no teste, a criatura é transportada para outro plano à escolha do Mestre e não fica mais cega. (Normalmente, uma criatura que está em um plano que não é seu plano natal é banida para casa, enquanto outras criaturas são geralmente lançadas nos planos Astral ou Etéreo.) Esta camada é destruída por uma magia <em>Dispel Magic</em> ou uma magia semelhante de nível igual ou superior que pode encerrar magias e efeitos mágicos.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "abj",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "gGzl6eyLz_6n7Hc1": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            },
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.fire_bolt.orange",
+        "fallbacks": [
+          "jb2a.impact.fire.01.orange"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Prismatic Wall",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

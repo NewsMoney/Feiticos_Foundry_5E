@@ -1,0 +1,202 @@
+{
+  "_id": "f2WHjUOvFjEJlu95",
+  "name": "Earthquake",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria uma perturbação sísmica em um ponto do solo que você pode ver dentro do alcance. Durante esse período, um tremor intenso rasga o solo em um círculo de 30 metros de raio centrado naquele ponto e sacode criaturas e estruturas em contato com o solo naquela área.</p><p>O solo na área se torna um terreno difícil. Cada criatura no solo que estiver se concentrando deve realizar um teste de resistência de Constituição. Se falhar na resistência, a concentração da criatura é quebrada.</p><p>Quando você lança esta magia e no final de cada turno que você gasta concentrando-se nela, cada criatura no chão na área deve fazer um teste de resistência de Destreza. Se falhar, a criatura será derrubada.</p><p>Esta magia pode ter efeitos adicionais dependendo do terreno na área, conforme determinado pelo Mestre.</p><p><strong>Fissuras.</strong> Fissuras se abrem em toda a área da magia no início do seu próximo turno após você lançar a magia. Um total de 1d6 dessas fissuras se abrem em locais escolhidos pelo Mestre. Cada um tem 1d10 x 3 metros de profundidade, 3 metros de largura e se estende de uma borda da área da magia até o lado oposto. Uma criatura parada em um local onde uma fissura se abre deve ser bem sucedida em um teste de resistência de Destreza ou cairá. Uma criatura que conseguir salvar se move com a borda da fissura quando ela se abre.</p><p>Uma fissura que se abre abaixo de uma estrutura faz com que ela desmorone automaticamente (veja abaixo).</p><p><strong>Estruturas.</strong> O tremor causa 50 de dano de concussão a qualquer estrutura em contato com o solo na área quando você lança a magia e no início de cada um deles. seus turnos até que a magia termine. Se uma estrutura chegar a 0 pontos de vida, ela entra em colapso e potencialmente causa danos às criaturas próximas. Uma criatura dentro da metade da distância da altura de uma estrutura deve fazer um teste de resistência de Destreza. Se falhar na resistência, a criatura sofre 5d6 de dano de concussão, é derrubada e enterrada nos escombros, exigindo um teste de Força CD 20 (Atletismo) como ação para escapar. O Mestre pode ajustar a CD para mais ou para menos, dependendo da natureza dos escombros. Em um teste bem sucedido, a criatura sofre metade do dano e não cai no chão ou é enterrada.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 8,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 500,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a pinch of dirt, a piece of rock, and a lump of clay",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "N7bIAKe97tbBxBR4": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.boulder.toss.01",
+        "fallbacks": [
+          "jb2a.impact.ground_crack.01.brown"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "prone"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "prone",
+        "ids": [
+          "prone"
+        ],
+        "label": "prone",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Earthquake",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

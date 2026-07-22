@@ -1,0 +1,153 @@
+{
+  "_key": "!items!X8XkYWxHU7ldjwV-",
+  "_id": "X8XkYWxHU7ldjwV-",
+  "name": "Shapechange",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você assume a forma de uma criatura diferente durante o período. A nova forma pode ser de qualquer criatura com nível de desafio igual ao seu nível ou inferior. A criatura não pode ser um construto ou um morto-vivo, e você deve ter visto esse tipo de criatura pelo menos uma vez. Você se transforma em um exemplo médio daquela criatura, sem nenhum nível de classe ou a característica Conjuração.</p><p>Suas estatísticas de jogo são substituídas pelas estatísticas da criatura escolhida, embora você mantenha sua tendência e valores de Inteligência, Sabedoria e Carisma. Você também retém todas as suas perícias e proficiências em testes de resistência, além de ganhar as da criatura. Se a criatura tiver a mesma proficiência que você e o bônus listado em suas estatísticas for maior que o seu, use o bônus da criatura no lugar do seu. Você não pode usar nenhuma ação lendária ou de covil da nova forma.</p><p>Você assume os pontos de vida e os dados de vida da nova forma. Ao retornar à sua forma normal, você retorna ao número de pontos de vida que tinha antes de se transformar. Se você reverter como resultado de cair para 0 pontos de vida, qualquer dano excessivo será transferido para sua forma normal. Contanto que o dano excessivo não reduza sua forma normal a 0 pontos de vida, você não ficará inconsciente.</p><p>Você retém o benefício de quaisquer recursos de sua classe, raça ou outra fonte e pode usá-los, desde que sua nova forma seja fisicamente capaz de fazê-lo. Você não pode usar nenhum sentido especial que possua (por exemplo, visão no escuro), a menos que sua nova forma também tenha esse sentido. Você só pode falar se a criatura puder falar normalmente.</p><p>Quando você se transforma, você escolhe se seu equipamento cai no chão, se funde na nova forma ou é usado por ela. Equipamentos gastos funcionam normalmente. O Mestre determina se é prático para a nova forma usar um equipamento, baseado na forma e tamanho da criatura. Seu equipamento não muda de forma ou tamanho para combinar com a nova forma, e qualquer equipamento que a nova forma não possa usar deve cair no chão ou se fundir em sua nova forma. Equipamentos que se fundem não têm efeito nesse estado.</p><p>Durante a duração deste magia, você pode usar sua ação para assumir uma forma diferente seguindo as mesmas restrições e regras da forma original, com uma exceção: se sua nova forma tiver mais pontos de vida do que a atual, seus pontos de vida permanecerão com o valor atual.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a jade circlet worth at least 1,500 gp, which you must place on your head before you cast the spell",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "qpiSwPrqP8s9vugD": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Shapechange",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

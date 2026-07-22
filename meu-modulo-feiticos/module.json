@@ -1,24 +1,52 @@
 {
-  "name": "meu-modulo-feiticos",
-  "title": "Meus Feitiços Personalizados",
-  "description": "Um módulo com feitiços customizados.",
-  "version": "1.0.0",
-  "author": "Money, Kirlian",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "11",
-  "system": "dnd5e",
-  "packs": [
+  "id": "meu-modulo-feiticos",
+  "type": "module",
+  "title": "Feitiços D&D 5e — 2014",
+  "description": "Compêndio de 517 magias das regras de 2014, com descrições em português e automações opcionais.",
+  "version": "2.0.0",
+  "url": "https://github.com/NewsMoney/Feiticos_Foundry_5E",
+  "manifest": "https://raw.githubusercontent.com/NewsMoney/Feiticos_Foundry_5E/main/meu-modulo-feiticos/module.json",
+  "download": "https://github.com/NewsMoney/Feiticos_Foundry_5E/releases/download/v2.0.0/meu-modulo-feiticos-v2.0.0.zip",
+  "license": "ATTRIBUTION.md",
+  "authors": [
+    { "name": "Money" },
+    { "name": "Kirlian" }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.3.0",
+          "verified": "5.3.3"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/cantrip-automation.js"
+  ],
+  "languages": [
     {
-      "name": "Feiticos-5e",
-      "label": "Feitiços Personalizados",
-      "system": "dnd5e",
-      "path": "pack/meus-feiticos.db",
-      "type": "Item",
-      "private": false
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-br.json"
     }
   ],
-  "manifest": "URL ou caminho local para este module.json",
-  "download": "URL para download (pode deixar em branco se for local)",
-  "url": "URL com mais informações (GitHub ou outro)",
+  "packs": [
+    {
+      "name": "feiticos-5e",
+      "label": "Feitiços D&D 5e — 2014",
+      "system": "dnd5e",
+      "path": "packs/feiticos-5e",
+      "type": "Item"
+    }
+  ],
+  "media": [],
   "flags": {}
 }

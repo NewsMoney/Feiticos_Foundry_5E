@@ -1,0 +1,161 @@
+{
+  "_key": "!items!4jXAGK5F6ASJJYHa",
+  "_id": "4jXAGK5F6ASJJYHa",
+  "name": "Seeming",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia permite que você altere a aparência de qualquer número de criaturas que você possa ver dentro do alcance. Você dá a cada alvo escolhido uma aparência nova e ilusória. Um alvo involuntário pode fazer um teste de resistência de Carisma e, se tiver sucesso, não será afetado por esta magia.</p><p>A magia disfarça a aparência física, bem como roupas, armaduras, armas e equipamentos. Você pode fazer com que cada criatura pareça 30 centímetros mais baixa ou mais alta e pareça magra, gorda ou intermediária. Você não pode alterar o tipo de corpo de um alvo, então você deve escolher uma forma que tenha a mesma disposição básica de membros. Caso contrário, a extensão da ilusão depende de você. A magia dura pela duração, a menos que você use sua ação para descartá-lo mais cedo.</p><p>As mudanças provocadas por esta magia não resistem à inspeção física. Por exemplo, se você usar esta magia para adicionar um chapéu à roupa de uma criatura, os objetos passarão através do chapéu e qualquer um que o tocar não sentirá nada ou sentirá a cabeça e o cabelo da criatura. Se você usar esta magia para parecer mais magro do que você é, a mão de alguém que estender a mão para tocá-lo irá esbarrar em você enquanto ele aparentemente ainda está no ar.</p><p>Uma criatura pode usar sua ação para inspecionar um alvo e fazer um teste de Inteligência (Investigação) contra sua CD para resistir às suas magias. Se tiver sucesso, ele percebe que o alvo está disfarçado.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "ill",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 8,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "opBK1-ogqJ1L1qt7": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.illusion.intro.purple",
+        "fallbacks": [
+          "jb2a.smoke.puff.centered.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Seeming",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

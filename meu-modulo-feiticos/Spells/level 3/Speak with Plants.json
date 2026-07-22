@@ -1,0 +1,151 @@
+{
+  "_id": "CIgSiYvPc7AZIdHJ",
+  "name": "Speak with Plants",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você imbui plantas a até 9 metros de você com senciência e animação limitadas, dando-lhes a capacidade de se comunicarem com você e seguirem seus comandos simples. Você pode questionar plantas sobre eventos na área da magia no dia anterior, obtendo informações sobre criaturas que passaram, clima e outras circunstâncias.</p><p>Você também pode transformar terreno difícil causado pelo crescimento de plantas (como matagais e vegetação rasteira) em terreno comum que dura pela duração. Ou você pode transformar um terreno comum onde as plantas estão presentes em um terreno difícil que dura o tempo todo, fazendo com que trepadeiras e galhos atrapalhem os perseguidores, por exemplo.</p><p>As plantas podem ser capazes de realizar outras tarefas em seu nome, a critério do Mestre. A magia não permite que as plantas se desenraízem e se movam, mas elas podem mover livremente galhos, gavinhas e caules.</p><p>Se uma criatura vegetal estiver na área, você pode se comunicar com ela como se compartilhasse uma linguagem comum, mas não ganha nenhuma habilidade mágica para influenciá-la.</p><p>Esta magia pode fazer com que as plantas criadas pela magia emaranhar liberem uma criatura contida.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 3,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (30-foot radius)"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "circle",
+        "size": 30
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "AMpDp_Javm0fBkzo": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "circle",
+            "size": 30
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Speak with Plants",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

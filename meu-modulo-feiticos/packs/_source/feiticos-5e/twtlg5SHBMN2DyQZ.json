@@ -1,0 +1,153 @@
+{
+  "_key": "!items!twtlg5SHBMN2DyQZ",
+  "_id": "twtlg5SHBMN2DyQZ",
+  "name": "Move Earth",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Escolha uma área de terreno com no máximo 12 metros de lado dentro do alcance. Você pode remodelar sujeira, areia ou argila na área da maneira que desejar durante o período. Você pode aumentar ou diminuir a elevação da área, criar ou preencher uma vala, erguer ou nivelar uma parede ou formar um pilar. A extensão de tais alterações não pode exceder metade da maior dimensão da área. Portanto, se você afetar um quadrado de 12 metros, poderá criar um pilar de até 6 metros de altura, aumentar ou diminuir a elevação do quadrado em até 6 metros, cavar uma trincheira de até 6 metros de profundidade e assim por diante. Leva 10 minutos para que essas mudanças sejam concluídas.</p><p>Ao final de cada 10 minutos que você gasta se concentrando na magia, você pode escolher uma nova área de terreno para afetar.</p><p>Como a transformação do terreno ocorre lentamente, as criaturas na área geralmente não podem ficar presas ou feridas pelo movimento do solo. Esta magia não pode manipular pedra natural ou construção em pedra. Rochas e estruturas mudam para acomodar o novo terreno. Se a maneira como você molda o terreno tornar uma estrutura instável, ela poderá desabar.</p><p>Da mesma forma, esta magia não afeta diretamente o crescimento das plantas. A terra movida carrega consigo todas as plantas.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 2,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "an iron blade and a small bag containing a mixture of soils--clay, loam, and sand",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "YHiQ1n0DBgjKzFLG": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 2,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Move Earth",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

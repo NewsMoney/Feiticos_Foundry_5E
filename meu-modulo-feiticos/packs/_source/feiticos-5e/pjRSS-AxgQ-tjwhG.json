@@ -1,0 +1,152 @@
+{
+  "_key": "!items!pjRSS-AxgQ-tjwhG",
+  "_id": "pjRSS-AxgQ-tjwhG",
+  "name": "Planar Ally",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você implora por ajuda a uma entidade de outro mundo. O ser deve ser conhecido por você: um deus, um primordial, um príncipe demônio ou algum outro ser de poder cósmico. Essa entidade envia um celestial, um elemental ou um demônio leal a ela para ajudá-lo, fazendo a criatura aparecer em um espaço desocupado dentro do alcance. Se você souber o nome de uma criatura específica, você pode falar esse nome quando lançar esta magia para solicitar aquela criatura, embora você possa obter uma criatura diferente de qualquer maneira (a escolha do Mestre).</p><p>Quando a criatura aparece, ela não está sob nenhuma compulsão de se comportar de qualquer maneira particular. Você pode pedir à criatura que realize um serviço em troca de pagamento, mas ela não é obrigada a fazê-lo. A tarefa solicitada pode variar de simples (voar-nos através do abismo ou ajudar-nos a travar uma batalha) a complexa (espionar nossos inimigos ou proteger-nos durante nossa incursão na masmorra). Você deve ser capaz de se comunicar com a criatura para negociar seus serviços.</p><p>O pagamento pode assumir diversas formas. Um celestial pode exigir uma doação considerável de ouro ou itens mágicos para um templo aliado, enquanto um demônio pode exigir um sacrifício vivo ou um presente de tesouro. Algumas criaturas podem trocar seus serviços por uma missão realizada por você. Como regra geral, uma tarefa que pode ser medida em minutos exige um pagamento de 100 po por minuto. Uma tarefa medida em horas requer 1.000 PO por hora. E uma tarefa medida em dias (até 10 dias) requer 10.000 PO por dia. O Mestre pode ajustar esses pagamentos com base nas circunstâncias sob as quais você lançou a magia. Se a tarefa estiver alinhada com o espírito da criatura, o pagamento poderá ser reduzido pela metade ou até mesmo dispensado. Tarefas não perigosas normalmente exigem apenas metade do pagamento sugerido, enquanto tarefas especialmente perigosas podem exigir um presente maior. As criaturas raramente aceitam tarefas que pareçam suicidas.</p><p>Após a criatura completar a tarefa, ou quando a duração acordada do serviço expirar, a criatura retorna ao seu plano natal após reportar a você, se apropriado para a tarefa e se possível. Se você não conseguir chegar a um acordo sobre o preço do serviço da criatura, a criatura retornará imediatamente ao seu plano natal.</p><p>Uma criatura alistada para se juntar ao seu grupo conta como membro dele, recebendo uma parte integral dos pontos de experiência concedidos.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "con",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "5UUj8C4Bf1IKX4MS": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
+        "fallbacks": [
+          "jb2a.portals.vertical.vortex.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Planar Ally",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

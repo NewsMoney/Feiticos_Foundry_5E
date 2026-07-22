@@ -1,0 +1,160 @@
+{
+  "_id": "NwPVtMbRTwvsbxau",
+  "name": "Hallow",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você toca um ponto e infunde uma área ao redor dele com poder sagrado (ou profano). A área pode ter um raio de até 18 metros, e a magia falha se o raio incluir uma área já sob o efeito de uma magia <em>santificar</em>. A área afetada está sujeita aos seguintes efeitos.</p><p>Primeiro, celestiais, elementais, fadas, demônios e mortos-vivos não podem entrar na área, nem tais criaturas podem encantar, assustar ou possuir criaturas dentro dela. Qualquer criatura encantada, assustada ou possuída por tal criatura não estará mais encantada, assustada ou possuída ao entrar na área. Você pode excluir um ou mais desses tipos de criaturas deste efeito.</p><p>Segundo, você pode vincular um efeito extra à área. Escolha o efeito na lista a seguir ou escolha um efeito oferecido pelo Mestre. Alguns destes efeitos se aplicam a criaturas na área; você pode determinar se o efeito se aplica a todas as criaturas, criaturas que seguem uma divindade ou líder específico, ou criaturas de um tipo específico, como orcs ou trolls. Quando uma criatura que seria afetada entra na área da magia pela primeira vez em um turno ou inicia seu turno lá, ela pode realizar um teste de resistência de Carisma. Em caso de sucesso, a criatura ignora o efeito extra até sair da área.</p><p><strong>Coragem.</strong> As criaturas afetadas não podem ficar assustadas enquanto estiverem na área.</p><p><strong>Escuridão.</strong> A escuridão preenche a área. A luz normal, assim como a luz mágica criada por magias de nível inferior ao espaço de magia que você usou para lançar esta magia, não pode iluminar a área.</p><p><strong>Luz do dia.</strong> A luz brilhante preenche a área. A escuridão mágica criada por magias de nível inferior ao espaço de magia que você usou para lançar esta magia não pode extinguir a luz.</p><p><strong>Proteção de Energia.</strong> As criaturas afetadas na área têm resistência a um tipo de dano de sua escolha, exceto concussão, perfurante ou cortante.</p><p><strong>Vulnerabilidade de Energia</strong> As criaturas afetadas na área têm vulnerabilidade a um tipo de dano de sua escolha, exceto concussão, perfurante ou cortante.</p><p><strong>Descanso Eterno</strong> Cadáveres enterrados na área não podem ser transformados em mortos-vivos.</p><p><strong>Interferência Extradimensional.</strong> As criaturas afetadas não podem se mover ou viajar usando teletransporte ou por meios extradimensionais ou interplanares.</p><p><strong>Medo.</strong> As criaturas afetadas ficam assustadas enquanto estão na área.</p><p><strong>Silêncio.</strong> Nenhum som pode emanar de dentro da área e nenhum som pode alcançá-la.</p><p><strong>Línguas.</strong> As criaturas afetadas podem se comunicar com qualquer outra criatura na área, mesmo que não compartilhem um idioma comum.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "evo",
+    "activation": {
+      "type": "hour",
+      "value": 24,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "perm",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "DJnRFuqlbz2veif9": {
+        "type": "save",
+        "activation": {
+          "type": "hour",
+          "value": 24,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "perm",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
+        "fallbacks": [
+          "jb2a.impact.004.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Hallow",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

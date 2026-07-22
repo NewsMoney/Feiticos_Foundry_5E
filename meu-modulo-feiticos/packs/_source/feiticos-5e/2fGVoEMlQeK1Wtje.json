@@ -1,0 +1,162 @@
+{
+  "_key": "!items!2fGVoEMlQeK1Wtje",
+  "_id": "2fGVoEMlQeK1Wtje",
+  "name": "Detect Thoughts",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Enquanto isso, você pode ler os pensamentos de certas criaturas. Quando você conjura a magia e como sua ação em cada turno até a magia terminar, você pode focar sua mente em qualquer criatura que você possa ver a até 9 metros de você. Se a criatura que você escolher tiver Inteligência 3 ou inferior ou não falar nenhum idioma, a criatura não será afetada.</p><p>Você inicialmente aprende os pensamentos superficiais da criatura – o que está mais em sua mente naquele momento. Como uma ação, você pode desviar sua atenção para os pensamentos de outra criatura ou tentar investigar mais profundamente a mente da mesma criatura. Se você investigar mais profundamente, o alvo deve fazer um teste de resistência de Sabedoria. Se falhar, você obterá insights sobre seu raciocínio (se houver), seu estado emocional e algo que paira em sua mente (como algo que o preocupa, ama ou odeia). Se tiver sucesso, a magia termina. De qualquer forma, o alvo sabe que você está investigando sua mente e, a menos que você mude sua atenção para os pensamentos de outra criatura, a criatura pode usar sua ação no seu turno para fazer um teste de Inteligência contestado por seu teste de Inteligência; se tiver sucesso, a magia termina.</p><p>As perguntas dirigidas verbalmente à criatura alvo moldam naturalmente o curso de seus pensamentos, portanto esta magia é particularmente eficaz como parte de um interrogatório. Você também pode usar esta magia para detectar a presença de criaturas pensantes que você não pode ver. Quando você conjura a magia ou como sua ação durante a duração, você pode procurar pensamentos a até 9 metros de você. A magia pode penetrar barreiras, mas 60 centímetros de rocha, 5 centímetros de qualquer metal que não seja chumbo ou uma fina folha de chumbo bloqueiam você. Você não pode detectar uma criatura com Inteligência 3 ou inferior ou que não fale nenhum idioma.</p><p>Depois de detectar a presença de uma criatura dessa forma, você pode ler seus pensamentos pelo resto da duração conforme descrito acima, mesmo que não consiga vê-la, mas ela ainda deve estar dentro do alcance.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 2,
+    "school": "div",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a copper piece",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "IP8J4tAKPA40Hvai": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.detect_magic.circle.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.divination.intro.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Detect Thoughts",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "_id": "bzcU6d4_PdWXbPad",
+  "name": "Absorb Elements",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Quando você sofre dano ácido, elétrico, de fogo, frio ou trovejante, usa sua reação para capturar parte dessa energia. Você recebe resistência ao tipo de dano desencadeador até o começo do seu próximo turno, inclusive contra o dano que ativou a magia.</p><p>Na primeira vez que acertar um ataque corpo a corpo no turno seguinte, o ataque causa 1d6 de dano adicional do mesmo tipo absorvido. Ao usar espaços superiores, esse dano adicional aumenta em 1d6 para cada círculo acima do 1º.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "EE/XGE"
+    },
+    "level": 1,
+    "school": "abj",
+    "activation": {
+      "type": "reaction",
+      "value": 1,
+      "condition": "which you take when you take acid, cold, fire, lightning, or thunder damage"
+    },
+    "duration": {
+      "value": 1,
+      "units": "round",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "somatic"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "PK_3lw-qpf-zVr8c": {
+        "type": "utility",
+        "activation": {
+          "type": "reaction",
+          "value": 1,
+          "override": false,
+          "condition": "which you take when you take acid, cold, fire, lightning, or thunder damage"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "round",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Absorb Elements",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

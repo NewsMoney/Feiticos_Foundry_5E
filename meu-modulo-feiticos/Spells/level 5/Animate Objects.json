@@ -1,0 +1,152 @@
+{
+  "_id": "xWGjTJ-2QmR01mvK",
+  "name": "Animate Objects",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Os objetos ganham vida ao seu comando. Escolha até dez objetos não mágicos dentro do alcance que não estejam sendo usados ​​ou carregados. Alvos médios contam como dois objetos, alvos grandes contam como quatro objetos, alvos enormes contam como oito objetos. Você não pode animar nenhum objeto maior que Enorme. Cada alvo é animado e se torna uma criatura sob seu controle até que a magia termine ou até ser reduzido a 0 pontos de vida.</p><p>Como uma ação bônus, você pode comandar mentalmente qualquer criatura que você criou com esta magia se a criatura estiver a até 150 metros de você (se você controlar múltiplas criaturas, você pode comandar qualquer uma ou todas elas ao mesmo tempo, emitindo o mesmo comando para cada uma). Você decide qual ação a criatura realizará e para onde ela se moverá durante seu próximo turno, ou pode emitir um comando geral, como guardar uma câmara ou corredor específico. Se você não emitir nenhum comando, a criatura apenas se defenderá contra criaturas hostis. Uma vez dada uma ordem, a criatura continua a segui-la até que sua tarefa seja concluída.</p><p><strong>ESTATÍSTICAS DE OBJETOS ANIMADOS</strong></p><pre>| Tamanho | HP | AC | Ataque | Str | Dex |<br>| ------ |:--:|:--:|:-------------:|:---:|:---:|<br>| Minúsculo | 20 | 18 | +8 para acertar, 1d4+4 de dano |   4 |  18 |<br>| Pequeno | 25 | 16 | +6 para acertar, 1d8+2 de dano |   6 |  14 |<br>| Médio | 40 | 13 | +5 para acertar, 2d6+1 de dano |  10 |  12 |<br>| Grande | 50 | 10 | +6 para acertar, 2d10+2 de dano |  14 |  10 |<br>| Enorme | 80 | 10 | +8 para acertar, 2d12+2 de dano |  18 |   6 |</pre><p>Um objeto animado é uma construção com CA, pontos de vida, ataques, Força e Destreza determinados por seu tamanho. Sua Constituição é 10 e sua Inteligência e Sabedoria são 3, e seu Carisma é 1. Seu deslocamento é de 9 metros; se o objeto não tiver pernas ou outros apêndices que possa usar para locomoção, ele terá um deslocamento de vôo de 9 metros e poderá pairar. Se o objeto estiver firmemente preso a uma superfície ou a um objeto maior, como uma corrente aparafusada a uma parede, seu deslocamento será 0. Ele tem visão cega com um raio de 9 metros e fica cego além dessa distância. Quando o objeto animado chega a 0 pontos de vida, ele reverte à sua forma de objeto original e qualquer dano restante é transferido para sua forma de objeto original.</p><p>Se você comandar um objeto para atacar, ele pode realizar um único ataque corpo a corpo contra uma criatura a até 1,5 metro dele. Ele realiza um ataque violento com bônus de ataque e dano de concussão determinados pelo seu tamanho. O Mestre pode decidir que um objeto específico inflige dano cortante ou perfurante com base em sua forma.</p><p><strong>Em níveis mais altos.</strong> Se você conjurar esta magia usando um espaço de magia de 6º nível ou superior, você pode animar dois objetos adicionais para cada nível de espaço acima do 5º.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "qY-Vw_Y88X0_C2_h": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Animate Objects",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

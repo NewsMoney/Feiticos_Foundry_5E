@@ -1,0 +1,160 @@
+{
+  "_id": "mOAqGCDWT4gBYbsO",
+  "name": "Planar Binding",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Com esta magia, você tenta vincular um celestial, um elemental, uma fada ou um demônio ao seu serviço. A criatura deve estar dentro do alcance durante todo o lançamento da magia. (Normalmente, a criatura é primeiro convocada para o centro de um círculo mágico invertido para mantê-la presa enquanto a magia é lançada.) Ao completar a conjuração, o alvo deve fazer um teste de resistência de Carisma. Em caso de falha no teste de resistência, ele certamente servirá a você durante todo o tempo. Se a criatura foi invocada ou criada por outra magia, a duração dessa magia será estendida para corresponder à duração deste magia.</p><p>Uma criatura vinculada deve seguir suas instruções da melhor maneira possível. Você pode ordenar que a criatura o acompanhe em uma aventura, guarde um local ou entregue uma mensagem. A criatura obedece à letra de suas instruções, mas se for hostil a você, ela se esforçará para distorcer suas palavras para atingir seus próprios objetivos. Se a criatura seguir suas instruções completamente antes da magia terminar, ela viajará até você para relatar esse fato se você estiver no mesmo plano de existência. Se você estiver em um plano de existência diferente, ele retorna ao local onde você o amarrou e permanece lá até que a magia termine.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de nível superior, a duração aumenta para 10 dias com um espaço de 6º nível, para 30 dias com um espaço de 7º nível, para 180 dias com um espaço de 8º nível, e para um ano e um dia com um espaço de 9º nível. espaço de magia.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "abj",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 24,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a jewel worth at least 1,000 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "lSeNA9e2AQN8zQbb": {
+        "type": "save",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 24,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Planar Binding",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

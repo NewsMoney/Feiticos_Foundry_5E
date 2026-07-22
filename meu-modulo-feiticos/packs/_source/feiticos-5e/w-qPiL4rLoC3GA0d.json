@@ -1,0 +1,202 @@
+{
+  "_key": "!items!w-qPiL4rLoC3GA0d",
+  "_id": "w-qPiL4rLoC3GA0d",
+  "name": "Storm of Vengeance",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Uma nuvem de tempestade agitada se forma, centrada em um ponto que você pode ver e se espalhando por um raio de 108 metros. Relâmpagos brilham na área, trovões estrondosos e ventos fortes rugem. Cada criatura sob a nuvem (não mais que 1.500 metros abaixo da nuvem), quando ela aparecer, deve fazer um teste de resistência de Constituição. Se falhar na resistência, uma criatura sofre 2d6 de dano trovejante e fica surda por 5 minutos.</p><p>A cada rodada que você mantém a concentração nesta magia, a tempestade produz efeitos diferentes no seu turno.</p><p><strong>Rodada 2.</strong> A chuva ácida cai da nuvem. Cada criatura e objeto sob a nuvem sofre 1d6 de dano ácido.</p><p><strong>Rodada 3.</strong> Você invoca seis raios da nuvem para atingir seis criaturas ou objetos de sua escolha sob a nuvem. Uma determinada criatura ou objeto não pode ser atingido por mais de um raio. Uma criatura atingida deve fazer um teste de resistência de Destreza. A criatura sofre 10d6 de dano elétrico se falhar na resistência, ou metade desse dano se obtiver sucesso.</p><p><strong>Rodada 4.</strong> Pedras de granizo caem da nuvem. Cada criatura sob a nuvem sofre 2d6 de dano de concussão.</p><p><strong>Rodada 5-10.</strong> Rajadas e chuva congelante assolam a área sob a nuvem. A área se torna um terreno difícil e está fortemente obscurecida. Cada criatura sofre 1d6 de dano de frio. Ataques com armas de longo alcance na área são impossíveis. O vento e a chuva contam como uma distração severa para fins de manter a concentração nas magias. Finalmente, rajadas de vento forte (variando de 32 a 80 quilômetros por hora) dispersam automaticamente neblina, neblina e fenômenos semelhantes na área, sejam eles mundanos ou mágicos.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "spec",
+      "special": "Sight"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "7FYwb1cOelhi7MUF": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            },
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.thunderwave.center.blue",
+        "fallbacks": [
+          "jb2a.impact.ground_crack.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Storm of Vengeance",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

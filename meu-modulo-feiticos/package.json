@@ -1,0 +1,26 @@
+{
+  "name": "meu-modulo-feiticos",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:cantrips": "node tools/generate-cantrips.mjs && node tools/build-pack.mjs",
+    "generate:levels12": "node tools/generate-levels-1-2.mjs 1 2 && node tools/build-pack.mjs",
+    "generate:levels34": "node tools/generate-levels-1-2.mjs 3 4 && node tools/build-pack.mjs",
+    "generate:levels56": "node tools/generate-levels-1-2.mjs 5 6 && node tools/build-pack.mjs",
+    "generate:levels79": "node tools/generate-levels-1-2.mjs 7 8 9 && node tools/build-pack.mjs",
+    "generate:all": "node tools/generate-cantrips.mjs && node tools/generate-levels-1-2.mjs 1 2 3 4 5 6 7 8 9 && node tools/build-pack.mjs",
+    "validate:cantrips": "node tools/validate-cantrips.mjs",
+    "validate:levels12": "node tools/validate-levels-1-2.mjs",
+    "validate:levels34": "node tools/validate-levels-3-4.mjs",
+    "validate:levels56": "node tools/validate-levels-5-6.mjs",
+    "validate:levels79": "node tools/validate-levels-7-9.mjs",
+    "validate:descriptions": "node tools/validate-descriptions.mjs",
+    "validate:foundry14": "node tools/validate-foundry14.mjs",
+    "validate:all": "npm run validate:foundry14 && npm run validate:cantrips && npm run validate:levels12 && npm run validate:levels34 && npm run validate:levels56 && npm run validate:levels79 && npm run validate:descriptions && npm run validate:translations",
+    "translate:srd": "node tools/translate-srd-pt-br.mjs",
+    "validate:translations": "node tools/validate-srd-translations.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.4"
+  }
+}

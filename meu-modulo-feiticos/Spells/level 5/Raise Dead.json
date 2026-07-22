@@ -1,0 +1,151 @@
+{
+  "_id": "hYzWHl0eQNg4izCh",
+  "name": "Raise Dead",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você devolve a vida a uma criatura morta que você toca, desde que ela esteja morta há não mais que 10 dias. Se a alma da criatura estiver disposta e tiver liberdade para se juntar ao corpo, a criatura retorna à vida com 1 ponto de vida.</p><p>Esta magia também neutraliza quaisquer venenos e cura doenças não-mágicas que afetaram a criatura no momento em que ela morreu. Esta magia, entretanto, não remove doenças mágicas, maldições ou efeitos similares; se eles não forem removidos antes de lançar a magia, eles entrarão em vigor quando a criatura retornar à vida. A magia não pode devolver a vida a uma criatura morta-viva.</p><p>Esta magia fecha todos os ferimentos mortais, mas não restaura partes perdidas do corpo. Se a criatura não tiver partes do corpo ou órgãos essenciais para sua sobrevivência – sua cabeça, por exemplo – a magia falha automaticamente.</p><p>Voltar dos mortos é uma provação. O alvo sofre uma penalidade de -4 em todas as jogadas de ataque, testes de resistência e testes de habilidade. Cada vez que o alvo termina um descanso longo, a penalidade é reduzida em 1 até desaparecer.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "nec",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a diamond worth at least 500 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "Om6U_qqjJFDqj1Ay": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "fallbacks": [
+          "jb2a.energy_strands.in.dark_purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Raise Dead",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

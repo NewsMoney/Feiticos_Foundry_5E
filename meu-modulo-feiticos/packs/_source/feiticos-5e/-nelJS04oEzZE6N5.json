@@ -1,0 +1,153 @@
+{
+  "_key": "!items!-nelJS04oEzZE6N5",
+  "_id": "-nelJS04oEzZE6N5",
+  "name": "Gate",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você conjura um portal ligando um espaço desocupado que você pode ver dentro do alcance a um local preciso em um plano de existência diferente. O portal é uma abertura circular, que pode ser feita com 1,5 a 6 metros de diâmetro. Você pode orientar o portal em qualquer direção que desejar. O portal dura enquanto durar.</p><p>O portal tem uma frente e um verso em cada plano onde aparece. Viajar pelo portal só é possível passando pela sua frente. Qualquer coisa que faça isso é instantaneamente transportada para o outro plano, aparecendo no espaço desocupado mais próximo do portal.</p><p>Divindades e outros governantes planares podem impedir que portais criados por esta magia se abram em sua presença ou em qualquer lugar dentro de seus domínios.</p><p>Ao lançar esta magia, você pode falar o nome de uma criatura específica (um pseudônimo, título ou apelido não funciona). Se aquela criatura estiver em um plano diferente daquele em que você está, o portal se abre nas imediações da criatura nomeada e atrai a criatura através dele até o espaço desocupado mais próximo do seu lado do portal. Você não ganha nenhum poder especial sobre a criatura, e ela é livre para agir como o Mestre considerar apropriado. Ele pode sair, atacá-lo ou ajudá-lo.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 9,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a diamond worth at least 5,000 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "ObjyFX067wSjiqvp": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
+        "fallbacks": [
+          "jb2a.portals.vertical.vortex.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Gate",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

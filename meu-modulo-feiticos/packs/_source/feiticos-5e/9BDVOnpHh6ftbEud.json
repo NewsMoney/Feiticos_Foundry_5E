@@ -1,0 +1,170 @@
+{
+  "_key": "!items!9BDVOnpHh6ftbEud",
+  "_id": "9BDVOnpHh6ftbEud",
+  "name": "Telekinesis",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você ganha a habilidade de mover ou manipular criaturas ou objetos pelo pensamento. Quando você conjura a magia, e como sua ação a cada rodada durante a duração, você pode exercer sua vontade em uma criatura ou objeto que você possa ver dentro do alcance, causando o efeito apropriado abaixo. Você pode afetar o mesmo alvo rodada após rodada ou escolher um novo a qualquer momento. Se você trocar de alvo, o alvo anterior não será mais afetado pela magia.</p><p><strong>Criatura.</strong> Você pode tentar mover uma criatura Enorme ou menor. Faça um teste de atributo com sua habilidade de conjuração contestado pelo teste de Força da criatura. Se você vencer a disputa, você moverá a criatura até 9 metros em qualquer direção, inclusive para cima, mas não além do alcance desta magia. Até o final do seu próximo turno, a criatura fica contida em seu controle telecinético. Uma criatura levantada fica suspensa no ar.</p><p>Nas rodadas subsequentes, você pode usar sua ação para tentar manter seu controle telecinético sobre a criatura repetindo a luta.</p><p><strong>Objeto.</strong> Você pode tentar mover um objeto que pese até 1.000 libras. Se o objeto não estiver sendo usado ou carregado, você o move automaticamente até 9 metros em qualquer direção, mas não além do alcance desta magia.</p><p>Se o objeto for usado ou carregado por uma criatura, você deve fazer um teste de habilidade com sua habilidade de conjuração contestada pelo teste de Força daquela criatura. Se tiver sucesso, você puxa o objeto para longe daquela criatura e pode movê-lo até 9 metros em qualquer direção, mas não além do alcance deste magia.</p><p>Você pode exercer controle preciso sobre objetos com seu controle telecinético, como manipular uma ferramenta simples, abrir uma porta ou contêiner, guardar ou recuperar um item de um contêiner aberto ou despejar o conteúdo de um frasco.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "gIE5FXHX10GZRuTj": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "restrained"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "restrained",
+        "ids": [
+          "restrained"
+        ],
+        "label": "restrained",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Telekinesis",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

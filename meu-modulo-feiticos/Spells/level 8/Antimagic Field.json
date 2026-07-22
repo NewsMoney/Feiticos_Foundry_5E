@@ -1,0 +1,152 @@
+{
+  "_id": "u2Vk16B-k0f0LGuw",
+  "name": "Antimagic Field",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Uma esfera invisível de antimagia com 3 metros de raio envolve você. Esta área está divorciada da energia mágica que permeia o multiverso. Dentro da esfera, magias não podem ser lançadas, criaturas invocadas desaparecem e até mesmo itens mágicos tornam-se mundanos. Até que a magia termine, a esfera se move com você, centrada em você.</p><p>Os magias e outros efeitos mágicos, exceto aqueles criados por um artefato ou uma divindade, são suprimidos na esfera e não podem se projetar nela. Um espaço gasto para conjurar uma magia suprimida é consumido. Enquanto um efeito é suprimido, ele não funciona, mas o tempo que ele passa suprimido conta em relação à sua duração.</p><p><strong>Efeitos direcionados.</strong> magias e outros efeitos mágicos, como <em>Míssil Mágico</em> e <em>Encantar Pessoa</em>, que têm como alvo uma criatura ou objeto na esfera, não têm efeito sobre isso. alvo.</p><p><strong>Áreas de Magia.</strong> A área de outra magia ou efeito mágico, como <em>Bola de Fogo</em>, não pode se estender para dentro da esfera. Se a esfera se sobrepõe a uma área de magia, a parte da área coberta pela esfera é suprimida. Por exemplo, as chamas criadas por uma <em>Parede de Fogo</em> são suprimidas dentro da esfera, criando uma lacuna na parede se a sobreposição for grande o suficiente.</p><p><strong>magias.</strong> Qualquer magia ativo ou outro efeito mágico em uma criatura ou objeto na esfera é suprimido enquanto a criatura ou objeto estiver nela.</p><p><strong>Itens Mágicos.</strong> As propriedades e poderes dos itens mágicos são suprimidos em a esfera. Por exemplo, uma <em>espada longa +1</em> na esfera funciona como uma espada longa não mágica.</p><p>As propriedades e poderes de uma arma mágica são suprimidos se ela for usada contra um alvo na esfera ou empunhada por um atacante na esfera. Se uma arma mágica ou um pedaço de munição mágica deixar completamente a esfera (por exemplo, se você disparar uma flecha mágica ou lançar uma lança magia em um alvo fora da esfera), a magia do item deixa de ser suprimida assim que ele sai.</p><p><strong>Viagem Mágica.</strong> O teletransporte e a viagem planar não funcionam na esfera, seja a esfera o destino ou o ponto de partida para tal viagem mágica. Um portal para outro local, mundo ou plano de existência, bem como uma abertura para um espaço extradimensional como aquele criado pela magia <em>Rope Trick</em>, fecha temporariamente enquanto estiver na esfera.</p><p><strong>Criaturas e Objetos.</strong> Uma criatura ou objeto invocado ou criado por magia desaparece temporariamente da existência na esfera. Tal criatura reaparece instantaneamente quando o espaço que a criatura ocupava não estiver mais dentro da esfera.</p><p><strong>Dispel Magic.</strong> magias e efeitos mágicos como <em>Dispel Magic</em> não têm efeito na esfera. Da mesma forma, as esferas criadas por diferentes magias de <em>Campo Antimágico</em> não se anulam.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 8,
+    "school": "abj",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (10-foot-radius sphere)"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "circle",
+        "size": 10
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a pinch of powdered iron or iron filings",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "WzluHTnvCnOU7lAI": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "circle",
+            "size": 10
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Antimagic Field",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

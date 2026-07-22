@@ -1,0 +1,161 @@
+{
+  "_id": "ClRHdNDCPQySagjs",
+  "name": "Wall of Stone",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Uma parede não-mágica de pedra sólida surge em um ponto que você escolher dentro do alcance. A parede tem 15 centímetros de espessura e é composta por dez painéis de 3 por 3 metros. Cada painel deve ser contíguo a pelo menos um outro painel. Alternativamente, você pode criar painéis de 3 x 6 metros com apenas 7 centímetros de espessura.</p><p>Se a parede cortar o espaço de uma criatura quando ela aparecer, a criatura será empurrada para um lado da parede (sua escolha). Se uma criatura for cercada por todos os lados pela parede (ou pela parede e outra superfície sólida), aquela criatura pode fazer um teste de resistência de Destreza. Se obtiver sucesso, ele pode usar sua reação para se mover até seu deslocamento, de modo que não fique mais cercado pela parede.</p><p>A parede pode ter qualquer formato que você desejar, embora não possa ocupar o mesmo espaço que uma criatura ou objeto. A parede não precisa ser vertical ou apoiada em uma base sólida. Deve, no entanto, fundir-se e ser solidamente suportado pela pedra existente. Assim, você pode usar esta magia para construir uma ponte sobre um abismo ou criar uma rampa.</p><p>Se você criar um vão com mais de 6 metros de comprimento, deverá reduzir pela metade o tamanho de cada painel para criar suportes. Você pode moldar a parede de maneira grosseira para criar ameias, ameias e assim por diante.</p><p>A parede é um objeto feito de pedra que pode ser danificado e, portanto, rompido. Cada painel tem CA 15 e 30 pontos de vida por polegada de espessura. Reduzir um painel a 0 pontos de vida o destrói e pode causar o colapso dos painéis conectados a critério do Mestre.</p><p>Se você mantiver sua concentração nesta magia durante toda a sua duração, a parede se tornará permanente e não poderá ser dissipada. Caso contrário, a parede desaparece quando a magia termina.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a small block of granite",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "6YneN5AO47gbHxkE": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
+        "fallbacks": [
+          "jb2a.impact.004.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Wall of Stone",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

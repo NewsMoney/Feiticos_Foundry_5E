@@ -1,0 +1,153 @@
+{
+  "_key": "!items!_5jQ113FyMtVvX78",
+  "_id": "_5jQ113FyMtVvX78",
+  "name": "Project Image",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria uma cópia ilusória de si mesmo que dura enquanto durar. A cópia pode aparecer em qualquer local dentro do alcance que você já viu antes, independentemente dos obstáculos intervenientes. A ilusão parece e soa como você, mas é intangível. Se a ilusão sofrer algum dano, ela desaparece e a magia termina.</p><p>Você pode usar sua ação para mover esta ilusão até o dobro de sua velocidade e fazê-la gesticular, falar e se comportar da maneira que você escolher. Ele imita perfeitamente seus maneirismos.</p><p>Você pode ver através de seus olhos e ouvir através de seus ouvidos como se estivesse em seu espaço. No seu turno, como uma ação bônus, você pode passar do uso dos sentidos para o uso dos seus próprios sentidos ou vice-versa. Enquanto você usa seus sentidos, você fica cego e surdo em relação ao seu próprio entorno.</p><p>A interação física com a imagem revela que ela é uma ilusão, porque coisas podem passar por ela. Uma criatura que usa sua ação para examinar a imagem pode determinar que ela é uma ilusão com um teste bem sucedido de Inteligência (Investigação) contra sua CD de resistência de magia. Se uma criatura discernir a ilusão pelo que ela é, a criatura poderá ver através da imagem, e qualquer ruído que ela fizer soará vazio para a criatura.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "ill",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "day",
+      "concentration": true
+    },
+    "range": {
+      "value": 500,
+      "units": "mi",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a small replica of you made from materials worth at least 5 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "4jhnPLWKqv0FNunx": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "day",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.illusion.intro.purple",
+        "fallbacks": [
+          "jb2a.smoke.puff.centered.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Project Image",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

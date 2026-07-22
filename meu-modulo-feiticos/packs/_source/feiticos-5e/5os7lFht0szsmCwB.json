@@ -1,0 +1,176 @@
+{
+  "_key": "!items!5os7lFht0szsmCwB",
+  "_id": "5os7lFht0szsmCwB",
+  "name": "Teleport",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia transporta instantaneamente você e até oito criaturas voluntárias de sua escolha que você possa ver dentro do alcance, ou um único objeto, que você possa ver dentro do alcance, para um destino que você selecionar. Se você mirar em um objeto, ele deve caber inteiramente dentro de um cubo de 3 metros e não pode ser segurado ou carregado por uma criatura involuntária.</p><p>O destino que você escolher deve ser conhecido por você e deve estar no mesmo plano de existência que você. Sua familiaridade com o destino determina se você chegará lá com sucesso. O Mestre rola d100 e consulta a tabela.</p><pre>| Familiaridade | Acidente | Área semelhante | Fora do alvo | No alvo |<br>|-------------------|--------|--------------|------------|-----------|<br>| Círculo permanente |  --- |      --- |     --- |   01-100 |<br>| Objeto associado |  --- |      --- |     --- |   01-100 |<br>| Muito familiar | 01-05 |     06-13 |    14-24 |   25-100 |<br>| Visto casualmente | 01-33 |     34-43 |    44-53 |   54-100 |<br>| Visto uma vez | 01-43 |     44-53 |    54-73 |   74-100 |<br>| Descrição | 01-43 |     44-53 |    54-73 |   74-100 |<br>| Destino falso | 01-50 |    51-100 |     --- |    --- |</pre><p><strong>Familiaridade.</strong> “Círculo permanente” significa um círculo de teletransporte permanente cuja sequência de sigilo você conhece. “Objeto associado” significa que você possui um objeto retirado do destino desejado nos últimos seis meses, como um livro da biblioteca de um bruxo, roupa de cama de uma suíte real ou um pedaço de mármore da tumba secreta de um lich.</p><p>“Muito familiar” é um lugar onde você esteve com frequência, um lugar que você estudou cuidadosamente ou um lugar que você pode ver quando lançou a magia. “Visto casualmente” é algum lugar que você viu mais de uma vez, mas com o qual não está muito familiarizado. “Visualizado uma vez” é um lugar que você viu uma vez, possivelmente usando magia. “Descrição” é um lugar cuja localização e aparência você conhece através da descrição de outra pessoa, talvez de um mapa.</p><p>“Falso destino” é um lugar que não existe. Talvez você tenha tentado visualizar o santuário de um inimigo, mas em vez disso viu uma ilusão, ou estava tentando se teletransportar para um local familiar que não existe mais.</p><p><strong>No alvo.</strong> Você e seu grupo (ou o objeto alvo) aparecem onde quiserem.</p><p><strong>Fora do alvo.</strong> Você e seu grupo (ou o objeto alvo) aparecem a uma distância aleatória do destino em uma direção aleatória. A distância fora do alvo é 1d10 x 1d10 por cento da distância que deveria ser percorrida. Por exemplo, se você tentasse viajar 190 quilômetros, aterrissasse fora do alvo e obtivesse um 5 e 3 nos dois d10s, então você estaria 15% fora do alvo, ou 18 quilômetros. O Mestre determina a direção fora do alvo aleatoriamente rolando um d8 e designando 1 como norte, 2 como nordeste, 3 como leste e assim por diante em torno dos pontos cardeais. Se você estivesse se teletransportando para uma cidade costeira e acabasse a 29 quilômetros no mar, poderia estar em apuros.</p><p><strong>Área semelhante.</strong> Você e seu grupo (ou o objeto alvo) acabam em uma área diferente que é visual ou tematicamente semelhante à área alvo. Se você estiver indo para o seu laboratório doméstico, por exemplo, você pode acabar no laboratório de outro mago ou em uma loja de suprimentos alquímicos que tenha muitas das mesmas ferramentas e implementos do seu laboratório. Geralmente, você aparece no local mais próximo, mas como a magia não tem limite de alcance, você pode acabar em qualquer lugar do avião.</p><p><strong>Acidente.</strong> A magia imprevisível da magia resulta em uma jornada difícil. Cada criatura teletransportada (ou o objeto alvo) sofre 3d10 de dano de força, e o Mestre rola novamente na mesa para ver onde você vai parar (múltiplos acidentes podem ocorrer, causando dano a cada vez).</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "con",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": 10,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "oHWj_1oxlgVEb6ZK": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_missile.blue",
+        "fallbacks": [
+          "jb2a.impact.004.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Teleport",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

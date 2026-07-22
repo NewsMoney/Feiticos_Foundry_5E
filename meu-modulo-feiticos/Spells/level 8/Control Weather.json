@@ -1,0 +1,152 @@
+{
+  "_id": "5XnP89xyggaxUb6M",
+  "name": "Control Weather",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você assume o controle do clima em um raio de 8 quilômetros de você durante todo o período. Você deve estar ao ar livre para lançar esta magia. Mover-se para um lugar onde você não tem um caminho claro para o céu encerra a magia mais cedo.</p><p>Ao lançar a magia, você altera as condições climáticas atuais, que são determinadas pelo Mestre com base no clima e na estação. Você pode alterar a precipitação, a temperatura e o vento. Leva 1d4 x 10 minutos para que as novas condições entrem em vigor. Depois que eles fizerem isso, você poderá alterar as condições novamente. Quando a magia termina, o clima retorna gradualmente ao normal.</p><p>Quando você altera as condições climáticas, encontre uma condição atual nas tabelas a seguir e mude seu estágio em um, para cima ou para baixo. Ao mudar o vento, você pode mudar sua direção.</p><p><strong>Precipitação</strong></p><pre>|Estágio|Condição|<br>|-|-|<br>| 1 | Claro |<br>| 2 | Nuvens claras |<br>| 3 | Neblina nublada ou terrestre |<br>| 4 | Chuva, granizo ou neve |<br>| 5 | Chuva torrencial, granizo ou nevasca |</pre><p><strong>Temperatura</strong></p><pre>|Estágio|Condição|<br>|-|-|<br>| 1 | Calor insuportável |<br>| 2 | Quente |<br>| 3 | Quente |<br>| 4 | Legal |<br>| 5 | Frio |<br>| 6 | Frio Ártico |</pre><p><strong>Vento</strong></p><pre>|Estágio|Condição|<br>|-|-|<br>| 1 | Calma |<br>| 2 | Vento moderado |<br>| 3 | Vento forte |<br>| 4 | Vendaval |<br>| 5 | Tempestade |</pre>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 8,
+    "school": "trs",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": 8,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (5-mile radius)"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "circle",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "burning incense and bits of earth and wood mixed in water",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "e-2pbO868EOzWduP": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "circle",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Control Weather",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

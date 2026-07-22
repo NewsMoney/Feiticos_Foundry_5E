@@ -1,0 +1,162 @@
+{
+  "_key": "!items!DYQUl4Y_XrnECgZz",
+  "_id": "DYQUl4Y_XrnECgZz",
+  "name": "Delayed Blast Fireball",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Um feixe de luz amarela brilha do seu dedo apontador e depois se condensa para permanecer em um ponto escolhido dentro do alcance como uma conta brilhante durante todo o período. Quando a magia termina, seja porque sua concentração foi quebrada ou porque você decidiu encerrá-lo, a conta floresce com um rugido baixo em uma explosão de chamas que se espalha pelos cantos. Cada criatura em uma esfera de 6 metros de raio centrada naquele ponto deve realizar um teste de resistência de Destreza. Uma criatura sofre dano de fogo igual ao dano total acumulado em caso de falha na resistência, ou metade do dano em caso de sucesso.</p><p>O dano base da magia é 12d6. Se no final do seu turno a conta ainda não tiver detonado, o dano aumenta em 1d6.</p><p>Se a conta brilhante for tocada antes do intervalo expirar, a criatura que a tocou deve fazer um teste de resistência de Destreza. Se falhar, a magia termina imediatamente, fazendo a conta explodir em chamas. Se obtiver sucesso, a criatura pode lançar a conta até 12 metros. Quando atinge uma criatura ou um objeto sólido, a magia termina e a conta explode.</p><p>O fogo danifica objetos na área e incendeia objetos inflamáveis ​​que não estão sendo usados ​​ou carregados.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 8º nível ou superior, o dano base aumenta em 1d6 para cada nível de espaço acima do 7º.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "evo",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 150,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a tiny ball of bat guano and sulfur",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "i_C8I5UESUWBTH_H": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
+        "fallbacks": [
+          "jb2a.impact.004.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Delayed Blast Fireball",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "_key": "!items!wxi1F-4CDqLkUHjD",
+  "_id": "wxi1F-4CDqLkUHjD",
+  "name": "Scrying",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você pode ver e ouvir uma criatura específica que você escolher e que esteja no mesmo plano de existência que você. O alvo deve fazer um teste de resistência de Sabedoria, que é modificado pelo quão bem você conhece o alvo e pelo tipo de conexão física que você tem com ele. Se um alvo souber que você está lançando esta magia, ele pode falhar no teste de resistência voluntariamente se quiser ser observado.</p><pre>|Conhecimento|Modificador do teste de resistência|<br>|---------|:-----------:|<br>|De segunda mão (você já ouviu falar do alvo)| +5|<br>|Em primeira mão (você encontrou pessoalmente o alvo)| 0|<br>|Familiar (você conhece bem o alvo)| -5|</pre><pre>|Conexão|Modificador do teste de resistência|<br>|----------|:-----------:|<br>|Semelhança ou imagem| -2|<br>|Posse ou vestimenta| -4|<br>|Parte do corpo, mecha de cabelo, pedaço de unha ou algo parecido| -10|</pre><p>Em um teste bem-sucedido, o alvo não é afetado e você não pode usar esta magia contra ele novamente por 24 horas. Se falhar, a magia cria um sensor invisível a até 3 metros do alvo. Você pode ver e ouvir através do sensor como se estivesse lá. O sensor se move com o alvo, permanecendo a até 3 metros dele durante todo o período. Uma criatura que pode ver objetos invisíveis vê o sensor como um orbe luminoso do tamanho do seu punho.</p><p>Em vez de mirar em uma criatura, você pode escolher um local que você tenha visto antes como alvo desta magia. Quando você faz isso, o sensor aparece naquele local e não se move.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "div",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "qnI-eHiOpBpeLYWU": {
+        "type": "save",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.detect_magic.circle.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.divination.intro.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Scrying",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "_key": "!items!KsuyK49ZrXzSd93r",
+  "_id": "KsuyK49ZrXzSd93r",
+  "name": "Dominate Person",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você tenta enganar um humanóide que você pode ver dentro do alcance. Ele deve ter sucesso em um teste de resistência de Sabedoria ou ficará encantado por você enquanto durar. Se você ou criaturas amigas a você estiverem lutando contra ele, ele terá vantagem no teste de resistência.</p><p>Enquanto o alvo estiver enfeitiçado, você terá uma ligação telepática com ele, desde que vocês dois estejam no mesmo plano de existência. Você pode usar esta ligação telepática para emitir comandos para a criatura enquanto você está consciente (nenhuma ação é necessária), aos quais ela faz o possível para obedecer. Você pode especificar um curso de ação simples e geral, como “Atacar aquela criatura”, “Correr até lá” ou “Buscar aquele objeto”. Se a criatura completar a ordem e não receber mais instruções suas, ela se defenderá e se preservará da melhor maneira possível.</p><p>Você pode usar sua ação para assumir o controle total e preciso do alvo. Até o final do seu próximo turno, a criatura realiza apenas as ações que você escolher e não faz nada que você não permita. Durante esse tempo você também pode fazer com que a criatura use uma reação, mas isso exige que você use sua própria reação também. Cada vez que o alvo sofre dano, ele faz um novo teste de resistência de Sabedoria contra a magia. Se o teste de resistência for bem-sucedido, a magia termina.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 6º nível, a duração é de concentração, até 10 minutos. Quando você usa um espaço de magia de 7º nível, a duração é de concentração, até 1 hora. Quando você usa um espaço de magia de 8º nível ou superior, a duração é de concentração, até 8 horas.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "enc",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "3ZKGchAgwT7Qjb6Z": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "charmed"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "charmed",
+        "ids": [
+          "charmed"
+        ],
+        "label": "charmed",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Dominate Person",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

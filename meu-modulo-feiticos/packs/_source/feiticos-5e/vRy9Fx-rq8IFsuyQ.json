@@ -1,0 +1,178 @@
+{
+  "_key": "!items!vRy9Fx-rq8IFsuyQ",
+  "_id": "vRy9Fx-rq8IFsuyQ",
+  "name": "Contagion",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Seu toque causa doenças. Faça um ataque mágico corpo a corpo contra uma criatura ao seu alcance. Se acertar, o alvo fica envenenado.</p><p>No final de cada turno do alvo envenenado, o alvo deve fazer um teste de resistência de Constituição. Se o alvo tiver sucesso em três desses testes, ele não estará mais envenenado e a magia termina. Se o alvo falhar em três desses testes, o alvo não estará mais envenenado, mas escolha uma das doenças abaixo. O alvo fica sujeito à doença escolhida durante a duração da magia.</p><p>Como esta magia induz uma doença natural em seu alvo, qualquer efeito que remova uma doença ou melhore os efeitos de uma doença se aplica a ele.</p><p><strong>Doença Cegante.</strong> A dor toma conta da mente da criatura e seus olhos ficam brancos leitosos. A criatura tem desvantagem em testes de Sabedoria e testes de resistência de Sabedoria e fica cega.</p><p><strong>Filth Fever.</strong> Uma febre violenta varre o corpo da criatura. A criatura tem desvantagem em testes de Força, testes de resistência de Força e jogadas de ataque que usam Força.</p><p><strong>Podridão da Carne.</strong> A carne da criatura se deteriora. A criatura tem desvantagem em testes de Carisma e vulnerabilidade a todos os danos.</p><p><strong>Fogo Mental.</strong> A mente da criatura fica febril. A criatura tem desvantagem em testes de Inteligência e testes de resistência de Inteligência, e a criatura se comporta como se estivesse sob os efeitos da magia <em>Confusão</em> durante o combate.</p><p><strong>Apreensão.</strong> A criatura é dominada pelo tremor. A criatura tem desvantagem em testes de Destreza, testes de resistência de Destreza e jogadas de ataque que usam Destreza.</p><p><strong>Desgraça Viscosa.</strong> A criatura começa a sangrar incontrolavelmente. A criatura tem desvantagem em testes de Constituição e testes de resistência de Constituição. Além disso, sempre que a criatura sofrer dano, ela ficará atordoada até o final do próximo turno.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "nec",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 7,
+      "units": "day",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "04LOZMeDAtHLeH6d": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 7,
+          "units": "day",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "fallbacks": [
+          "jb2a.energy_strands.in.dark_purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "poisoned"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "poisoned",
+        "ids": [
+          "poisoned"
+        ],
+        "label": "poisoned",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 7,
+          "units": "day",
+          "concentration": false
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Contagion",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

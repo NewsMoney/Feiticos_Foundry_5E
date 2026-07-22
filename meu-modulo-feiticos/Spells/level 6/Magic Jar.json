@@ -1,0 +1,160 @@
+{
+  "_id": "ZNH0_teGsj6H4Y20",
+  "name": "Magic Jar",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Seu corpo cai em um estado catatônico quando sua alma sai dele e entra no recipiente que você usou para o componente material da magia. Enquanto sua alma habita o recipiente, você está consciente do que está ao seu redor como se estivesse no espaço do recipiente. Você não pode se mover ou usar reações. A única ação que você pode realizar é projetar sua alma até 30 metros para fora do recipiente, seja retornando ao seu corpo vivo (e encerrando a magia) ou tentando possuir o corpo de um humanóide.</p><p>Você pode tentar possuir qualquer humanóide a até 30 metros de você que você possa ver (criaturas protegidas por uma <em>Proteção contra o Mal e o Bem</em> ou <em>Magia a magia Círculo</em> não pode ser possuído). O alvo deve fazer um teste de resistência de Carisma. Em caso de falha, sua alma se move para dentro do corpo do alvo, e a alma do alvo fica presa no recipiente. Se obtiver sucesso, o alvo resiste aos seus esforços para possuí-lo e você não poderá tentar possuí-lo novamente por 24 horas.</p><p>Uma vez que você possua o corpo de uma criatura, você a controla. Suas estatísticas de jogo são substituídas pelas estatísticas da criatura, embora você mantenha sua tendência e seus valores de Inteligência, Sabedoria e Carisma. Você retém o benefício de seus próprios recursos de classe. Se o alvo tiver qualquer nível de classe, você não poderá usar nenhuma de suas características de classe.</p><p>Enquanto isso, a alma da criatura possuída pode perceber do recipiente usando seus próprios sentidos, mas ela não pode se mover ou realizar ações.</p><p>Enquanto possuir um corpo, você pode usar sua ação para retornar do corpo hospedeiro para o recipiente se ele estiver a até 30 metros de você, devolvendo a alma da criatura hospedeira ao seu corpo. Se o corpo hospedeiro morrer enquanto você estiver nele, a criatura morre e você deve fazer um teste de resistência de Carisma contra sua própria CD de conjuração. Se obtiver sucesso, você retorna ao contêiner se ele estiver a até 30 metros de você. Caso contrário, você morre.</p><p>Se o recipiente for destruído ou a magia terminar, sua alma retornará imediatamente ao seu corpo. Se seu corpo estiver a mais de 30 metros de você ou se seu corpo estiver morto quando você tentar retornar a ele, você morre. Se a alma de outra criatura estiver no recipiente quando ela for destruída, a alma da criatura retornará ao seu corpo se o corpo estiver vivo e a até 30 metros. Caso contrário, aquela criatura morre.</p><p>Quando a magia termina, o contêiner é destruído.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "nec",
+    "activation": {
+      "type": "minute",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "perm",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a gem, crystal, reliquary, or some other ornamental container worth at least 500 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "AnYuKwVUaanacV4M": {
+        "type": "save",
+        "activation": {
+          "type": "minute",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "perm",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "fallbacks": [
+          "jb2a.energy_strands.in.dark_purple"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Magic Jar",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

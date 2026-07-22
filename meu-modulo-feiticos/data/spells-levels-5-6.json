@@ -1,0 +1,3433 @@
+[
+  {
+    "name": "Animate Objects",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Antilife Shell",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (10-foot radius)"
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Awaken",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "hour",
+    "activationValue": 8,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "an agate worth at least 1000 gp, which the spell consumes",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "charmed"
+    ]
+  },
+  {
+    "name": "Banishing Smite",
+    "level": 5,
+    "source": "PHB",
+    "school": "abj",
+    "activation": "bonus",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [
+      [
+        5,
+        10,
+        "force"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "incapacitated"
+    ]
+  },
+  {
+    "name": "Bigby’s Hand",
+    "level": 5,
+    "source": "PHB",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "an eggshell and a snakeskin glove",
+    "mode": "attack",
+    "save": null,
+    "attack": "melee",
+    "damage": [
+      [
+        4,
+        8,
+        "force"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Circle of Power",
+    "level": 5,
+    "source": "PHB",
+    "school": "abj",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (30-foot radius)"
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Cloudkill",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        5,
+        8,
+        "poison"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Commune",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": true,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "incense and a vial of holy or unholy water",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Commune with Nature",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Cone of Cold",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (60-foot cone)"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a small crystal or a glass cone",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        8,
+        8,
+        "cold"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Conjure Elemental",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Conjure Volley",
+    "level": 5,
+    "source": "PHB",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 150,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "one piece of ammunition or one throwing weapon",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Contact Other Plane",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": true,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "int",
+    "attack": null,
+    "damage": [
+      [
+        6,
+        6,
+        "psychic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Contagion",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "7 days",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": "melee",
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "blinded",
+      "poisoned"
+    ]
+  },
+  {
+    "name": "Control Winds",
+    "level": 5,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 300,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "str",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "prone"
+    ]
+  },
+  {
+    "name": "Create Spelljamming Helm",
+    "level": 5,
+    "source": "AAG",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a crystal rod worth at least 5,000 gp, which the spell consumes",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Creation",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "ill",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Special",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a tiny piece of matter of the same type of the item you plan to create",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Danse Macabre",
+    "level": 5,
+    "source": "XGE",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Dawn",
+    "level": 5,
+    "source": "XGE",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a sunburst pendant worth at least 100 gp",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        4,
+        10,
+        "radiant"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Destructive Wave",
+    "level": 5,
+    "source": "PHB",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (30-foot radius)"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        5,
+        6,
+        "thunder"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": [
+      "prone"
+    ]
+  },
+  {
+    "name": "Dispel Evil and Good",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "holy water or powdered silver and iron",
+    "mode": "save",
+    "save": "cha",
+    "attack": "melee",
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "charmed"
+    ]
+  },
+  {
+    "name": "Dominate Person",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "enc",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "charmed"
+    ]
+  },
+  {
+    "name": "Dream",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "ill",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "spec",
+      "special": "Special"
+    },
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [
+      [
+        3,
+        6,
+        "psychic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Enervation",
+    "level": 5,
+    "source": "XGE",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        2,
+        8,
+        "necrotic"
+      ],
+      [
+        4,
+        8,
+        "necrotic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Far Step",
+    "level": 5,
+    "source": "XGE",
+    "school": "con",
+    "activation": "bonus",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Flame Strike",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "pinch of sulfur",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        4,
+        6,
+        "fire"
+      ],
+      [
+        4,
+        6,
+        "radiant"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Geas",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "enc",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "30 days",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [
+      [
+        5,
+        10,
+        "psychic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "charmed"
+    ]
+  },
+  {
+    "name": "Greater Restoration",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "diamond dust worth at least 100 gp, which the spell consumes",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Hallow",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "hour",
+    "activationValue": 24,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes",
+    "mode": "save",
+    "save": "cha",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Hold Monster",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "enc",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a small, straight piece of iron",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Holy Weapon",
+    "level": 5,
+    "source": "XGE",
+    "school": "evo",
+    "activation": "bonus",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        2,
+        8,
+        "radiant"
+      ],
+      [
+        4,
+        8,
+        "radiant"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": [
+      "blinded"
+    ]
+  },
+  {
+    "name": "Immolation",
+    "level": 5,
+    "source": "EE/XGE",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        8,
+        6,
+        "fire"
+      ],
+      [
+        4,
+        6,
+        "fire"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Infernal Calling",
+    "level": 5,
+    "source": "XGE",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a ruby worth at least 999 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Insect Plague",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 300,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a few grains of sugar, some kernels of grain, and a smear of fat",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        4,
+        10,
+        "piercing"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Legend Lore",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "incense worth at least 250 gp, which the spell consumes, and four ivory strips worth at least 50 gp each",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Maelstrom",
+    "level": 5,
+    "source": "EE/XGE",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "paper or leaf in the shape of a funnel",
+    "mode": "save",
+    "save": "str",
+    "attack": null,
+    "damage": [
+      [
+        6,
+        6,
+        "bludgeoning"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Mass Cure Wounds",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "heal",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": [
+      3,
+      8
+    ],
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Mislead",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "ill",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "somatic"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "invisible"
+    ]
+  },
+  {
+    "name": "Modify Memory",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "enc",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "charmed",
+      "incapacitated"
+    ]
+  },
+  {
+    "name": "Negative Energy Flood",
+    "level": 5,
+    "source": "XGE",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a broken bone and a square of black silk",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        5,
+        12,
+        "necrotic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Passwall",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a pinch of sesame seeds",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Planar Binding",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "hour",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a jewel worth at least 1,000 gp, which the spell consumes",
+    "mode": "save",
+    "save": "cha",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Raise Dead",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "hour",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a diamond worth at least 500 gp, which the spell consumes",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Rary’s Telepathic Bond",
+    "level": 5,
+    "source": "PHB",
+    "school": "div",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "pieces of eggshell from two different kinds of creatures",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Reincarnate",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "hour",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "rare oils and unguents worth at least 1,000 gp, which the spell consumes",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Scrying",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Seeming",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "ill",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "cha",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Skill Empowerment",
+    "level": 5,
+    "source": "XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Steel Wind Strike",
+    "level": 5,
+    "source": "XGE",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "somatic"
+    ],
+    "materials": "a melee weapon worth at least 1 sp",
+    "mode": "attack",
+    "save": null,
+    "attack": "melee",
+    "damage": [
+      [
+        6,
+        10,
+        "force"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Summon Celestial",
+    "level": 5,
+    "source": "TCE",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a gold reliquary worth at least 500gp",
+    "mode": "heal",
+    "save": null,
+    "attack": null,
+    "damage": [
+      [
+        2,
+        6,
+        "radiant"
+      ],
+      [
+        1,
+        10,
+        "radiant"
+      ]
+    ],
+    "heal": [
+      2,
+      8
+    ],
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Summon Draconic Spirit",
+    "level": 5,
+    "source": "FTD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "an object with the image of a dragon engraved on it, worth at least 500 gp",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        1,
+        6,
+        "piercing"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Swift Quiver",
+    "level": 5,
+    "source": "PHB",
+    "school": "trs",
+    "activation": "bonus",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a quiver containing at least one piece of ammunition",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Synaptic Static",
+    "level": 5,
+    "source": "XGE",
+    "school": "enc",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "int",
+    "attack": null,
+    "damage": [
+      [
+        8,
+        6,
+        "psychic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Telekinesis",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "restrained"
+    ]
+  },
+  {
+    "name": "Teleportation Circle",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 10,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "rare chalks and inks infused with precious gems with 50 gp, which the spell consumes",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Temporal Shunt",
+    "level": 5,
+    "source": "EGW",
+    "school": "trs",
+    "activation": "reaction",
+    "activationValue": 1,
+    "activationCondition": "taken when a creature you can see makes an attack roll or starts to cast a spell",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Transmute Rock",
+    "level": 5,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "clay and water",
+    "mode": "save",
+    "save": "str",
+    "attack": null,
+    "damage": [
+      [
+        4,
+        8,
+        "bludgeoning"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": [
+      "restrained"
+    ]
+  },
+  {
+    "name": "Tree Stride",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Wall of Force",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a pinch of powder made by crushing a clear gemstone",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Wall of Light",
+    "level": 5,
+    "source": "XGE",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a hand mirror",
+    "mode": "save",
+    "save": "con",
+    "attack": "ranged",
+    "damage": [
+      [
+        4,
+        8,
+        "radiant"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": [
+      "blinded"
+    ]
+  },
+  {
+    "name": "Wall of Stone",
+    "level": 5,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a small block of granite",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Wrath of Nature",
+    "level": 5,
+    "source": "XGE",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": "ranged",
+    "damage": [
+      [
+        4,
+        6,
+        "slashing"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "restrained"
+    ]
+  },
+  {
+    "name": "Arcane Gate",
+    "level": 6,
+    "source": "PHB",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 500,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Blade Barrier",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        6,
+        10,
+        "slashing"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Bones of the Earth",
+    "level": 6,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        6,
+        6,
+        "bludgeoning"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "restrained"
+    ]
+  },
+  {
+    "name": "Chain Lightning",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 150,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a bit of fur; a piece of amber, glass or a crystal rod; and three silver pins",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        10,
+        8,
+        "lightning"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Circle of Death",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 150,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "the powder of a crushed black pearl worth at least 500 gp",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        8,
+        6,
+        "necrotic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Conjure Fey",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Contingency",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "10 days",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Create Homunculus",
+    "level": 6,
+    "source": "XGE",
+    "school": "trs",
+    "activation": "hour",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted dagger worth at least 1,000 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [
+      [
+        2,
+        4,
+        "piercing"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Create Undead",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 10,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Disintegrate",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a lodestone and a pinch of dust",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        10,
+        6,
+        "force"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Drawmij’s Instant Summons",
+    "level": 6,
+    "source": "PHB",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": true,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "sapphire worth 1000 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Druid Grove",
+    "level": 6,
+    "source": "XGE",
+    "school": "abj",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "mistletoe, which the spell consumes, that was harvested with a golden sickle under the light of a full moon",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Eyebite",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "frightened"
+    ]
+  },
+  {
+    "name": "Find the Path",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 day",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a set of divinatory tools -- such as bones, ivory sticks, cards, teeth, or carved runes -- worth 100 gp and an object from the location you wish to find",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Fizban’s Platinum Shield",
+    "level": 6,
+    "source": "FTD",
+    "school": "abj",
+    "activation": "bonus",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a platinum-plated dragon scale, worth at least 500 gp",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Flesh to Stone",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a pinch of lime, water, and earth",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "restrained"
+    ]
+  },
+  {
+    "name": "Forbiddance",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "1 day",
+    "concentration": false,
+    "ritual": true,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1000 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Globe of Invulnerability",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a glass or crystal bead that shatters when the spell ends",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Gravity Fissure",
+    "level": 6,
+    "source": "EGW",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (100-foot line)"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a fistful of iron fillings",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        8,
+        8,
+        "force"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Guards and Wards",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "abj",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Harm",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        14,
+        6,
+        "necrotic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Heal",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Heroes’ Feast",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Investiture of Flame",
+    "level": 6,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        1,
+        10,
+        "fire"
+      ],
+      [
+        4,
+        8,
+        "fire"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Investiture of Ice",
+    "level": 6,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        4,
+        6,
+        "cold"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Investiture of Stone",
+    "level": 6,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "prone"
+    ]
+  },
+  {
+    "name": "Investiture of Wind",
+    "level": 6,
+    "source": "EE/XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        2,
+        10,
+        "bludgeoning"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Magic Jar",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "nec",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a gem, crystal, reliquary, or some other ornamental container worth at least 500 gp",
+    "mode": "save",
+    "save": "cha",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Mass Suggestion",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "enc",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a snake’s tongue and either a bit of honeycomb or a drop of sweet oil",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Mental Prison",
+    "level": 6,
+    "source": "XGE",
+    "school": "ill",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "somatic"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "int",
+    "attack": null,
+    "damage": [
+      [
+        5,
+        10,
+        "psychic"
+      ],
+      [
+        10,
+        10,
+        "psychic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "restrained"
+    ]
+  },
+  {
+    "name": "Move Earth",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 2 hours",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "an iron blade and a small bag containing a mixture of soils--clay, loam, and sand",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Otiluke’s Freezing Sphere",
+    "level": 6,
+    "source": "PHB",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 300,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a small crystal sphere",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        10,
+        6,
+        "cold"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Otto’s Irresistible Dance",
+    "level": 6,
+    "source": "PHB",
+    "school": "enc",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Planar Ally",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "minute",
+    "activationValue": 10,
+    "activationCondition": "",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Primordial Ward",
+    "level": 6,
+    "source": "EE/XGE",
+    "school": "abj",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Programmed Illusion",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "ill",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a bit of fleece and jade dust worth at least 25 gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Scatter",
+    "level": 6,
+    "source": "XGE",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "save",
+    "save": "wis",
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Soul Cage",
+    "level": 6,
+    "source": "XGE",
+    "school": "nec",
+    "activation": "reaction",
+    "activationValue": 1,
+    "activationCondition": "which you take when a humanoid you can see within 60 feet of you dies",
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a tiny silver cage worth 100 gp",
+    "mode": "heal",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": [
+      2,
+      8
+    ],
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Summon Fiend",
+    "level": 6,
+    "source": "TCE",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 90,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "humanoid blood inside a ruby vial worth at least 600gp",
+    "mode": "save",
+    "save": "dex",
+    "attack": "ranged",
+    "damage": [
+      [
+        2,
+        10,
+        "fire"
+      ],
+      [
+        1,
+        12,
+        "necrotic"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Sunbeam",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": "Self (60-foot line)"
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a magnifying glass",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        6,
+        8,
+        "radiant"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": [
+      "blinded"
+    ]
+  },
+  {
+    "name": "Tasha’s Otherworldly Guise",
+    "level": 6,
+    "source": "TCE",
+    "school": "con",
+    "activation": "bonus",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "an object engraved with a symbol of the Outer Planes, worth at least 500gp",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Tenser’s Transformation",
+    "level": 6,
+    "source": "XGE",
+    "school": "trs",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a few hairs from a bull",
+    "mode": "save",
+    "save": "con",
+    "attack": null,
+    "damage": [
+      [
+        2,
+        12,
+        "force"
+      ]
+    ],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Transport via Plants",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 10,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "True Seeing",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "div",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "an ointment for the eyes that costs 25 gp, is made from mushroom powder, saffron, and fat, and is consumed by the spell",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  },
+  {
+    "name": "Wall of Ice",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "evo",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a small piece of quartz",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        10,
+        6,
+        "cold"
+      ],
+      [
+        5,
+        6,
+        "cold"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Wall of Thorns",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 120,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "a handful of thorns",
+    "mode": "save",
+    "save": "dex",
+    "attack": null,
+    "damage": [
+      [
+        7,
+        8,
+        "piercing"
+      ],
+      [
+        7,
+        8,
+        "slashing"
+      ]
+    ],
+    "heal": null,
+    "onSave": "half",
+    "conditions": []
+  },
+  {
+    "name": "Wind Walk",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "trs",
+    "activation": "minute",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "fire and holy water",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": [
+      "incapacitated"
+    ]
+  },
+  {
+    "name": "Word of Recall",
+    "level": 6,
+    "source": "PHB/SRD",
+    "school": "con",
+    "activation": "action",
+    "activationValue": 1,
+    "activationCondition": "",
+    "range": {
+      "value": 5,
+      "units": "ft",
+      "special": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "properties": [
+      "vocal"
+    ],
+    "materials": "",
+    "mode": "utility",
+    "save": null,
+    "attack": null,
+    "damage": [],
+    "heal": null,
+    "onSave": "none",
+    "conditions": []
+  }
+]

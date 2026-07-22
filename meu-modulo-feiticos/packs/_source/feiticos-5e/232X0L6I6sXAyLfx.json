@@ -1,0 +1,152 @@
+{
+  "_key": "!items!232X0L6I6sXAyLfx",
+  "_id": "232X0L6I6sXAyLfx",
+  "name": "Reincarnate",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você toca um humanóide morto ou um pedaço de um humanóide morto. Desde que a criatura esteja morta há menos de 10 dias, a magia forma um novo corpo adulto para ela e então chama a alma para entrar naquele corpo. Se a alma do alvo não estiver livre ou disposta a fazê-lo, a magia falha.</p><p>A magia cria um novo corpo para a criatura habitar, o que provavelmente faz com que a raça da criatura mude. O Mestre rola um d100 e consulta a tabela a seguir para determinar que forma a criatura assume quando restaurada à vida, ou o Mestre escolhe uma forma.</p><pre>|d100|Raça|<br>|--------|---------|<br>|01-04|Dragonborn|<br>|05-13|Anão, colina|<br>|14-21|Anão, montanha|<br>|22-25|Elfo, escuro|<br>|26-34|Elfo, alto|<br>|35-42|Elfo, madeira|<br>|43-46|Gnomo, floresta|<br>|47-52|Gnomo, rocha|<br>|53-56|Meio-elfo|<br>|57-60|Meio-orc|<br>|61-68|Halfling, pé leve|<br>|69-76|Halfling, robusto|<br>|77-96|Humano|<br>|97-00|Tiefling|</pre><p>A criatura reencarnada relembra sua vida e experiências anteriores. Ele retém as capacidades que tinha na sua forma original, exceto que troca a sua raça original pela nova e altera as suas características raciais em conformidade.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "trs",
+    "activation": {
+      "type": "hour",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "rare oils and unguents worth at least 1,000 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "xdd5fCsCthqbMVot": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Reincarnate",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

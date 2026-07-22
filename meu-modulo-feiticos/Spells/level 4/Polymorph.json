@@ -1,0 +1,161 @@
+{
+  "_id": "6XNwGKoxVUYMeY0O",
+  "name": "Polymorph",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia transforma uma criatura que você pode ver dentro do alcance em uma nova forma. Uma criatura relutante deve fazer um teste de resistência de Sabedoria para evitar o efeito. A magia não tem efeito em um metamorfo ou em uma criatura com 0 pontos de vida.</p><p>A transformação dura pela duração ou até que o alvo caia para 0 pontos de vida ou morra. A nova forma pode ser qualquer fera cujo nível de desafio seja igual ou menor que o do alvo (ou o nível do alvo, se não tiver um nível de desafio). As estatísticas de jogo do alvo, incluindo valores de habilidades mentais, são substituídas pelas estatísticas da fera escolhida. Ele mantém seu alinhamento e personalidade.</p><p>O alvo assume os pontos de vida de sua nova forma. Quando ela volta à sua forma normal, a criatura retorna ao número de pontos de vida que tinha antes de se transformar. Se ele reverter como resultado de cair para 0 pontos de vida, qualquer dano excedente será transferido para sua forma normal.</p><p>Contanto que o dano excessivo não reduza a forma normal da criatura a 0 pontos de vida, ela não ficará inconsciente. <br>A criatura está limitada nas ações que pode realizar pela natureza de sua nova forma e não pode falar, lançar magias ou realizar qualquer outra ação que exija mãos ou fala.</p><p>O equipamento do alvo se funde na nova forma. A criatura não pode ativar, usar, empunhar ou de outra forma se beneficiar de qualquer um de seus equipamentos.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 4,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a caterpillar cocoon",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "8kCjB2xnkCK2S50t": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Polymorph",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "_key": "!items!NRb2esvzElNWCcPz",
+  "_id": "NRb2esvzElNWCcPz",
+  "name": "Awaken",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Depois de passar o tempo de conjuração traçando caminhos mágicos dentro de uma pedra preciosa, você toca uma fera ou planta enorme ou menor. O alvo não deve ter nenhum valor de Inteligência ou ter Inteligência igual ou inferior a 3. O alvo ganha Inteligência 10. O alvo também ganha a habilidade de falar um idioma que você conhece. Se o alvo for uma planta, ele ganha a habilidade de mover seus galhos, raízes, trepadeiras, trepadeiras e assim por diante, e ganha sentidos semelhantes aos de um humano. Seu Mestre escolhe as estatísticas apropriadas para a planta despertada, como as estatísticas do arbusto despertado ou da árvore despertada.</p><p>A fera ou planta despertada fica encantada por você por 30 dias ou até que você ou seus companheiros façam algo prejudicial a ela. Quando a condição encantada termina, a criatura desperta escolhe se deseja permanecer amigável com você, com base em como você a tratou enquanto ela estava encantada.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "trs",
+    "activation": {
+      "type": "hour",
+      "value": 8,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "an agate worth at least 1000 gp, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "nxm3h4Ztlg2TP3hI": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 8,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "charmed"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "charmed",
+        "ids": [
+          "charmed"
+        ],
+        "label": "charmed",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "days": 30
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Awaken",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

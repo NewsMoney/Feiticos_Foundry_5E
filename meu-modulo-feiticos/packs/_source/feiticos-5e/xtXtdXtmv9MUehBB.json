@@ -1,0 +1,185 @@
+{
+  "_key": "!items!xtXtdXtmv9MUehBB",
+  "_id": "xtXtdXtmv9MUehBB",
+  "name": "Dream",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Esta magia molda os sonhos de uma criatura. Escolha uma criatura conhecida por você como alvo desta magia. O alvo deve estar no mesmo plano de existência que você. Criaturas que não dormem, como elfos, não podem ser contatadas por esta magia. Você, ou uma criatura voluntária que você toca, entra em estado de transe, agindo como um mensageiro. Enquanto estiver em transe, o mensageiro está ciente do que está ao seu redor, mas não pode realizar ações ou se mover.</p><p>Se o alvo estiver dormindo, o mensageiro aparece nos sonhos do alvo e pode conversar com o alvo enquanto ele permanecer dormindo, durante a duração da magia. O mensageiro também pode moldar o ambiente do sonho, criando paisagens, objetos e outras imagens. O mensageiro pode sair do transe a qualquer momento, encerrando o efeito da magia mais cedo. O alvo se lembra perfeitamente do sonho ao acordar. Se o alvo estiver acordado quando você lançar a magia, o mensageiro sabe disso e pode encerrar o transe (e a magia) ou esperar que o alvo adormeça, momento em que o mensageiro aparece nos sonhos do alvo.</p><p>Você pode fazer o mensageiro parecer monstruoso e aterrorizante para o alvo. Se você fizer isso, o mensageiro poderá entregar uma mensagem de no máximo dez palavras e então o alvo deverá fazer um teste de resistência de Sabedoria. Se falhar na resistência, os ecos da monstruosidade fantasmagórica geram um pesadelo que dura a duração do sono do alvo e impede que o alvo obtenha qualquer benefício desse descanso. Além disso, quando o alvo acorda, ele sofre 3d6 de dano psíquico.</p><p>Se você tiver uma parte do corpo, uma mecha de cabelo, um corte de unha ou uma parte semelhante do corpo do alvo, o alvo realiza seu teste de resistência com desvantagem.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "ill",
+    "activation": {
+      "type": "minute",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 8,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "spec",
+      "special": "Special"
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "zcsVH3p1FDkRcD8D": {
+        "type": "save",
+        "activation": {
+          "type": "minute",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.mind_sliver.pink",
+        "fallbacks": [
+          "jb2a.impact.004.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Dream",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

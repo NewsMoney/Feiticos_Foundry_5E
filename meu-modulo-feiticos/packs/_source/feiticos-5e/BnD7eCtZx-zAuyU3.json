@@ -1,0 +1,186 @@
+{
+  "_key": "!items!BnD7eCtZx-zAuyU3",
+  "_id": "BnD7eCtZx-zAuyU3",
+  "name": "Control Water",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Até a magia terminar, você controla qualquer água livre dentro de uma área que você escolher, que seja um cubo de até 30 metros de lado. Você pode escolher qualquer um dos seguintes efeitos ao lançar esta magia. Como uma ação no seu turno, você pode repetir o mesmo efeito ou escolher um diferente.</p><p><strong>Inundação.</strong> Você faz com que o nível de água de todas as águas paradas na área suba em até 6 metros. Se a área incluir uma costa, a água da inundação transbordará para a terra seca.</p><p>Se você escolher uma área em um grande corpo de água, poderá criar uma onda de 6 metros de altura que viaja de um lado a outro da área e depois cai. Quaisquer veículos Enormes ou menores no caminho da onda são carregados com ela para o outro lado. Qualquer veículo Enorme ou menor atingido pela onda tem 25% de chance de virar.</p><p>O nível da água permanece elevado até que a magia termine ou você escolha um efeito diferente. Se este efeito produzir uma onda, a onda se repetirá no início do seu próximo turno enquanto durar o efeito da inundação.</p><p><strong>Parte Água.</strong> Você faz com que a água na área se separe e crie uma trincheira. A trincheira se estende pela área da magia e a água separada forma uma parede em ambos os lados. A trincheira permanece até que a magia termine ou você escolha um efeito diferente. A água então enche lentamente a trincheira ao longo da próxima rodada até que o nível normal da água seja restaurado.</p><p><strong>Redirecionar fluxo.</strong> Você faz com que a água corrente na área se mova na direção que você escolher, mesmo que a água tenha que fluir sobre obstáculos, subir paredes ou em outras direções improváveis. A água na área se move conforme você a direciona, mas uma vez que ela se move além da área da magia, ela retoma seu fluxo com base nas condições do terreno. A água continua a se mover na direção que você escolher até que a magia termine ou você escolha um efeito diferente.</p><p><strong>Redemoinho.</strong> Este efeito requer um corpo de água profundo com pelo menos 15 metros quadrados e 7,5 metros de profundidade. Você causa a formação de um redemoinho no centro da área. O redemoinho forma um vórtice com 1,5 metro de largura na base, até 15 metros de largura no topo e 7,5 metros de altura. Qualquer criatura ou objeto na água e a até 7,5 metros do vórtice é puxado 3 metros em sua direção. Uma criatura pode nadar para longe do vórtice fazendo um teste de Força (Atletismo) contra sua CD de resistência de magia.</p><p>Quando uma criatura entra no vórtice pela primeira vez em um turno, ou começa seu turno lá, ela deve fazer um teste de resistência de Força. Se falhar na resistência, a criatura sofre 2d8 de dano de concussão e fica presa no vórtice até a magia terminar. Se obtiver sucesso, a criatura sofre metade do dano e não é pega no vórtice. Uma criatura pega no vórtice pode usar sua ação para tentar nadar para longe do vórtice como descrito acima, mas tem desvantagem no teste de Força (Atletismo) para fazer isso.</p><p>Na primeira vez em cada turno que um objeto entra no vórtice, o objeto sofre 2d8 de dano de concussão; esse dano ocorre a cada rodada que ele permanece no vórtice.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 4,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 300,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "a drop of water and a pinch of dust",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "j6-kHtbZj0AVTjbL": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.boulder.toss.01",
+        "fallbacks": [
+          "jb2a.impact.ground_crack.01.brown"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Control Water",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

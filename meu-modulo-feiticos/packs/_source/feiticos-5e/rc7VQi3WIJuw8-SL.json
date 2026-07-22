@@ -1,0 +1,152 @@
+{
+  "_key": "!items!rc7VQi3WIJuw8-SL",
+  "_id": "rc7VQi3WIJuw8-SL",
+  "name": "Simulacrum",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você molda uma duplicata ilusória de uma besta ou humanoide que esteja dentro do alcance durante todo o tempo de lançamento da magia. A duplicata é uma criatura, parcialmente real e formada de gelo ou neve, e pode realizar ações e ser afetada como uma criatura normal. Parece ser igual ao original, mas tem metade do ponto de vida máximo da criatura e é formado sem nenhum equipamento. Caso contrário, a ilusão usa todas as estatísticas da criatura que duplica, exceto que é uma construção.</p><p>O simulacro é amigável para você e para as criaturas que você designar. Ele obedece aos seus comandos falados, movendo-se e agindo de acordo com seus desejos e agindo no seu turno em combate. O simulacro não tem a habilidade de aprender ou se tornar mais poderoso, então ele nunca aumenta seu nível ou outras habilidades, nem pode recuperar espaços de magia gastos.</p><p>Se o simulacro for danificado, você pode consertá-lo em um laboratório alquímico, usando ervas e minerais raros no valor de 100gp por ponto de vida que ele recupera. O simulacro dura até cair para 0 pontos de vida, momento em que ele reverte para neve e derrete instantaneamente.</p><p>Se você lançar esta magia novamente, quaisquer duplicatas atualmente ativas que você criou com esta magia serão destruídas instantaneamente.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 7,
+    "school": "ill",
+    "activation": {
+      "type": "hour",
+      "value": 12,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "perm",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature’s body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "yZfeRbCGjoK8qqhi": {
+        "type": "utility",
+        "activation": {
+          "type": "hour",
+          "value": 12,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": null,
+          "units": "perm",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.illusion.intro.purple",
+        "fallbacks": [
+          "jb2a.smoke.puff.centered.purple"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Simulacrum",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

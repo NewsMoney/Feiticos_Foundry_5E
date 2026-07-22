@@ -1,0 +1,153 @@
+{
+  "_key": "!items!dy6KRgAi5GHimGiV",
+  "_id": "dy6KRgAi5GHimGiV",
+  "name": "Alter Self",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você assume uma forma diferente. Ao lançar a magia, escolha uma das seguintes opções, cujos efeitos duram pela duração da magia. Enquanto a magia durar, você pode encerrar uma opção como uma ação para obter os benefícios de outra diferente.</p><p><strong>Adaptação Aquática.</strong> Você adapta seu corpo a um ambiente aquático, brotando guelras e crescendo teias entre seus dedos. Você pode respirar debaixo d'água e ganhar um deslocamento de natação igual ao seu deslocamento de caminhada.</p><p><strong>Mudar a aparência.</strong> Você transforma sua aparência. Você decide sua aparência, incluindo altura, peso, características faciais, som da sua voz, comprimento do cabelo, coloração e características distintivas, se houver. Você pode aparecer como membro de outra raça, embora nenhuma de suas estatísticas mude. Você também não pode aparecer como uma criatura de tamanho diferente do seu, e sua forma básica permanece a mesma; se você for bípede, não poderá usar essa magia para se tornar quadrúpede, por exemplo. A qualquer momento durante a duração da magia, você pode usar sua ação para mudar sua aparência desta forma novamente.</p><p><strong>Armas Naturais.</strong> Você desenvolve garras, presas, espinhos, chifres ou uma arma natural diferente de sua escolha. Seus ataques desarmados causam 1d6 de dano contundente, perfurante ou cortante, conforme apropriado para a arma natural que você escolheu, e você é proficiente com seus ataques desarmados. Finalmente, a arma natural é mágica e você tem um bônus de +1 nas jogadas de ataque e dano que fizer usando-a.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 2,
+    "school": "trs",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour",
+      "concentration": true
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "self",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "tyvs4BxbbTWnKCoU": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
+        "fallbacks": [
+          "jb2a.sparkles.01.blue"
+        ],
+        "targeted": false
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Alter Self",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "_id": "cTFmlx1zD4H8-LdX",
+  "name": "Command",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você fala um comando de uma palavra para uma criatura que você pode ver dentro do alcance. O alvo deve ser bem sucedido em um teste de resistência de Sabedoria ou seguir o comando em seu próximo turno. A magia não tem efeito se o alvo for um morto-vivo, se ele não entender seu idioma ou se seu comando for diretamente prejudicial a ele. <br>A seguir seguem alguns comandos típicos e seus efeitos. Você pode emitir um comando diferente do descrito aqui. Se você fizer isso, o Mestre determinará como o alvo se comportará. Se o alvo não puder seguir seu comando, a magia termina.</p><p><strong>Aproximação.</strong> O alvo se move em sua direção pela rota mais curta e direta, terminando seu turno se ele se mover a até 1,5 metro de você.</p><p><strong>Largar.</strong> O alvo larga tudo o que está segurando e então<br>termina seu turno.</p><p><strong>Fugir.</strong> O alvo passa seu turno se afastando de você pelo mais rápido disponível. significa.</p><p><strong>Rastejar.</strong> O alvo cai no chão e então termina seu turno.</p><p><strong>Parar.</strong> O alvo não se move e não realiza nenhuma ação. Uma criatura voadora permanece no ar, desde que seja capaz de fazê-lo. Se precisar se mover para permanecer no ar, ele voa a distância mínima necessária para permanecer no ar.</p><p><strong>Em níveis mais altos.</strong> Quando você conjura esta magia usando um espaço de magia de 2º nível ou superior, você pode afetar uma criatura adicional para cada nível de espaço acima do 1º. As criaturas devem estar a até 9 metros uma da outra quando você as alvejar.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 1,
+    "school": "enc",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "round",
+      "concentration": false
+    },
+    "range": {
+      "value": 60,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "wLKt0MSq5-2GesZG": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "round",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Command",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

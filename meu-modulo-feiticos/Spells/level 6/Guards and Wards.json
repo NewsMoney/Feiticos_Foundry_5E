@@ -1,0 +1,151 @@
+{
+  "_id": "Hp-CqDLONBEzFgI-",
+  "name": "Guards and Wards",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você cria uma proteção que protege até 225 metros quadrados de espaço (uma área de 15 metros quadrados, ou cem quadrados de 1,5 metro ou vinte e cinco quadrados de 3 metros). A área protegida pode ter até 6 metros de altura e ter o formato que você desejar. Você pode proteger vários andares de uma fortaleza dividindo a área entre eles, desde que você possa entrar em cada área contígua enquanto lança a magia.</p><p>Ao lançar esta magia, você pode especificar indivíduos que não são afetados por nenhum ou todos os efeitos que você escolher. Você também pode especificar uma senha que, quando falada em voz alta, torna o locutor imune a esses efeitos.</p><p><em>Guardas e Proteções</em> cria os seguintes efeitos dentro da área protegida.</p><p><strong>Corredores.</strong> Nevoeiro preenche todos os corredores protegidos, tornando-os fortemente obscurecidos. Além disso, em cada interseção ou passagem que oferece uma escolha de direção, há 50 por cento de chance de que uma criatura que não seja você acredite que está indo na direção oposta àquela que ela escolheu.</p><p><strong>Portas.</strong> Todas as portas na área protegida são magicamente trancadas, como se seladas por uma magia <em>Arcane Lock</em>. Além disso, você pode cobrir até dez portas com uma ilusão (equivalente à função de objeto ilusório da magia <em>Ilusão Menor</em>) para fazê-las aparecer como seções simples de parede.</p><p><strong>Escadas.</strong> Teias preenchem todas as escadas na área protegida de cima para baixo, como a magia <em>Web</em>. Esses fios regeneram em 10 minutos se forem queimados ou arrancados enquanto durarem Guardas e Proteções.</p><p><strong>Outro efeito de magia.</strong> Você pode colocar um dos seguintes efeitos mágicos à sua escolha dentro da área protegida da fortaleza.</p><p>* Coloque <em>Luzes Dançantes</em> em quatro corredores. Você pode designar um programa simples que as luzes repitam enquanto durarem os Guardas e Proteções.<br>* Coloque <em>Boca Mágica</em> em dois locais.<br>* Coloque <em>Nuvem Fedorenta</em> em dois locais. Os vapores aparecem nos locais que você designar; Eles retornam dentro de 10 minutos se forem dispersos pelo vento enquanto Guardas e Proteções durarem.<br>* Coloque uma<em>Gust of Wind</em> constante em um corredor ou sala.<br>* Coloque uma<em>Suggestion</em> em um local. Você seleciona uma área de até 1,5 metro quadrado, e qualquer criatura que entre ou passe pela área recebe a sugestão mentalmente.</p><p>Toda a área protegida irradia magia. Um <em>Dispel Magic</em> lançado em um efeito específico, se bem-sucedido, remove apenas esse efeito.</p><p>Você pode criar uma estrutura permanentemente protegida e protegida lançando esta magia lá todos os dias durante um ano.</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 6,
+    "school": "abj",
+    "activation": {
+      "type": "minute",
+      "value": 10,
+      "condition": ""
+    },
+    "duration": {
+      "value": 24,
+      "units": "hour",
+      "concentration": false
+    },
+    "range": {
+      "value": null,
+      "units": "touch",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal"
+    ],
+    "materials": {
+      "value": "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "riiQODPzbVLV8KCH": {
+        "type": "utility",
+        "activation": {
+          "type": "minute",
+          "value": 10,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 24,
+          "units": "hour",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.shield.01.intro.blue",
+        "fallbacks": [
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": []
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Guards and Wards",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}

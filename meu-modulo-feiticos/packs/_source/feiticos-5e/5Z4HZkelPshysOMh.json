@@ -1,0 +1,181 @@
+{
+  "_key": "!items!5Z4HZkelPshysOMh",
+  "_id": "5Z4HZkelPshysOMh",
+  "name": "Modify Memory",
+  "type": "spell",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": {
+      "value": "<p>Você tenta remodelar as memórias de outra criatura. Uma criatura que você possa ver deve fazer um teste de resistência de Sabedoria. Se você estiver lutando contra a criatura, ela terá vantagem no teste de resistência. Se falhar na resistência, o alvo fica encantado por você durante o período. O alvo encantado fica incapacitado e inconsciente do que está ao seu redor, embora ainda possa ouvi-lo. Se sofrer algum dano ou for alvo de outra magia, esta magia termina e nenhuma das memórias do alvo é modificada.</p><p>Enquanto esta magia durar, você pode afetar a memória do alvo de um evento que ele experimentou nas últimas 24 horas e que não durou mais do que 10 minutos. Você pode eliminar permanentemente toda a memória do evento, permitir que o alvo se lembre do evento com perfeita clareza e detalhes exatos, alterar sua memória dos detalhes do evento ou criar uma memória de algum outro evento.</p><p>Você deve falar com o alvo para descrever como suas memórias são afetadas, e ele deve ser capaz de entender sua linguagem para que as memórias modificadas criem raízes. Sua mente preenche quaisquer lacunas nos detalhes da sua descrição. Se a magia terminar antes de você terminar de descrever as memórias modificadas, a memória da criatura não será alterada. Caso contrário, as memórias modificadas serão mantidas quando a magia terminar.</p><p>Uma memória modificada não afeta necessariamente o comportamento de uma criatura, especialmente se a memória contradizer as inclinações, tendências ou crenças naturais da criatura. Uma memória modificada ilógica, como a implantação de uma memória de quanto a criatura gostou de se banhar em ácido, é descartada, talvez como um pesadelo. O Mestre pode considerar uma memória modificada muito absurda para afetar uma criatura de maneira significativa.</p><p>uma magia <em>Remover Maldição</em> ou <em>Restauração Maior</em> lançado no alvo restaura a memória verdadeira da criatura.</p><p><strong>Em níveis mais altos.</strong> Se você lançar esta magia usando um espaço de magia de 6º nível ou superior, você pode alterar as memórias do alvo de um evento que ocorreu até 7 dias atrás (6º nível), 30 dias atrás (7º nível), 1 ano atrás (8º nível) ou qualquer momento no passado da criatura (9º nível).</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "PHB/SRD"
+    },
+    "level": 5,
+    "school": "enc",
+    "activation": {
+      "type": "action",
+      "value": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute",
+      "concentration": true
+    },
+    "range": {
+      "value": 30,
+      "units": "ft",
+      "special": ""
+    },
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "",
+        "size": null
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      }
+    },
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "muoiJhXvcZSpGuJK": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "",
+            "size": null
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "foundry-spell-pack": {
+      "animation": {
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
+        "fallbacks": [
+          "jb2a.markers.heart.complete.pink"
+        ],
+        "targeted": true
+      },
+      "automation": {
+        "generated": true,
+        "needsReview": true,
+        "conditions": [
+          "charmed",
+          "incapacitated"
+        ]
+      },
+      "description": {
+        "quality": "technical-reviewed-pt-br",
+        "needsReview": false
+      },
+      "status": {
+        "id": "charmed",
+        "ids": [
+          "charmed",
+          "incapacitated"
+        ],
+        "label": "charmed + incapacitated",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true
+        },
+        "specialDuration": []
+      }
+    },
+    "itemacro": {
+      "macro": {
+        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runSpell({ item, token, workflow });",
+        "name": "Modify Memory",
+        "img": "icons/svg/book.svg",
+        "type": "script",
+        "scope": "global",
+        "ownership": {
+          "default": 3
+        },
+        "flags": {}
+      }
+    },
+    "midi-qol": {
+      "onUseMacroName": "[postActiveEffects]ItemMacro"
+    }
+  }
+}
