@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel04Fldr",
+  "_id": "spellLevel04Fldr",
+  "name": "4º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 500000,
+  "color": null,
+  "description": "Magias de 4º círculo.",
+  "flags": {}
+}

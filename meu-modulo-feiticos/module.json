@@ -3,10 +3,10 @@
   "type": "module",
   "title": "Feitiços D&D 5e — 2014",
   "description": "Compêndio de 517 magias das regras de 2014, com descrições em português e automações opcionais.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "url": "https://github.com/NewsMoney/Feiticos_Foundry_5E",
   "manifest": "https://raw.githubusercontent.com/NewsMoney/Feiticos_Foundry_5E/main/meu-modulo-feiticos/module.json",
-  "download": "https://github.com/NewsMoney/Feiticos_Foundry_5E/releases/download/v2.0.0/meu-modulo-feiticos-v2.0.0.zip",
+  "download": "https://github.com/NewsMoney/Feiticos_Foundry_5E/releases/download/v2.0.1/meu-modulo-feiticos-v2.0.1.zip",
   "license": "ATTRIBUTION.md",
   "authors": [
     { "name": "Money" },

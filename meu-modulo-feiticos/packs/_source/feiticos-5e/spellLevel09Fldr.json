@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel09Fldr",
+  "_id": "spellLevel09Fldr",
+  "name": "9º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 1000000,
+  "color": null,
+  "description": "Magias de 9º círculo.",
+  "flags": {}
+}

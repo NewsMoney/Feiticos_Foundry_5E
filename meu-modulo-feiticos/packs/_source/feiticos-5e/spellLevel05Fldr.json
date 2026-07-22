@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel05Fldr",
+  "_id": "spellLevel05Fldr",
+  "name": "5º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 600000,
+  "color": null,
+  "description": "Magias de 5º círculo.",
+  "flags": {}
+}

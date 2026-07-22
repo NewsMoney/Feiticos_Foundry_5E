@@ -180,5 +180,6 @@
     "midi-qol": {
       "onUseMacroName": "[postActiveEffects]ItemMacro"
     }
-  }
+  },
+  "folder": "spellLevel00Fldr"
 }

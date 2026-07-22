@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel01Fldr",
+  "_id": "spellLevel01Fldr",
+  "name": "1º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": null,
+  "description": "Magias de 1º círculo.",
+  "flags": {}
+}

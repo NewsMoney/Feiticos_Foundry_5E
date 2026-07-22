@@ -2,6 +2,7 @@ import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { spellFolders } from "./pack-utils.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const entries = [];
@@ -19,9 +20,25 @@ const packDir = path.join(root, "packs", "feiticos-5e");
 await rm(sourceDir, { recursive: true, force: true });
 await rm(packDir, { recursive: true, force: true });
 await mkdir(sourceDir, { recursive: true });
+for (const folder of spellFolders) {
+  const source = {
+    _key: `!folders!${folder._id}`,
+    _id: folder._id,
+    name: folder.name,
+    type: "Item",
+    folder: null,
+    sorting: "a",
+    sort: folder.sort,
+    color: null,
+    description: `Magias de ${folder.name.toLocaleLowerCase("pt-BR")}.`,
+    flags: {}
+  };
+  await writeFile(path.join(sourceDir, `${folder._id}.json`), `${JSON.stringify(source, null, 2)}\n`);
+}
+const folderByLevel = new Map(spellFolders.map(folder => [folder.level, folder._id]));
 for (const item of entries) {
-  const source = { _key: `!items!${item._id}`, ...item };
+  const source = { _key: `!items!${item._id}`, ...item, folder: folderByLevel.get(item.system.level) };
   await writeFile(path.join(sourceDir, `${item._id}.json`), `${JSON.stringify(source, null, 2)}\n`);
 }
 await compilePack(sourceDir, packDir, { log: false });
-console.log(`Compêndio LevelDB para Foundry 14 construído com ${entries.length} magias.`);
+console.log(`Compêndio LevelDB para Foundry 14 construído com ${entries.length} magias em ${spellFolders.length} pastas.`);

@@ -7,7 +7,7 @@ Módulo de feitiços para Foundry VTT 14 com D&D5e 5.3+, animações opcionais e
 - Foundry Virtual Tabletop 14.
 - Sistema D&D Fifth Edition 5.3.0 ou posterior da série 5.3.
 - O manifesto usa o schema moderno (`id`, `type`, `compatibility`, `relationships` e `esmodules`).
-- O compêndio distribuído usa LevelDB em `packs/feiticos-5e`; o arquivo NeDB legado não é usado pelo manifesto.
+- O compêndio distribuído usa LevelDB em `packs/feiticos-5e`; o arquivo NeDB legado não é usado pelo manifesto. As magias são organizadas internamente nas pastas `Truques` e `1º Círculo` a `9º Círculo`.
 - Sequencer, JB2A, Midi-QOL, Item Macro e DAE continuam opcionais. Sem eles, os itens e suas atividades nativas permanecem disponíveis, mas integrações adicionais não são executadas.
 
 Para reconstruir e validar a distribuição destinada ao Foundry 14:

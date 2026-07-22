@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel08Fldr",
+  "_id": "spellLevel08Fldr",
+  "name": "8º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 900000,
+  "color": null,
+  "description": "Magias de 8º círculo.",
+  "flags": {}
+}

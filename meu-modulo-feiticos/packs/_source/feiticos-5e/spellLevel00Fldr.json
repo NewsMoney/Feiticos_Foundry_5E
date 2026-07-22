@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel00Fldr",
+  "_id": "spellLevel00Fldr",
+  "name": "Truques",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "description": "Magias de truques.",
+  "flags": {}
+}

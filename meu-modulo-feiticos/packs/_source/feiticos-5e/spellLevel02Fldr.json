@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel02Fldr",
+  "_id": "spellLevel02Fldr",
+  "name": "2º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": null,
+  "description": "Magias de 2º círculo.",
+  "flags": {}
+}

@@ -1,0 +1,12 @@
+{
+  "_key": "!folders!spellLevel03Fldr",
+  "_id": "spellLevel03Fldr",
+  "name": "3º Círculo",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 400000,
+  "color": null,
+  "description": "Magias de 3º círculo.",
+  "flags": {}
+}

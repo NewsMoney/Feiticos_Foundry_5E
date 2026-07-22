@@ -3,6 +3,7 @@ import { access, mkdtemp, readFile, readdir, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { spellFolders } from "./pack-utils.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(await readFile(path.join(root, "module.json"), "utf8"));
@@ -20,12 +21,25 @@ const temporaryDir = await mkdtemp(path.join(os.tmpdir(), "foundry-spells-v14-")
 try {
   await extractPack(path.join(root, pack.path), temporaryDir);
   const files = (await readdir(temporaryDir)).filter(file => file.endsWith(".json"));
-  if (files.length !== 517) errors.push(`LevelDB contém ${files.length} entradas em vez de 517`);
+  const documents = await Promise.all(files.map(async file => JSON.parse(await readFile(path.join(temporaryDir, file), "utf8"))));
+  const items = documents.filter(document => document._key?.startsWith("!items!"));
+  const folders = documents.filter(document => document._key?.startsWith("!folders!"));
+  if (items.length !== 517) errors.push(`LevelDB contém ${items.length} itens em vez de 517`);
+  if (folders.length !== spellFolders.length) errors.push(`LevelDB contém ${folders.length} pastas em vez de ${spellFolders.length}`);
+  const expectedFolders = new Map(spellFolders.map(folder => [folder._id, folder]));
+  for (const folder of folders) {
+    const expected = expectedFolders.get(folder._id);
+    if (!expected) errors.push(`${folder.name ?? folder._id}: pasta inesperada`);
+    else if (folder.name !== expected.name || folder.type !== "Item" || folder.folder !== null || folder.sorting !== "a") {
+      errors.push(`${folder.name ?? folder._id}: estrutura de pasta inválida`);
+    }
+  }
   const ids = new Set();
-  for (const file of files) {
-    const item = JSON.parse(await readFile(path.join(temporaryDir, file), "utf8"));
-    if (item.type !== "spell" || !item.system?.activities || !item.system?.description?.value) errors.push(`${item.name ?? file}: estrutura de Item incompleta`);
-    if (ids.has(item._id)) errors.push(`${item.name ?? file}: ID duplicado`);
+  for (const item of items) {
+    if (item.type !== "spell" || !item.system?.activities || !item.system?.description?.value) errors.push(`${item.name ?? item._id}: estrutura de Item incompleta`);
+    if (ids.has(item._id)) errors.push(`${item.name ?? item._id}: ID duplicado`);
+    const expectedFolder = spellFolders.find(folder => folder.level === item.system?.level);
+    if (!expectedFolder || item.folder !== expectedFolder._id) errors.push(`${item.name ?? item._id}: pasta incompatível com o nível ${item.system?.level}`);
     ids.add(item._id);
   }
 } finally {
@@ -36,5 +50,5 @@ if (errors.length) {
   console.error(errors.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log("Foundry 14: manifesto moderno, D&D5e 5.3+ e LevelDB com 517 itens válidos.");
+  console.log("Foundry 14: manifesto moderno, D&D5e 5.3+ e LevelDB com 517 itens organizados em 10 pastas válidas.");
 }
