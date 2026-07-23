@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Sacred%20Flame.png",
   "system": {
     "description": {
-      "value": "<p>Chamas radiantes descem sobre uma criatura a até 18 metros. Ela faz resistência de Destreza sem benefício de cobertura, sofrendo 1d8 radiante em falha. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Uma radiância semelhante a chamas desce sobre uma criatura que você possa ver dentro do alcance. O alvo realiza uma salvaguarda de Destreza. Ele não recebe benefício de cobertura nessa salvaguarda. Em uma falha, sofre 1d8 de dano radiante; em um sucesso, não sofre dano.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -152,7 +152,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

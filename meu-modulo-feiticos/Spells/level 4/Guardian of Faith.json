@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "JiVlCZBk5XX_075-": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,6 +108,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "guardian-trigger": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Hostil entra a 10 ft pela primeira vez no turno ou termina o turno ali"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "DEX: 20 radiante na falha, 10 no sucesso. Some o dano; remova o guardião após causar 60."
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 10,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "3"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
             "dex"
@@ -116,6 +171,30 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "20"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": null
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -133,10 +212,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie guardião em espaço desocupado; use o gatilho no raio de 10 ft e controle o total de 60 de dano."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 9 metros começa a dançar por até 1 minuto de concentração, gastando movimento, sofrendo desvantagem em ataques e resistências de Destreza e concedendo vantagem a atacantes. Como ação, pode fazer resistência de Sabedoria para encerrar. Criaturas imunes a encanto não são afetadas.</p>",
+      "value": "<p>Uma criatura visível a até 9 metros começa a dançar irresistivelmente, sem salvaguarda inicial, por até 1 minuto de concentração. Criaturas imunes a enfeitiçado não são afetadas.</p><p>O alvo gasta todo o movimento dançando sem sair do espaço, tem desvantagem em salvaguardas de Destreza e ataques, e ataques contra ele têm vantagem. Em seu turno, pode usar uma ação para fazer salvaguarda de Sabedoria, encerrando a magia em um sucesso.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "ufwVY7-BmSYdLT5c": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -110,9 +110,64 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "dance-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Ação do alvo em seu próprio turno"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "WIS para encerrar a dança."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
-            "dex"
+            "wis"
           ],
           "dc": {
             "calculation": "spellcasting",
@@ -135,10 +190,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique a dança sem save inicial; use somente o save WIS posterior quando o alvo gastar sua ação."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

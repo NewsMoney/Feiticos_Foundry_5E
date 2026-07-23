@@ -26,19 +26,21 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "100-foot wall or 60-foot-diameter ring"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "wall",
+        "size": 100,
+        "width": 5,
+        "height": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +60,7 @@
     },
     "activities": {
       "TnW79OShRA2WSJ-l": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,7 +92,7 @@
             "contiguous": false,
             "units": "ft",
             "type": "",
-            "size": null
+            "size": 100
           },
           "affects": {
             "choice": false
@@ -109,6 +111,71 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "blade-barrier-zone": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Ao surgir sobre a criatura, entrar pela primeira vez no turno ou terminar o turno na parede"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "DEX: 6d10 cortante na falha, metade no sucesso."
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "wall",
+            "size": 100,
+            "width": 5,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -123,8 +190,8 @@
                 "slashing"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
@@ -132,15 +199,6 @@
             "allow": false
           },
           "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,19 +207,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.slashing_attack.01.white",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A conjuração cria a parede; use a atividade de zona apenas nos gatilhos. A parede é terreno difícil e concede três quartos de cobertura."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -124,7 +124,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "O cubo descrito limita o tamanho máximo do objeto criado; não é uma área que seleciona criaturas nem exige template de resolução."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

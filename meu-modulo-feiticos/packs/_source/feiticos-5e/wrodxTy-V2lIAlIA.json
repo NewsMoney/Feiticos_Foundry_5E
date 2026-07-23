@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 9 metros faz resistência de Sabedoria, com vantagem se você ou seus aliados estiverem combatendo-a. Em falha, fica enfeitiçada por você durante 1 hora ou até ser atacada por seu grupo. Espaços superiores permitem mais alvos.</p>",
+      "value": "<p>Você tenta enfeitiçar uma criatura que possa ver a até 9 metros. Ela realiza uma salvaguarda de Sabedoria, com vantagem se você ou seus companheiros estiverem combatendo contra ela.</p><p>Em uma falha, a criatura fica enfeitiçada por você durante 1 hora ou até que você ou um de seus companheiros lhe cause dano. Enquanto estiver enfeitiçada, ela o considera uma conhecida amistosa.</p><p><strong>Em Círculos Superiores.</strong> Você pode afetar uma criatura adicional para cada círculo acima do 4º; os alvos devem estar a até 9 metros uns dos outros.</p>",
       "chat": ""
     },
     "source": {
@@ -136,10 +136,11 @@
         "needsReview": true,
         "conditions": [
           "charmed"
-        ]
+        ],
+        "manual": "Conceda vantagem no save a quem estiver combatendo o grupo; aplique Enfeitiçado na falha e remova quando o grupo ferir o alvo."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

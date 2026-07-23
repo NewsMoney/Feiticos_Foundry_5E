@@ -36,10 +36,10 @@
         "size": null
       },
       "affects": {
-        "choice": false,
-        "count": "1",
+        "choice": true,
+        "count": "3",
         "type": "creature",
-        "special": ""
+        "special": "Distribua três dardos; cada espaço acima do 1º cria um dardo adicional"
       }
     },
     "properties": [
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada dardo acerta automaticamente e causa 1d4 + 1 de força. Distribua três dardos entre criaturas visíveis; todos atingem simultaneamente. Crie um dardo adicional por nível de espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -112,18 +112,18 @@
           "parts": [
             {
               "custom": {
-                "enabled": false,
-                "formula": ""
+                "enabled": true,
+                "formula": "1d4 + 1"
               },
-              "number": 1,
-              "denomination": 4,
+              "number": null,
+              "denomination": null,
               "bonus": "",
               "types": [
                 "force"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "none",
+                "number": null
               }
             }
           ],

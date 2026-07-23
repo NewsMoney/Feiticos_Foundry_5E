@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Vicious%20Mockery.png",
   "system": {
     "description": {
-      "value": "<p>Uma criatura que ouça você a até 18 metros faz resistência de Sabedoria. Em falha sofre 1d4 psíquico e tem desvantagem no próximo ataque antes do fim do próximo turno. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você profere uma sequência de insultos impregnados de encantamento contra uma criatura que possa ver dentro do alcance. Se o alvo puder ouvi-lo, embora não precise compreendê-lo, deve realizar uma salvaguarda de Sabedoria. Em uma falha, sofre 1d4 de dano psíquico e tem desvantagem na próxima jogada de ataque que fizer antes do fim do próximo turno dele. Em um sucesso, não sofre efeito.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d4 no 5º nível, 3d4 no 11º e 4d4 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -151,7 +151,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

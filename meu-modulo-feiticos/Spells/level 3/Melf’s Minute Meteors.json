@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Seis meteoros orbitam você por até 10 minutos de concentração. Ao conjurar e como ação bônus posterior, lança até dois contra pontos a 36 metros; criaturas a até 1,5 metro fazem resistência de Destreza, sofrendo 2d6 de fogo por meteoro ou metade. Círculos superiores criam mais meteoros.</p>",
+      "value": "<p>Seis meteoros minúsculos aparecem orbitando você por até 10 minutos de concentração. Ao conjurar e, depois, como ação bônus em cada turno, você pode gastar um ou dois meteoros, enviando cada um a um ponto visível a até 36 metros.</p><p>Cada meteoro explode numa esfera de 1,5 metro de raio. Criaturas na área realizam salvaguarda de Destreza, sofrendo 2d6 de fogo na falha ou metade no sucesso. Meteoros não lançados desaparecem ao terminar a magia.</p><p><strong>Em Círculos Superiores.</strong> Cria dois meteoros adicionais por círculo acima do 3º. A conjuração não deve aplicar seis vezes o dano: escolha até dois pontos por uso e gaste as cargas.</p>",
       "chat": ""
     },
     "source": {
@@ -24,9 +24,7 @@
       "concentration": true
     },
     "range": {
-      "value": null,
-      "units": "self",
-      "special": ""
+      "value": null
     },
     "target": {
       "template": {
@@ -38,7 +36,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "self",
+        "type": "creature",
         "special": ""
       }
     },
@@ -58,7 +56,7 @@
     },
     "activities": {
       "ks5apDus73ON7KwB": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,6 +106,73 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        }
+      },
+      "minuteMeteorExplosion": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Ao conjurar ou em turno posterior; gaste um meteoro, no máximo dois por uso"
+        },
+        "description": {
+          "chatFlavor": "Explosão de um meteoro em esfera de raio 5 ft. Repita uma segunda vez se gastar dois meteoros."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "value": 120,
+          "units": "ft",
+          "special": "",
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 5,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "6"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
         },
         "damage": {
           "parts": [
@@ -123,8 +188,8 @@
                 "fire"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "none",
+                "number": null
               }
             }
           ],
@@ -132,15 +197,6 @@
             "allow": false
           },
           "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,11 +205,11 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.fire_bolt.orange",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.impact.004.blue"
         ],
-        "targeted": false
+        "targeted": true
       },
       "automation": {
         "generated": true,
@@ -161,9 +217,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Crie 6 cargas (+2/slot). Ao conjurar e como bônus posterior, gaste 1–2 e faça área de 5 ft, DEX, 2d6/metade por meteoro."
     },
     "itemacro": {
       "macro": {

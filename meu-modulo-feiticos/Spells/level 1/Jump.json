@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura. A distância do salto da criatura é triplicada até a magia terminar.</p>",
+      "value": "<p>Você toca uma criatura. Até a magia terminar, por 1 minuto, a distância dos saltos do alvo é triplicada.</p><p>A magia altera a distância que a criatura pode cobrir com seus saltos, mas não concede deslocamento adicional: cada pé saltado ainda consome movimento normalmente. Ela não exige concentração, não possui salvaguarda e não recebe benefício ao ser conjurada com espaços de nível superior.</p>",
       "chat": ""
     },
     "source": {
@@ -127,7 +127,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

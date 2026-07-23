@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "11",
         "type": "creature",
         "special": ""
       }
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique forma de nuvem a até dez voluntários mais o conjurador; transformações de 1 minuto e descida final são manuais."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

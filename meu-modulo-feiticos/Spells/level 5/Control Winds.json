@@ -26,19 +26,19 @@
     "range": {
       "value": 300,
       "units": "ft",
-      "special": ""
+      "special": "100-foot cube"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 100
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "iR31xL0-v9T4AshU": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 100
           },
           "affects": {
             "choice": false
@@ -109,15 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "str"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -136,10 +129,11 @@
         "needsReview": true,
         "conditions": [
           "prone"
-        ]
+        ],
+        "manual": "Escolha Calmadas, Ascendente ou Descendente; use STR apenas para o gatilho do modo descendente e troque o modo com ação."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

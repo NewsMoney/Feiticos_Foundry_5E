@@ -18,7 +18,7 @@
   "Shape Water": "<p>Você controla água num cubo de 1,5 metro a até 9 metros: move-a, cria formas animadas, altera cor ou opacidade, ou congela-a por 1 hora. Até dois efeitos duradouros podem coexistir e o gelo derrete se contiver criatura.</p>",
   "Sword Burst": "<p>Lâminas espectrais giram ao seu redor. Cada criatura escolhida a até 1,5 metro faz resistência de Destreza, sofrendo 1d6 de energia em falha. O dano aumenta nos níveis 5, 11 e 17.</p>",
   "Thorn Whip": "<p>Você realiza um ataque mágico corpo a corpo com alcance de 9 metros. Em acerto, o chicote causa 1d6 perfurante e pode puxar uma criatura Grande ou menor até 3 metros. O dano aumenta nos níveis 5, 11 e 17.</p>",
-  "Thunderclap": "<p>Um estrondo audível a 30 metros explode ao seu redor. Cada criatura a até 1,5 metro, exceto você, faz resistência de Constituição, sofrendo 1d6 trovejante em falha. O dano aumenta nos níveis 5, 11 e 17.</p>",
+  "Thunderclap": "<p>Você cria uma explosão de som trovejante, que pode ser ouvida a 30 metros de distância. Cada criatura, exceto você, em um raio de 1,5 metro deve realizar um teste de resistência de Constituição. Em uma falha, a criatura sofre 1d6 de dano trovejante.</p><p><strong>Em Níveis Superiores.</strong> O dano da magia aumenta em 1d6 quando você atinge o 5º nível (2d6), o 11º nível (3d6) e o 17º nível (4d6).</p>",
   "Toll the Dead": "<p>Uma criatura a até 18 metros faz resistência de Sabedoria. Em falha sofre 1d8 necrótico, ou 1d12 se já tiver perdido PV. O número de dados aumenta nos níveis 5, 11 e 17.</p>",
   "Word of Radiance": "<p>Uma palavra divina emite energia ao redor. Criaturas escolhidas a até 1,5 metro fazem resistência de Constituição, sofrendo 1d6 radiante em falha. O dano aumenta nos níveis 5, 11 e 17.</p>"
 }

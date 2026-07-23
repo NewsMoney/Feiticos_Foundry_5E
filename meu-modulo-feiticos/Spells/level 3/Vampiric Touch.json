@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>O toque de sua mão envolta em sombras pode sugar a força vital de outras pessoas para curar suas feridas. Faça um ataque mágico corpo a corpo contra uma criatura ao seu alcance. Se acertar, o alvo sofre 3d6 de dano necrótico e você recupera pontos de vida iguais à metade da quantidade de dano necrótico causado. Até que a magia termine, você pode fazer o ataque novamente em cada um de seus turnos como uma ação.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, o dano aumenta em 1d6 para cada nível do espaço acima do 3º.</p>",
+      "value": "<p>O toque de sua mão torna-se capaz de drenar força vital. Ao conjurar, realize um ataque mágico corpo a corpo contra uma criatura ao alcance. Em um acerto, ela sofre 3d6 de dano necrótico e você recupera pontos de vida iguais à metade do dano necrótico efetivamente causado.</p><p>Por até 1 minuto de concentração, em cada turno posterior você pode usar uma ação para repetir o ataque sem gastar outro espaço. Resistência, imunidade e outros modificadores alteram a cura porque ela usa o dano realmente causado.</p><p><strong>Em Círculos Superiores.</strong> +1d6 por círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -24,9 +24,7 @@
       "concentration": true
     },
     "range": {
-      "value": null,
-      "units": "self",
-      "special": ""
+      "value": null
     },
     "target": {
       "template": {
@@ -38,7 +36,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "self",
+        "type": "creature",
         "special": ""
       }
     },
@@ -59,7 +57,7 @@
     },
     "activities": {
       "4MTgr_c5J59oeS7i": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,42 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 3,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "necrotic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
-          },
-          "onSave": "none"
-        },
-        "attack": {
-          "ability": "",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": "spell"
-          }
         }
       }
     }
@@ -153,11 +115,11 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.energy_strands.range.standard.dark_purple",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
         "fallbacks": [
-          "jb2a.impact.004.dark_purple"
+          "jb2a.energy_strands.in.dark_purple"
         ],
-        "targeted": false
+        "targeted": true
       },
       "automation": {
         "generated": true,
@@ -165,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Faça ataque corpo a corpo ao conjurar e como ação posterior; em acerto cure metade do dano necrótico efetivo."
     },
     "itemacro": {
       "macro": {

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Energia gravitacional preenche um cone de 9 metros. Criaturas fazem resistência de Constituição, sofrendo 6d6 de energia em falha ou metade em sucesso. Quem falha é empurrado ou puxado até 4,5 metros, à sua escolha. O dano aumenta em 1d6 por círculo.</p>",
+      "value": "<p>Você libera pressão num cone de 9 metros. Cada criatura realiza salvaguarda de Constituição, sofrendo 6d6 de dano de energia na falha ou metade no sucesso. Para cada criatura que falhar, escolha empurrá-la ou puxá-la 4,5 metros. Mova-a para espaço desocupado; em sucesso não há deslocamento.</p><p>Objetos soltos totalmente na área também são empurrados ou puxados 4,5 metros, conforme a escolha geral da magia.</p><p><strong>Em Círculos Superiores.</strong> +1d6 por círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (30-foot cone)"
+      "special": "Cone de 30 ft"
     },
     "target": {
       "template": {
@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -131,7 +131,7 @@
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "half"
         },
         "save": {
           "ability": [
@@ -161,9 +161,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Após os saves, empurre ou puxe 15 ft somente cada criatura que falhou."
     },
     "itemacro": {
       "macro": {

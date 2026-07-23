@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Infestation.png",
   "system": {
     "description": {
-      "value": "<p>Parasitas surgem sobre uma criatura a até 9 metros. Em falha de Constituição, ela sofre 1d6 de veneno e move 1,5 metro numa direção aleatória se puder. O movimento não provoca ataques de oportunidade. O dano escala nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você faz ácaros, pulgas e outros parasitas surgirem sobre uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano de veneno e, se puder se mover e seu deslocamento for pelo menos 1,5 metro, move-se 1,5 metro numa direção aleatória. Esse movimento não provoca ataques de oportunidade. Em um sucesso, não sofre dano nem se move.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -152,7 +152,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

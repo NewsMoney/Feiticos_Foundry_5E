@@ -59,7 +59,7 @@
     },
     "activities": {
       "TxvSXoG_zBA96c-_": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -110,6 +110,71 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "sunbeam-line": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Na conjuração e como ação em turnos posteriores"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "CON: 6d8 radiante/metade; falha também Cego até o próximo turno. Undead e ooze têm desvantagem."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "line",
+            "size": 60,
+            "width": 5,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -124,8 +189,8 @@
                 "radiant"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
@@ -133,15 +198,6 @@
             "allow": false
           },
           "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -150,9 +206,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },
@@ -161,10 +217,11 @@
         "needsReview": true,
         "conditions": [
           "blinded"
-        ]
+        ],
+        "manual": "Use a linha na conjuração e novamente como ação; aplique Cego apenas na falha e desvantagem a undead/ooze."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

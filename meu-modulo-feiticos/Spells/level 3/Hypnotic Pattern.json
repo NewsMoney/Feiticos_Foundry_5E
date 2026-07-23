@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria um padrão retorcido de cores que serpenteia pelo ar dentro de um cubo de 9 metros dentro do alcance. O padrão aparece por um momento e desaparece. Cada criatura na área que vir o padrão deve fazer um teste de resistência de Sabedoria. Se falhar na resistência, a criatura fica encantada enquanto durar. Enquanto enfeitiçada por esta magia, a criatura fica incapacitada e tem velocidade 0.</p><p>A magia termina para uma criatura afetada se ela sofrer algum dano ou se outra pessoa usar uma ação para tirar a criatura de seu estupor.</p>",
+      "value": "<p>Você cria um padrão de cores num cubo de 9 metros dentro de 36 metros. O padrão aparece por um instante e desaparece. Cada criatura que o veja realiza uma salvaguarda de Sabedoria. Em uma falha, fica enfeitiçada por até 1 minuto de concentração; enquanto enfeitiçada dessa forma, fica incapacitada e tem velocidade 0.</p><p>O efeito termina individualmente se a criatura sofrer dano ou se outra criatura usar uma ação para sacudi-la. Em um sucesso, nenhum efeito é aplicado. A conjuração não causa dano, e criaturas incapazes de ver o padrão não fazem a salvaguarda.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "Cubo de 30 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 30
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 30
           },
           "affects": {
             "choice": false
@@ -134,31 +134,13 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "charmed",
-          "incapacitated"
-        ]
+        "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
-      "status": {
-        "id": "charmed",
-        "ids": [
-          "charmed",
-          "incapacitated"
-        ],
-        "label": "charmed + incapacitated",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
-      }
+      "manualWorkflow": "Aplique charmed, incapacitated e velocidade 0 só nas falhas; remova por dano ou ação para sacudir."
     },
     "itemacro": {
       "macro": {

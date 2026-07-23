@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>A luz divina sai de você e se funde em um brilho suave em um raio de 9 metros ao seu redor. As criaturas à sua escolha naquele raio quando você conjura esta magia emitem luz fraca em um raio de 1,5 metro e têm vantagem em todos os testes de resistência, e outras criaturas têm desvantagem nas jogadas de ataque contra elas até que a magia termine. Além disso, quando um demônio ou morto-vivo atinge uma criatura afetada com um ataque corpo a corpo, a aura brilha com uma luz brilhante. O atacante deve ser bem sucedido em um teste de resistência de Constituição ou ficará cego até o fim da magia.</p>",
+      "value": "<p>Ao conjurar, escolha criaturas num raio de 9 metros de você. Por até 1 minuto de concentração, cada escolhida emite penumbra a 1,5 metro, tem vantagem em todas as salvaguardas e ataques feitos por outras criaturas contra ela têm desvantagem. Sair da área depois não remove o benefício, e entrar depois não o concede.</p><p>Não há salvaguarda inicial. Quando um corruptor ou morto-vivo acerta uma criatura afetada com ataque corpo a corpo, o atacante realiza salvaguarda de Constituição; em falha, fica cego até a magia terminar.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": ""
+      "special": "30-foot-radius at casting"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 30
       },
       "affects": {
-        "choice": false,
-        "count": "1",
-        "type": "self",
+        "choice": true,
+        "count": "",
+        "type": "ally",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "b94NCu44C1_P3cA2": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,11 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 30
           },
           "affects": {
-            "choice": false
+            "choice": true,
+            "type": "ally",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -109,6 +111,25 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "save": null,
+        "damage": null
+      },
+      "holy-aura-retaliation": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fiend ou undead acerta afetado com ataque corpo a corpo"
+        },
+        "target": {
+          "affects": {
+            "type": "enemy",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -135,10 +156,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione beneficiados na conjuração; role CON apenas quando fiend/undead os acertar corpo a corpo."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -26,18 +26,18 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": ""
+      "special": "Self (10-foot radius)"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "self",
         "special": ""
       }
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Aura móvel de 10 ft centrada no conjurador: abafa, extingue chamas pequenas, dispersa vapores, cria terreno difícil para outros e impõe desvantagem a ataques de arma à distância que a atravessem."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

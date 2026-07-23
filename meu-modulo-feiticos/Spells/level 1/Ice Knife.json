@@ -57,7 +57,7 @@
     },
     "activities": {
       "8s5brTzgo4EspkTe": {
-        "type": "save",
+        "type": "attack",
         "activation": {
           "type": "action",
           "value": 1,
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ataque inicial: 1d10 perfurante somente no acerto. Acertando ou errando, execute em seguida a atividade Explosão de Gelo."
         },
         "duration": {
           "value": null,
@@ -125,7 +125,68 @@
                 "mode": "whole",
                 "number": 1
               }
-            },
+            }
+          ],
+          "critical": {
+            "allow": true
+          },
+          "onSave": "none"
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        }
+      },
+      "iceKnifeBurst": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Após o ataque inicial, acertando ou errando"
+        },
+        "description": {
+          "chatFlavor": "Crie uma explosão de raio 5 pés centrada no alvo do ataque. Todas as criaturas na área, inclusive o alvo, fazem Destreza; somente as que falharem sofrem 2d6 frio. +1d6 frio por nível de espaço acima do 1º."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "circle",
+            "size": 5
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
             {
               "custom": {
                 "enabled": false,
@@ -147,15 +208,6 @@
             "allow": false
           },
           "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }

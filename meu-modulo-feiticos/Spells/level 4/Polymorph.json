@@ -134,10 +134,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Voluntário não salva; rejeite metamorfo/0 PV. Substitua pela ficha de fera de CR permitido, reverta a 0 PV/fim e transfira dano excedente."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

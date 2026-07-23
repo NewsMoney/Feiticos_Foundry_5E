@@ -26,19 +26,19 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "60-foot wall or 20-foot-diameter ring"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "wall",
+        "size": 60
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "ItSDpUuubbaRKi4m": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,7 +90,7 @@
             "contiguous": false,
             "units": "ft",
             "type": "",
-            "size": null
+            "size": 60
           },
           "affects": {
             "choice": false
@@ -106,6 +106,61 @@
         "midiProperties": {},
         "overTimeProperties": {
           "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": null,
+        "damage": null
+      },
+      "wall-zone-damage": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Entra na parede pela primeira vez no turno ou termina na parede/a 10 ft do lado quente"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "5d8 fogo sem salvaguarda; apenas no lado escolhido."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "wall",
+            "size": 60,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
@@ -131,7 +186,60 @@
           "critical": {
             "allow": false
           },
-          "onSave": "half"
+          "onSave": "full"
+        }
+      },
+      "wall-appears": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente quando a parede surge; criaturas dentro de sua área"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "DEX: 5d8 fogo na falha, metade no sucesso."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "wall",
+            "size": 60,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
@@ -141,6 +249,119 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "wall-zone": {
+          "type": "damage",
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": "Entra na parede pela primeira vez no turno ou termina na parede/a 10 ft do lado quente"
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": true
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "5d8 fogo sem salvaguarda; apenas no lado escolhido."
+          },
+          "duration": {
+            "value": 1,
+            "units": "minute",
+            "concentration": true,
+            "override": true
+          },
+          "effects": [],
+          "range": {
+            "override": true
+          },
+          "target": {
+            "template": {
+              "type": "wall",
+              "size": 60,
+              "units": "ft",
+              "contiguous": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "midiProperties": {},
+          "overTimeProperties": {
+            "saveRemoves": false,
+            "preRemoveConditionText": "",
+            "postRemoveConditionText": ""
+          },
+          "damage": {
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 5,
+                "denomination": 8,
+                "bonus": "",
+                "types": [
+                  "fire"
+                ],
+                "scaling": {
+                  "mode": "whole",
+                  "number": 1
+                }
+              }
+            ],
+            "critical": {
+              "allow": false
+            },
+            "onSave": "full"
+          }
+        }
+      }
+    },
+    "flags": {
+      "foundry-spell-pack": {
+        "description": {
+          "quality": "reviewed-deep-pt-br",
+          "needsReview": false
+        },
+        "automation": {
+          "needsReview": true,
+          "manual": "Escolha parede reta ou anel e lado quente. Use Surgimento uma vez com save; use Zona para entrada/fim de turno sem save."
         }
       }
     }
@@ -149,19 +370,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.fire_bolt.orange",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha parede reta ou anel e lado quente. Use Surgimento uma vez com save; use Zona para entrada/fim de turno sem save."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

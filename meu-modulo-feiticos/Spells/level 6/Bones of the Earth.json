@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Até seis pilares de pedra emergem de pontos no chão a até 36 metros. Eles podem erguer criaturas, que fazem resistência de Destreza para evitar serem prensadas e impedidas. Cada pilar possui CA e PV e deixa terreno difícil ao ser destruído. Espaços superiores criam mais pilares.</p>",
+      "value": "<p>Até seis pilares de pedra, cada um com 1,5 metro de diâmetro e até 9 metros de altura, emergem de pontos no chão que você possa ver. Se um pilar surgir sob uma criatura, ela faz salvaguarda de Destreza: em sucesso move-se para um lado; em falha é elevada.</p><p>Quando um teto impede a elevação, a criatura sofre 6d6 de dano de concussão e fica impedida entre o pilar e o teto. Ela ou outra criatura pode usar uma ação para libertá-la com teste de Força ou Destreza contra sua CD. Cada pilar tem CA 5, 30 PV, imunidades apropriadas e deixa terreno difícil quando destruído.</p><p><strong>Em Círculos Superiores.</strong> Você cria dois pilares adicionais por círculo acima do 6º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "Up to six 5-foot-diameter pillars"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
         "type": "",
-        "size": null
+        "size": 5
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "6",
+        "type": "space",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "wBNHVURMSokuF39m": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -89,7 +89,7 @@
             "contiguous": false,
             "units": "ft",
             "type": "",
-            "size": null
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -108,6 +108,69 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "pillar-crush": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente se o teto impedir a elevação do alvo"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "DEX evita a elevação; dano e condição só existem quando o alvo é prensado contra teto."
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -122,8 +185,8 @@
                 "bludgeoning"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
@@ -131,15 +194,6 @@
             "allow": false
           },
           "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -148,9 +202,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.boulder.toss.01",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": true
       },
@@ -159,10 +213,11 @@
         "needsReview": true,
         "conditions": [
           "restrained"
-        ]
+        ],
+        "manual": "Posicione cada pilar. Só use Prensar quando houver teto; elevação, deslocamento lateral, objeto e fuga exigem resolução manual."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

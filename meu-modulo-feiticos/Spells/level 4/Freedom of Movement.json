@@ -124,10 +124,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique por 1 h: ignora terreno difícil, impede redução mágica de deslocamento e paralisia/impedimento mágicos; 5 ft escapam de restrição não mágica; movimento normal sob água."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

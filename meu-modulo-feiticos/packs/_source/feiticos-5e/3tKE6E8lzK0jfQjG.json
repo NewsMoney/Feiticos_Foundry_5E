@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Como reação à morte de um humanoide próximo, você aprisiona sua alma numa pequena jaula por 8 horas. Pode consumir um dos seis usos para recuperar PV, obter vantagem, fazer uma pergunta à alma ou enxergar um local conhecido por ela. Libertar ou esgotar os usos encerra a magia.</p>",
+      "value": "<p>Como reação quando um humanoide a até 18 metros morre, você aprisiona sua alma numa pequena jaula de 100 PO por 8 horas. A jaula possui seis usos; liberar a alma ou gastar o último encerra a magia.</p><p>Gaste um uso para: como ação bônus, recuperar 2d8 PV; como ação bônus, obter vantagem no próximo ataque, teste ou salvaguarda; como ação, fazer uma pergunta à alma; ou como ação, ver por até 10 minutos um local conhecido por ela, recebendo visão verdadeira durante a observação.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "L-B7geQRXOH7mHLV": {
-        "type": "heal",
+        "type": "utility",
         "activation": {
           "type": "reaction",
           "value": 1,
@@ -109,22 +109,9 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "healing": {
-          "number": 2,
-          "denomination": 8,
-          "bonus": "@mod",
-          "types": [
-            "healing"
-          ],
-          "custom": {
-            "enabled": false,
-            "formula": ""
-          },
-          "scaling": {
-            "mode": "whole",
-            "number": 1
-          }
-        }
+        "save": null,
+        "healing": null,
+        "damage": null
       }
     }
   },
@@ -141,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Controle seis usos e escolha uma das quatro atividades; respostas e observação remota exigem adjudicação."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Mind%20Sliver.png",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 18 metros faz resistência de Inteligência. Em falha sofre 1d6 psíquico e subtrai 1d4 da próxima resistência realizada antes do fim do seu próximo turno. O dano escala nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você introduz uma ponta desorientadora de energia psíquica na mente de uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Inteligência. Em uma falha, sofre 1d6 de dano psíquico e deve subtrair 1d4 da próxima salvaguarda que fizer antes do fim do seu próximo turno. Em um sucesso, não sofre dano nem penalidade.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -151,7 +151,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

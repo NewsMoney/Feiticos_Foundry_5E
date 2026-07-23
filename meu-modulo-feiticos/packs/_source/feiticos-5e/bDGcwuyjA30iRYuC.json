@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "object",
         "special": ""
       }
     },
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha duas plantas Grandes inanimadas no mesmo plano; o portal dura uma rodada e travessias são manuais."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

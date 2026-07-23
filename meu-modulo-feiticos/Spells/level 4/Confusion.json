@@ -26,18 +26,18 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "10-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -89,13 +89,75 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
           },
           "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      },
+      "confusion-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo afetado"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "WIS em sucesso encerra Confusão; role d10 no início de cada turno enquanto afetado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -134,10 +196,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique a tabela d10 e bloqueie reações na falha; use o save final por alvo. O raio aumenta 5 ft por círculo acima do 4º."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

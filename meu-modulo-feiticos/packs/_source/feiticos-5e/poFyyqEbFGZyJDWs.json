@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você interrompe brevemente o fluxo do tempo para todos, menos para você mesmo. Nenhum tempo passa para outras criaturas, enquanto você realiza 1d4 + 1 turnos consecutivos, durante os quais você pode usar ações e se mover normalmente.</p><p>Esta magia termina se uma das ações que você usa durante este período, ou quaisquer efeitos que você cria durante este período, afetar uma criatura que não seja você ou um objeto sendo usado ou carregado por alguém que não seja você. Além disso, a magia termina se você se mover para um local a mais de 300 metros do local onde o lançou.</p>",
+      "value": "<p>Você interrompe o tempo para todos exceto você e realiza 1d4 + 1 turnos consecutivos. Durante esse período, outras criaturas não agem nem são afetadas pela passagem do tempo.</p><p>A magia termina antes se uma ação ou efeito seu afetar outra criatura ou um objeto vestido ou carregado por ela, ou se você se afastar mais de 300 metros do ponto de conjuração. Role a quantidade de turnos e encerre ao primeiro gatilho; não há ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Role 1d4+1 turnos exclusivos; encerre ao afetar outra criatura/posse ou afastar-se mais de 1.000 ft."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

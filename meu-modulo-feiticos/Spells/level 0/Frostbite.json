@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Frostbite.png",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 18 metros faz resistência de Constituição. Em falha sofre 1d6 de frio e tem desvantagem no próximo ataque com arma antes do fim do próximo turno. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você faz uma geada entorpecente formar-se sobre uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano de frio e tem desvantagem na próxima jogada de ataque com arma que fizer antes do fim do próximo turno dele. Em um sucesso, não sofre dano nem a desvantagem.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -151,7 +151,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

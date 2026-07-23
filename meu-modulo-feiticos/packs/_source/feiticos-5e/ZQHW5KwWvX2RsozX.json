@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Um raio formando uma linha de 30 metros de comprimento e 1,5 metro de largura sai de você na direção que você escolher. Cada criatura na linha deve fazer um teste de resistência de Destreza. Uma criatura sofre 8d6 de dano elétrico se falhar na resistência, ou metade do dano se obtiver sucesso.</p><p>O raio incendeia objetos inflamáveis ​​na área que não estão sendo usados ​​ou carregados.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, o dano aumenta em 1d6 para cada nível de espaço acima do 3º.</p>",
+      "value": "<p>Um relâmpago forma uma linha de 30 metros de comprimento por 1,5 metro de largura originada em você. Cada criatura na linha realiza uma salvaguarda de Destreza, sofrendo 8d6 de dano elétrico na falha ou metade no sucesso.</p><p>O relâmpago incendeia objetos inflamáveis na área que não estejam vestidos nem sendo carregados.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d6 por círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,20 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (100-foot line)"
+      "special": "Linha de 100 ft por 5 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
         "type": "line",
-        "size": 100
+        "size": 100,
+        "width": 5
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -90,7 +91,8 @@
             "contiguous": false,
             "units": "ft",
             "type": "line",
-            "size": 100
+            "size": 100,
+            "width": 5
           },
           "affects": {
             "choice": false
@@ -161,7 +163,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

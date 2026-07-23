@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você explode a mente de uma criatura que você pode ver dentro do alcance, tentando destruir seu intelecto e personalidade. O alvo sofre 4d6 de dano psíquico e deve fazer um teste de resistência de Inteligência.</p><p>Se falhar, os valores de Inteligência e Carisma da criatura tornam-se 1. A criatura não pode lançar magias, ativar itens mágicos, compreender a linguagem ou se comunicar de qualquer forma inteligível. A criatura pode, entretanto, identificar seus amigos, segui-los e até mesmo protegê-los.</p><p>Ao final de cada 30 dias, a criatura pode repetir seu teste de resistência contra esta magia. Se for bem-sucedido no teste de resistência, a magia termina.</p><p>A magia também pode ser encerrado com <em>Restauração Maior</em>, <em>Curar</em> ou <em>Desejo</em>.</p>",
+      "value": "<p>Você ataca a mente de uma criatura visível a até 45 metros. Ela sofre 4d6 de dano psíquico independentemente do resultado e então realiza salvaguarda de Inteligência. Em falha, Inteligência e Carisma tornam-se 1; ela não pode conjurar, ativar itens mágicos, compreender idiomas nem comunicar-se de modo inteligível, embora reconheça, siga e proteja amigos.</p><p>Ao fim de cada 30 dias, o alvo repete a salvaguarda, encerrando o efeito em um sucesso. <em>Greater Restoration</em>, <em>Heal</em> ou <em>Wish</em> também o encerram.</p>",
       "chat": ""
     },
     "source": {
@@ -142,6 +142,32 @@
             "formula": ""
           }
         }
+      },
+      "feeblemind-repeat": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Ao fim de cada 30 dias"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
       }
     }
   },
@@ -158,10 +184,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "O dano ocorre antes e independentemente do save; aplique INT/CHA 1 e repita INT a cada 30 dias."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

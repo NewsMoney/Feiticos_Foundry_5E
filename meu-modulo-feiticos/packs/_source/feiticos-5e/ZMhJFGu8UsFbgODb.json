@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Até a magia terminar, ao fazer um teste de Carisma, você pode substituir o número obtido por 15. Além disso, não importa o que você diga, a magia que determinaria se você está dizendo a verdade indica que você está sendo verdadeiro.</p>",
+      "value": "<p>Durante 1 hora, sem concentração, sempre que realizar um teste de Carisma você pode substituir o número mostrado no d20 por 15. Isso é uma substituição do resultado natural, não um bônus fixo.</p><p>Além disso, não importa o que diga, qualquer magia que determine se você está dizendo a verdade indica que suas palavras são verdadeiras.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Em checks de Carisma, permita substituir o resultado natural por 15; não aplique +15."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

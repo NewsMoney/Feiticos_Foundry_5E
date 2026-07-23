@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito morto-vivo fantasmagórico, pútrido ou esquelético por até 1 hora de concentração, usando um foco de 300 PO. Ele compartilha sua iniciativa e ganha ataque e propriedades conforme a forma. Espaços superiores fortalecem PV, dano e quantidade de ataques.</p>",
+      "value": "<p>Você invoca um espírito morto-vivo em espaço desocupado visível a até 27 metros, usando Undead Spirit escalado pelo nível do espaço. Escolha Ghostly, Putrid ou Skeletal; a forma altera movimento, ataques e efeitos. Exige componente de 300 PO e concentração por até 1 hora.</p><p>É amistoso, age imediatamente após você e obedece comandos verbais; sem comando por ação bônus, usa Dodge e evita perigo. Desaparece a 0 PV ou ao término. A conjuração não realiza os ataques, saves ou condições da ficha.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "WidYodj1ZR6y9IEI": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,55 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "necrotic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -165,9 +116,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.energy_strands.in.dark_purple"
         ],
         "targeted": true
       },
@@ -177,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha forma, invoque Undead Spirit escalado pelo slot e resolva efeitos pela ficha."
     },
     "itemacro": {
       "macro": {

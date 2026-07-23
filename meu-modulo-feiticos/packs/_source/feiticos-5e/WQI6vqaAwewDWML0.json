@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "creatureOrObject",
         "special": ""
       }
     },
@@ -158,10 +158,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Criaturas sofrem zero no sucesso. Objetos não mágicos e criações de força seguem a resolução própria descrita."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Ao lançar esta magia, você inscreve um glifo que afeta outras criaturas (o efeito não precisa ser prejudicial), seja sobre uma superfície (como uma mesa ou uma seção do chão ou parede) ou dentro de um objeto que pode ser fechado (como um livro, um pergaminho ou um baú de tesouro) para ocultar o glifo. O glifo pode cobrir uma área de até 3 metros de diâmetro. Se a superfície ou objeto for movido a mais de 3 metros de onde você lançou esta magia, o glifo será quebrado e a magia terminará sem ser acionada.</p><p>O glifo é quase invisível e requer um teste bem sucedido de Inteligência (Investigação) contra sua CD para resistir às suas magias para ser encontrado.</p><p>Você decide o que aciona o glifo quando você lança a magia. Para glifos inscritos em uma superfície, os gatilhos mais típicos incluem tocar ou ficar sobre o glifo, remover outro objeto que cobre o glifo, aproximar-se a uma certa distância do glifo ou manipular o objeto no qual o glifo está inscrito. Para glifos inscritos em um objeto, os gatilhos mais comuns incluem abrir esse objeto, aproximar-se a uma certa distância do objeto ou ver ou ler o glifo. Uma vez que um glifo é ativado, esta magia termina.</p><p>Você pode refinar ainda mais o gatilho para que a seja ativada apenas sob certas circunstâncias ou de acordo com características físicas (como altura ou peso), tipo de criatura (por exemplo, a proteção pode ser configurada para afetar aberrações ou drow) ou alinhamento. Você também pode definir condições para criaturas que não acionam o glifo, como aquelas que dizem uma determinada senha.</p><p>Ao inscrever o glifo, escolha <em>runas explosivas</em> ou um <em>glifo de magia</em>.</p><p><strong>Runas explosivas.</strong> Quando acionado, o glifo irrompe com energia mágica em uma esfera de 6 metros de raio centrada no glifo. A esfera se espalha pelos cantos. Cada criatura na área deve fazer um teste de resistência de Destreza. Uma criatura sofre 5d8 de dano de ácido, frio, fogo, raio ou trovão se falhar no teste de resistência (sua escolha quando você cria o glifo), ou metade desse dano se obtiver sucesso.</p><p><strong>Glifo de magia.</strong> Você pode armazenar uma magia preparada de 3º nível ou inferior no glifo, lançando-o como parte da criação do glifo. A magia deve ter como alvo uma única criatura ou uma área. A magia armazenada não tem efeito imediato quando lançado desta forma. Quando o glifo é acionado, a magia armazenada é lançada. Se a magia tiver um alvo, ela terá como alvo a criatura que acionou o glifo. Se a magia afetar uma área, a área será centrada naquela criatura. Se a magia invocar criaturas hostis ou criar objetos ou armadilhas prejudiciais, elas aparecem o mais próximo possível do intruso e o atacam. Se a magia exigir concentração, ele durará até o final de sua duração total.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, o dano de um glifo de <em>runas explosivas</em> aumenta em 1d8 para cada nível do espaço acima do 3º. Se você criar um <em>glifo de magia</em>, poderá armazenar qualquer magia até o mesmo nível do espaço usado para o <em>glifo de proteção</em>.</p>",
+      "value": "<p>Após 1 hora, você inscreve um glifo quase invisível numa superfície ou objeto tocado, consumindo incenso e diamante em pó de 200 PO. Define um gatilho e pode refiná-lo por características físicas observáveis. O glifo se rompe sem disparar se o objeto for movido mais de 3 metros do local da conjuração.</p><p><strong>Runas Explosivas.</strong> Ao disparar, esfera de 6 metros; Destreza; 5d8 de ácido, frio, fogo, elétrico ou trovejante escolhido, metade no sucesso. +1d8 por círculo superior.</p><p><strong>Glifo de Magia.</strong> Armazena magia preparada de até 3º círculo que alveje criatura ou área; ela usa seus parâmetros, não exige concentração e dura até o fim normal. O nível armazenável acompanha o espaço usado.</p><p>A conjuração apenas prepara o glifo: não faça salvaguarda nem dano antes do gatilho.</p>",
       "chat": ""
     },
     "source": {
@@ -57,7 +57,7 @@
     },
     "activities": {
       "DO4nujtVGy-IvrVr": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "hour",
           "value": 1,
@@ -107,6 +107,61 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        }
+      },
+      "glyphExplosiveRunes": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente quando o gatilho inscrito for satisfeito"
+        },
+        "description": {
+          "chatFlavor": "Disparo posterior de Runas Explosivas. Antes de rolar, escolha ácido, frio, fogo, elétrico ou trovejante e aplique esse tipo ao resultado; a inscrição do glifo não causa dano."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "1"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
@@ -116,6 +171,13 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -136,9 +198,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha runa ou magia e registre o gatilho. Execute área/save/dano ou a magia armazenada somente quando disparar."
     },
     "itemacro": {
       "macro": {

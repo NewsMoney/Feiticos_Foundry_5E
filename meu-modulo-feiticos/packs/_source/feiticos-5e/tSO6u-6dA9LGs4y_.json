@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Control%20Flames.png",
   "system": {
     "description": {
-      "value": "<p>Você manipula uma chama não mágica num cubo de 1,5 metro: pode expandi-la sobre combustível, apagá-la, alterar cor e iluminação ou criar formas simples por 1 hora. Até três efeitos duradouros podem coexistir.</p>",
+      "value": "<p>Você escolhe uma chama não mágica que possa ver dentro do alcance e que caiba em um cubo de 1,5 metro. Escolha um efeito: expandir instantaneamente a chama até 1,5 metro sobre combustível; extingui-la; dobrar ou reduzir por 1 hora a área de luz plena e penumbra e alterar a cor; ou fazer formas simples aparecerem nas chamas por 1 hora.</p><p>Você pode manter simultaneamente até três efeitos não instantâneos desta magia e pode dispensar qualquer um deles com uma ação. Escolha e resolva o modo manualmente; a atividade não realiza ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -32,7 +32,8 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": ""
+        "type": "cube",
+        "size": 5
       },
       "affects": {
         "choice": false,
@@ -86,7 +87,9 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "cube",
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -118,9 +121,10 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha um dos quatro modos; não há ataque, salvaguarda ou dano."
     },
     "itemacro": {
       "macro": {

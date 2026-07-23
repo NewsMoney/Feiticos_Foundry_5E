@@ -157,7 +157,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Trajetória linear de um objeto contra a primeira criatura atingida; alvo único, sem template de área."
       },
       "description": {
         "quality": "reviewed-pt-br",

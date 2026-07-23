@@ -1,0 +1,317 @@
+{
+  "Acid Splash": {
+    "definition": { "count": "2", "target": "creature", "mode": "save", "save": "dex", "damage": [1, 6, "acid"] },
+    "item": {
+      "system": { "description": { "value": "<p>Você arremessa uma bolha de ácido contra uma criatura dentro do alcance ou contra duas criaturas dentro do alcance que estejam a até 1,5 metro uma da outra. Cada alvo deve realizar uma salvaguarda de Destreza; em uma falha, sofre 1d6 de dano ácido, e não sofre dano em um sucesso.</p><p><strong>Seleção de alvos:</strong> ao escolher dois alvos, confirme manualmente a distância máxima de 1,5 metro entre eles.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Blade Ward": {
+    "item": {
+      "system": { "description": { "value": "<p>Você estende a mão e traça no ar um símbolo de proteção. Até o fim do seu próximo turno, você tem resistência a dano de concussão, cortante e perfurante causado por ataques com armas.</p><p>A resistência não se aplica a dano desses tipos que não seja causado por um ataque com arma. O efeito termina automaticamente no fim do seu próximo turno.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Booming Blade": {
+    "definition": { "mode": "utility", "range": 5, "target": "creature", "count": "1", "damage": null },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Você brande a arma usada na conjuração e realiza com ela um ataque corpo a corpo contra uma criatura a até 1,5 metro. Em um acerto, o alvo sofre os efeitos normais do ataque e fica envolto em energia trovejante até o início do seu próximo turno. Se, antes disso, ele se mover voluntariamente 1,5 metro ou mais, sofre 1d8 de dano trovejante e a magia termina.</p><p><strong>Procedimento:</strong> a atividade aciona a arma corpo a corpo equipada. Aplique o dano normal da arma. O dano por movimento é condicional e deve ser aplicado somente quando o alvo se mover voluntariamente; movimento forçado não o dispara.</p><p><strong>Em Níveis Superiores.</strong> No 5º nível, o ataque causa +1d8 trovejante no acerto e o dano por movimento passa a 2d8. Esses danos tornam-se +2d8/3d8 no 11º nível e +3d8/4d8 no 17º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Role a arma equipada; aplique o dano tardio somente após movimento voluntário de 1,5 metro." } }
+    }
+  },
+  "Chill Touch": {
+    "item": {
+      "system": { "description": { "value": "<p>Você cria uma mão esquelética espectral no espaço de uma criatura dentro do alcance e realiza um ataque mágico à distância. Em um acerto, o alvo sofre 1d8 de dano necrótico e não pode recuperar pontos de vida até o início do seu próximo turno.</p><p>Se o alvo for um morto-vivo, ele também tem desvantagem nas jogadas de ataque contra você até o fim do seu próximo turno.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "A desvantagem adicional aplica-se somente a mortos-vivos." } }
+    }
+  },
+  "Control Flames": {
+    "definition": { "target": "space", "template": { "type": "cube", "size": 5 }, "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você escolhe uma chama não mágica que possa ver dentro do alcance e que caiba em um cubo de 1,5 metro. Escolha um efeito: expandir instantaneamente a chama até 1,5 metro sobre combustível; extingui-la; dobrar ou reduzir por 1 hora a área de luz plena e penumbra e alterar a cor; ou fazer formas simples aparecerem nas chamas por 1 hora.</p><p>Você pode manter simultaneamente até três efeitos não instantâneos desta magia e pode dispensar qualquer um deles com uma ação. Escolha e resolva o modo manualmente; a atividade não realiza ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha um dos quatro modos; não há ataque, salvaguarda ou dano." } }
+    }
+  },
+  "Create Bonfire": {
+    "definition": { "target": "space", "template": { "type": "cube", "size": 5 }, "mode": "save", "save": "dex", "damage": [1, 8, "fire"] },
+    "item": {
+      "system": {
+        "target": { "template": { "contiguous": false, "units": "ft", "type": "cube", "size": 5 }, "affects": { "choice": false, "count": "", "type": "space", "special": "" } },
+        "description": { "value": "<p>Você cria uma fogueira no chão em um ponto que possa ver dentro do alcance. Até a magia terminar, ela preenche um cubo de 1,5 metro. Uma criatura no espaço da fogueira quando ela aparece deve realizar uma salvaguarda de Destreza; em uma falha, sofre 1d8 de dano de fogo, e não sofre dano em um sucesso.</p><p>A criatura repete a salvaguarda quando entra no espaço da fogueira pela primeira vez em um turno ou termina seu turno ali. Objetos inflamáveis no espaço que não estejam vestidos ou carregados pegam fogo. A área persiste por até 1 minuto, exigindo concentração; os gatilhos posteriores devem ser resolvidos quando ocorrerem.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Repetir DEX save ao entrar pela primeira vez no turno ou terminar o turno na fogueira." } }
+    }
+  },
+  "Dancing Lights": {
+    "item": {
+      "system": { "description": { "value": "<p>Você cria até quatro luzes do tamanho de tochas dentro do alcance, fazendo-as parecer tochas, lanternas ou orbes luminosos. Também pode combinar as quatro numa forma humanoide vagamente brilhante de tamanho Médio. Cada luz emite penumbra em um raio de 3 metros.</p><p>Como ação bônus no seu turno, você pode mover as luzes até 18 metros para novos pontos dentro do alcance. Uma luz deve permanecer a até 6 metros de outra luz criada pela magia e desaparece se exceder o alcance. A magia dura até 1 minuto e exige concentração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "areaReviewed": true }, "manualWorkflow": "A macro cria quatro luzes; mova-as como ação bônus e mantenha a separação máxima de 6 metros." } }
+    }
+  },
+  "Druidcraft": {
+    "definition": { "target": "space", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Sussurrando aos espíritos da natureza, você cria um dos seguintes efeitos dentro do alcance: um pequeno efeito sensorial que prevê o clima em sua localização pelas próximas 24 horas; o florescimento instantâneo de uma flor, vagem ou botão; um efeito sensorial inofensivo que caiba num cubo de 1,5 metro; ou acender ou apagar instantaneamente uma vela, tocha ou pequena fogueira.</p><p>Escolha o modo ao conjurar. Nenhuma opção realiza ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "areaReviewed": true }, "manualWorkflow": "Escolha clima, florescimento, efeito sensorial ou chama." } }
+    }
+  },
+  "Eldritch Blast": {
+    "definition": { "mode": "attack", "attack": "ranged", "damage": [1, 10, "force"], "count": "4" },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Um raio de energia crepitante parte em direção a uma criatura dentro do alcance. Realize um ataque mágico à distância contra o alvo. Em um acerto, ele sofre 1d10 de dano de energia.</p><p><strong>Em Níveis Superiores.</strong> A magia cria dois raios no 5º nível, três no 11º e quatro no 17º. Você pode direcionar os raios ao mesmo alvo ou a alvos diferentes. Faça uma jogada de ataque separada para cada raio; cada acerto causa 1d10, em vez de aumentar os dados de um único ataque.</p>" },
+        "target": { "template": { "contiguous": false, "units": "ft", "type": "" }, "affects": { "choice": false, "count": "4", "type": "creature", "special": "Um ataque separado por raio; 1/2/3/4 raios nos níveis 1/5/11/17." } },
+        "activities": { "a2Vr_yOqNOgiv90e": { "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 10, "bonus": "", "types": ["force"], "scaling": { "mode": "", "number": null } }], "critical": { "allow": true }, "onSave": "full" } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "areaReviewed": true }, "manualWorkflow": "Repita a atividade uma vez por raio e selecione o alvo de cada ataque." } }
+    }
+  },
+  "Encode Thoughts": {
+    "definition": { "range": "self", "target": "self", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você puxa da própria mente uma memória, ideia ou mensagem e a transforma num filamento de energia mental tangível que permanece por 8 horas ou até você conjurar esta magia novamente. O filamento aparece num espaço desocupado a até 1,5 metro de você e é um objeto Miúdo, sem peso, que pode ser segurado e transportado.</p><p>Enquanto segura um filamento, você pode conjurar esta magia para receber o conteúdo dele. Se Detect Thoughts criar o filamento, Encode Thoughts também permite lê-lo. Não há ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Fire Bolt": {
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "creatureOrObject", "special": "" } }, "description": { "value": "<p>Você arremessa uma fagulha de fogo contra uma criatura ou objeto dentro do alcance. Realize um ataque mágico à distância. Em um acerto, o alvo sofre 1d10 de dano de fogo.</p><p>Um objeto inflamável atingido pela magia pega fogo se não estiver vestido nem sendo carregado. Essa ignição não se aplica automaticamente a criaturas ou a objetos protegidos.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d10 no 5º nível, 3d10 no 11º e 4d10 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Friends": {
+    "item": {
+      "system": { "description": { "value": "<p>Durante a duração, você tem vantagem em todos os testes de Carisma direcionados a uma criatura à sua escolha que não seja hostil a você. A magia exige concentração e dura até 1 minuto.</p><p>Quando a magia termina, a criatura percebe que você usou magia para influenciar seu humor e torna-se hostil a você. Uma criatura propensa à violência pode atacá-lo; outra pode buscar retaliação de outra forma, conforme a natureza da interação e a decisão do Mestre.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Ao fim da magia, informe que o alvo percebe a influência e torna-se hostil." } }
+    }
+  },
+  "Frostbite": {
+    "item": {
+      "system": { "description": { "value": "<p>Você faz uma geada entorpecente formar-se sobre uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano de frio e tem desvantagem na próxima jogada de ataque com arma que fizer antes do fim do próximo turno dele. Em um sucesso, não sofre dano nem a desvantagem.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Green-Flame Blade": {
+    "definition": { "mode": "utility", "range": 5, "target": "creature", "count": "1", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você brande a arma usada na conjuração e realiza com ela um ataque corpo a corpo contra uma criatura a até 1,5 metro. Em um acerto, o alvo sofre os efeitos normais do ataque e você pode fazer fogo verde saltar para uma segunda criatura que possa ver a até 1,5 metro do primeiro alvo. A segunda criatura sofre dano de fogo igual ao seu modificador de habilidade de conjuração.</p><p><strong>Procedimento:</strong> role a arma equipada. O salto só ocorre em um acerto e exige uma segunda criatura válida; não há salvaguarda.</p><p><strong>Em Níveis Superiores.</strong> No 5º nível, o primeiro alvo sofre +1d8 de fogo e o segundo sofre 1d8 + modificador. Ambos os danos aumentam em 1d8 no 11º e novamente no 17º nível.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Role a arma; em acerto escolha segundo alvo a 1,5 metro e aplique o salto conforme o nível." } }
+    }
+  },
+  "Guidance": {
+    "item": {
+      "system": { "description": { "value": "<p>Você toca uma criatura voluntária. Uma vez antes de a magia terminar, o alvo pode rolar 1d4 e adicionar o resultado a um teste de habilidade à escolha. Ele pode rolar o dado antes ou depois de realizar o teste, mas antes de o Mestre declarar o resultado.</p><p>A magia dura até 1 minuto, exige concentração e termina após o d4 ser usado.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Gust": {
+    "item": {
+      "system": { "description": { "value": "<p>Você captura o ar e o compele a criar um dos efeitos dentro do alcance. Uma criatura Média ou menor escolhida deve vencer uma salvaguarda de Força ou ser empurrada até 1,5 metro para longe de você. Alternativamente, você empurra até 3 metros um objeto não preso nem carregado que pese até 2,25 kg, sem causar dano, ou cria um efeito sensorial inofensivo usando ar.</p><p>A salvaguarda existe somente no modo de empurrar criatura. Os modos de objeto e efeito sensorial não causam dano nem exigem rolagem.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Use o save apenas para criatura Média ou menor; os outros modos são utilitários." } }
+    }
+  },
+  "Infestation": {
+    "item": {
+      "system": { "description": { "value": "<p>Você faz ácaros, pulgas e outros parasitas surgirem sobre uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano de veneno e, se puder se mover e seu deslocamento for pelo menos 1,5 metro, move-se 1,5 metro numa direção aleatória. Esse movimento não provoca ataques de oportunidade. Em um sucesso, não sofre dano nem se move.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Light": {
+    "item": {
+      "system": { "description": { "value": "<p>Você toca um objeto que não exceda 3 metros em nenhuma dimensão. Até a magia terminar, ele emite luz plena num raio de 6 metros e penumbra por mais 6 metros. A luz pode ter a cor escolhida por você e cobrir completamente o objeto com algo opaco bloqueia a luz.</p><p>Se o objeto estiver vestido ou carregado por uma criatura hostil, ela deve vencer uma salvaguarda de Destreza para evitar a magia. A magia dura 1 hora e termina se você a conjurar novamente ou dispensá-la com uma ação.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "areaReviewed": true }, "manualWorkflow": "Se o objeto estiver com criatura hostil, role DEX save antes de aplicar a luz." } }
+    }
+  },
+  "Lightning Lure": {
+    "item": {
+      "system": { "description": { "value": "<p>Você cria um açoite de energia elétrica que atinge uma criatura à sua escolha que possa ver a até 4,5 metros. O alvo realiza uma salvaguarda de Força. Em uma falha, é puxado até 3 metros em linha reta em sua direção e, se terminar o movimento a até 1,5 metro de você, sofre 1d8 de dano elétrico. Em um sucesso, não é puxado e não sofre dano.</p><p>O dano é condicionado à posição após o puxão; não o aplique se o alvo terminar além de 1,5 metro.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Após falha, confirme que o alvo terminou a até 1,5 metro antes de aplicar dano." } }
+    }
+  },
+  "Mage Hand": {
+    "definition": { "target": "space", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Uma mão espectral flutuante aparece num ponto dentro do alcance e permanece por 1 minuto. Ela desaparece se ficar a mais de 9 metros de você ou se você conjurar esta magia novamente. Você pode usar sua ação para controlar a mão e movê-la até 9 metros.</p><p>A mão pode manipular objetos, abrir portas ou recipientes destrancados, guardar ou retirar um item de um recipiente aberto e derramar o conteúdo de um frasco. Ela não pode atacar, ativar itens mágicos nem carregar mais de 4,5 kg.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Magic Stone": {
+    "definition": { "mode": "utility", "activation": "bonus", "range": "touch", "target": "object", "count": "3", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você toca de uma a três pedras e as imbui com magia. Você ou outra criatura pode realizar um ataque mágico à distância com uma delas, arremessando-a ou usando uma funda. Se arremessada, a pedra tem alcance de 18 metros. Quem não for você adiciona seu modificador de habilidade de conjuração, e não o próprio, à jogada de ataque.</p><p>Em um acerto, o alvo sofre 1d6 + seu modificador de habilidade de conjuração de dano de concussão. A magia termina numa pedra após ela acertar ou errar. Conjurar a magia novamente encerra o efeito nas pedras anteriores.</p><p><strong>Procedimento:</strong> a conjuração não é um ataque e não causa dano imediato; ela cria um item temporário com três usos para os ataques posteriores.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Mending": {
+    "item": {
+      "system": { "description": { "value": "<p>Esta magia repara uma única quebra ou rasgo num objeto tocado, como um elo de corrente partido, duas metades de uma chave, um manto rasgado ou um odre furado. Desde que a quebra ou o rasgo não exceda 30 centímetros em nenhuma dimensão, você o conserta sem deixar vestígio do dano anterior.</p><p>A magia pode reparar fisicamente um item mágico ou construto, mas não restaura a magia nem as propriedades mágicas perdidas. O tempo de conjuração é 1 minuto e não há rolagem.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Message": {
+    "item": {
+      "system": { "description": { "value": "<p>Você aponta para uma criatura dentro do alcance e sussurra uma mensagem. O alvo, e somente ele, ouve a mensagem e pode responder num sussurro que somente você ouve. Você pode conjurar através de objetos sólidos se conhecer o alvo e souber que ele está além da barreira.</p><p>Silêncio mágico, 30 centímetros de pedra, 2,5 centímetros de metal comum, uma folha fina de chumbo ou 90 centímetros de madeira bloqueiam a magia. Ela não precisa seguir uma linha reta e pode contornar cantos e passar por aberturas.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Mind Sliver": {
+    "item": {
+      "system": { "description": { "value": "<p>Você introduz uma ponta desorientadora de energia psíquica na mente de uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Inteligência. Em uma falha, sofre 1d6 de dano psíquico e deve subtrair 1d4 da próxima salvaguarda que fizer antes do fim do seu próximo turno. Em um sucesso, não sofre dano nem penalidade.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Minor Illusion": {
+    "definition": { "target": "space", "template": { "type": "cube", "size": 5 }, "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você cria por 1 minuto um som ou a imagem de um objeto dentro do alcance. Um som pode variar de volume e continuar pela duração. Uma imagem deve caber num cubo de 1,5 metro; ela não produz som, luz, cheiro nem outro efeito sensorial. Interação física revela a imagem, pois coisas atravessam-na.</p><p>Uma criatura pode usar sua ação para examinar o som ou a imagem e realizar um teste de Inteligência (Investigação) contra sua CD de magia. Em sucesso, ela reconhece a ilusão, que se torna tênue para ela. Se uma criatura discernir a ilusão pelo exame ou interação, o efeito não a engana.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha som ou imagem; testes de Investigação são feitos somente por criaturas que examinem a ilusão." } }
+    }
+  },
+  "Mold Earth": {
+    "definition": { "target": "space", "template": { "type": "cube", "size": 5 }, "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Escolha uma porção de terra ou pedra solta que possa ver dentro do alcance e que caiba num cubo de 1,5 metro. Você pode escavá-la e depositá-la suavemente a até 1,5 metro; fazer formas, cores ou palavras aparecerem por 1 hora; ou tornar o terreno difícil, ou normal se já for difícil, por 1 hora.</p><p>Você pode manter até dois efeitos não instantâneos simultaneamente e pode dispensar um deles com uma ação. Escolha o modo manualmente; nenhum causa dano ou exige salvaguarda.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Poison Spray": {
+    "item": {
+      "system": { "description": { "value": "<p>Você estende a mão em direção a uma criatura que possa ver dentro do alcance e projeta uma nuvem de gás nocivo. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d12 de dano de veneno; em um sucesso, não sofre dano.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d12 no 5º nível, 3d12 no 11º e 4d12 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Prestidigitation": {
+    "definition": { "target": "space", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você cria um efeito mágico menor dentro do alcance: um efeito sensorial instantâneo e inofensivo; acende ou apaga uma vela, tocha ou pequena fogueira; limpa ou suja um objeto de até 0,03 m³; esfria, aquece ou tempera até 0,03 m³ de material não vivo por 1 hora; cria uma marca ou símbolo por 1 hora; ou cria uma bugiganga não mágica ou imagem ilusória que caiba em sua mão até o fim do próximo turno.</p><p>Você pode manter até três efeitos não instantâneos simultaneamente e pode dispensá-los com uma ação. Escolha o modo; não há ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Primal Savagery": {
+    "definition": { "range": "touch", "target": "creature" },
+    "item": {
+      "system": { "description": { "value": "<p>Você canaliza magia primal para fazer dentes ou unhas ficarem afiados e corrosivos. Realize um ataque mágico corpo a corpo contra uma criatura a até 1,5 metro. Em um acerto, o alvo sofre 1d10 de dano ácido. Após o ataque, seus dentes ou unhas voltam ao normal.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d10 no 5º nível, 3d10 no 11º e 4d10 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Produce Flame": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": null },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Uma chama tremeluzente aparece em sua mão e permanece por 10 minutos. Ela não causa dano a você nem ao seu equipamento e emite luz plena em 3 metros e penumbra por mais 3 metros. A magia termina se você dispensá-la, conjurá-la novamente ou atacar com a chama.</p><p>Você pode arremessar a chama contra uma criatura a até 9 metros como parte da ação de conjuração ou com uma ação posterior. Realize um ataque mágico à distância; em um acerto, o alvo sofre 1d8 de dano de fogo.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" },
+        "activities": {
+          "kggJ3jYvagAVwIJq": { "type": "utility", "damage": null, "save": null, "attack": null },
+          "produceFlameAtk": { "type": "attack", "name": "Arremessar a chama", "activation": { "type": "action", "value": null, "override": false, "condition": "Requer a chama criada por Produce Flame." }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "A chama é arremessada e a magia termina." }, "duration": { "units": "inst", "value": "", "concentration": false, "override": false }, "effects": [], "range": { "override": true, "value": 30, "units": "ft", "special": "" }, "target": { "template": { "contiguous": false, "units": "ft", "type": "" }, "affects": { "choice": false, "count": "1", "type": "creature" }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": true, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "attack": { "ability": "", "bonus": "", "critical": { "threshold": null }, "flat": false, "type": { "value": "ranged", "classification": "spell" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 8, "bonus": "", "types": ["fire"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": true }, "onSave": "full" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Ray of Frost": {
+    "item": {
+      "system": { "description": { "value": "<p>Um raio gélido de luz azulada atinge uma criatura dentro do alcance. Realize um ataque mágico à distância. Em um acerto, o alvo sofre 1d8 de dano de frio e seu deslocamento é reduzido em 3 metros até o início do seu próximo turno.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Resistance": {
+    "item": {
+      "system": { "description": { "value": "<p>Você toca uma criatura voluntária. Uma vez antes de a magia terminar, o alvo pode rolar 1d4 e adicionar o resultado a uma salvaguarda à escolha. Pode rolar o dado antes ou depois da salvaguarda, mas antes de o Mestre declarar o resultado.</p><p>A magia dura até 1 minuto, exige concentração e termina após o d4 ser usado.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Sacred Flame": {
+    "item": {
+      "system": { "description": { "value": "<p>Uma radiância semelhante a chamas desce sobre uma criatura que você possa ver dentro do alcance. O alvo realiza uma salvaguarda de Destreza. Ele não recebe benefício de cobertura nessa salvaguarda. Em uma falha, sofre 1d8 de dano radiante; em um sucesso, não sofre dano.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Sapping Sting": {
+    "item": {
+      "system": { "description": { "value": "<p>Você drena momentaneamente a vitalidade de uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d4 de dano necrótico e fica caído. Em um sucesso, não sofre dano e não fica caído.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d4 no 5º nível, 3d4 no 11º e 4d4 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Shape Water": {
+    "definition": { "target": "space", "template": { "type": "cube", "size": 5 }, "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você escolhe uma área de água que possa ver dentro do alcance e que caiba num cubo de 1,5 metro. Você pode mover ou alterar o fluxo da água até 1,5 metro; formar formas simples e animá-las; alterar cor ou opacidade uniformemente; ou congelar a água, desde que não haja criatura nela.</p><p>Os efeitos não instantâneos duram 1 hora. Você pode manter até dois deles simultaneamente e dispensar um com uma ação. A água descongela em 1 hora. Nenhum modo realiza ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Shillelagh": {
+    "definition": { "mode": "utility", "activation": "bonus", "range": "touch", "target": "object", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>O bordão ou clava que você segura é imbuído com o poder da natureza por 1 minuto. Durante esse período, você pode usar sua habilidade de conjuração, em vez de Força, nas jogadas de ataque e dano corpo a corpo com a arma; o dado de dano torna-se d8 e a arma é considerada mágica para superar resistência e imunidade.</p><p>A magia termina se você a conjurar novamente ou soltar a arma. A conjuração apenas encanta a arma: ela não realiza um ataque nem causa dano imediato.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Shocking Grasp": {
+    "item": {
+      "system": { "description": { "value": "<p>Relâmpagos saltam de sua mão para uma criatura que você tenta tocar. Realize um ataque mágico corpo a corpo contra o alvo. Você tem vantagem na jogada se o alvo estiver usando armadura feita de metal.</p><p>Em um acerto, o alvo sofre 1d8 de dano elétrico e não pode realizar reações até o início do próximo turno dele.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Conceda vantagem se o alvo estiver usando armadura de metal." } }
+    }
+  },
+  "Spare the Dying": {
+    "item": {
+      "system": { "description": { "value": "<p>Você toca uma criatura viva que tenha 0 pontos de vida. Ela se torna estável e deixa de realizar salvaguardas contra a morte, embora não recupere pontos de vida.</p><p>A magia não tem efeito sobre mortos-vivos nem construtos. Não há ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Sword Burst": {
+    "item": {
+      "system": { "description": { "value": "<p>Você cria um círculo momentâneo de lâminas espectrais que varrem ao seu redor. Todas as outras criaturas a até 1,5 metro de você devem realizar uma salvaguarda de Destreza. Em uma falha, uma criatura sofre 1d6 de dano de energia; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Thaumaturgy": {
+    "definition": { "target": "space", "damage": null },
+    "item": {
+      "system": { "description": { "value": "<p>Você manifesta um pequeno prodígio dentro do alcance: sua voz fica até três vezes mais alta; chamas tremulam, clareiam, escurecem ou mudam de cor; tremores inofensivos percorrem o chão; um som instantâneo surge de um ponto; uma porta ou janela destrancada se abre ou fecha instantaneamente; ou seus olhos mudam de aparência.</p><p>Os efeitos persistentes duram até 1 minuto. Você pode manter até três deles simultaneamente e dispensar qualquer um com uma ação. Não há ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Thorn Whip": {
+    "item": {
+      "system": { "description": { "value": "<p>Você cria um longo chicote semelhante a uma videira coberta de espinhos, que ataca uma criatura dentro do alcance. Realize um ataque mágico corpo a corpo. Em um acerto, o alvo sofre 1d6 de dano perfurante e, se for Grande ou menor, você pode puxá-lo até 3 metros em sua direção.</p><p>O puxão é opcional e ocorre somente em um acerto.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Thunderclap": {
+    "item": {
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Toll the Dead": {
+    "item": {
+      "system": {
+        "description": { "value": "<p>Você aponta para uma criatura que possa ver dentro do alcance, e o som de um sino doloroso preenche o ar ao redor dela. O alvo realiza uma salvaguarda de Sabedoria. Em uma falha, sofre 1d8 de dano necrótico. Se já tiver perdido qualquer ponto de vida, use d12 em vez de d8. Em um sucesso, não sofre dano.</p><p><strong>Em Níveis Superiores.</strong> A quantidade de dados aumenta: dois no 5º nível, três no 11º e quatro no 17º. O dado continua sendo d8 para alvo com PV máximos e d12 para alvo ferido.</p>" },
+        "activities": {
+          "F25sSzoJngkirAXV": { "name": "Alvo com PV máximos — d8" },
+          "tollDeadWounded": { "type": "save", "name": "Alvo ferido — d12", "activation": { "type": "action", "value": null, "override": false, "condition": "Use somente se o alvo estiver abaixo dos pontos de vida máximos." }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "O sino usa d12 porque o alvo já perdeu pontos de vida." }, "duration": { "units": "inst", "value": "", "concentration": false, "override": false }, "effects": [], "range": { "override": false }, "target": { "template": { "contiguous": false, "units": "ft", "type": "" }, "affects": { "choice": false, "count": "1", "type": "creature" }, "override": false, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": true, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["wis"], "dc": { "calculation": "spellcasting", "formula": "" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 12, "bonus": "", "types": ["necrotic"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "none" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha a atividade d12 somente se o alvo estiver abaixo dos PV máximos." } }
+    }
+  },
+  "True Strike": {
+    "item": {
+      "system": { "description": { "value": "<p>Você estende a mão e aponta para uma criatura dentro do alcance. Sua magia concede uma breve compreensão das defesas do alvo. No seu próximo turno, você recebe vantagem na primeira jogada de ataque contra esse alvo, desde que a magia ainda não tenha terminado.</p><p>A magia exige concentração e dura até 1 rodada. A vantagem aplica-se somente ao alvo escolhido, é consumida pelo primeiro ataque elegível e não realiza ataque nem causa dano na conjuração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplicar vantagem somente ao primeiro ataque contra o alvo no turno seguinte." } }
+    }
+  },
+  "Vicious Mockery": {
+    "item": {
+      "system": { "description": { "value": "<p>Você profere uma sequência de insultos impregnados de encantamento contra uma criatura que possa ver dentro do alcance. Se o alvo puder ouvi-lo, embora não precise compreendê-lo, deve realizar uma salvaguarda de Sabedoria. Em uma falha, sofre 1d4 de dano psíquico e tem desvantagem na próxima jogada de ataque que fizer antes do fim do próximo turno dele. Em um sucesso, não sofre efeito.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d4 no 5º nível, 3d4 no 11º e 4d4 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Word of Radiance": {
+    "definition": { "target": "creature", "count": "" },
+    "item": {
+      "system": { "target": { "template": { "contiguous": false, "units": "ft", "type": "circle", "size": 5 }, "affects": { "choice": true, "count": "", "type": "creature", "special": "Criaturas que você possa ver e escolher; exclui o conjurador." } }, "description": { "value": "<p>Você pronuncia uma palavra divina e uma radiância ardente irrompe de você. Cada criatura à sua escolha que você possa ver a até 1,5 metro deve realizar uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano radiante; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  }
+}

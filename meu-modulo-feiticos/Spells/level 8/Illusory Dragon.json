@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Um dragão sombrio Grande aparece por até 1 minuto de concentração. Inimigos que o veem fazem resistência de Sabedoria contra medo. Como ação bônus, você o move e expele cone de 18 metros, causando 7d6 do tipo escolhido em falha de Inteligência ou metade. Investigação revela a ilusão, mas não elimina o dano psíquico.</p>",
+      "value": "<p>Um dragão ilusório Grande aparece num espaço visível a até 36 metros por até 1 minuto de concentração. Ao surgir, inimigos que possam vê-lo fazem salvaguarda de Sabedoria; em falha ficam amedrontados por 1 minuto e repetem a salvaguarda no fim de cada turno.</p><p>Como ação bônus, você move o dragão até 18 metros e faz um cone de 18 metros partir dele. Escolha ácido, frio, fogo, elétrico, necrótico ou veneno; criaturas no cone fazem salvaguarda de Inteligência, sofrendo 7d6 do tipo em falha ou metade em sucesso.</p><p>Uma criatura usa uma ação para investigar a ilusão contra sua CD de magia. Em sucesso, reconhece-a e passa a ter vantagem nas salvaguardas contra ela, mas a ilusão continua capaz de causar dano.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "dragon space; 60-foot cone breath"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cone",
+        "size": 60
       },
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -89,11 +89,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cone",
+            "size": 60
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "type": "enemy",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -118,6 +120,336 @@
             "formula": ""
           }
         }
+      },
+      "illusory-dragon-breath-acid": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Sopro ácido após mover o dragão até 60 ft"
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 60,
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 7,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
+      },
+      "illusory-dragon-breath-cold": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Sopro frio após mover o dragão até 60 ft"
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 60,
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 7,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
+      },
+      "illusory-dragon-breath-fire": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Sopro de fogo após mover o dragão até 60 ft"
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 60,
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 7,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
+      },
+      "illusory-dragon-breath-lightning": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Sopro elétrico após mover o dragão até 60 ft"
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 60,
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 7,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
+      },
+      "illusory-dragon-breath-necrotic": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Sopro necrótico após mover o dragão até 60 ft"
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 60,
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 7,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
+      },
+      "illusory-dragon-breath-poison": {
+        "type": "save",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Sopro venenoso após mover o dragão até 60 ft"
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 60,
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 7,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "poison"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
       }
     }
   },
@@ -134,28 +466,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "frightened"
-        ]
+        "conditions": [],
+        "manual": "A atividade inicial é medo; repita WIS no fim do turno. Depois mova o dragão e escolha exatamente uma das seis atividades de sopro."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "frightened",
-        "ids": [
-          "frightened"
-        ],
-        "label": "frightened",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

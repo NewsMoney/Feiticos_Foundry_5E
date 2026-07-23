@@ -57,7 +57,7 @@
     },
     "activities": {
       "UZFDONaeOBcBGgkQ": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Não role salvaguarda no alvo ao conjurar. Sempre que outra criatura tentar atacar ou usar magia nociva contra o protegido, o atacante faz SAB; em falha escolhe outro alvo ou perde o ataque/magia. Áreas ignoram esta proteção. Controle o gatilho como reação/efeito."
         },
         "duration": {
           "value": 1,
@@ -107,15 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma aura de 9 metros acompanha você por até 10 minutos de concentração. Criaturas amigáveis na aura têm resistência a dano necrótico, não podem ter o máximo de PV reduzido e, ao começar o turno com 0 PV, recuperam 1 PV.</p>",
+      "value": "<p>Energia vital irradia de você numa aura de 9 metros, que se move com você por até 10 minutos de concentração.</p><p>Cada criatura não hostil na aura, incluindo você, tem resistência a dano necrótico e seu máximo de pontos de vida não pode ser reduzido. Uma criatura não hostil viva que começar o turno na aura com 0 pontos de vida recupera 1 ponto de vida.</p><p>A proteção se aplica somente enquanto a criatura estiver na aura; mortos-vivos e construtos não recuperam o ponto de vida.</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (30-foot radius)"
+      "special": "Self (30-foot-radius aura)"
     },
     "target": {
       "template": {
@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "ally",
         "special": ""
       }
     },
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Região móvel: aplique resistência necrótica e proteção do máximo aos aliados dentro dela; no início do turno, cure 1 PV de aliado vivo a 0 PV."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

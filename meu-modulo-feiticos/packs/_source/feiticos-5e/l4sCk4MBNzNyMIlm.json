@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de água de 3 metros de raio surge a até 27 metros por até 1 minuto de concentração. Criaturas na área fazem resistência de Força ou ficam impedidas dentro dela. Como ação, podem tentar escapar; como ação você move a esfera 9 metros, carregando quem estiver preso e apagando chamas.</p>",
+      "value": "<p>Uma esfera de água de 3 metros de raio surge num ponto a até 27 metros e dura por até 1 minuto de concentração. Ela paira, mas cai com segurança se não estiver apoiada.</p><p>Cada criatura na área quando a esfera surge, ou que entra nela, realiza uma salvaguarda de Força. Em uma falha, uma criatura Grande ou menor fica impedida dentro da esfera. Em um sucesso, é ejetada para o espaço desocupado mais próximo. Uma criatura impedida repete a salvaguarda no fim de cada turno, escapando em um sucesso.</p><p>A esfera comporta uma criatura Grande ou até quatro Médias ou menores; excesso é ejetado. Como ação, você a move até 9 metros, carregando os presos; chamas não mágicas atravessadas são apagadas.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "10-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "fSLax8dnubxtf1xk": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,13 +90,130 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
           },
           "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": null,
+        "damage": null
+      },
+      "watery-entry-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Esfera surge sobre a criatura ou criatura entra na esfera"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "STR: falha prende criatura Grande ou menor; sucesso ejeta."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 10,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      },
+      "watery-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno da criatura impedida na esfera"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "STR em sucesso liberta e ejeta a criatura."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -135,28 +252,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "restrained"
-        ]
+        "conditions": [],
+        "manual": "Criação não salva. Use Entrada quando surgir/sobrepor ou alguém entrar, e Save Final para presos; controle capacidade, movimento por ação e ejeção."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "restrained",
-        "ids": [
-          "restrained"
-        ],
-        "label": "restrained",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

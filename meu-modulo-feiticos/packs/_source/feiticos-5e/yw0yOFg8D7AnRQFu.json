@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Mage%20hand.png",
   "system": {
     "description": {
-      "value": "<p>Uma mão espectral surge a até 9 metros por 1 minuto. Você a controla com ação para manipular objetos, abrir recipientes ou transportar até 4,5 quilos. Ela não ataca, ativa itens mágicos nem se afasta além do alcance.</p>",
+      "value": "<p>Uma mão espectral flutuante aparece num ponto dentro do alcance e permanece por 1 minuto. Ela desaparece se ficar a mais de 9 metros de você ou se você conjurar esta magia novamente. Você pode usar sua ação para controlar a mão e movê-la até 9 metros.</p><p>A mão pode manipular objetos, abrir portas ou recipientes destrancados, guardar ou retirar um item de um recipiente aberto e derramar o conteúdo de um frasco. Ela não pode atacar, ativar itens mágicos nem carregar mais de 4,5 kg.</p>",
       "chat": ""
     },
     "source": {
@@ -37,7 +37,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -120,7 +120,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

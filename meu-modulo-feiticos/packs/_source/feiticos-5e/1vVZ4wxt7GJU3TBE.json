@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Lightning%20Lure.png",
   "system": {
     "description": {
-      "value": "<p>Um chicote elétrico alcança uma criatura a até 4,5 metros. Em falha de Força, ela é puxada até 3 metros em sua direção e, se terminar a até 1,5 metro, sofre 1d8 elétrico. O dano escala nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você cria um açoite de energia elétrica que atinge uma criatura à sua escolha que possa ver a até 4,5 metros. O alvo realiza uma salvaguarda de Força. Em uma falha, é puxado até 3 metros em linha reta em sua direção e, se terminar o movimento a até 1,5 metro de você, sofre 1d8 de dano elétrico. Em um sucesso, não é puxado e não sofre dano.</p><p>O dano é condicionado à posição após o puxão; não o aplique se o alvo terminar além de 1,5 metro.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -151,9 +151,10 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Após falha, confirme que o alvo terminou a até 1,5 metro antes de aplicar dano."
     },
     "itemacro": {
       "macro": {

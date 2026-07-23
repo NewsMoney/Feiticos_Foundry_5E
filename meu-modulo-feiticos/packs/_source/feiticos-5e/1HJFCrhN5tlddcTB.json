@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 10 minutos de concentração, você fica imune a frio, resistente a fogo, ignora terreno de gelo e cria terreno difícil ao redor. Como ação, projeta um cone gelado que causa 4d6 de frio e reduz deslocamento em falha de Constituição.</p>",
+      "value": "<p>Por até 10 minutos de concentração, você fica imune a frio, resistente a fogo e ignora terreno difícil de gelo ou neve. O chão num raio de 3 metros ao redor de você é terreno difícil para outras criaturas.</p><p>Como ação, você projeta um cone de 4,5 metros. Criaturas fazem salvaguarda de Constituição, sofrendo 4d6 de frio em uma falha ou metade em um sucesso; na falha, o deslocamento também é reduzido à metade até o início do seu próximo turno.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "4-RLLfMEmgXEj5T8": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -110,6 +110,70 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "investiture-ice-cone": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Ação reutilizável enquanto a concentração durar"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Cone gelado: CON, 4d6 frio na falha ou metade no sucesso; na falha, deslocamento reduzido à metade até o início do próximo turno do conjurador."
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 15,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -124,8 +188,8 @@
                 "cold"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
@@ -133,15 +197,6 @@
             "allow": false
           },
           "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -150,19 +205,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.ray_of_frost.blue",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.frost.blue"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A conjuração aplica efeitos passivos; use ação separada para cone CON e redução de deslocamento apenas na falha."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

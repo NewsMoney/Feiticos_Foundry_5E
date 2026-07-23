@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "12",
         "type": "creature",
         "special": ""
       }
@@ -58,7 +58,7 @@
     },
     "activities": {
       "5HxY2LqDDJw0miR6": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "minute",
           "value": 10,
@@ -109,15 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -134,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Não há save. Após uma hora, aplique a até 12 participantes: +2d10 PV atuais/máximos, curas, imunidades e vantagem em WIS por 24 h."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

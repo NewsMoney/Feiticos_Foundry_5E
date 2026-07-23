@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/True%20Strike.png",
   "system": {
     "description": {
-      "value": "<p>Você aponta para uma criatura a até 9 metros e mantém concentração até o próximo turno. Seu primeiro ataque contra ela nesse turno recebe vantagem, desde que a magia ainda esteja ativa.</p>",
+      "value": "<p>Você estende a mão e aponta para uma criatura dentro do alcance. Sua magia concede uma breve compreensão das defesas do alvo. No seu próximo turno, você recebe vantagem na primeira jogada de ataque contra esse alvo, desde que a magia ainda não tenha terminado.</p><p>A magia exige concentração e dura até 1 rodada. A vantagem aplica-se somente ao alvo escolhido, é consumida pelo primeiro ataque elegível e não realiza ataque nem causa dano na conjuração.</p>",
       "chat": ""
     },
     "source": {
@@ -120,7 +120,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {
@@ -139,7 +139,8 @@
           "1Attack",
           "turnEndSource"
         ]
-      }
+      },
+      "manualWorkflow": "Aplicar vantagem somente ao primeiro ataque contra o alvo no turno seguinte."
     },
     "itemacro": {
       "macro": {

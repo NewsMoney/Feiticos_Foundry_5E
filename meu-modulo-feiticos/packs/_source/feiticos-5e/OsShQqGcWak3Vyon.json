@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Após 6 horas usando um objeto ligado a outro mundo do Plano Material, você e até oito criaturas voluntárias adormecem e são transportados para esse mundo. A magia falha se a concentração for interrompida; ao chegar, todos despertam próximos ao local correspondente.</p>",
+      "value": "<p>Você e até oito criaturas voluntárias a até 6 metros ficam Inconscientes por 6 horas e vivenciam visões de outro mundo do Plano Material. A magia não exige concentração. Ao completar a duração, todos atravessam um véu azul e são transportados física e mentalmente ao mundo visto.</p><p>É necessário um item mágico originário do mundo de destino ou uma criatura afetada nascida nele. A chegada ocorre em local seguro a até 1 milha da origem do item ou nascimento da criatura. Dano encerra a magia apenas para a criatura atingida, que não viaja; se você sofrer dano, ela termina para todos e ninguém viaja.</p><p><strong>Procedimento:</strong> selecione até nove voluntários, aplique Inconsciente e resolva o teleporte ao fim. Não há ataque, save, dano nem concentração.</p>",
       "chat": ""
     },
     "source": {
@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "9",
+        "type": "willing",
         "special": ""
       }
     },
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Sem concentração. Dano remove somente o atingido; dano no conjurador cancela todos. Teleporte apenas após 6 h completas."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

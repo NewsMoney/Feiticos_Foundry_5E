@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma torrente de energia curativa flui de você para as criaturas feridas ao seu redor. Você restaura até 700 pontos de vida, divididos conforme sua escolha entre qualquer número de criaturas que você possa ver dentro do alcance. As criaturas curadas por esta magia também são curadas de todas as doenças e de qualquer efeito que as deixe cegas ou surdas. Esta magia não tem efeito em mortos-vivos ou construtos.</p>",
+      "value": "<p>Escolha quaisquer criaturas visíveis a até 18 metros e distribua entre elas um total de 700 pontos de vida restaurados. Você decide quanto cada alvo recupera, sem ultrapassar seu máximo, e a soma para todos nunca pode exceder 700.</p><p>As criaturas escolhidas também são curadas de todas as doenças e deixam de estar cegas e surdas. A magia não afeta mortos-vivos nem constructos. Selecione os alvos, valide a distribuição e remova as condições separadamente; não aplique 700 PV a cada criatura.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Distribua manualmente exatamente até 700 PV no total; cure doenças, Cego e Surdo e exclua mortos-vivos/constructos."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

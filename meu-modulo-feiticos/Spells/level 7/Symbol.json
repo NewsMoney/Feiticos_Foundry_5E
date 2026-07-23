@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Ao lançar esta magia, você inscreve um glifo prejudicial em uma superfície (como uma seção do chão, uma parede ou uma mesa) ou dentro de um objeto que pode ser fechado para ocultar o glifo (como um livro, um pergaminho ou um baú de tesouro). Se você escolher uma superfície, o glifo poderá cobrir uma área da superfície de até 3 metros de diâmetro. Se você escolher um objeto, esse objeto deverá permanecer em seu lugar; se o objeto for movido a mais de 3 metros de onde você lançou esta magia, o glifo será quebrado e a magia terminará sem ser acionado.</p><p>O glifo é quase invisível, exigindo um teste de Inteligência (Investigação) contra sua CD para resistir às suas magias para encontrá-lo.</p><p>Você decide o que aciona o glifo quando você lança a magia. Para glifos inscritos em uma superfície, os gatilhos mais típicos incluem tocar ou pisar no glifo, remover outro objeto que o cobre, aproximar-se a uma certa distância dele ou manipular o objeto que o contém. Para glifos inscritos em um objeto, os gatilhos mais comuns são abrir o objeto, aproximar-se a uma certa distância dele ou ver ou ler o glifo.</p><p>Você pode refinar ainda mais o gatilho para que a seja ativada apenas sob certas circunstâncias ou de acordo com as características físicas de uma criatura (como altura ou peso) ou tipo físico (por exemplo, a proteção pode ser configurada para afetar bruxas ou metamorfos). Você também pode especificar criaturas que não acionam o glifo, como aquelas que dizem uma determinada senha.</p><p>Ao inscrever o glifo, escolha uma das opções abaixo para seu efeito. Uma vez acionado, o glifo brilha, preenchendo uma esfera de 18 metros de raio com luz fraca por 10 minutos, após o qual a magia termina. Cada criatura na esfera quando o glifo é ativado é alvo de seu efeito, assim como uma criatura que entra na esfera pela primeira vez em um turno ou termina seu turno lá.</p><p><strong>Morte.</strong> Cada alvo deve fazer um teste de resistência de Constituição, sofrendo 10d10 de dano necrótico se falhar na resistência, ou metade do dano se obtiver sucesso.</p><p><strong>Discórdia.</strong> Cada alvo deve fazer um teste de resistência de Constituição. Se falhar na resistência, o alvo briga e discute com outras criaturas por 1 minuto. Durante esse tempo, ele é incapaz de comunicação significativa e tem desvantagem em jogadas de ataque e testes de habilidade.</p><p><strong>Medo.</strong> Cada alvo deve fazer um teste de resistência de Sabedoria e fica assustado por 1 minuto se falhar na resistência. Enquanto estiver assustado, o alvo deixa cair tudo o que estiver segurando e deve se afastar pelo menos 9 metros do glifo em cada um de seus turnos, se puder.</p><p><strong>Desesperança.</strong> Cada alvo deve fazer um teste de resistência de Carisma. Se falhar na resistência, o alvo fica desesperado por 1 minuto. Durante esse tempo, ele não pode atacar ou atingir qualquer criatura com habilidades prejudiciais, magias ou outros efeitos mágicos.</p><p><strong>Insanidade.</strong> Cada alvo deve fazer um teste de resistência de Inteligência. Se falhar no teste de resistência, o alvo fica louco por 1 minuto. Uma criatura insana não consegue realizar ações, não consegue entender o que outras criaturas dizem, não consegue ler e fala apenas coisas sem sentido. O Mestre controla seu movimento, que é errático.</p><p><strong>Dor.</strong> Cada alvo deve fazer um teste de resistência de Constituição e fica incapacitado com uma dor insuportável por 1 minuto se falhar na resistência.</p><p><strong>Sono.</strong> Cada alvo deve fazer um teste de resistência de Sabedoria e cai inconsciente por 10 minutos se falhar na resistência. Uma criatura desperta se sofrer dano ou se alguém usar uma ação para sacudi-la ou esbofeteá-la.</p><p><strong>Atordoamento.</strong> Cada alvo deve fazer um teste de resistência de Sabedoria e fica atordoado por 1 minuto se falhar na resistência.</p>",
+      "value": "<p>Após 1 minuto, você inscreve um glifo quase invisível numa superfície de até 3 metros de diâmetro ou em objeto que não pode ser movido mais de 3 metros. Define gatilho e exceções. Quando disparado, o símbolo afeta uma esfera de 18 metros por 10 minutos.</p><p>Escolha um modo: <strong>Morte</strong>, CON, 10d10 necrótico/metade; <strong>Discórdia</strong>, CON e hostilidade; <strong>Desespero</strong>, CHA e incapacidade; <strong>Insanidade</strong>, INT e comportamento aleatório; <strong>Dor</strong>, CON e incapacitação; <strong>Sono</strong>, WIS e inconsciência; <strong>Atordoamento</strong>, WIS e Atordoado. Cada modo conserva sua duração e repetições próprias.</p><p><strong>Procedimento:</strong> a inscrição não rola CON nem dano. Escolha o símbolo ao preparar e execute somente a atividade correspondente quando o gatilho ocorrer.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": null,
       "units": "touch",
-      "special": ""
+      "special": "60-foot-radius triggered sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 60
       },
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "object",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "lfnStL2gePwKc92f": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "minute",
           "value": 1,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 60
           },
           "affects": {
             "choice": false
@@ -107,39 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 10,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "necrotic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -148,19 +115,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.energy_strands.range.standard.dark_purple",
+        "file": "jb2a.shield.01.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.dark_purple"
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Neutralize CON/10d10 inicial. Registre gatilho e escolha entre 8 modos; resolva save, condição e recorrência próprios só ao disparar."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

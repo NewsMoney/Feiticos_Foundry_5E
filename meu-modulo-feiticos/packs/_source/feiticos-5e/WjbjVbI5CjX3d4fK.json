@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia cria um servo morto-vivo. Escolha uma pilha de ossos ou o cadáver de um humanóide Médio ou Pequeno dentro do alcance. sua magia imbui o alvo com uma imitação de vida, elevando-o a uma criatura morta-viva. O alvo se torna um esqueleto se você escolher ossos ou um zumbi se você escolher um cadáver (o Mestre tem as estatísticas de jogo da criatura).</p><p>Em cada um de seus turnos, você pode usar uma ação bônus para comandar mentalmente qualquer criatura que você criou com esta magia se a criatura estiver a até 18 metros de você (se você controlar múltiplas criaturas, você pode comandar uma ou todas elas ao mesmo tempo, emitindo o mesmo comando para cada uma). Você decide qual ação a criatura realizará e para onde ela se moverá durante seu próximo turno, ou pode emitir um comando geral, como guardar uma câmara ou corredor específico. Se você não emitir nenhum comando, a criatura apenas se defenderá contra criaturas hostis. Depois de receber uma ordem, a criatura continua a segui-la até que sua tarefa seja concluída.</p><p>A criatura fica sob seu controle por 24 horas, após as quais ela para de obedecer a qualquer comando que você tenha dado. Para manter o controle da criatura por mais 24 horas, você deve lançar esta magia na criatura novamente antes que o período atual de 24 horas termine. Este uso da magia reafirma seu controle sobre até quatro criaturas que você animou com esta magia, em vez de animar uma nova.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, você anima ou reafirma o controle sobre duas criaturas mortas-vivas adicionais para cada nível de espaço acima do 3º. Cada uma das criaturas deve vir de um cadáver ou pilha de ossos diferente.</p>",
+      "value": "<p>Escolha uma pilha de ossos ou o cadáver de um humanoide Médio ou Pequeno a até 3 metros. A magia anima o alvo como esqueleto, se forem ossos, ou zumbi, se for cadáver, usando o bloco de estatísticas correspondente.</p><p>A criatura é amistosa. Em combate tem iniciativa própria. Como ação bônus, você pode comandar mentalmente qualquer criatura criada por esta magia a até 18 metros; pode dar uma ordem geral a várias ou ordens individuais. Sem ordem, ela apenas se defende. O controle dura 24 horas; antes disso, reconjure para reafirmar controle por mais 24 horas.</p><p><strong>Em Círculos Superiores.</strong> Para cada círculo acima do 3º, anima ou reafirma controle sobre dois mortos-vivos adicionais. A conjuração não realiza ataque, save ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -128,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Invoque skeleton/zombie ou reafirme controle; gerencie iniciativa e comandos separadamente."
     },
     "itemacro": {
       "macro": {

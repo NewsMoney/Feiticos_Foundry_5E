@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você anima um objeto Minúsculo não mágico por 8 horas. Ele recebe um bloco próprio, obedece comandos bônus e se defende se não receber ordens. Ao chegar a 0 PV ou terminar a magia, volta a ser objeto. Espaços superiores animam dois objetos adicionais por círculo.</p>",
+      "value": "<p>Você toca um objeto Miúdo, não mágico e não preso, que cria braços e pernas e usa o bloco Tiny Servant por 8 horas. É amistoso, age imediatamente após você e obedece comandos mentais quando está a até 36 metros.</p><p>Como ação bônus, ordene uma atividade simples; sem comando, ele apenas se defende. A 0 PV ou ao término, volta à forma de objeto. A conjuração não executa os ataques da ficha.</p><p><strong>Em Círculos Superiores.</strong> Anime dois objetos adicionais por círculo acima do 3º, podendo dar a mesma ordem a todos.</p>",
       "chat": ""
     },
     "source": {
@@ -107,30 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 4,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
         }
       }
     }
@@ -139,9 +115,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.boulder.toss.01",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": true
       },
@@ -151,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Transforme/invoque Tiny Servant, controle-o por comando bônus e use a ficha nos turnos próprios."
     },
     "itemacro": {
       "macro": {

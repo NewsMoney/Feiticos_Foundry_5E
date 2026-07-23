@@ -23,6 +23,46 @@ for (const file of (await readdir(path.join(root, "data"))).filter(name => name.
 }
 const flagScope = "foundry-spell-pack";
 const id = value => crypto.createHash("sha256").update(value).digest("base64url").slice(0, 16);
+const workflowOverrides = {};
+for (const level of supportedLevels) {
+  const filename = path.join(root, "data", `workflow-overrides-level-${level}.json`);
+  try { Object.assign(workflowOverrides, JSON.parse(await readFile(filename, "utf8"))); }
+  catch (error) { if (error.code !== "ENOENT") throw error; }
+}
+
+function deepMerge(base, override) {
+  if (Array.isArray(override)) return structuredClone(override);
+  if (!override || typeof override !== "object") return override;
+  const result = base && typeof base === "object" && !Array.isArray(base) ? structuredClone(base) : {};
+  for (const [key, value] of Object.entries(override)) {
+    result[key] = value && typeof value === "object" && !Array.isArray(value)
+      ? deepMerge(result[key], value)
+      : structuredClone(value);
+  }
+  return result;
+}
+
+function finalizeItem(item) {
+  const activities = Object.values(item.system?.activities ?? {});
+  for (const activity of activities) {
+    if (activity.target?.template?.type && activity.target.prompt === undefined) activity.target.prompt = true;
+  }
+  if (activities.length !== 1) return item;
+  const activity = activities[0];
+  const itemTemplate = item.system?.target?.template;
+  const activityTemplate = activity.target?.template;
+  if (itemTemplate?.type && !activityTemplate?.type) {
+    activity.target ??= {};
+    activity.target.template = structuredClone(itemTemplate);
+  } else if (itemTemplate?.type === activityTemplate?.type && itemTemplate?.size && !activityTemplate?.size) {
+    activity.target.template.size = itemTemplate.size;
+  } else if (activityTemplate?.type && !itemTemplate?.type) {
+    item.system.target ??= {};
+    item.system.target.template = structuredClone(activityTemplate);
+  }
+  return item;
+}
+
 const mechanicalOverrides = {
   "Chaos Bolt": { damage: [[2, 8, "force"], [1, 6, "force"]] },
   "Chromatic Orb": { damage: [[3, 8, "acid"]] },
@@ -61,7 +101,10 @@ const mechanicalOverrides = {
   "Storm of Vengeance": { conditions: [] },
   "Imprisonment": { conditions: [] }
 };
-for (const def of catalog) Object.assign(def, mechanicalOverrides[def.name] ?? {});
+for (const def of catalog) {
+  Object.assign(def, mechanicalOverrides[def.name] ?? {});
+  Object.assign(def, workflowOverrides[def.name]?.definition ?? {});
+}
 
 const animations = {
   acid: ["jb2a.liquid.splash.bright_green", "jb2a.impact.004.green"],
@@ -163,7 +206,9 @@ function makeItem(def) {
 for (const level of requestedLevels) {
   const dir = path.join(root, "Spells", `level ${level}`);
   await mkdir(dir, { recursive: true });
-  const entries = catalog.filter(def => def.level === level).map(makeItem);
+  const entries = catalog.filter(def => def.level === level).map(def =>
+    finalizeItem(deepMerge(makeItem(def), workflowOverrides[def.name]?.item ?? {}))
+  );
   for (const entry of entries) {
     const filename = entry.name.replaceAll("/", "-");
     await writeFile(path.join(dir, `${filename}.json`), `${JSON.stringify(entry, null, 2)}\n`);

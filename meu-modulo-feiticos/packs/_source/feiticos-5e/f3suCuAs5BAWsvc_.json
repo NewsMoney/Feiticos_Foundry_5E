@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma porta sombria em uma superfície plana e sólida que você pode ver dentro do alcance. A porta é grande o suficiente para permitir que criaturas Médias passem sem impedimentos. Quando aberta, a porta leva a um semiplano que parece ser uma sala vazia de 9 metros em cada dimensão, feita de madeira ou pedra. Quando a magia termina, a porta desaparece e quaisquer criaturas ou objetos dentro do semiplano permanecem presos lá, já que a porta também desaparece do outro lado.</p><p>Cada vez que você lança esta magia, você pode criar um novo semiplano ou fazer com que a porta sombria se conecte a um semiplano que você criou com um lançamento anterior deste magia.  Além disso, se você conhece a natureza e o conteúdo de um semiplano criado pelo lançamento desta magia por outra criatura, você pode fazer com que a porta sombria se conecte ao seu semiplano.</p>",
+      "value": "<p>Você cria uma porta sombria numa superfície sólida e plana visível a até 18 metros. Ela permite a passagem de criaturas Médias e, aberta, conduz a um semiplano: sala vazia de 9 metros de lado, de madeira ou pedra.</p><p>A porta permanece por 1 hora, sem concentração. Ao terminar, desaparece de ambos os lados e criaturas e objetos que estejam dentro permanecem presos. Cada conjuração pode criar novo semiplano, conectar-se a um que você criou antes ou, se conhecer sua natureza e conteúdo, a um criado por outra criatura.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Posicione a porta e escolha criar ou reconectar um semiplano conhecido."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

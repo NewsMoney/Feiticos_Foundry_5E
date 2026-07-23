@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Toll%20the%20dead.png",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 18 metros faz resistência de Sabedoria. Em falha sofre 1d8 necrótico, ou 1d12 se já tiver perdido PV. O número de dados aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você aponta para uma criatura que possa ver dentro do alcance, e o som de um sino doloroso preenche o ar ao redor dela. O alvo realiza uma salvaguarda de Sabedoria. Em uma falha, sofre 1d8 de dano necrótico. Se já tiver perdido qualquer ponto de vida, use d12 em vez de d8. Em um sucesso, não sofre dano.</p><p><strong>Em Níveis Superiores.</strong> A quantidade de dados aumenta: dois no 5º nível, três no 11º e quatro no 17º. O dado continua sendo d8 para alvo com PV máximos e d12 para alvo ferido.</p>",
       "chat": ""
     },
     "source": {
@@ -137,6 +137,95 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "name": "Alvo com PV máximos — d8"
+      },
+      "tollDeadWounded": {
+        "type": "save",
+        "name": "Alvo ferido — d12",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": "Use somente se o alvo estiver abaixo dos pontos de vida máximos."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "O sino usa d12 porque o alvo já perdeu pontos de vida."
+        },
+        "duration": {
+          "units": "inst",
+          "value": "",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
         }
       }
     }
@@ -152,9 +241,10 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha a atividade d12 somente se o alvo estiver abaixo dos PV máximos."
     },
     "itemacro": {
       "macro": {

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você drena umidade de criaturas num cubo de 9 metros a até 45 metros. Elas fazem resistência de Constituição, sofrendo 12d8 necrótico em falha ou metade em sucesso. Plantas e elementais de água têm desvantagem e sofrem dano máximo; vegetação não mágica seca.</p>",
+      "value": "<p>Você drena a umidade de todas as criaturas em um cubo de 9 metros situado num ponto a até 45 metros. Cada criatura na área realiza uma salvaguarda de Constituição, sofrendo 12d8 de dano necrótico em uma falha ou metade em um sucesso.</p><p>Constructos e mortos-vivos não são afetados. Plantas e elementais da água fazem a salvaguarda com desvantagem e sofrem o dano máximo, em vez de rolado. Plantas não mágicas na área que não sejam criaturas simplesmente murcham e morrem.</p>",
       "chat": ""
     },
     "source": {
@@ -27,18 +27,18 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "30-foot cube"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 30
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -89,11 +89,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 30
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "type": "creature",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -158,10 +160,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Exclua constructos e mortos-vivos; plantas e elementais da água têm desvantagem e recebem 96 de dano na falha."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Durante até 10 minutos de concentração, você fica imune a todo tipo de dano. A magia exige um pedaço de adamante de alto valor, consumido na conjuração.</p>",
+      "value": "<p>Consumindo adamante no valor mínimo de 500 PO, você fica imune a todo dano enquanto mantiver concentração, por até 10 minutos. A magia não concede imunidade a condições, deslocamento ou efeitos que não causem dano.</p><p>Aplique imunidade universal ao conjurador somente enquanto a concentração persistir e remova-a ao término. Não há ataque ou salvaguarda.</p>",
       "chat": ""
     },
     "source": {
@@ -126,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Consuma 500 PO de adamante e aplique imunidade a todos os tipos de dano enquanto houver concentração."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

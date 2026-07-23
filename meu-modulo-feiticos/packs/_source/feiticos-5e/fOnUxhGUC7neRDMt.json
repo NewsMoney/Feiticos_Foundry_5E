@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "6",
         "type": "creature",
         "special": ""
       }
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Inclua o conjurador e até cinco voluntários a 5 ft; exige santuário previamente designado."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

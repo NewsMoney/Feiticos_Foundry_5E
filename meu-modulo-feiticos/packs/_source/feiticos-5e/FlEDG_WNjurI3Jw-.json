@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura e estimula sua habilidade natural de cura. O alvo recupera 4d8 + 15 pontos de vida. Durante a duração da magia, o alvo recupera 1 ponto de vida no início de cada um de seus turnos (10 pontos de vida a cada minuto).</p><p>Os membros decepados do corpo do alvo (dedos, pernas, caudas e assim por diante), se houver, são restaurados após 2 minutos. Se você tiver a parte cortada e segurá-la contra o coto, a magia instantaneamente fará com que o membro se junte ao coto.</p>",
+      "value": "<p>Após 1 minuto, uma criatura tocada recupera 4d8 + 15 PV. Durante 1 hora, sem concentração, ela recupera 1 PV no início de cada turno, equivalente a 10 PV por minuto fora de combate.</p><p>Membros decepados são restaurados após 2 minutos; se a parte separada for mantida contra o coto, ela se une imediatamente. Não há salvaguarda ou escalonamento.</p><p><strong>Procedimento:</strong> a cura inicial usa bônus fixo +15, nunca o modificador de conjuração; aplique a cura recorrente em atividade/efeito separado.</p>",
       "chat": ""
     },
     "source": {
@@ -112,7 +112,7 @@
         "healing": {
           "number": 4,
           "denomination": 8,
-          "bonus": "@mod",
+          "bonus": "15",
           "types": [
             "healing"
           ],
@@ -121,8 +121,8 @@
             "formula": ""
           },
           "scaling": {
-            "mode": "whole",
-            "number": 1
+            "mode": "",
+            "number": null
           }
         }
       }
@@ -141,10 +141,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Cure 4d8+15 ao fim da conjuração e 1 PV no início de cada turno por 1 h; regenere membros conforme o tempo."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

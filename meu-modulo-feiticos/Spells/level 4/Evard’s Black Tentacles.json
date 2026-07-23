@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Tentáculos preenchem um quadrado de 6 metros a até 27 metros por até 1 minuto de concentração. A área é terreno difícil. Criaturas que entram ou começam ali fazem resistência de Destreza; em falha sofrem 3d6 de concussão e ficam impedidas, repetindo dano e podendo usar ação para escapar.</p>",
+      "value": "<p>Tentáculos negros preenchem um quadrado de 6 metros no solo dentro do alcance. Por até 1 minuto de concentração, a área é terreno difícil.</p><p>Quando uma criatura entra na área pela primeira vez em um turno ou começa o turno nela, realiza uma salvaguarda de Destreza. Em uma falha, sofre 3d6 de dano de concussão e fica impedida pelos tentáculos; em um sucesso, não sofre dano nem fica impedida.</p><p>Uma criatura que começa o turno impedida sofre 3d6 de dano de concussão. Ela pode usar sua ação para fazer um teste de Força ou Destreza, à escolha dela, contra sua CD de magia, libertando-se em um sucesso.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "20-foot square"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -58,7 +58,7 @@
     },
     "activities": {
       "Rwed9lR-VaxCCPeZ": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,7 +90,7 @@
             "contiguous": false,
             "units": "ft",
             "type": "",
-            "size": null
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -109,6 +109,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "tentacles-restrained": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Alvo começa o turno já impedido pelos tentáculos"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "3d6 concussão sem nova salvaguarda; fuga exige ação e teste STR ou DEX."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -124,14 +179,67 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
+        }
+      },
+      "tentacles-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Entra pela primeira vez no turno ou começa o turno na área sem estar impedido"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "DEX: 3d6 concussão e impedido na falha; nenhum efeito no sucesso."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 20,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
@@ -141,6 +249,119 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "tentacles-restrained-damage": {
+          "type": "damage",
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": "Alvo começa o turno já impedido pelos tentáculos"
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": false
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "Dano sem nova salvaguarda; a fuga exige ação e teste STR ou DEX."
+          },
+          "duration": {
+            "value": 1,
+            "units": "minute",
+            "concentration": true,
+            "override": true
+          },
+          "effects": [],
+          "range": {
+            "override": true
+          },
+          "target": {
+            "template": {
+              "type": "",
+              "size": null,
+              "units": "ft",
+              "contiguous": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "midiProperties": {},
+          "overTimeProperties": {
+            "saveRemoves": false,
+            "preRemoveConditionText": "",
+            "postRemoveConditionText": ""
+          },
+          "damage": {
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 3,
+                "denomination": 6,
+                "bonus": "",
+                "types": [
+                  "bludgeoning"
+                ],
+                "scaling": {
+                  "mode": "whole",
+                  "number": 0
+                }
+              }
+            ],
+            "critical": {
+              "allow": false
+            },
+            "onSave": "full"
+          }
+        }
+      }
+    },
+    "flags": {
+      "foundry-spell-pack": {
+        "description": {
+          "quality": "reviewed-deep-pt-br",
+          "needsReview": false
+        },
+        "automation": {
+          "needsReview": true,
+          "manual": "Crie terreno difícil. Use o save ao entrar/iniciar livre e o dano separado se começar impedido; fuga é ação com teste STR ou DEX."
         }
       }
     }
@@ -158,10 +379,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie terreno difícil. Use o save ao entrar/iniciar livre e o dano separado se começar impedido; fuga é ação com teste STR ou DEX."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

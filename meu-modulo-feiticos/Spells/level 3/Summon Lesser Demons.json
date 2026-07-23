@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca demônios aleatórios em espaços a até 18 metros por até 1 hora de concentração. O mestre determina os tipos conforme os dados rolados; eles agem em grupo e atacam criaturas próximas sem controle direto. Um círculo de sangue opcional pode protegê-lo. Espaços superiores aumentam a quantidade.</p>",
+      "value": "<p>Você invoca demônios em espaços desocupados visíveis a até 18 metros e rola a composição: dois de ND 1 ou menor, quatro de ND 1/2 ou menor, ou oito de ND 1/4 ou menor. O Mestre escolhe os demônios. Eles são hostis a todas as criaturas, têm iniciativa própria e atacam os não demônios mais próximos.</p><p>Ao conjurar, pode derramar sangue de humanoide morto nas últimas 24 horas para criar um círculo de 1,5 metro que os demônios não atravessam nem atacam através. Concentração até 1 hora. Espaço 6º–7º dobra e 8º–9º triplica a quantidade. A conjuração não rola os ataques das criaturas.</p>",
       "chat": ""
     },
     "source": {
@@ -128,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Role o grupo, invoque atores hostis e, se usado sangue, crie o círculo protetor; resolva turnos separadamente."
     },
     "itemacro": {
       "macro": {

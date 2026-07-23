@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma restrição mágica para manter uma criatura que você pode ver dentro do alcance. O alvo deve ser bem sucedido em um teste de resistência de Sabedoria ou ficará vinculado ao magia; se tiver sucesso, ele ficará imune a esta magia se você lançá-la novamente. Enquanto afetada por esta magia, a criatura não precisa respirar, comer ou beber e não envelhece. magias de adivinhação não conseguem localizar ou perceber o alvo.</p><p>Quando você lança a magia, você escolhe uma das seguintes formas de aprisionamento.</p><p><strong>Enterro.</strong> O alvo é sepultado bem abaixo da terra em uma esfera de força magia que é grande o suficiente para conter o alvo. Nada pode passar pela esfera, nem qualquer criatura pode se teletransportar ou usar viagens planas para entrar ou sair dela.</p><p>O componente especial para esta versão da magia é um pequeno orbe de mithral.</p><p><strong>Acorrentamento.</strong> Correntes pesadas, firmemente enraizadas no chão, mantêm o alvo no lugar. O alvo fica restringido até o fim da magia e não pode se mover ou ser movido de qualquer maneira até então.</p><p>O componente especial para esta versão da magia é uma fina corrente de metal precioso.</p><p><strong>Prisão protegida.</strong> a magia transporta o alvo para um pequeno semiplano que é protegido contra teletransporte e viagens planas. O semiplano pode ser um labirinto, uma gaiola, uma torre ou qualquer estrutura ou área confinada semelhante de sua escolha.</p><p>O componente especial para esta versão da magia é uma representação em miniatura da prisão feita de jade.</p><p><strong>Contenção Mínima.</strong> O alvo encolhe até uma altura de 2,5 cm e é aprisionado dentro de uma pedra preciosa ou objeto semelhante. A luz pode passar através da gema normalmente (permitindo que o alvo veja para fora e outras criaturas vejam para dentro), mas nada mais pode passar, mesmo por meio de teletransporte ou viagem plana. A pedra preciosa não pode ser cortada ou quebrada enquanto a magia permanecer em vigor.</p><p>O componente especial para esta versão da magia é uma pedra preciosa grande e transparente, como um corindo, diamante ou rubi.</p><p><strong>Sono.</strong> O alvo adormece e não pode ser acordado. O componente especial para esta versão da magia consiste em ervas soporíficas raras.</p><p><strong>Terminando a magia.</strong> Durante o lançamento da magia, em qualquer uma de suas versões, você pode especificar uma condição que fará com que a magia termine e libere o alvo. A condição pode ser tão específica ou elaborada quanto você escolher, mas o Mestre deve concordar que a condição é razoável e tem probabilidade de se concretizar. As condições podem ser baseadas no nome, identidade ou divindade de uma criatura, mas de outra forma devem ser baseadas em ações ou qualidades observáveis e não baseadas em intangíveis como nível, classe ou pontos de vida.</p><p>uma magia <em>Dispel Magic</em> pode encerrar a magia apenas se for lançado como uma magia de 9º nível, tendo como alvo a prisão ou o componente especial usado para criá-lo.</p><p>Você pode usar um componente especial específico para criar apenas uma prisão de cada vez. Se você lançar a magia novamente usando o mesmo componente, o alvo do primeiro lançamento será imediatamente libertado de sua ligação.</p>",
+      "value": "<p>Após 1 minuto, uma criatura visível a 9 metros faz salvaguarda de Sabedoria. Em sucesso, não é afetada e fica imune a novas conjurações suas desta magia. Em falha, escolha uma prisão até ser dissipada: <strong>Enterro</strong>, esfera subterrânea que bloqueia saída e divinação; <strong>Acorrentamento</strong>, correntes que deixam restrained; <strong>Prisão Cercada</strong>, semiplano labiríntico; <strong>Contenção Mínima</strong>, redução e aprisionamento numa gema; ou <strong>Adormecimento</strong>, sono do qual não acorda, sem envelhecer nem precisar comer, beber ou respirar.</p><p><em>Dispel Magic</em> de 9º círculo lançado no componente especial encerra a prisão. Você também pode definir uma condição razoável e observável de término, sujeita aos limites e à decisão do Mestre. O componente especial varia por forma e vale ao menos 500 PO por Dado de Vida do alvo.</p><p>A salvaguarda inicial é a única rolagem automática. Após uma falha, escolha exatamente uma atividade de forma; não aplique restrained a todas elas.</p>",
       "chat": ""
     },
     "source": {
@@ -117,6 +117,74 @@
             "formula": ""
           }
         }
+      },
+      "imprisonment-save": {
+        "type": "save",
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      },
+      "imprisonment-burial": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "condition": "Após falha: Enterro",
+          "override": true
+        },
+        "damage": null,
+        "save": null
+      },
+      "imprisonment-chaining": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "condition": "Após falha: Acorrentamento; aplicar Restrained",
+          "override": true
+        },
+        "damage": null,
+        "save": null
+      },
+      "imprisonment-prison": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "condition": "Após falha: Prisão Cercada",
+          "override": true
+        },
+        "damage": null,
+        "save": null
+      },
+      "imprisonment-minimus": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "condition": "Após falha: Contenção Mínima",
+          "override": true
+        },
+        "damage": null,
+        "save": null
+      },
+      "imprisonment-slumber": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "condition": "Após falha: Adormecimento",
+          "override": true
+        },
+        "damage": null,
+        "save": null
       }
     }
   },
@@ -133,10 +201,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Sucesso concede imunidade futura; na falha escolha uma das cinco formas e sua condição de término. Restrained pertence somente a Acorrentamento."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

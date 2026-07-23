@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Até a magia terminar, uma criatura voluntária que você tocar é imune a dano psíquico, qualquer efeito que possa sentir suas emoções ou ler seus pensamentos, magias de adivinhação e a condição encantado. A magia frustra até mesmo magias de <em>desejo</em> e magias ou efeitos de poder semelhante usados ​​para afetar a mente do alvo ou para obter informações sobre o alvo.</p>",
+      "value": "<p>Uma criatura voluntária tocada fica protegida por 24 horas, sem concentração. Ela torna-se imune a dano psíquico, à condição enfeitiçado, a efeitos que percebam emoções ou leiam pensamentos e a magias de adivinhação.</p><p>A proteção frustra até <em>Wish</em> e efeitos de poder semelhante usados para afetar a mente do alvo ou obter informações sobre ele.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique por 24 horas imunidade psíquica/charmed e proteção contra leitura mental e adivinhação."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Druidcraft.png",
   "system": {
     "description": {
-      "value": "<p>Você produz um pequeno efeito natural a até 9 metros: prevê o clima das próximas 24 horas, faz uma planta florescer, cria um efeito sensorial inofensivo ou acende e apaga pequenas fontes de fogo.</p>",
+      "value": "<p>Sussurrando aos espíritos da natureza, você cria um dos seguintes efeitos dentro do alcance: um pequeno efeito sensorial que prevê o clima em sua localização pelas próximas 24 horas; o florescimento instantâneo de uma flor, vagem ou botão; um efeito sensorial inofensivo que caiba num cubo de 1,5 metro; ou acender ou apagar instantaneamente uma vela, tocha ou pequena fogueira.</p><p>Escolha o modo ao conjurar. Nenhuma opção realiza ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -35,7 +35,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -117,9 +117,13 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "automation": {
+        "areaReviewed": true
+      },
+      "manualWorkflow": "Escolha clima, florescimento, efeito sensorial ou chama."
     },
     "itemacro": {
       "macro": {

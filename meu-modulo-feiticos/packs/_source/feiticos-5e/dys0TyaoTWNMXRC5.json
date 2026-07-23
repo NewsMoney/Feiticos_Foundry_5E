@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura voluntária e escolhe ácido, elétrico, fogo, frio ou veneno. Por até 1 minuto de concentração, ela pode usar uma ação para expelir um cone de 4,5 metros; criaturas fazem resistência de Destreza, sofrendo 3d6 do tipo escolhido ou metade. O dano aumenta em 1d6 por círculo.</p>",
+      "value": "<p>Você toca uma criatura voluntária e escolhe ácido, elétrico, fogo, frio ou veneno. Durante até 1 minuto de concentração, o alvo recebe a capacidade de expelir energia; a conjuração não provoca salvaguarda nem causa dano.</p><p>Enquanto a magia durar, o alvo pode usar uma ação para expelir um cone de 4,5 metros a partir de si. Cada criatura no cone realiza uma salvaguarda de Destreza, sofrendo 3d6 do tipo escolhido em uma falha ou metade em um sucesso.</p><p><strong>Em Círculos Superiores.</strong> O dano do sopro aumenta em 1d6 para cada círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "qSoZ3KSkD3tGnjfg": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -110,6 +110,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "dragon-breath-action": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Ação concedida à criatura tocada; origem do cone é essa criatura"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Escolha o tipo definido na conjuração e posicione o cone a partir do portador."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "cone",
+            "size": 15,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
             "dex"
@@ -118,6 +173,34 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "poison"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -135,10 +218,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A conjuração apenas concede a atividade. Execute Sopro pelo ator tocado, com cone originado nele, e selecione somente o tipo escolhido."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

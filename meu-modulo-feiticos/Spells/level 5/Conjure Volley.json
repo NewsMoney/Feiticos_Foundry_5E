@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma munição ou arma arremessada cria uma chuva numa área cilíndrica de 12 metros de raio e 6 metros de altura a até 45 metros. Criaturas fazem resistência de Destreza, sofrendo 8d8 do tipo da arma em falha ou metade em sucesso.</p>",
+      "value": "<p>Você arremessa uma arma não mágica ou munição e escolhe um ponto a até 45 metros. Cópias da arma caem num cilindro de 12 metros de raio e 6 metros de altura; a peça original desaparece.</p><p>Cada criatura na área faz salvaguarda de Destreza, sofrendo 8d8 do tipo de dano da arma em uma falha ou metade em um sucesso. Objetos não mágicos na área também sofrem o dano.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "40-foot-radius, 20-foot-high cylinder"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 40
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 40
           },
           "affects": {
             "choice": false
@@ -116,6 +116,9 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "onSave": "half"
         }
       }
     }
@@ -136,7 +139,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

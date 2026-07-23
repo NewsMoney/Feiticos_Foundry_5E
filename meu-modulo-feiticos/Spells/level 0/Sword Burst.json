@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Sword%20Burst.png",
   "system": {
     "description": {
-      "value": "<p>Lâminas espectrais giram ao seu redor. Cada criatura escolhida a até 1,5 metro faz resistência de Destreza, sofrendo 1d6 de energia em falha. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você cria um círculo momentâneo de lâminas espectrais que varrem ao seu redor. Todas as outras criaturas a até 1,5 metro de você devem realizar uma salvaguarda de Destreza. Em uma falha, uma criatura sofre 1d6 de dano de energia; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -24,18 +24,19 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": ""
+      "special": "Self (5-foot radius)"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": ""
+        "type": "circle",
+        "size": 5
       },
       "affects": {
         "choice": false,
         "count": "",
-        "type": "enemy",
+        "type": "creature",
         "special": ""
       }
     },
@@ -84,7 +85,9 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "circle",
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -149,7 +152,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "5",
+        "type": "object",
         "special": ""
       }
     },
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione até 5 cadáveres, crie esqueletos/zumbis com bônus de ataque/dano, iniciativa própria e comando bônus; +2 corpos por slot."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

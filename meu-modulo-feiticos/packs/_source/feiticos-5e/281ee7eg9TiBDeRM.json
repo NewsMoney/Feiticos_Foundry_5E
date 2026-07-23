@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/light.png",
   "system": {
     "description": {
-      "value": "<p>Um objeto tocado emite luz plena em 6 metros e penumbra por mais 6 metros durante 1 hora. Um alvo vestido ou carregado pode evitar o efeito com resistência de Destreza. Conjurar novamente encerra a luz anterior.</p>",
+      "value": "<p>Você toca um objeto que não exceda 3 metros em nenhuma dimensão. Até a magia terminar, ele emite luz plena num raio de 6 metros e penumbra por mais 6 metros. A luz pode ter a cor escolhida por você e cobrir completamente o objeto com algo opaco bloqueia a luz.</p><p>Se o objeto estiver vestido ou carregado por uma criatura hostil, ela deve vencer uma salvaguarda de Destreza para evitar a magia. A magia dura 1 hora e termina se você a conjurar novamente ou dispensá-la com uma ação.</p>",
       "chat": ""
     },
     "source": {
@@ -117,7 +117,7 @@
         "targeted": true
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {
@@ -138,7 +138,11 @@
           }
         ],
         "specialDuration": []
-      }
+      },
+      "automation": {
+        "areaReviewed": true
+      },
+      "manualWorkflow": "Se o objeto estiver com criatura hostil, role DEX save antes de aplicar a luz."
     },
     "itemacro": {
       "macro": {

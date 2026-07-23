@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Chamas sombrias envolvem você por até 1 minuto de concentração, deixando-o fortemente obscurecido para os demais. Você recebe resistência a radiante; criaturas a até 3 metros que o acertam sofrem 2d8 necrótico. A aura reduz luz próxima e extingue escuridão ao terminar.</p>",
+      "value": "<p>Chamas sombrias envolvem você por até 1 minuto de concentração. Para outras criaturas, você fica fortemente obscurecido. Você recebe resistência a dano radiante.</p><p>A sombra transforma luz plena a até 3 metros em luz fraca e luz fraca na mesma área em escuridão. Quando a magia termina, a iluminação retorna.</p><p>Quando uma criatura a até 3 metros acerta você com um ataque, ela sofre 2d8 de dano necrótico. A conjuração não causa esse dano imediatamente.</p>",
       "chat": ""
     },
     "source": {
@@ -109,6 +109,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "shadow-retaliation": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Criatura a 10 ft acerta o conjurador com um ataque"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Retaliação de 2d8 necrótico."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -124,14 +179,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
         }
       }
     }
@@ -140,19 +195,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.energy_strands.range.standard.dark_purple",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
         "fallbacks": [
-          "jb2a.impact.004.dark_purple"
+          "jb2a.energy_strands.in.dark_purple"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique obscurecimento, resistência radiante e luz. Use Retaliação apenas quando atacante a 10 ft acertar."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um demônio de ND até 5 por até 1 hora de concentração e pronuncia um comando inicial. A cada turno ele tenta resistência de Carisma para romper seu controle; ao conseguir, age livremente por algumas rodadas. Um círculo de sangue pode protegê-lo. Espaços superiores permitem ND maior.</p>",
+      "value": "<p>Você invoca um demônio de ND 5 ou menor num espaço desocupado a até 18 metros e pronuncia um comando. Ele rola iniciativa própria e obedece enquanto estiver sob seu controle.</p><p>No fim de cada turno dele, o demônio realiza uma salvaguarda de Carisma contra sua CD de magia, com vantagem se você disser seu nome verdadeiro. Em um sucesso, rompe o controle e persegue criaturas próximas durante o tempo restante indicado pela magia. Esse save não ocorre ao conjurar.</p><p>O círculo de sangue do componente pode proteger ocupantes conforme a regra. <strong>Em Círculos Superiores.</strong> O ND máximo aumenta em 1 por círculo acima do 4º.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "hzBkpam1ayGxvix9": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,6 +109,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "demon-control-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do demônio; ele rola CHA, com vantagem se o nome verdadeiro foi dito"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Sucesso rompe o controle; este save pertence ao demônio invocado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
             "cha"
@@ -134,10 +189,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie o demônio; não role CHA no alvo da conjuração. Use Save de Controle no fim dos turnos do próprio demônio."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

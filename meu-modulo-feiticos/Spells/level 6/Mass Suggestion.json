@@ -37,7 +37,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "12",
         "type": "creature",
         "special": ""
       }
@@ -133,10 +133,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique WIS apenas a criaturas que ouçam/compreendam e possam ser enfeitiçadas; dano encerra. Upcast altera duração."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

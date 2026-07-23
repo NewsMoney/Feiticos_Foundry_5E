@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia reverte a gravidade em um cilindro de 15 metros de raio e 30 metros de altura centrado em um ponto dentro do alcance. Todas as criaturas e objetos que não estão de alguma forma ancorados no chão na área caem para cima e alcançam o topo da área quando você lança esta magia. Uma criatura pode fazer um teste de resistência de Destreza para agarrar um objeto fixo que possa alcançar, evitando assim a queda.</p><p>Se algum objeto sólido (como um teto) for encontrado nesta queda, os objetos e a criatura em queda o atingirão exatamente como fariam durante uma queda normal. Se um objeto ou criatura chegar ao topo da área sem atingir nada, ele permanecerá lá, oscilando levemente, durante a duração.</p><p>No final da duração, os objetos e criaturas afetadas caem novamente.</p>",
+      "value": "<p>A gravidade é invertida num cilindro de 15 metros de raio e 30 metros de altura por até 1 minuto de concentração. Criaturas e objetos não ancorados caem para cima. Uma criatura só faz salvaguarda de Destreza se houver objeto fixo ao alcance para agarrar e evitar a queda.</p><p>Colisão com teto causa dano normal de queda; quem alcança o topo sem colisão permanece oscilando. Quando a magia termina, todos caem normalmente. Não há dano fixo ou escalonamento.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 100,
       "units": "ft",
-      "special": ""
+      "special": "50-foot-radius, 100-foot-high cylinder"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 50
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "Qlf0NfYdsgW8sTL3": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,8 +90,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 50
           },
           "affects": {
             "choice": false
@@ -109,15 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -135,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie cilindro 50×100 ft. DEX somente com apoio alcançável; resolva colisão, suspensão e queda final manualmente."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

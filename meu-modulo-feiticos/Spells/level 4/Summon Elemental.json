@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito do ar, água, fogo ou terra por até 1 hora de concentração usando foco de 400 PO. Ele compartilha sua iniciativa, recebe resistência e deslocamentos conforme o elemento e obedece comandos. Espaços superiores aumentam suas estatísticas ofensivas e PV.</p>",
+      "value": "<p>Você invoca um espírito elemental num espaço desocupado a até 27 metros. Escolha Ar, Água, Fogo ou Terra; a forma determina resistências, deslocamentos e tipo de dano do bloco da magia.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e apenas evita perigo. Desaparece a 0 PV ou no fim da concentração.</p><p><strong>Em Círculos Superiores.</strong> Calcule CA, PV, quantidade de ataques e dano pelo nível do espaço. A conjuração não causa dano diretamente.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -109,30 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -140,19 +118,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.boulder.toss.01",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha o elemento e crie o ator pelo bloco; não role o falso dano da conjuração."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

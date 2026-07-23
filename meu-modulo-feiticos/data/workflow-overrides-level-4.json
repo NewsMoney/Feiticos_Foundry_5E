@@ -1,0 +1,3652 @@
+{
+  "Arcane Eye": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Crie um olho invisível no ponto escolhido. Use uma ação para movê-lo 30 ft; ele transmite visão normal e visão no escuro 30 ft."
+          }
+        }
+      }
+    }
+  },
+  "Aura of Life": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "Self (30-foot-radius aura)"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 30
+          },
+          "affects": {
+            "type": "ally",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Energia vital irradia de você numa aura de 9 metros, que se move com você por até 10 minutos de concentração.</p><p>Cada criatura não hostil na aura, incluindo você, tem resistência a dano necrótico e seu máximo de pontos de vida não pode ser reduzido. Uma criatura não hostil viva que começar o turno na aura com 0 pontos de vida recupera 1 ponto de vida.</p><p>A proteção se aplica somente enquanto a criatura estiver na aura; mortos-vivos e construtos não recuperam o ponto de vida.</p>"
+        },
+        "activities": {
+          "mjNqKRLG_NJ3xU-X": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Região móvel: aplique resistência necrótica e proteção do máximo aos aliados dentro dela; no início do turno, cure 1 PV de aliado vivo a 0 PV."
+          }
+        }
+      }
+    }
+  },
+  "Aura of Purity": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "Self (30-foot-radius aura)"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 30
+          },
+          "affects": {
+            "type": "ally",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Energia purificadora irradia de você numa aura de 9 metros, que se move com você por até 10 minutos de concentração.</p><p>Cada criatura não hostil na aura, incluindo você, é imune a doença, tem resistência a dano de veneno e possui vantagem nas salvaguardas para evitar ou encerrar as condições amedrontado, atordoado, cego, enfeitiçado, envenenado e paralisado.</p><p>Os benefícios terminam para uma criatura quando ela deixa a aura ou quando a magia termina.</p>"
+        },
+        "activities": {
+          "miHw6PckJ6g9QZjc": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Região móvel: conceda imunidade a doença, resistência a veneno e vantagem nos saves listados enquanto o aliado permanecer dentro."
+          }
+        }
+      }
+    }
+  },
+  "Banishment": {
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1 + @item.level - 4"
+          }
+        },
+        "activities": {
+          "2-8v_q2u67CHFnN1": {
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Em falha aplique banido/incapacitado. Se o alvo for extraplanar e a concentração completar 1 minuto, ele não retorna. Adicione um alvo por círculo acima do 4º."
+          }
+        }
+      }
+    }
+  },
+  "Blight": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Mortos-vivos e construtos são imunes. Planta criatura salva com desvantagem e recebe dano máximo; planta não criatura murcha sem save. O dano escala +1d8/círculo."
+          }
+        }
+      }
+    }
+  },
+  "Charm Monster": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você tenta enfeitiçar uma criatura que possa ver a até 9 metros. Ela realiza uma salvaguarda de Sabedoria, com vantagem se você ou seus companheiros estiverem combatendo contra ela.</p><p>Em uma falha, a criatura fica enfeitiçada por você durante 1 hora ou até que você ou um de seus companheiros lhe cause dano. Enquanto estiver enfeitiçada, ela o considera uma conhecida amistosa.</p><p><strong>Em Círculos Superiores.</strong> Você pode afetar uma criatura adicional para cada círculo acima do 4º; os alvos devem estar a até 9 metros uns dos outros.</p>"
+        },
+        "activities": {
+          "8LNwDlJMiQtVpPCw": {
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Conceda vantagem no save a quem estiver combatendo o grupo; aplique Enfeitiçado na falha e remova quando o grupo ferir o alvo."
+          }
+        }
+      }
+    }
+  },
+  "Compulsion": {
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": ""
+          }
+        },
+        "activities": {
+          "w_J46rPrLpSQlq1M": {
+            "effects": []
+          },
+          "compulsion-repeat": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Depois de o alvo mover-se na direção designada"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "WIS em sucesso encerra Compulsão para este alvo."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": true,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Selecione criaturas visíveis que ouçam; imunes a encanto passam automaticamente. Ação bônus define direção; use o save de repetição depois do movimento."
+          }
+        }
+      }
+    }
+  },
+  "Confusion": {
+    "definition": {
+      "range": {
+        "value": 90,
+        "units": "ft",
+        "special": "10-foot-radius sphere"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 10
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          }
+        },
+        "activities": {
+          "BOUO9PHGHz4UOiWv": {
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 10
+              }
+            },
+            "effects": []
+          },
+          "confusion-end-save": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Fim de cada turno do alvo afetado"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "WIS em sucesso encerra Confusão; role d10 no início de cada turno enquanto afetado."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": true,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Aplique a tabela d10 e bloqueie reações na falha; use o save final por alvo. O raio aumenta 5 ft por círculo acima do 4º."
+          }
+        }
+      }
+    }
+  },
+  "Conjure Minor Elementals": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "activities": {
+          "90B1k_bVvzuKS4Nn": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha 1×CR2, 2×CR1, 4×CR1/2 ou 8×CR1/4 e crie os tokens em espaços vistos. Dobre no 6º e triplique no 8º."
+          }
+        }
+      }
+    }
+  },
+  "Conjure Woodland Beings": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "activities": {
+          "7jkCpvi38Hk_tYOa": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha 1×CR2, 2×CR1, 4×CR1/2 ou 8×CR1/4 e crie as fadas; iniciativa em grupo e comandos verbais. Dobre no 6º e triplique no 8º."
+          }
+        }
+      }
+    }
+  },
+  "Control Water": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "range": {
+        "value": 300,
+        "units": "ft",
+        "special": "100-foot cube"
+      },
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 100
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "activities": {
+          "j6-kHtbZj0AVTjbL": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "whirlpool-trigger": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Criatura entra no redemoinho pela primeira vez no turno ou começa o turno nele"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "STR: 2d8 concussão e preso na falha; metade e não preso no sucesso."
+            },
+            "duration": {
+              "value": 10,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 25,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "bludgeoning"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "half"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "A conjuração escolhe Inundação, Separar Água, Redirecionar Fluxo ou Redemoinho. Só use o gatilho de save/dano no redemoinho."
+          }
+        }
+      }
+    }
+  },
+  "Death Ward": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Efeito reativo por 8 h: consuma-o para manter 1 PV quando dano reduziria a 0, ou para negar uma morte instantânea sem dano."
+          }
+        }
+      }
+    }
+  },
+  "Dimension Door": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "activities": {
+          "MgJb8qdNWvOlSXPi": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          },
+          "occupied-destination": {
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Somente se o destino estiver ocupado; o teleporte falha"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Aplique 4d6 força ao conjurador e ao passageiro."
+            },
+            "duration": {
+              "value": null,
+              "units": "inst",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "force"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Teleporte o conjurador e, opcionalmente, um aliado voluntário adjacente. Role o dano apenas se o destino estiver ocupado."
+          }
+        }
+      }
+    }
+  },
+  "Divination": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Encaminhe ao Mestre a pergunta sobre evento em até 7 dias e controle a chance cumulativa de resposta aleatória após usos repetidos antes do descanso longo."
+          }
+        }
+      }
+    }
+  },
+  "Dominate Beast": {
+    "item": {
+      "system": {
+        "activities": {
+          "3-C-xeAzsNQKV_Nt": {
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Vantagem no save se estiver combatendo; aplique Enfeitiçado/vínculo. Repita WIS quando sofrer dano. Duração por upcast: 1 min, 10 min no 5º, 1 h no 6º, 8 h no 7º+."
+          }
+        }
+      }
+    }
+  },
+  "Elemental Bane": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Escolha uma criatura que possa ver dentro do alcance e um tipo entre ácido, elétrico, fogo, frio ou trovejante. O alvo realiza uma salvaguarda de Constituição.</p><p>Em uma falha, até a magia terminar, o alvo perde resistência ao tipo escolhido. Na primeira vez em cada turno que ele sofrer dano desse tipo, também sofre 2d6 de dano adicional do mesmo tipo.</p><p><strong>Em Círculos Superiores.</strong> Você pode afetar uma criatura adicional para cada círculo acima do 4º; todos os alvos usam o mesmo tipo de dano escolhido.</p>"
+        },
+        "activities": {
+          "3nfLyZkk_zkC9r4m": {
+            "effects": []
+          },
+          "elemental-bane-trigger": {
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Primeira vez em cada turno que o alvo recebe o tipo escolhido"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Role 2d6 do tipo escolhido na conjuração."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "acid",
+                    "cold",
+                    "fire",
+                    "lightning",
+                    "thunder"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha um único tipo; remova a resistência na falha e use o dano adicional somente uma vez por turno. Selecione apenas o tipo escolhido ao rolar."
+          }
+        }
+      }
+    }
+  },
+  "Evard’s Black Tentacles": {
+    "definition": {
+      "range": {
+        "value": 90,
+        "units": "ft",
+        "special": "20-foot square"
+      },
+      "conditions": []
+    },
+    "item": {
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie terreno difícil. Use o save ao entrar/iniciar livre e o dano separado se começar impedido; fuga é ação com teste STR ou DEX." } } },
+      "system": {
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 20
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Tentáculos negros preenchem um quadrado de 6 metros no solo dentro do alcance. Por até 1 minuto de concentração, a área é terreno difícil.</p><p>Quando uma criatura entra na área pela primeira vez em um turno ou começa o turno nela, realiza uma salvaguarda de Destreza. Em uma falha, sofre 3d6 de dano de concussão e fica impedida pelos tentáculos; em um sucesso, não sofre dano nem fica impedida.</p><p>Uma criatura que começa o turno impedida sofre 3d6 de dano de concussão. Ela pode usar sua ação para fazer um teste de Força ou Destreza, à escolha dela, contra sua CD de magia, libertando-se em um sucesso.</p>"
+        },
+        "activities": {
+          "tentacles-restrained": { "type": "damage", "activation": { "type": "special", "value": null, "override": true, "condition": "Alvo começa o turno já impedido pelos tentáculos" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "3d6 concussão sem nova salvaguarda; fuga exige ação e teste STR ou DEX." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 3, "denomination": 6, "bonus": "", "types": ["bludgeoning"], "scaling": { "mode": "whole", "number": 0 } }], "critical": { "allow": false }, "onSave": "full" } },
+          "Rwed9lR-VaxCCPeZ": {
+            "damage": null,
+            "save": null,
+            "type": "utility"
+          },
+          "tentacles-save": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Entra pela primeira vez no turno ou começa o turno na área sem estar impedido"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "DEX: 3d6 concussão e impedido na falha; nenhum efeito no sucesso."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "cube",
+                "size": 20,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 3,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "bludgeoning"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "none"
+            },
+            "tentacles-restrained-damage": {
+              "type": "damage",
+              "activation": {
+                "type": "special",
+                "value": null,
+                "override": true,
+                "condition": "Alvo começa o turno já impedido pelos tentáculos"
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": false
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "Dano sem nova salvaguarda; a fuga exige ação e teste STR ou DEX."
+              },
+              "duration": {
+                "value": 1,
+                "units": "minute",
+                "concentration": true,
+                "override": true
+              },
+              "effects": [],
+              "range": {
+                "override": true
+              },
+              "target": {
+                "template": {
+                  "type": "",
+                  "size": null,
+                  "units": "ft",
+                  "contiguous": false
+                },
+                "affects": {
+                  "choice": false
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "midiProperties": {},
+              "overTimeProperties": {
+                "saveRemoves": false,
+                "preRemoveConditionText": "",
+                "postRemoveConditionText": ""
+              },
+              "damage": {
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 3,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "bludgeoning"
+                    ],
+                    "scaling": {
+                      "mode": "whole",
+                      "number": 0
+                    }
+                  }
+                ],
+                "critical": {
+                  "allow": false
+                },
+                "onSave": "full"
+              }
+            }
+          }
+        },
+        "flags": {
+          "foundry-spell-pack": {
+            "description": {
+              "quality": "reviewed-deep-pt-br",
+              "needsReview": false
+            },
+            "automation": {
+              "needsReview": true,
+              "manual": "Crie terreno difícil. Use o save ao entrar/iniciar livre e o dano separado se começar impedido; fuga é ação com teste STR ou DEX."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Fabricate": {
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 10
+          },
+          "affects": {
+            "type": "object",
+            "count": ""
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Selecione matéria-prima visível em cubo de 10 ft (ou oito cubos conectados de 5 ft para minerais); criação detalhada exige proficiência adequada."
+          }
+        }
+      }
+    }
+  },
+  "Find Greater Steed": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você invoca um espírito que assume a forma de uma montaria leal, surgindo em um espaço desocupado dentro do alcance. Escolha uma forma permitida pela fonte adotada; o espírito usa o bloco da forma, mas seu tipo é celestial, feérico ou ínfero, à sua escolha.</p><p>A montaria é inteligente, compreende um idioma que você fale e luta como uma unidade coordenada com você. Enquanto estiverem no mesmo plano, vocês podem comunicar-se telepaticamente a até 1,6 quilômetro.</p><p>Enquanto estiver montado, uma magia que você conjure tendo apenas você como alvo também pode afetar a montaria. Você pode dispensá-la como uma ação; conjurar novamente substitui a montaria anterior.</p>"
+        },
+        "activities": {
+          "CM45gmxoOukwzOSN": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha a forma e tipo, crie o ator da montaria e mantenha somente uma. Controle vínculo telepático e compartilhamento de magias self enquanto montado."
+          }
+        }
+      }
+    }
+  },
+  "Fire Shield": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Chamas finas envolvem seu corpo por 10 minutos, emitindo luz plena em 3 metros e luz fraca por mais 3 metros. Ao conjurar, escolha um escudo quente ou frio.</p><p>O escudo quente concede resistência a dano de frio e revida com 2d8 de fogo. O escudo frio concede resistência a fogo e revida com 2d8 de frio.</p><p>A retaliação ocorre somente quando uma criatura a até 1,5 metro acerta você com um ataque corpo a corpo. A conjuração, por si só, não causa dano.</p>"
+        },
+        "activities": {
+          "akd9xSgNdlYy-300": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          },
+          "fire-shield-retaliation": {
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Atacante a 5 ft acerta o conjurador com ataque corpo a corpo"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Escolha somente fogo (escudo quente) ou frio (escudo frio)."
+            },
+            "duration": {
+              "value": 10,
+              "units": "minute",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "fire",
+                    "cold"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha Quente ou Frio e aplique a resistência oposta. Use Retaliação apenas no gatilho e selecione somente o tipo da escolha."
+          }
+        }
+      }
+    }
+  },
+  "Freedom of Movement": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Aplique por 1 h: ignora terreno difícil, impede redução mágica de deslocamento e paralisia/impedimento mágicos; 5 ft escapam de restrição não mágica; movimento normal sob água."
+          }
+        }
+      }
+    }
+  },
+  "Galder’s Speedy Courier": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você invoca um pequeno mensageiro que surge com um baú Miúdo em um espaço desocupado a até 1,5 metro. Você coloca no baú objetos que caibam nele e nomeia um destinatário conhecido no mesmo plano.</p><p>O mensageiro desaparece e reaparece ao lado do destinatário após 10 minutos. Ele abre o baú e permanece por até 3 minutos enquanto o destinatário retira ou deposita objetos, então retorna a você. Se o destinatário recusar ou não puder receber, o mensageiro retorna.</p><p>Se não puder retornar antes de 24 horas, o mensageiro desaparece e o conteúdo reaparece aos seus pés. O Mestre resolve impedimentos de plano, identidade e espaço segundo a fonte adotada.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Registre conteúdo e destinatário; resolva manualmente viagem de 10 min, janela de 3 min, retorno e limite de 24 h."
+          }
+        }
+      }
+    }
+  },
+  "Gate Seal": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": 60,
+        "units": "ft",
+        "special": "30-foot-radius glyph"
+      }
+    },
+    "item": {
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie região de 30 ft que bloqueie portais/viagem planar por 24 h + 24 h por círculo; Dispel Magic pode removê-la." } } },
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 30
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Você inscreve um glifo num ponto no chão a até 18 metros. Durante 24 horas, ele protege uma esfera de 9 metros de raio centrada nesse ponto.</p><p>Dentro da área, portais não podem abrir e criaturas não podem viajar para outro plano por magia ou outra característica. Uma tentativa bloqueada falha sem transportar a criatura. Dissipar Magia pode encerrar o selo.</p><p><strong>Em Círculos Superiores.</strong> A duração aumenta em 24 horas para cada círculo acima do 4º.</p>"
+        },
+        "activities": {
+          "fvLgJi34gz6jxxRP": {
+            "type": "utility",
+            "save": null,
+            "damage": null,
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 30
+              }
+            }
+          }
+        },
+        "flags": {
+          "foundry-spell-pack": {
+            "description": {
+              "quality": "reviewed-deep-pt-br",
+              "needsReview": false
+            },
+            "automation": {
+              "needsReview": true,
+              "manual": "Crie região de 30 ft que bloqueie portais/viagem planar por 24 h + 24 h por círculo; Dispel Magic pode removê-la."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Giant Insect": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Transforme até 10 centopeias, 3 aranhas, 5 vespas ou 1 escorpião nas versões gigantes; reverta a 0 PV, no fim da concentração ou ao dispensar."
+          }
+        }
+      }
+    }
+  },
+  "Grasping Vine": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": 30,
+        "units": "ft",
+        "special": "Vine in an unoccupied point"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você conjura uma vinha em um espaço desocupado que possa ver a até 9 metros. Ela dura por até 1 minuto de concentração.</p><p>Quando conjura a magia, você pode fazer a vinha atacar uma criatura a até 9 metros dela. Faça um ataque corpo a corpo com magia; em um acerto, o alvo é puxado até 6 metros em direção à vinha.</p><p>Até a magia terminar, você pode usar uma ação bônus em cada turno para repetir esse ataque contra a mesma criatura ou outra. Não há salvaguarda e a magia não causa dano diretamente.</p>"
+        },
+        "activities": {
+          "-qDQbb2Yebc6Hswv": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "vine-attack": {
+            "type": "attack",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "override": true,
+              "condition": "Ao conjurar e como ação bônus nos turnos seguintes; alvo a 30 ft da vinha"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Em acerto, puxe o alvo até 20 ft em direção à vinha; sem dano."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "spell"
+              }
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Crie a vinha; use Ataque da Vinha, não save. Em acerto puxe até 20 ft em direção à origem."
+          }
+        }
+      }
+    }
+  },
+  "Gravity Sinkhole": {
+    "definition": {
+      "range": {
+        "value": 120,
+        "units": "ft",
+        "special": "20-foot-radius sphere"
+      }
+    },
+    "item": {
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Após cada save, puxe 20 ft na falha ou 10 ft no sucesso em direção ao centro; o dano é 5d10/half e escala +1d10." } } },
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Uma esfera de força gravitacional com 6 metros de raio surge num ponto que você possa ver a até 36 metros. Cada criatura na esfera realiza uma salvaguarda de Constituição.</p><p>Em uma falha, a criatura sofre 5d10 de dano de força e é puxada em linha reta até 6 metros em direção ao centro. Em um sucesso, sofre metade do dano e é puxada apenas até metade dessa distância, conforme a redação da fonte adotada.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d10 para cada círculo acima do 4º.</p>"
+        },
+        "activities": {
+          "OOUgdBfUkW-hwC4F": {
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 20
+              }
+            }
+          }
+        },
+        "flags": {
+          "foundry-spell-pack": {
+            "description": {
+              "quality": "reviewed-deep-pt-br",
+              "needsReview": false
+            },
+            "automation": {
+              "needsReview": true,
+              "manual": "Após cada save, puxe 20 ft na falha ou 10 ft no sucesso em direção ao centro; o dano é 5d10/half e escala +1d10."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Greater Invisibility": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você ou uma criatura que tocar torna-se invisível por até 1 minuto de concentração. Tudo que o alvo estiver vestindo ou carregando também fica invisível enquanto permanecer com ele.</p><p>Diferentemente de Invisibilidade, esta magia não termina quando o alvo ataca, causa dano ou conjura outra magia. A condição termina apenas quando a duração ou a concentração termina.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Aplique Invisível por concentração; não remova ao atacar ou conjurar."
+          }
+        }
+      }
+    }
+  },
+  "Guardian of Faith": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "activities": {
+          "JiVlCZBk5XX_075-": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "guardian-trigger": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Hostil entra a 10 ft pela primeira vez no turno ou termina o turno ali"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "DEX: 20 radiante na falha, 10 no sucesso. Some o dano; remova o guardião após causar 60."
+            },
+            "duration": {
+              "value": 8,
+              "units": "hour",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 10,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": "3"
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": true,
+                    "formula": "20"
+                  },
+                  "number": null,
+                  "denomination": null,
+                  "bonus": "",
+                  "types": [
+                    "radiant"
+                  ],
+                  "scaling": {
+                    "mode": "",
+                    "number": null
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "half"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Crie guardião em espaço desocupado; use o gatilho no raio de 10 ft e controle o total de 60 de dano."
+          }
+        }
+      }
+    }
+  },
+  "Guardian of Nature": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Um espírito natural fortalece você por até 1 minuto de concentração. Ao conjurar, escolha uma forma; a conjuração não exige salvaguarda nem causa dano.</p><p><strong>Fera Primordial.</strong> Seu deslocamento de caminhada aumenta em 3 metros; você recebe visão no escuro 36 metros; ataques baseados em Força têm vantagem; e seus ataques corpo a corpo com arma causam 1d6 de dano de força adicional.</p><p><strong>Árvore Grandiosa.</strong> Você recebe 10 pontos de vida temporários; faz salvaguardas de Constituição com vantagem; ataques baseados em Destreza ou Sabedoria têm vantagem; e o solo a 4,5 metros é terreno difícil para seus inimigos.</p>"
+        },
+        "activities": {
+          "DwcBnspIzVquEK_u": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha Fera ou Árvore e aplique apenas o conjunto correspondente. Não role CON nem 1d6 na conjuração; o 1d6 pertence aos acertos corpo a corpo da Fera."
+          }
+        }
+      }
+    }
+  },
+  "Hallucinatory Terrain": {
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 150
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Marque cubo de 150 ft; aparência muda, sensação tátil não. Investigation contra CD permite discernir e torna a ilusão tênue apenas para aquela criatura."
+          }
+        }
+      }
+    }
+  },
+  "Ice Storm": {
+    "definition": {
+      "range": {
+        "value": 300,
+        "units": "ft",
+        "special": "20-foot-radius, 40-foot-high cylinder"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          }
+        },
+        "activities": {
+          "N9GKg0ZagzKK8fO-": {
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 20
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "bludgeoning"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 1
+                  }
+                },
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "cold"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "half"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Cilindro 20×40 ft; aplique terreno difícil até o fim do próximo turno. Somente 2d8 concussão escala +1d8; 4d6 frio permanece fixo."
+          }
+        }
+      }
+    }
+  },
+  "Leomund’s Secret Chest": {
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "object",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você esconde um baú Grande e todo seu conteúdo no Plano Etéreo usando uma réplica Miúda. Os dois baús devem cumprir os valores e materiais indicados nos componentes da magia.</p><p>Enquanto segurar a réplica, você pode usar uma ação para enviar o baú ao Etéreo ou trazê-lo de volta a um espaço desocupado no chão a até 1,5 metro. Se uma criatura estiver dentro, há chance de ela ficar presa no Etéreo.</p><p>Após 60 dias, existe chance cumulativa diária de a magia terminar. Destruir ou perder a réplica impede recuperar o baú pela magia; terminar voluntariamente traz o conteúdo de volta conforme a regra, mas não recria um baú destruído.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Vincule baú e réplica, controle envio/retorno e a chance cumulativa após 60 dias. A perda da réplica pode tornar o baú irrecuperável."
+          }
+        }
+      }
+    }
+  },
+  "Locate Creature": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Informe direção apenas se a criatura familiar estiver a 1.000 ft no mesmo plano; água corrente de 10 ft bloqueia e transformação/descrição incorreta pode impedir."
+          }
+        }
+      }
+    }
+  },
+  "Mordenkainen’s Faithful Hound": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você conjura um cão de guarda fantasmagórico em um espaço desocupado a até 9 metros. Ele é invisível para todos, exceto você, e permanece por 8 horas, até você dispensá-lo ou afastar-se mais de 30 metros.</p><p>Ao conjurar, designe criaturas que não serão hostis ao cão. Quando uma criatura Pequena ou maior não designada chega a até 9 metros sem pronunciar a senha escolhida, o cão começa a latir. Ele percebe invisibilidade e o Plano Etéreo e ignora ilusões.</p><p>No início de cada um de seus turnos, o cão tenta morder uma criatura hostil a até 1,5 metro: faça um ataque corpo a corpo com magia; em um acerto, causa 4d8 de dano perfurante.</p>"
+        },
+        "activities": {
+          "edO2oJG2mB7LlDml": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          },
+          "hound-bite": {
+            "type": "attack",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Início do turno do conjurador; hostil a 5 ft do cão"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Ataque corpo a corpo com magia do cão."
+            },
+            "duration": {
+              "value": 8,
+              "units": "hour",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "spell"
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "piercing"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": true
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Crie o cão e defina senha/excluídos; use Mordida no início do turno apenas contra hostil a 5 ft."
+          }
+        }
+      }
+    }
+  },
+  "Mordenkainen’s Private Sanctum": {
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 100
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Você protege uma área cúbica de até 30 metros de lado por 24 horas. Ao conjurar, escolha um ou mais efeitos: som não atravessa a borda; a borda parece escura e enevoada; sensores de adivinhação não surgem dentro nem atravessam a barreira; criaturas não podem ser alvo de adivinhação; teleporte e viagem planar para dentro ou para fora são bloqueados.</p><p>Conjurar diariamente no mesmo local por um ano torna o efeito permanente.</p><p><strong>Em Círculos Superiores.</strong> Cada dimensão máxima do cubo aumenta em 30 metros para cada círculo acima do 4º.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Marque cubo e registre as barreiras escolhidas; +100 ft por dimensão/círculo e permanente após um ano diário."
+          }
+        }
+      }
+    }
+  },
+  "Otiluke’s Resilient Sphere": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Uma esfera de força envolve uma criatura ou objeto Grande ou menor a até 9 metros. Um alvo voluntário é envolvido sem salvaguarda; um alvo involuntário faz uma salvaguarda de Destreza e, em sucesso, evita a esfera.</p><p>Nada atravessa a barreira. O alvo fica impedido e totalmente protegido de efeitos originados fora, enquanto efeitos internos não alcançam o exterior. A esfera é imune a dano, mas pode ser removida por Desintegrar.</p><p>Uma criatura dentro pode usar uma ação para rolar a esfera até metade de seu deslocamento. Você pode dispensá-la como ação bônus.</p>"
+        },
+        "activities": {
+          "F_C1opws5NeIMIBQ": {
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "areaReviewed": true,
+            "manual": "Alvo voluntário não salva; no involuntário, DEX nega. Na falha aplique impedido/barreira e permita rolar por ação ou dispensar por bônus."
+          }
+        }
+      }
+    }
+  },
+  "Phantasmal Killer": {
+    "definition": {
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "bGRF08t3pFJ4I1cx": {
+            "damage": null,
+            "effects": []
+          },
+          "killer-end-save": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Fim de cada turno do alvo amedrontado"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": true
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "WIS: na falha 4d10 psíquico; no sucesso a magia termina."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": true,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 10,
+                  "bonus": "",
+                  "types": [
+                    "psychic"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 1
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "none"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "A falha inicial apenas amedronta, sem dano. Use o save final; falha causa dano, sucesso encerra."
+          }
+        }
+      }
+    }
+  },
+  "Polymorph": {
+    "item": {
+      "system": {
+        "activities": {
+          "8kCjB2xnkCK2S50t": {
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Voluntário não salva; rejeite metamorfo/0 PV. Substitua pela ficha de fera de CR permitido, reverta a 0 PV/fim e transfira dano excedente."
+          }
+        }
+      }
+    }
+  },
+  "Raulothim’s Psychic Lance": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Escolha uma criatura que possa ver a até 36 metros ou pronuncie o nome de uma criatura conhecida. Um alvo nomeado pode ser atingido mesmo sem visão, desde que esteja dentro do alcance; se não estiver, o espaço não é gasto.</p><p>O alvo realiza uma salvaguarda de Inteligência. Em uma falha, sofre 7d6 de dano psíquico e fica incapacitado até o início de seu próximo turno. Em um sucesso, sofre metade do dano e não fica incapacitado.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d6 para cada círculo acima do 4º.</p>"
+        },
+        "activities": {
+          "TRanrcMFSA_bZk7S": {
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Aplique incapacitado somente na falha. Alvo nomeado dispensa visão, mas deve estar no alcance; fora dele, não gaste o espaço."
+          }
+        }
+      }
+    }
+  },
+  "Shadow of Moil": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Chamas sombrias envolvem você por até 1 minuto de concentração. Para outras criaturas, você fica fortemente obscurecido. Você recebe resistência a dano radiante.</p><p>A sombra transforma luz plena a até 3 metros em luz fraca e luz fraca na mesma área em escuridão. Quando a magia termina, a iluminação retorna.</p><p>Quando uma criatura a até 3 metros acerta você com um ataque, ela sofre 2d8 de dano necrótico. A conjuração não causa esse dano imediatamente.</p>"
+        },
+        "activities": {
+          "NAe1YTHkhY-h6a1v": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          },
+          "shadow-retaliation": {
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Criatura a 10 ft acerta o conjurador com um ataque"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Retaliação de 2d8 necrótico."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "necrotic"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Aplique obscurecimento, resistência radiante e luz. Use Retaliação apenas quando atacante a 10 ft acertar."
+          }
+        }
+      }
+    }
+  },
+  "Sickening Radiance": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "range": {
+        "value": 120,
+        "units": "ft",
+        "special": "30-foot-radius sphere"
+      },
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 30
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Luz esverdeada preenche uma esfera de 9 metros de raio centrada num ponto dentro do alcance. A luz fraca se espalha ao redor de cantos e dura por até 10 minutos de concentração.</p><p>Quando uma criatura entra na área pela primeira vez em um turno ou começa o turno nela, realiza uma salvaguarda de Constituição. Em uma falha, sofre 4d10 de dano radiante, recebe um nível de exaustão e emite luz fraca num raio de 1,5 metro, perdendo o benefício de invisibilidade. Em um sucesso, não sofre esses efeitos.</p><p>Todos os níveis de exaustão causados por esta magia desaparecem quando ela termina.</p>"
+        },
+        "activities": {
+          "Nke8oeJ-jOLOZ2NS": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          },
+          "radiance-trigger": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Entra pela primeira vez no turno ou começa o turno na esfera"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "CON: em falha, 4d10 radiante, +1 exaustão e emite luz; sucesso sem efeito."
+            },
+            "duration": {
+              "value": 10,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 30,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "con"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 10,
+                  "bonus": "",
+                  "types": [
+                    "radiant"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "none"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "A criação não rola save. Use o gatilho da região; some exaustão por falhas e remova todos os níveis desta magia ao terminar."
+          }
+        }
+      }
+    }
+  },
+  "Spirit of Death": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você invoca um espírito da morte em um espaço desocupado a até 18 metros, usando o foco material exigido. Ele permanece por até 1 hora de concentração e usa o bloco de estatísticas da magia.</p><p>Ao invocá-lo, escolha uma criatura que possa ver como assombrada. O espírito conhece direção e distância até ela enquanto ambos estiverem no mesmo plano e tem vantagem em ataques contra ela.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e move-se apenas para evitar perigo. Seus PV, ataques e dano escalam com o círculo usado.</p>"
+        },
+        "activities": {
+          "u6xpre4etuZBTTyE": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Não role save/dano ao conjurar. Crie o espírito com bloco completo, alvo assombrado, iniciativa após o conjurador e escalas do espaço."
+          }
+        }
+      }
+    }
+  },
+  "Staggering Smite": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Até a magia terminar, o próximo ataque corpo a corpo com arma que você acertar causa 4d6 de dano psíquico adicional. A conjuração não causa dano nem exige salvaguarda.</p><p>Depois do acerto, o alvo realiza uma salvaguarda de Sabedoria. Em uma falha, até o fim do próximo turno dele, tem desvantagem em jogadas de ataque e testes de habilidade e não pode realizar reações. Em um sucesso, sofre apenas o dano adicional.</p><p>O efeito é consumido no primeiro acerto válido; errar um ataque não o consome enquanto a concentração permanecer.</p>"
+        },
+        "activities": {
+          "dolyiIvO_IBlpSm_": {
+            "type": "utility",
+            "damage": null,
+            "save": null
+          },
+          "staggering-hit": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Próximo ataque corpo a corpo com arma que acertar durante a concentração"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Aplique 4d6 psíquico; WIS só determina os efeitos debilitantes."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": "1"
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "wis"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "psychic"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Conjuração só arma o smite. Use Acerto do Smite no próximo acerto válido; dano ocorre sempre, efeitos apenas em falha no WIS."
+          }
+        }
+      }
+    }
+  },
+  "Stone Shape": {
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "object",
+            "count": "1"
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          }
+        }
+      }
+    }
+  },
+  "Stoneskin": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você toca uma criatura voluntária e torna sua carne dura como pedra por até 1 hora de concentração.</p><p>Enquanto a magia durar, o alvo tem resistência a dano de concussão, perfurante e cortante causado por ataques não mágicos. A resistência não se aplica a dano mágico desses tipos.</p><p>A magia consome o pó de diamante de 100 PO indicado em seus componentes.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Aplique resistência somente a B/P/S não mágicos e consuma o componente de 100 PO."
+          }
+        }
+      }
+    }
+  },
+  "Storm Sphere": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": 150,
+        "units": "ft",
+        "special": "20-foot-radius sphere"
+      }
+    },
+    "item": {
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie terreno difícil. Use Impacto apenas ao surgir e Raio como bônus; são rolagens distintas e cada dano escala +1d6." } } },
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Uma esfera de ar revolto de 6 metros de raio surge num ponto a até 45 metros e dura por até 1 minuto de concentração. A área é terreno difícil.</p><p>Quando a esfera surge, cada criatura nela faz uma salvaguarda de Força, sofrendo 2d6 de concussão em uma falha ou nenhum dano em um sucesso.</p><p>Como ação bônus em cada turno, você faz um ataque à distância com magia contra uma criatura a até 18 metros do centro; o ataque tem vantagem se o alvo estiver dentro da esfera e causa 4d6 de dano elétrico no acerto.</p><p><strong>Em Círculos Superiores.</strong> Cada um dos dois danos aumenta em 1d6 por círculo acima do 4º.</p>"
+        },
+        "activities": {
+          "storm-bolt-attack": { "type": "attack", "activation": { "type": "bonus", "value": 1, "override": true, "condition": "Alvo a 60 ft do centro; vantagem se estiver dentro da esfera" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Ataque à distância com magia, 4d6 elétrico no acerto." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "attack": { "ability": "", "bonus": "", "critical": { "threshold": null }, "flat": false, "type": { "value": "ranged", "classification": "spell" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 4, "denomination": 6, "bonus": "", "types": ["lightning"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": true }, "onSave": "full" } },
+          "YVcu5CG30RuwTjzo": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "storm-initial": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Somente quando a esfera surge"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": true
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "STR: 2d6 concussão na falha, zero no sucesso."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 20,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [
+                    "bludgeoning"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 1
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "none"
+            },
+            "storm-bolt": {
+              "type": "attack",
+              "activation": {
+                "type": "bonus",
+                "value": 1,
+                "override": true,
+                "condition": "Alvo a 60 ft do centro; vantagem se estiver dentro da esfera"
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": true
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "Ataque à distância com magia, 4d6 elétrico no acerto."
+              },
+              "duration": {
+                "value": 1,
+                "units": "minute",
+                "concentration": true,
+                "override": true
+              },
+              "effects": [],
+              "range": {
+                "override": true
+              },
+              "target": {
+                "template": {
+                  "type": "",
+                  "size": null,
+                  "units": "ft",
+                  "contiguous": false
+                },
+                "affects": {
+                  "choice": false
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "midiProperties": {},
+              "overTimeProperties": {
+                "saveRemoves": false,
+                "preRemoveConditionText": "",
+                "postRemoveConditionText": ""
+              },
+              "attack": {
+                "ability": "",
+                "bonus": "",
+                "critical": {
+                  "threshold": null
+                },
+                "flat": false,
+                "type": {
+                  "value": "ranged",
+                  "classification": "spell"
+                }
+              },
+              "damage": {
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 4,
+                    "denomination": 6,
+                    "bonus": "",
+                    "types": [
+                      "lightning"
+                    ],
+                    "scaling": {
+                      "mode": "whole",
+                      "number": 1
+                    }
+                  }
+                ],
+                "critical": {
+                  "allow": true
+                },
+                "onSave": "full"
+              }
+            }
+          }
+        },
+        "flags": {
+          "foundry-spell-pack": {
+            "description": {
+              "quality": "reviewed-deep-pt-br",
+              "needsReview": false
+            },
+            "automation": {
+              "needsReview": true,
+              "manual": "Crie terreno difícil. Use Impacto apenas ao surgir e Raio como bônus; são rolagens distintas e cada dano escala +1d6."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Summon Aberration": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você invoca um espírito aberrante num espaço desocupado a até 27 metros. Escolha a forma Beholderkin, Slaad ou Star Spawn; ela determina características e ataques do bloco de estatísticas da magia.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e move-se apenas para evitar perigo. Desaparece a 0 PV ou no fim da concentração.</p><p><strong>Em Círculos Superiores.</strong> Use o nível do espaço para calcular CA, PV, quantidade de ataques e dano exatamente como no bloco. A conjuração não pede salvaguarda nem causa dano.</p>"
+        },
+        "activities": {
+          "L0frVY1sP61QCUax": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha uma das três formas e crie o ator pelo bloco; não role o falso WIS/dano da conjuração."
+          }
+        }
+      }
+    }
+  },
+  "Summon Construct": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você invoca um espírito construto num espaço desocupado a até 27 metros. Escolha Argila, Metal ou Pedra; a forma determina a reação ou aura apresentada no bloco da magia.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e apenas evita perigo. Desaparece a 0 PV ou no fim da concentração.</p><p><strong>Em Círculos Superiores.</strong> Calcule CA, PV, quantidade de ataques e dano pelo nível do espaço. A conjuração não pede salvaguarda nem causa fogo ou concussão.</p>"
+        },
+        "activities": {
+          "LSOTTXxgbxfvhewp": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha Argila/Metal/Pedra e crie o ator pelo bloco; não role o falso WIS/dano da conjuração."
+          }
+        }
+      }
+    }
+  },
+  "Summon Elemental": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você invoca um espírito elemental num espaço desocupado a até 27 metros. Escolha Ar, Água, Fogo ou Terra; a forma determina resistências, deslocamentos e tipo de dano do bloco da magia.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e apenas evita perigo. Desaparece a 0 PV ou no fim da concentração.</p><p><strong>Em Círculos Superiores.</strong> Calcule CA, PV, quantidade de ataques e dano pelo nível do espaço. A conjuração não causa dano diretamente.</p>"
+        },
+        "activities": {
+          "nvuoaOVEwzjARXOn": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Escolha o elemento e crie o ator pelo bloco; não role o falso dano da conjuração."
+          }
+        }
+      }
+    }
+  },
+  "Summon Greater Demon": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        },
+        "description": {
+          "value": "<p>Você invoca um demônio de ND 5 ou menor num espaço desocupado a até 18 metros e pronuncia um comando. Ele rola iniciativa própria e obedece enquanto estiver sob seu controle.</p><p>No fim de cada turno dele, o demônio realiza uma salvaguarda de Carisma contra sua CD de magia, com vantagem se você disser seu nome verdadeiro. Em um sucesso, rompe o controle e persegue criaturas próximas durante o tempo restante indicado pela magia. Esse save não ocorre ao conjurar.</p><p>O círculo de sangue do componente pode proteger ocupantes conforme a regra. <strong>Em Círculos Superiores.</strong> O ND máximo aumenta em 1 por círculo acima do 4º.</p>"
+        },
+        "activities": {
+          "hzBkpam1ayGxvix9": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "demon-control-save": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Fim de cada turno do demônio; ele rola CHA, com vantagem se o nome verdadeiro foi dito"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Sucesso rompe o controle; este save pertence ao demônio invocado."
+            },
+            "duration": {
+              "value": 1,
+              "units": "hour",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "cha"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Crie o demônio; não role CHA no alvo da conjuração. Use Save de Controle no fim dos turnos do próprio demônio."
+          }
+        }
+      }
+    }
+  },
+  "Vitriolic Sphere": {
+    "definition": {
+      "range": {
+        "value": 150,
+        "units": "ft",
+        "special": "20-foot-radius sphere"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20
+          },
+          "affects": {
+            "type": "creature",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Uma esfera de ácido explode num ponto a até 45 metros, cobrindo uma esfera de 6 metros de raio. Cada criatura na área realiza uma salvaguarda de Destreza.</p><p>Em uma falha, o alvo sofre 10d4 de dano de ácido imediatamente e mais 5d4 no fim do próximo turno dele. Em um sucesso, sofre metade do dano inicial e nenhum dano tardio.</p><p><strong>Em Círculos Superiores.</strong> Apenas o dano inicial aumenta em 2d4 para cada círculo acima do 4º; o dano tardio permanece 5d4.</p>"
+        },
+        "activities": {
+          "ETeF208m5KH-7WNC": {
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 20
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 10,
+                  "denomination": 4,
+                  "bonus": "",
+                  "types": [
+                    "acid"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 2
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "half"
+            }
+          },
+          "vitriolic-delayed": {
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Fim do próximo turno de um alvo que falhou na salvaguarda inicial"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "Somente alvos que falharam; 5d4 ácido sem nova salvaguarda."
+            },
+            "duration": {
+              "value": 1,
+              "units": "round",
+              "concentration": false,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 5,
+                  "denomination": 4,
+                  "bonus": "",
+                  "types": [
+                    "acid"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 0
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "full"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "A atividade inicial faz 10d4/half. Use Dano Tardio somente em falhas, no fim do próximo turno; só o inicial escala +2d4."
+          }
+        }
+      }
+    }
+  },
+  "Wall of Fire": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": 120,
+        "units": "ft",
+        "special": "60-foot wall or 20-foot-diameter ring"
+      }
+    },
+    "item": {
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Escolha parede reta ou anel e lado quente. Use Surgimento uma vez com save; use Zona para entrada/fim de turno sem save." } } },
+      "system": {
+        "target": {
+          "template": {
+            "type": "wall",
+            "size": 60
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "activities": {
+          "wall-zone-damage": { "type": "damage", "activation": { "type": "special", "value": null, "override": true, "condition": "Entra na parede pela primeira vez no turno ou termina na parede/a 10 ft do lado quente" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "5d8 fogo sem salvaguarda; apenas no lado escolhido." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "wall", "size": 60, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 5, "denomination": 8, "bonus": "", "types": ["fire"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "full" } },
+          "ItSDpUuubbaRKi4m": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "wall-appears": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Somente quando a parede surge; criaturas dentro de sua área"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": true
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "DEX: 5d8 fogo na falha, metade no sucesso."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "wall",
+                "size": 60,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 5,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "mode": "whole",
+                    "number": 1
+                  }
+                }
+              ],
+              "critical": {
+                "allow": false
+              },
+              "onSave": "half"
+            },
+            "wall-zone": {
+              "type": "damage",
+              "activation": {
+                "type": "special",
+                "value": null,
+                "override": true,
+                "condition": "Entra na parede pela primeira vez no turno ou termina na parede/a 10 ft do lado quente"
+              },
+              "consumption": {
+                "scaling": {
+                  "allowed": true
+                },
+                "spellSlot": false,
+                "targets": []
+              },
+              "description": {
+                "chatFlavor": "5d8 fogo sem salvaguarda; apenas no lado escolhido."
+              },
+              "duration": {
+                "value": 1,
+                "units": "minute",
+                "concentration": true,
+                "override": true
+              },
+              "effects": [],
+              "range": {
+                "override": true
+              },
+              "target": {
+                "template": {
+                  "type": "wall",
+                  "size": 60,
+                  "units": "ft",
+                  "contiguous": false
+                },
+                "affects": {
+                  "choice": false
+                },
+                "override": true,
+                "prompt": true
+              },
+              "uses": {
+                "spent": 0,
+                "recovery": [],
+                "max": ""
+              },
+              "midiProperties": {},
+              "overTimeProperties": {
+                "saveRemoves": false,
+                "preRemoveConditionText": "",
+                "postRemoveConditionText": ""
+              },
+              "damage": {
+                "parts": [
+                  {
+                    "custom": {
+                      "enabled": false,
+                      "formula": ""
+                    },
+                    "number": 5,
+                    "denomination": 8,
+                    "bonus": "",
+                    "types": [
+                      "fire"
+                    ],
+                    "scaling": {
+                      "mode": "whole",
+                      "number": 1
+                    }
+                  }
+                ],
+                "critical": {
+                  "allow": false
+                },
+                "onSave": "full"
+              }
+            }
+          }
+        },
+        "flags": {
+          "foundry-spell-pack": {
+            "description": {
+              "quality": "reviewed-deep-pt-br",
+              "needsReview": false
+            },
+            "automation": {
+              "needsReview": true,
+              "manual": "Escolha parede reta ou anel e lado quente. Use Surgimento uma vez com save; use Zona para entrada/fim de turno sem save."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Watery Sphere": {
+    "definition": {
+      "mode": "utility",
+      "damage": [],
+      "save": "",
+      "conditions": [],
+      "range": {
+        "value": 90,
+        "units": "ft",
+        "special": "10-foot-radius sphere"
+      }
+    },
+    "item": {
+      "system": {
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 10
+          },
+          "affects": {
+            "type": "space",
+            "count": ""
+          }
+        },
+        "description": {
+          "value": "<p>Uma esfera de água de 3 metros de raio surge num ponto a até 27 metros e dura por até 1 minuto de concentração. Ela paira, mas cai com segurança se não estiver apoiada.</p><p>Cada criatura na área quando a esfera surge, ou que entra nela, realiza uma salvaguarda de Força. Em uma falha, uma criatura Grande ou menor fica impedida dentro da esfera. Em um sucesso, é ejetada para o espaço desocupado mais próximo. Uma criatura impedida repete a salvaguarda no fim de cada turno, escapando em um sucesso.</p><p>A esfera comporta uma criatura Grande ou até quatro Médias ou menores; excesso é ejetado. Como ação, você a move até 9 metros, carregando os presos; chamas não mágicas atravessadas são apagadas.</p>"
+        },
+        "activities": {
+          "fSLax8dnubxtf1xk": {
+            "type": "utility",
+            "save": null,
+            "damage": null
+          },
+          "watery-entry-save": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Esfera surge sobre a criatura ou criatura entra na esfera"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "STR: falha prende criatura Grande ou menor; sucesso ejeta."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "circle",
+                "size": 10,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": false,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            }
+          },
+          "watery-end-save": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Fim de cada turno da criatura impedida na esfera"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": false,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": "STR em sucesso liberta e ejeta a criatura."
+            },
+            "duration": {
+              "value": 1,
+              "units": "minute",
+              "concentration": true,
+              "override": true
+            },
+            "effects": [],
+            "range": {
+              "override": true
+            },
+            "target": {
+              "template": {
+                "type": "",
+                "size": null,
+                "units": "ft",
+                "contiguous": false
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": true,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "midiProperties": {},
+            "overTimeProperties": {
+              "saveRemoves": true,
+              "preRemoveConditionText": "",
+              "postRemoveConditionText": ""
+            },
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          },
+          "automation": {
+            "needsReview": true,
+            "manual": "Criação não salva. Use Entrada quando surgir/sobrepor ou alguém entrar, e Save Final para presos; controle capacidade, movimento por ação e ejeção."
+          }
+        }
+      }
+    }
+  }
+}

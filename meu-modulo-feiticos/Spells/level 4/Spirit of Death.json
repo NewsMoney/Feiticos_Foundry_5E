@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito da morte por até 1 hora de concentração usando um foco de 400 PO. Escolhe uma criatura assombrada por ele; o espírito conhece sua direção e a ataca com vantagem. Compartilha sua iniciativa e usa o bloco da magia, melhorando com espaços superiores.</p>",
+      "value": "<p>Você invoca um espírito da morte em um espaço desocupado a até 18 metros, usando o foco material exigido. Ele permanece por até 1 hora de concentração e usa o bloco de estatísticas da magia.</p><p>Ao invocá-lo, escolha uma criatura que possa ver como assombrada. O espírito conhece direção e distância até ela enquanto ambos estiverem no mesmo plano e tem vantagem em ataques contra ela.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e move-se apenas para evitar perigo. Seus PV, ataques e dano escalam com o círculo usado.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "u6xpre4etuZBTTyE": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,55 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "necrotic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "damage": null,
+        "save": null
       }
     }
   },
@@ -165,19 +118,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.energy_strands.in.dark_purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Não role save/dano ao conjurar. Crie o espírito com bloco completo, alvo assombrado, iniciativa após o conjurador e escalas do espaço."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

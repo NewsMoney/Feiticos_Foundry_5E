@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito que assume a forma de uma montaria superior, como grifo, pégaso ou rinoceronte. Ela é leal, inteligente, comunica-se telepaticamente a até 1,5 quilômetro e compartilha magias que você conjura apenas em si mesmo. Só uma montaria vinculada pode existir por vez.</p>",
+      "value": "<p>Você invoca um espírito que assume a forma de uma montaria leal, surgindo em um espaço desocupado dentro do alcance. Escolha uma forma permitida pela fonte adotada; o espírito usa o bloco da forma, mas seu tipo é celestial, feérico ou ínfero, à sua escolha.</p><p>A montaria é inteligente, compreende um idioma que você fale e luta como uma unidade coordenada com você. Enquanto estiverem no mesmo plano, vocês podem comunicar-se telepaticamente a até 1,6 quilômetro.</p><p>Enquanto estiver montado, uma magia que você conjure tendo apenas você como alvo também pode afetar a montaria. Você pode dispensá-la como uma ação; conjurar novamente substitui a montaria anterior.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha a forma e tipo, crie o ator da montaria e mantenha somente uma. Controle vínculo telepático e compartilhamento de magias self enquanto montado."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

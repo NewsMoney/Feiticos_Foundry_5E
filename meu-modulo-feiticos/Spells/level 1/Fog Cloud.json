@@ -26,14 +26,14 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "20-foot radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Posicione uma esfera de raio 20 pés. Ela é fortemente obscurecida e não exige salvaguarda. O raio aumenta 20 pés por nível de espaço acima do 1º; ajuste manualmente o template no upcast."
         },
         "duration": {
           "value": 1,
@@ -89,13 +89,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -125,7 +125,8 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

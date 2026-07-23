@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Shocking%20Grasp.png",
   "system": {
     "description": {
-      "value": "<p>Você realiza ataque mágico corpo a corpo com vantagem se o alvo usa armadura metálica. Em acerto causa 1d8 elétrico e impede reações até o próximo turno dele. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Relâmpagos saltam de sua mão para uma criatura que você tenta tocar. Realize um ataque mágico corpo a corpo contra o alvo. Você tem vantagem na jogada se o alvo estiver usando armadura feita de metal.</p><p>Em um acerto, o alvo sofre 1d8 de dano elétrico e não pode realizar reações até o início do próximo turno dele.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -154,7 +154,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {
@@ -171,7 +171,8 @@
         "specialDuration": [
           "turnStartSource"
         ]
-      }
+      },
+      "manualWorkflow": "Conceda vantagem se o alvo estiver usando armadura de metal."
     },
     "itemacro": {
       "macro": {

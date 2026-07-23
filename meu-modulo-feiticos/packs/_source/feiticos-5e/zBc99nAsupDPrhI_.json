@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma faixa brilhante brilha do seu dedo apontador para um ponto que você escolher dentro do alcance e então floresce com um rugido baixo em uma explosão de chamas. Cada criatura em uma esfera de 6 metros de raio centrada naquele ponto deve realizar um teste de resistência de Destreza. Um alvo sofre 8d6 de dano de fogo se falhar na resistência, ou metade desse dano se obtiver sucesso.</p><p>O fogo se espalha pelos cantos. Ele incendeia objetos inflamáveis ​​na área que não estão sendo usados ​​ou carregados.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, o dano aumenta em 1d6 para cada nível de espaço acima do 3º.</p>",
+      "value": "<p>Um facho parte de seu dedo até um ponto à sua escolha a até 45 metros e explode numa esfera de chamas de 6 metros de raio. O fogo se espalha por cantos. Cada criatura na área realiza uma salvaguarda de Destreza, sofrendo 8d6 de dano de fogo na falha ou metade no sucesso.</p><p>O fogo incendeia objetos inflamáveis na área que não estejam vestidos nem sendo carregados.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d6 para cada círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -27,18 +27,18 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "Esfera de raio 20 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -161,7 +161,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

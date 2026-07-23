@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>O solo em um raio de 6 metros centrado em um ponto dentro do alcance se contorce e brota espinhos duros e espinhos. A área se torna um terreno difícil durante o período. Quando uma criatura se move dentro ou dentro da área, ela sofre 2d4 de dano perfurante para cada 1,5 metro que percorrer.</p><p>A transformação do solo é camuflada para parecer natural. Qualquer criatura que não possa ver a área no momento em que a magia é lançada deve fazer um teste de Sabedoria (Percepção) contra sua CD de resistência de magia para reconhecer o terreno como perigoso antes de entrar nele.</p>",
+      "value": "<p>O chão em um raio de 6 metros centrado num ponto no alcance se cobre de espinhos por até 10 minutos de concentração. A área se torna terreno difícil e parece natural.</p><p>Quando uma criatura se move para dentro ou através da área, sofre 2d4 de dano perfurante para cada 1,5 metro percorrido. Não há salvaguarda contra esse dano. Quem não viu a transformação pode reconhecer o perigo com Percepção contra sua CD de magia.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "20-foot-radius circle"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -90,8 +90,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -110,6 +110,60 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null
+      },
+      "spike-step": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Para cada 5 ft voluntariamente percorridos na área"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Repita uma vez por segmento de 5 ft percorrido; sem save."
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -125,14 +179,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
         }
       }
     }
@@ -141,19 +195,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "A conjuração não causa dano. Use Passo nos Espinhos uma vez por cada 5 ft percorridos dentro da área."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura, e essa criatura deve ser bem sucedida em um teste de resistência de Sabedoria ou será amaldiçoada pela duração da magia. Ao lançar esta magia, escolha a natureza da maldição dentre as seguintes opções:</p><p>* Escolha um valor de habilidade. Enquanto amaldiçoado, o alvo tem desvantagem em testes de habilidade e testes de resistência feitos com aquele valor de habilidade.<br>* Enquanto amaldiçoado, o alvo tem desvantagem em jogadas de ataque contra você.<br>* Enquanto amaldiçoado, o alvo deve fazer um teste de resistência de Sabedoria no início de cada um de seus turnos. Se falhar, ele desperdiça sua ação naquele turno sem fazer nada.<br>* Enquanto o alvo estiver amaldiçoado, seus ataques e magias causam 1d8 de dano necrótico extra ao alvo.</p><p>uma magia <em>Remover Maldição</em> encerra este efeito. A critério do Mestre, você pode escolher um efeito de maldição alternativo, mas não deve ser mais poderoso do que os descritos acima. O Mestre tem a palavra final sobre o efeito de tal maldição.</p><p><strong>Em níveis mais altos.</strong> Se você conjurar esta magia usando um espaço de magia de 4º nível ou superior, a duração é de concentração, até 10 minutos. Se você usar um espaço de magia de 5º nível ou superior, a duração será de 8 horas. Se você usar um espaço de magia de 7º nível ou superior, a duração será de 24 horas. Se você usar um espaço de magia de 9º nível, a magia dura até ser dissipada. Usar um espaço de magia de 5º nível ou superior concede uma duração que não requer concentração.</p>",
+      "value": "<p>Você toca uma criatura, que realiza uma salvaguarda de Sabedoria. Em uma falha, fica amaldiçoada pela duração. Escolha: desvantagem em testes e salvaguardas de uma habilidade escolhida; desvantagem em ataques contra você; no início de cada turno, uma salvaguarda de Sabedoria, desperdiçando a ação em uma falha; ou seus ataques e magias causam 1d8 de dano necrótico adicional ao alvo. O Mestre pode permitir outra maldição de poder semelhante.</p><p>No 3º círculo a duração é concentração até 1 minuto; no 4º, concentração até 10 minutos; no 5º ou 6º, 8 horas; no 7º ou 8º, 24 horas; no 9º, até dissipada. Usando espaço de 5º círculo ou superior, não exige concentração.</p><p>A conjuração não causa dano. Escolha e aplique apenas uma maldição após a falha.</p>",
       "chat": ""
     },
     "source": {
@@ -110,30 +110,6 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "necrotic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
         "save": {
           "ability": [
             "wis"
@@ -150,9 +126,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.energy_strands.range.standard.dark_purple",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
         "fallbacks": [
-          "jb2a.impact.004.dark_purple"
+          "jb2a.energy_strands.in.dark_purple"
         ],
         "targeted": true
       },
@@ -162,9 +138,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Após a falha, escolha uma maldição. O 1d8 só ocorre nos acertos posteriores do conjurador."
     },
     "itemacro": {
       "macro": {

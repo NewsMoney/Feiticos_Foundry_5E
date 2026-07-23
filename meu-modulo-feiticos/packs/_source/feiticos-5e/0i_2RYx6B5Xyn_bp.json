@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Shape%20Water.png",
   "system": {
     "description": {
-      "value": "<p>Você controla água num cubo de 1,5 metro a até 9 metros: move-a, cria formas animadas, altera cor ou opacidade, ou congela-a por 1 hora. Até dois efeitos duradouros podem coexistir e o gelo derrete se contiver criatura.</p>",
+      "value": "<p>Você escolhe uma área de água que possa ver dentro do alcance e que caiba num cubo de 1,5 metro. Você pode mover ou alterar o fluxo da água até 1,5 metro; formar formas simples e animá-las; alterar cor ou opacidade uniformemente; ou congelar a água, desde que não haja criatura nela.</p><p>Os efeitos não instantâneos duram 1 hora. Você pode manter até dois deles simultaneamente e dispensar um com uma ação. A água descongela em 1 hora. Nenhum modo realiza ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -32,7 +32,8 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": ""
+        "type": "cube",
+        "size": 5
       },
       "affects": {
         "choice": false,
@@ -86,7 +87,9 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "cube",
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -119,7 +122,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

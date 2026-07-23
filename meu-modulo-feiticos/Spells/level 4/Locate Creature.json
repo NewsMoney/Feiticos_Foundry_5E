@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Informe direção apenas se a criatura familiar estiver a 1.000 ft no mesmo plano; água corrente de 10 ft bloqueia e transformação/descrição incorreta pode impedir."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

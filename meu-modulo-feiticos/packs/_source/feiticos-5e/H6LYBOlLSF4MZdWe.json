@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca espíritos feéricos que assumem a forma de feras e aparecem em espaços desocupados que você pode ver dentro do alcance. Escolha uma das seguintes opções para o que aparece:</p><p>* Uma fera com nível de desafio 2 ou inferior<br>* Duas feras com nível de desafio 1 ou inferior<br>* Quatro feras com nível de desafio 1/2 ou inferior<br>* Oito feras com nível de desafio 1/4 ou inferior</p><p>Cada fera também é considerada feérica e desaparece quando chega a 0 pontos de vida ou quando a magia termina.</p><p>As criaturas invocadas são amigáveis com você e seus companheiros. Role a iniciativa para as criaturas invocadas como um grupo, que tem seus próprios turnos. Eles obedecem a quaisquer comandos verbais que você emite a eles (nenhuma ação exigida de sua parte). Se você não emitir nenhum comando para eles, eles se defenderão de criaturas hostis, mas não realizarão nenhuma ação.</p><p>O Mestre tem as estatísticas das criaturas.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando certos espaços de magia de nível mais alto, você escolhe uma das opções de invocação acima, e mais criaturas aparecem: o dobro com um espaço de 5º nível, três vezes mais com um espaço de 7º nível e quatro vezes mais com um espaço de 7º nível, e quatro vezes mais com um espaço de 7º nível. Espaço de 9º nível.</p>",
+      "value": "<p>Você invoca espíritos feéricos em espaços desocupados visíveis a até 18 metros. Escolha uma opção: uma besta de ND 2 ou menor; duas de ND 1 ou menor; quatro de ND 1/2 ou menor; ou oito de ND 1/4 ou menor. O Mestre determina as formas adequadas.</p><p>As criaturas são feéricas, amistosas, têm iniciativa própria, obedecem comandos verbais sem exigir sua ação e, sem ordem, defendem-se. Desaparecem a 0 PV ou quando termina a concentração, após até 1 hora.</p><p>Espaço de 5º círculo dobra a quantidade, 7º triplica e 9º quadruplica. A conjuração não realiza os ataques ou danos das fichas invocadas.</p>",
       "chat": ""
     },
     "source": {
@@ -129,9 +129,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha a faixa de ND, invoque atores aprovados e controle seus turnos; não role ataques ao conjurar."
     },
     "itemacro": {
       "macro": {

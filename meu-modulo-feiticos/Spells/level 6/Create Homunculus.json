@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Consumindo materiais valiosos e seu próprio sangue, você cria um homúnculo ligado telepaticamente a você no mesmo plano. Ele é seu aliado e usa um bloco próprio. Ao conjurar, você pode transferir parte dos seus Dados de Vida para aumentar o máximo de PV dele.</p>",
+      "value": "<p>Após uma hora de trabalho com argila, cinzas, raiz de mandrágora, uma adaga e componentes de 1.000 PO consumidos, você cria um homúnculo em um espaço próximo. Ele é seu aliado e vocês se comunicam telepaticamente enquanto estiverem no mesmo plano.</p><p>Ao terminar a conjuração, você pode gastar e rolar qualquer quantidade de seus Dados de Vida. Seu máximo de PV é reduzido pelo total, e o máximo do homúnculo aumenta na mesma quantidade; seu máximo não pode cair abaixo de 1. A alteração termina após seu próximo descanso longo, e a morte do homúnculo devolve a redução.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -108,30 +108,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 4,
-              "bonus": "",
-              "types": [
-                "piercing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -139,19 +117,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie o ator do homúnculo e ajuste manualmente os máximos de PV conforme Dados de Vida gastos."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -26,19 +26,19 @@
     "range": {
       "value": null,
       "units": "touch",
-      "special": ""
+      "special": "up to 60-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 60
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "DJnRFuqlbz2veif9": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "hour",
           "value": 24,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 60
           },
           "affects": {
             "choice": false
@@ -108,15 +108,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "cha"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -133,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Configure tipos barrados e um efeito adicional. CHA ocorre somente quando criatura barrada tenta entrar; registre a área permanente e impeça sobreposição."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

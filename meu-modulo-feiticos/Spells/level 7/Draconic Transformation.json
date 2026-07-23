@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 1 minuto de concentração, você ganha visão às cegas, voo e sopro dracônico. Como ação bônus em cada turno, expele um cone de 18 metros que causa 6d8 de energia em falha de Destreza ou metade em sucesso.</p>",
+      "value": "<p>Por até 1 minuto de concentração, você manifesta traços dracônicos: visão às cegas em 9 metros, deslocamento de voo de 18 metros e um sopro mágico.</p><p>Ao conjurar e, depois, como ação bônus em cada turno, você expele energia num cone de 18 metros. Cada criatura na área faz salvaguarda de Destreza, sofrendo 6d8 de dano de energia na falha ou metade no sucesso. Não há escalonamento.</p><p><strong>Procedimento:</strong> aplique os efeitos ao conjurador; o sopro imediato e cada sopro posterior são atividades separadas e reutilizáveis, sem novo slot.</p>",
       "chat": ""
     },
     "source": {
@@ -26,7 +26,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (60-foot cone)"
+      "special": "60-foot cone for the breath"
     },
     "target": {
       "template": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "AXdtvkxagdIxpt8R": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -108,39 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 6,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,19 +116,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A conjuração aplica blindsight/voo; use atividade separada DEX 6d8/half no cone ao conjurar e como bônus posterior."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

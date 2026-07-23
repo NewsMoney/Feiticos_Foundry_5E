@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura tocada recupera todos os pontos de vida, deixa de estar enfeitiçada, amedrontada, paralisada ou atordoada e pode usar reação para levantar-se. Não afeta constructos nem mortos-vivos.</p>",
+      "value": "<p>Uma criatura tocada recupera todos os pontos de vida e é curada de charmed, frightened, paralyzed e stunned. Se estiver caída, pode usar a reação para se levantar. A magia não afeta mortos-vivos nem constructos.</p><p>Essas condições são removidas, nunca aplicadas. Restaure até o máximo, remova as quatro condições e ofereça separadamente o uso opcional da reação para levantar; estar caída não é removido automaticamente sem a reação.</p>",
       "chat": ""
     },
     "source": {
@@ -108,6 +108,28 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         }
+      },
+      "power-word-heal": {
+        "type": "utility",
+        "damage": null,
+        "save": null,
+        "target": {
+          "affects": {
+            "type": "ally",
+            "count": "1"
+          }
+        }
+      },
+      "power-word-heal-stand": {
+        "type": "utility",
+        "activation": {
+          "type": "reaction",
+          "value": 1,
+          "override": true,
+          "condition": "Alvo caído escolhe levantar-se"
+        },
+        "damage": null,
+        "save": null
       }
     }
   },
@@ -124,10 +146,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Cure ao máximo; remova Charmed/Frightened/Paralyzed/Stunned. Levantar exige reação opcional. Exclua undead/construct."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

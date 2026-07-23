@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Um escudo dracônico protege uma criatura a até 18 metros por até 1 minuto de concentração. O alvo recebe meia cobertura, resistência a ácido, elétrico, fogo, frio e veneno, além de Evasão. Como ação bônus, você transfere o escudo para outro alvo.</p>",
+      "value": "<p>Um escudo de energia dracônica envolve uma criatura que você veja a até 18 metros por até 1 minuto de concentração. Ela recebe meia cobertura, resistência a ácido, elétrico, fogo, frio e veneno, e Evasão: em salvaguardas de Destreza que normalmente causariam metade, sofre zero no sucesso e metade na falha.</p><p>Como ação bônus, você pode transferir o escudo para outra criatura visível a até 18 metros. A salvaguarda de Destreza pertence ao efeito que atingir o protegido, não à conjuração desta magia.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "9UTwvp7iiON4El-w": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,15 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -134,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique resistências, meia cobertura e Evasão; transfira o efeito como bônus. Não role DEX ao conjurar."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

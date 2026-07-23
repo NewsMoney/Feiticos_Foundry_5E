@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Mending.png",
   "system": {
     "description": {
-      "value": "<p>Após 1 minuto, você repara uma ruptura ou rasgo de até 30 centímetros num objeto tocado. A magia restaura fisicamente o objeto, mas não recupera propriedades mágicas perdidas.</p>",
+      "value": "<p>Esta magia repara uma única quebra ou rasgo num objeto tocado, como um elo de corrente partido, duas metades de uma chave, um manto rasgado ou um odre furado. Desde que a quebra ou o rasgo não exceda 30 centímetros em nenhuma dimensão, você o conserta sem deixar vestígio do dano anterior.</p><p>A magia pode reparar fisicamente um item mágico ou construto, mas não restaura a magia nem as propriedades mágicas perdidas. O tempo de conjuração é 1 minuto e não há rolagem.</p>",
       "chat": ""
     },
     "source": {
@@ -119,7 +119,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

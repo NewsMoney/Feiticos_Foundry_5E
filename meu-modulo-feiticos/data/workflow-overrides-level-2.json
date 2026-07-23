@@ -1,0 +1,488 @@
+{
+  "Aganazzar’s Scorcher": {
+    "definition": {
+      "range": { "value": null, "units": "self", "special": "Self (30-foot line, 5 feet wide)" }
+    },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "line", "size": 30, "width": 5 }, "affects": { "count": "", "type": "creature" } },
+        "activities": { "6_lNiFI91StKafx1": { "target": { "template": { "type": "line", "size": 30, "width": 5 }, "affects": { "choice": false } } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Aid": {
+    "item": {
+      "system": {
+        "target": { "affects": { "count": "3", "type": "creature" } },
+        "description": { "value": "<p>Você fortalece até três criaturas dentro do alcance. Durante 8 horas, o máximo de pontos de vida e os pontos de vida atuais de cada alvo aumentam em 5.</p><p>Esse aumento não é uma cura comum: ele eleva simultaneamente o máximo e o valor atual, e desaparece quando a magia termina.</p><p><strong>Em Círculos Superiores.</strong> Ambos os aumentos crescem em 5 para cada círculo acima do 2º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Aumente PV atuais e máximos de até três alvos; não trate como cura limitada pelo máximo anterior." } } }
+    }
+  },
+  "Blindness/Deafness": {
+    "definition": { "conditions": [] },
+    "item": {
+      "system": {
+        "target": { "affects": { "count": "1", "type": "creature" } },
+        "description": { "value": "<p>Uma criatura no alcance realiza uma salvaguarda de Constituição. Em uma falha, você escolhe deixá-la cega ou surda por 1 minuto. A magia não exige concentração.</p><p>No fim de cada turno, o alvo repete a salvaguarda, encerrando o efeito em um sucesso.</p><p><strong>Em Círculos Superiores.</strong> Você pode afetar uma criatura adicional para cada círculo acima do 2º.</p>" },
+        "activities": {
+          "5XfWnWV8H68nc4OS": { "effects": [] },
+          "repeat-save": {
+            "type": "save",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Fim de cada turno do alvo" },
+            "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Repita a salvaguarda de Constituição; em sucesso, remova Cego ou Surdo." },
+            "duration": { "value": 1, "units": "minute", "concentration": false, "override": true },
+            "effects": [],
+            "range": { "override": true },
+            "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": true, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["con"], "dc": { "calculation": "spellcasting", "formula": "" } }
+          }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Após a falha inicial, escolha Cego ou Surdo e use a atividade de repetição no fim de cada turno." } } }
+    }
+  },
+  "Calm Emotions": {
+    "definition": { "range": { "value": 60, "units": "ft", "special": "20-foot-radius sphere" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "creature" } },
+        "activities": { "b9iPU73TMFdhCbcN": { "target": { "template": { "type": "circle", "size": 20 }, "affects": { "choice": true } } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Cada humanoide pode falhar voluntariamente; após a falha, escolha suprimir charmed/frightened ou causar indiferença." } } }
+    }
+  },
+  "Cloud of Daggers": {
+    "definition": { "mode": "utility", "damage": [], "range": { "value": 60, "units": "ft", "special": "5-foot cube" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 5 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você preenche um cubo de 1,5 metro no alcance com adagas giratórias por até 1 minuto de concentração.</p><p>Uma criatura sofre 4d4 de dano cortante, sem salvaguarda, quando entra na área pela primeira vez em um turno ou quando começa o turno nela. A conjuração, por si só, não causa dano fora desses gatilhos.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 2d4 para cada dois círculos acima do 2º.</p>" },
+        "activities": {
+          "c44pcpTtVYHNTs-i": { "damage": null, "save": null },
+          "zone-damage": {
+            "type": "damage",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Ao entrar pela primeira vez no turno ou começar o turno na área" },
+            "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Dano recorrente da zona; não há salvaguarda." },
+            "duration": { "value": 1, "units": "minute", "concentration": true, "override": true },
+            "effects": [], "range": { "override": true },
+            "target": { "template": { "type": "cube", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 4, "denomination": 4, "bonus": "", "types": ["slashing"], "scaling": { "mode": "whole", "number": 2 } }], "critical": { "allow": false }, "onSave": "full" }
+          }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": false, "manual": "Use Dano da Zona somente quando uma criatura entra pela primeira vez no turno ou começa o turno no cubo." } } }
+    }
+  },
+  "Cordon Of Arrows": {
+    "definition": { "mode": "utility", "damage": [], "conditions": [] },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Você finca quatro munições não mágicas no chão e escolhe as criaturas que não ativam a proteção. Durante 8 horas, quando uma criatura não excluída chega pela primeira vez em um turno a até 9 metros das munições, uma delas voa contra a criatura.</p><p>O alvo realiza uma salvaguarda de Destreza. Em uma falha, sofre 1d6 de dano perfurante; em um sucesso, não sofre dano. Cada munição pode disparar apenas uma vez.</p><p><strong>Em Círculos Superiores.</strong> Você prepara duas munições adicionais para cada círculo acima do 2º.</p>" },
+        "activities": {
+          "1y__6AkXkxDHmPwp": { "type": "utility", "damage": null, "save": null },
+          "trigger-arrow": {
+            "type": "save",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura não excluída aproxima-se a 30 ft; gaste uma munição" },
+            "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Disparo posterior de uma munição preparada." },
+            "duration": { "value": 8, "units": "hour", "concentration": false, "override": true }, "effects": [], "range": { "override": true },
+            "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "4" }, "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } },
+            "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 6, "bonus": "", "types": ["piercing"], "scaling": { "mode": "whole", "number": 0 } }], "critical": { "allow": false }, "onSave": "none" }
+          }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Selecione exclusões na conjuração e use Disparar Munição apenas no gatilho, controlando a quantidade de munições." } } }
+    }
+  },
+  "Darkness": {
+    "definition": { "range": { "value": 60, "units": "ft", "special": "15-foot-radius sphere" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 15 }, "affects": { "count": "", "type": "space" } }, "activities": { "ncNcx4kiMqfFoL8h": { "target": { "template": { "type": "circle", "size": 15 } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie a zona de escuridão; se conjurada em objeto, mova a zona com ele e permita cobri-lo." } } }
+    }
+  },
+  "Detect Thoughts": {
+    "definition": { "mode": "utility", "conditions": [] },
+    "item": {
+      "system": { "activities": { "IP8J4tAKPA40Hvai": { "type": "utility", "save": null } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A leitura superficial e a varredura não provocam save. Role WIS somente quando o conjurador tenta aprofundar a leitura; a disputa de INT posterior é manual." } } }
+    }
+  },
+  "Dragon’s Breath": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "conditions": [] },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Você toca uma criatura voluntária e escolhe ácido, elétrico, fogo, frio ou veneno. Durante até 1 minuto de concentração, o alvo recebe a capacidade de expelir energia; a conjuração não provoca salvaguarda nem causa dano.</p><p>Enquanto a magia durar, o alvo pode usar uma ação para expelir um cone de 4,5 metros a partir de si. Cada criatura no cone realiza uma salvaguarda de Destreza, sofrendo 3d6 do tipo escolhido em uma falha ou metade em um sucesso.</p><p><strong>Em Círculos Superiores.</strong> O dano do sopro aumenta em 1d6 para cada círculo acima do 2º.</p>" },
+        "activities": {
+          "qSoZ3KSkD3tGnjfg": { "type": "utility", "save": null, "damage": null, "effects": [], "target": { "template": { "type": "", "size": null }, "affects": { "choice": false } } },
+          "dragon-breath-action": {
+            "type": "save",
+            "activation": { "type": "action", "value": 1, "override": true, "condition": "Ação concedida à criatura tocada; origem do cone é essa criatura" },
+            "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Escolha o tipo definido na conjuração e posicione o cone a partir do portador." },
+            "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true },
+            "target": { "template": { "type": "cone", "size": 15, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } },
+            "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 3, "denomination": 6, "bonus": "", "types": ["acid", "cold", "fire", "lightning", "poison"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "half" }
+          }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A conjuração apenas concede a atividade. Execute Sopro pelo ator tocado, com cone originado nele, e selecione somente o tipo escolhido." } } }
+    }
+  },
+  "Dust Devil": {
+    "definition": { "mode": "utility", "damage": [], "save": "", "range": { "value": 60, "units": "ft", "special": "5-foot cube" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 5 }, "affects": { "type": "space", "count": "" } },
+        "activities": { "tKNs7SwD44BHHbfe": { "type": "utility", "save": null, "damage": null }, "dust-trigger": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura termina o turno a até 5 ft do redemoinho" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Falha: 1d8 concussão e empurrão de 10 ft; sucesso: nenhum efeito." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["str"], "dc": { "calculation": "spellcasting", "formula": "" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 8, "bonus": "", "types": ["bludgeoning"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "none" } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Mova o redemoinho 30 ft como bônus e use o gatilho apenas no fim do turno de criaturas próximas." } } }
+    }
+  },
+  "Flaming Sphere": {
+    "definition": { "mode": "utility", "damage": [], "save": "", "range": { "value": 60, "units": "ft", "special": "5-foot sphere" } },
+    "item": {
+      "system": {
+        "activities": {
+          "tXc-J7795BLOyH4Y": { "type": "utility", "save": null, "damage": null },
+          "sphere-damage": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura termina o turno a até 5 ft, ou esfera colide após ser movida como bônus" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "DEX: 2d6 fogo na falha, nenhum dano no sucesso." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 6, "bonus": "", "types": ["fire"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "none" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A conjuração cria a esfera sem dano. Use a atividade posterior para o fim do turno ou colisão; movê-la custa ação bônus." } } }
+    }
+  },
+  "Gust of Wind": {
+    "definition": { "mode": "utility", "save": "" },
+    "item": {
+      "system": { "activities": { "FOK3EX8kF_cZR8ii": { "type": "utility", "save": null }, "gust-turn-save": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura começa o turno na linha" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Falha em STR: empurrão de 15 ft." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "line", "size": 60, "width": 10, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["str"], "dc": { "calculation": "spellcasting", "formula": "" } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A linha surge sem save imediato; role ao começo do turno na linha. Mudar sua direção exige ação bônus." } } }
+    }
+  },
+  "Healing Spirit": {
+    "definition": { "mode": "utility", "heal": [], "range": { "value": 60, "units": "ft", "special": "5-foot cube" } },
+    "item": {
+      "system": {
+        "activities": { "SXSTEz-cIkXmVYCc": { "type": "utility", "healing": null }, "spirit-heal": { "type": "heal", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura entra pela primeira vez no turno ou começa no espaço; conjurador deve vê-la e escolher curar" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Gaste um uso do espírito." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "cube", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": true }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "max(2, 1 + @mod)" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "healing": { "number": 1, "denomination": 6, "bonus": "", "types": ["healing"], "custom": { "enabled": false, "formula": "" }, "scaling": { "mode": "whole", "number": 1 } } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Controle o limite de usos (1 + modificador, mínimo 2) e mova o espírito como ação bônus." } } }
+    }
+  },
+  "Heat Metal": {
+    "definition": { "mode": "utility", "save": "", "conditions": [] },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Escolha um objeto metálico manufaturado no alcance. Ele brilha em calor e qualquer criatura em contato com ele sofre 2d8 de dano de fogo imediatamente, sem salvaguarda.</p><p>Até a magia terminar, você pode usar uma ação bônus em turnos posteriores para causar o dano novamente. Se uma criatura estiver segurando ou vestindo o objeto, ela realiza uma salvaguarda de Constituição apenas para evitar soltá-lo quando puder. Se não puder ou não soltar, terá desvantagem em ataques e testes até o início do seu próximo turno.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d8 para cada círculo acima do 2º.</p>" },
+        "activities": {
+          "J8n3TOlVi87TuDSf": { "type": "damage", "save": null, "damage": { "onSave": "full" } },
+          "heat-again": { "type": "damage", "activation": { "type": "bonus", "value": 1, "override": true, "condition": "Turno posterior, enquanto mantiver concentração" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Repete o dano sem save. Se o objeto puder ser largado, faça CON separadamente para decidir se é largado." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 8, "bonus": "", "types": ["fire"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "full" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "O save de CON nunca reduz o dano; ele serve somente para largar o objeto. A desvantagem quando não larga exige aplicação manual." } } }
+    }
+  },
+  "Hold Person": {
+    "item": {
+      "system": { "description": { "value": "<p>Escolha um humanoide no alcance. Ele realiza uma salvaguarda de Sabedoria; em uma falha, fica paralisado enquanto você mantiver concentração, por até 1 minuto.</p><p>No fim de cada turno, o alvo repete a salvaguarda e encerra a condição em um sucesso.</p><p><strong>Em Círculos Superiores.</strong> Você pode escolher um humanoide adicional por círculo acima do 2º; todos devem estar a até 9 metros uns dos outros.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Repita WIS no fim de cada turno; remova Paralisado no sucesso. Adicione um alvo por slot." } } }
+    }
+  },
+  "Melf’s Acid Arrow": {
+    "item": {
+      "system": {
+        "description": { "value": "<p>Faça um ataque mágico à distância contra uma criatura no alcance. Em um acerto, ela sofre 4d4 de dano ácido imediatamente e 2d4 adicionais no fim do próximo turno dela.</p><p>Em um erro, o alvo sofre apenas metade do dano inicial — 2d4 — e nenhum dano posterior.</p><p><strong>Em Círculos Superiores.</strong> Tanto o dano inicial quanto o posterior aumentam em 1d4 por círculo acima do 2º.</p>" },
+        "activities": {
+          "ohPz9s9eOc8hV3QE": { "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 4, "denomination": 4, "bonus": "", "types": ["acid"], "scaling": { "mode": "whole", "number": 1 } }], "onSave": "full" } },
+          "acid-arrow-later": { "type": "damage", "activation": { "type": "special", "value": null, "override": true, "condition": "Fim do próximo turno do alvo, somente se o ataque acertou" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Dano tardio; não use se o ataque inicial errou." }, "duration": { "value": 1, "units": "round", "concentration": false, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 4, "bonus": "", "types": ["acid"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "full" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "No erro, aplique manualmente 2d4 + escalonamento apenas uma vez. No acerto, use Dano Tardio no fim do próximo turno." } } }
+    }
+  },
+  "Moonbeam": {
+    "definition": { "mode": "utility", "damage": [], "save": "", "range": { "value": 120, "units": "ft", "special": "5-foot-radius, 40-foot-high cylinder" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 5 }, "affects": { "type": "space", "count": "" } },
+        "activities": { "zLK1n6G3MoHqSFWB": { "type": "utility", "save": null, "damage": null }, "moonbeam-zone": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura entra pela primeira vez no turno ou começa o turno no cilindro" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "CON: 2d10 radiante, metade no sucesso. Shapechangers têm desvantagem e revertem na falha." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["con"], "dc": { "calculation": "spellcasting", "formula": "" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 10, "bonus": "", "types": ["radiant"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": false }, "onSave": "half" } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A criação do cilindro não causa dano. Use o gatilho de zona; movê-lo 60 ft custa ação." } } }
+    }
+  },
+  "Phantasmal Force": {
+    "definition": { "damage": [] },
+    "item": {
+      "system": { "activities": { "nPYv1O1a7C7H4HMz": { "damage": null }, "phantasm-damage": { "type": "damage", "activation": { "type": "special", "value": null, "override": true, "condition": "Fim de cada turno do conjurador, somente se a ilusão representar perigo a até 5 ft do alvo" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Dano opcional recorrente; investigação como ação pode encerrar a ilusão." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 6, "bonus": "", "types": ["psychic"], "scaling": { "mode": "whole", "number": 0 } }], "critical": { "allow": false }, "onSave": "full" } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Não cause dano na conjuração. Use o dano somente no fim do turno do conjurador se a ilusão perigosa estiver a 5 ft; o teste de Investigation é manual." } } }
+    }
+  },
+  "Prayer of Healing": {
+    "item": {
+      "system": {
+        "target": { "affects": { "count": "6", "type": "creature" } },
+        "activities": { "vfzteLaevkcCd5Bt": { "healing": { "number": 2, "denomination": 8, "bonus": "@mod", "types": ["healing"], "custom": { "enabled": false, "formula": "" }, "scaling": { "mode": "whole", "number": 1 } } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Pyrotechnics": {
+    "definition": { "mode": "utility", "save": "", "conditions": [] },
+    "item": {
+      "system": { "activities": { "I0KKXbELO-HOGUZX": { "type": "utility", "save": null }, "fireworks": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Escolha Fogos após extinguir a chama" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Criaturas a 10 ft fazem CON; falha: blinded até o fim do próximo turno." }, "duration": { "value": 1, "units": "round", "concentration": false, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 10, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["con"], "dc": { "calculation": "spellcasting", "formula": "" } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Escolha Fogos ou Fumaça. Somente Fogos usa save; Fumaça cria esfera de 20 ft heavily obscured sem save." } } }
+    }
+  },
+  "Ray of Enfeeblement": {
+    "definition": { "mode": "attack", "attack": "ranged", "save": "", "conditions": [] },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Faça um ataque mágico à distância contra uma criatura no alcance. Em um acerto, enquanto você mantiver concentração, os ataques com arma do alvo que usem Força causam apenas metade do dano.</p><p>No fim de cada turno, o alvo realiza uma salvaguarda de Constituição, encerrando a magia em um sucesso. Não existe salvaguarda inicial: um ataque errado não aplica o efeito.</p>" },
+        "activities": {
+          "nLuEnzmoeU6rvxE2": { "type": "attack", "save": null, "attack": { "ability": "", "bonus": "", "critical": { "threshold": null }, "flat": false, "type": { "value": "ranged", "classification": "spell" } } },
+          "enfeeblement-save": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Fim de cada turno do alvo após um acerto" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Sucesso encerra o efeito." }, "duration": { "value": 1, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": true, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["con"], "dc": { "calculation": "spellcasting", "formula": "" } } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Após acertar, aplique a redução de dano de ataques com arma baseados em STR. Use o save apenas no fim dos turnos." } } }
+    }
+  },
+  "Scorching Ray": {
+    "item": {
+      "system": {
+        "description": { "value": "<p>Você cria três raios de fogo e faz um ataque mágico à distância separado para cada raio. Pode dirigi-los ao mesmo alvo ou a alvos diferentes. Cada raio que acerta causa 2d6 de dano de fogo.</p><p><strong>Em Círculos Superiores.</strong> Você cria um raio adicional para cada círculo acima do 2º.</p>" },
+        "activities": { "a1K01A-kPz_f-sNk": { "description": { "chatFlavor": "Faça três ataques separados no 2º círculo; acrescente um ataque por círculo superior." } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Repita a atividade três vezes no 2º círculo e uma vez adicional por círculo superior; escolha o alvo de cada raio separadamente." } } }
+    }
+  },
+  "Shatter": {
+    "definition": { "range": { "value": 60, "units": "ft", "special": "10-foot-radius sphere" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 10 }, "affects": { "count": "", "type": "creature" } }, "activities": { "3heRtzEiGKoxGUzO": { "target": { "template": { "type": "circle", "size": 10 } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Constructos inorgânicos têm desvantagem; objetos não mágicos soltos também sofrem o dano." } } }
+    }
+  },
+  "Silence": {
+    "definition": { "range": { "value": 120, "units": "ft", "special": "20-foot-radius sphere" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "space" } }, "activities": { "GS8W5o7pVzSgogck": { "target": { "template": { "type": "circle", "size": 20 } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Na zona: deafened, imunidade a thunder e impossibilidade de componentes verbais. Aplique/remova conforme tokens entram ou saem." } } }
+    }
+  },
+  "Snilloc’s Snowball Swarm": {
+    "definition": { "range": { "value": 90, "units": "ft", "special": "5-foot-radius sphere" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 5 }, "affects": { "count": "", "type": "creature" } }, "activities": { "DIgyW5N92WZOXlPl": { "target": { "template": { "type": "circle", "size": 5 } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Spike Growth": {
+    "definition": { "mode": "utility", "damage": [], "range": { "value": 150, "units": "ft", "special": "20-foot-radius circle" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>O chão em um raio de 6 metros centrado num ponto no alcance se cobre de espinhos por até 10 minutos de concentração. A área se torna terreno difícil e parece natural.</p><p>Quando uma criatura se move para dentro ou através da área, sofre 2d4 de dano perfurante para cada 1,5 metro percorrido. Não há salvaguarda contra esse dano. Quem não viu a transformação pode reconhecer o perigo com Percepção contra sua CD de magia.</p>" },
+        "activities": {
+          "42RKO_FJ-NM9FFku": { "damage": null },
+          "spike-step": { "type": "damage", "activation": { "type": "special", "value": null, "override": true, "condition": "Para cada 5 ft voluntariamente percorridos na área" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Repita uma vez por segmento de 5 ft percorrido; sem save." }, "duration": { "value": 10, "units": "minute", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 4, "bonus": "", "types": ["piercing"], "scaling": { "mode": "whole", "number": 0 } }], "critical": { "allow": false }, "onSave": "full" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": false, "manual": "A conjuração não causa dano. Use Passo nos Espinhos uma vez por cada 5 ft percorridos dentro da área." } } }
+    }
+  },
+  "Spiritual Weapon": {
+    "definition": { "mode": "utility", "damage": [] },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Como ação bônus, você cria uma arma espectral no alcance e pode realizar imediatamente um ataque mágico corpo a corpo contra uma criatura a até 1,5 metro dela. Em acerto, causa 1d8 + seu modificador de conjuração de dano de energia.</p><p>Durante 1 minuto, sem concentração, você pode usar uma ação bônus para mover a arma até 6 metros e repetir o ataque.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d8 para cada dois círculos acima do 2º.</p>" },
+        "activities": {
+          "6zTB6Wllw4-alrwT": { "type": "utility", "attack": null, "damage": null },
+          "weapon-attack": { "type": "attack", "activation": { "type": "bonus", "value": 1, "override": true, "condition": "Ataque inicial ou turno posterior; mova a arma até 20 ft antes" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Ataque originado na arma espectral contra alvo a 5 ft dela." }, "duration": { "value": 1, "units": "minute", "concentration": false, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "", "size": null, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "attack": { "ability": "", "bonus": "", "critical": { "threshold": null }, "flat": false, "type": { "value": "melee", "classification": "spell" } }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 1, "denomination": 8, "bonus": "@mod", "types": ["force"], "scaling": { "mode": "whole", "number": 1 } }], "critical": { "allow": true }, "onSave": "full" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Use Ataque da Arma na conjuração e em turnos posteriores. O escalonamento real é +1d8 a cada dois níveis de slot, ajuste quando necessário." } } }
+    }
+  },
+  "Web": {
+    "definition": { "mode": "utility", "damage": [], "save": "", "conditions": [], "range": { "value": 60, "units": "ft", "special": "20-foot cube" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 20 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você cria uma massa de teias num cubo de 6 metros por até 1 hora de concentração. A área fica levemente obscurecida e é terreno difícil; as teias precisam ser ancoradas ou colapsam no início do próximo turno.</p><p>Uma criatura que começa o turno nas teias ou entra nelas durante o turno realiza uma salvaguarda de Destreza. Em uma falha, fica impedida enquanto permanecer nas teias ou até escapar. Como ação, ela pode fazer um teste de Força contra sua CD de magia para se libertar.</p><p>As teias são inflamáveis. Um cubo de 1,5 metro exposto a fogo queima em uma rodada e causa 2d4 de dano de fogo às criaturas que começarem o turno no fogo. Esse dano não ocorre ao conjurar a magia.</p>" },
+        "activities": {
+          "BB0TN2L_LkNEiDhR": { "type": "utility", "save": null, "damage": null },
+          "web-restrain": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura entra na área ou começa o turno nela" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Falha em DEX: restrained; ação e teste de STR contra a CD para escapar." }, "duration": { "value": 1, "units": "hour", "concentration": true, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "cube", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } } },
+          "web-fire": { "type": "damage", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura começa o turno num cubo de 5 ft incendiado; o cubo queima em uma rodada" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Dano de fogo secundário, nunca na conjuração." }, "duration": { "value": 1, "units": "round", "concentration": false, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "cube", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 4, "bonus": "", "types": ["fire"], "scaling": { "mode": "whole", "number": 0 } }], "critical": { "allow": false }, "onSave": "full" } }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Use o save apenas ao entrar/começar turno. Aplique restrained na falha e remova após teste STR bem-sucedido. Use Dano do Fogo somente em cubos incendiados." } } }
+    }
+  },
+  "Wither and Bloom": {
+    "definition": { "range": { "value": 60, "units": "ft", "special": "10-foot-radius sphere" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 10 }, "affects": { "count": "", "type": "creature" } },
+        "activities": { "qeqfa_z2Z3cjtLMg": { "target": { "template": { "type": "circle", "size": 10 }, "affects": { "choice": true } }, "wither-heal": { "type": "heal", "activation": { "type": "special", "value": null, "override": true, "condition": "Uma criatura escolhida na área gasta Dado de Vida após resolver o dano" }, "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Role um Dado de Vida do alvo e some o modificador de conjuração. Slots superiores permitem gastar um dado adicional." }, "duration": { "value": null, "units": "inst", "concentration": false, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 10, "units": "ft", "contiguous": false }, "affects": { "choice": true }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "healing": { "number": null, "denomination": null, "bonus": "@mod", "types": ["healing"], "custom": { "enabled": true, "formula": "Dado de Vida do alvo + @mod" }, "scaling": { "mode": "whole", "number": 1 } } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Escolha separadamente os alvos de dano e uma criatura para gastar Dados de Vida; a fórmula depende do dado do ator." } } }
+    }
+  }
+  },
+  "Zone of Truth": {
+    "definition": { "mode": "utility", "save": "", "range": { "value": 60, "units": "ft", "special": "15-foot-radius sphere" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 15 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você cria uma zona mágica num raio de 4,5 metros por 10 minutos. Uma criatura que entra na área pela primeira vez em um turno ou começa o turno nela realiza uma salvaguarda de Carisma. Ela continua realizando a salvaguarda nesses gatilhos até falhar.</p><p>Depois de falhar, a criatura não pode proferir deliberadamente uma mentira enquanto estiver na zona. Você sabe quais criaturas passaram ou falharam. Uma criatura afetada sabe da magia e ainda pode evitar responder ou ser evasiva, desde que não minta deliberadamente.</p>" },
+        "activities": { "FkkldHs0PcKWGDBX": { "type": "utility", "save": null }, "truth-zone-save": { "type": "save", "activation": { "type": "special", "value": null, "override": true, "condition": "Criatura entra pela primeira vez no turno ou começa o turno na zona; repita até falhar" }, "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] }, "description": { "chatFlavor": "Após falhar uma vez, não repita; o conjurador sabe o resultado." }, "duration": { "value": 10, "units": "minute", "concentration": false, "override": true }, "effects": [], "range": { "override": true }, "target": { "template": { "type": "circle", "size": 15, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true }, "uses": { "spent": 0, "recovery": [], "max": "" }, "midiProperties": {}, "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }, "save": { "ability": ["cha"], "dc": { "calculation": "spellcasting", "formula": "" } } } }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Role ao entrar/começar turno até a primeira falha. Registre quem falhou; a limitação de fala é interpretativa." } } }
+    }
+  },
+  "Nathair’s Mischief": {
+    "definition": {
+      "mode": "utility",
+      "save": "",
+      "conditions": [],
+      "range": { "value": 60, "units": "ft", "special": "20-foot cube" }
+    },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 20 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você preenche um cubo de 6 metros no alcance com magia feérica por até 1 minuto de concentração. A conjuração apenas cria a região: ela não provoca uma salvaguarda geral.</p><p>No início de cada um dos seus turnos, role 1d4 e substitua o efeito anterior: <strong>1</strong>, aroma de torta de maçã exige Sabedoria ou deixa a criatura enfeitiçada até o início do seu próximo turno; <strong>2</strong>, flores exigem Destreza ou deixam a criatura cega até o início do seu próximo turno; <strong>3</strong>, melaço transforma o cubo em terreno difícil; <strong>4</strong>, risadas exigem Sabedoria ou deixam a criatura incapacitada até o início do seu próximo turno.</p><p>Como ação bônus, você pode mover o cubo até 3 metros antes de rolar o novo efeito.</p>" },
+        "activities": {
+          "k_5H6xoYBbEMSMrs": {
+            "type": "utility",
+            "save": null,
+            "damage": null,
+            "effects": [],
+            "target": { "template": { "type": "cube", "size": 20 }, "affects": { "choice": false } }
+          },
+          "nathair-apple": {
+            "type": "save",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Resultado 1 no início do turno do conjurador" },
+            "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Sabedoria; falha: enfeitiçado até o início do próximo turno do conjurador." },
+            "duration": { "value": 1, "units": "round", "concentration": true, "override": true },
+            "effects": [],
+            "range": { "override": true },
+            "target": { "template": { "type": "cube", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["wis"], "dc": { "calculation": "spellcasting", "formula": "" } }
+          },
+          "nathair-flowers": {
+            "type": "save",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Resultado 2 no início do turno do conjurador" },
+            "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Destreza; falha: cego até o início do próximo turno do conjurador." },
+            "duration": { "value": 1, "units": "round", "concentration": true, "override": true },
+            "effects": [],
+            "range": { "override": true },
+            "target": { "template": { "type": "cube", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } }
+          },
+          "nathair-molasses": {
+            "type": "utility",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Resultado 3 no início do turno do conjurador" },
+            "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "O cubo vira terreno difícil até ser substituído no próximo turno." },
+            "duration": { "value": 1, "units": "round", "concentration": true, "override": true },
+            "effects": [],
+            "range": { "override": true },
+            "target": { "template": { "type": "cube", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": false },
+            "uses": { "spent": 0, "recovery": [], "max": "" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" }
+          },
+          "nathair-giggles": {
+            "type": "save",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Resultado 4 no início do turno do conjurador" },
+            "consumption": { "scaling": { "allowed": false }, "spellSlot": false, "targets": [] },
+            "description": { "chatFlavor": "Sabedoria; falha: incapacitado até o início do próximo turno do conjurador." },
+            "duration": { "value": 1, "units": "round", "concentration": true, "override": true },
+            "effects": [],
+            "range": { "override": true },
+            "target": { "template": { "type": "cube", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["wis"], "dc": { "calculation": "spellcasting", "formula": "" } }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": { "quality": "reviewed-deep-pt-br", "needsReview": false },
+          "automation": {
+            "needsReview": true,
+            "areaReviewed": true,
+            "manual": "Role 1d4 no início de cada turno, mova a região antes da rolagem quando usar a ação bônus e execute somente a atividade correspondente; substitua o efeito anterior."
+          }
+        }
+      }
+    }
+  },
+  "Warding Wind": {
+    "definition": {
+      "mode": "utility",
+      "range": { "value": null, "units": "self", "special": "Self (10-foot radius)" }
+    },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 10 }, "affects": { "count": "", "type": "self" } },
+        "activities": {
+          "sf-_kB-atMBCyUi8": {
+            "type": "utility",
+            "save": null,
+            "damage": null,
+            "target": { "template": { "type": "circle", "size": 10 }, "affects": { "choice": false } }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": { "quality": "reviewed-deep-pt-br", "needsReview": false },
+          "automation": {
+            "needsReview": true,
+            "areaReviewed": true,
+            "manual": "Aura móvel de 10 ft centrada no conjurador: abafa, extingue chamas pequenas, dispersa vapores, cria terreno difícil para outros e impõe desvantagem a ataques de arma à distância que a atravessem."
+          }
+        }
+      }
+    }
+  },
+  "Branding Smite": {
+    "item": { "flags": { "foundry-spell-pack": { "automation": { "areaReviewed": true, "needsReview": true, "manual": "Não é área: a menção à luz é consequência do próximo acerto com arma." } } } }
+  },
+  "Find Traps": {
+    "item": { "flags": { "foundry-spell-pack": { "automation": { "areaReviewed": true, "needsReview": true, "manual": "O alcance de percepção não é uma área de alvos e não deve criar template." } } } }
+  },
+  "Flame Blade": {
+    "item": { "flags": { "foundry-spell-pack": { "automation": { "areaReviewed": true, "needsReview": true, "manual": "A menção à luz e o alcance do ataque da lâmina não são área de resolução." } } } }
+  },
+  "Locate Animals or Plants": {
+    "item": { "flags": { "foundry-spell-pack": { "automation": { "areaReviewed": true, "needsReview": true, "manual": "O raio de localização é alcance sensorial narrativo, não área de alvos." } } } }
+  },
+  "Locate Object": {
+    "item": { "flags": { "foundry-spell-pack": { "automation": { "areaReviewed": true, "needsReview": true, "manual": "O raio de localização é alcance sensorial narrativo, não área de alvos." } } } }
+  }
+}

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você sela um portal ou passagem planar a até 18 metros por 24 horas. Durante esse período, ele não pode ser aberto nem atravessado e viagens planares pela área falham. Conjurar diariamente por um ano torna o selo permanente até ser dissipado.</p>",
+      "value": "<p>Você inscreve um glifo num ponto no chão a até 18 metros. Durante 24 horas, ele protege uma esfera de 9 metros de raio centrada nesse ponto.</p><p>Dentro da área, portais não podem abrir e criaturas não podem viajar para outro plano por magia ou outra característica. Uma tentativa bloqueada falha sem transportar a criatura. Dissipar Magia pode encerrar o selo.</p><p><strong>Em Círculos Superiores.</strong> A duração aumenta em 24 horas para cada círculo acima do 4º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "30-foot-radius glyph"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 30
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 30
           },
           "affects": {
             "choice": false
@@ -107,6 +107,20 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "save": null,
+        "damage": null
+      }
+    },
+    "flags": {
+      "foundry-spell-pack": {
+        "description": {
+          "quality": "reviewed-deep-pt-br",
+          "needsReview": false
+        },
+        "automation": {
+          "needsReview": true,
+          "manual": "Crie região de 30 ft que bloqueie portais/viagem planar por 24 h + 24 h por círculo; Dispel Magic pode removê-la."
         }
       }
     }
@@ -124,10 +138,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie região de 30 ft que bloqueie portais/viagem planar por 24 h + 24 h por círculo; Dispel Magic pode removê-la."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

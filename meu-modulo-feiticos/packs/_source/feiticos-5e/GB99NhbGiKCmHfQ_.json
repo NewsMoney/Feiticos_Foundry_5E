@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Magic%20Stone.png",
   "system": {
     "description": {
-      "value": "<p>Como ação bônus, você encanta até três pedras por 1 minuto. Elas podem ser arremessadas ou lançadas por funda usando seu ataque mágico; em acerto causam 1d6 mais seu modificador de conjuração como dano mágico de concussão.</p>",
+      "value": "<p>Você toca de uma a três pedras e as imbui com magia. Você ou outra criatura pode realizar um ataque mágico à distância com uma delas, arremessando-a ou usando uma funda. Se arremessada, a pedra tem alcance de 18 metros. Quem não for você adiciona seu modificador de habilidade de conjuração, e não o próprio, à jogada de ataque.</p><p>Em um acerto, o alvo sofre 1d6 + seu modificador de habilidade de conjuração de dano de concussão. A magia termina numa pedra após ela acertar ou errar. Conjurar a magia novamente encerra o efeito nas pedras anteriores.</p><p><strong>Procedimento:</strong> a conjuração não é um ataque e não causa dano imediato; ela cria um item temporário com três usos para os ataques posteriores.</p>",
       "chat": ""
     },
     "source": {
@@ -23,8 +23,8 @@
       "units": "inst"
     },
     "range": {
-      "value": 60,
-      "units": "ft",
+      "value": null,
+      "units": "touch",
       "special": ""
     },
     "target": {
@@ -35,8 +35,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "3",
+        "type": "object",
         "special": ""
       }
     },
@@ -56,7 +56,7 @@
     },
     "activities": {
       "rWVUhh-uKZ5pVVJF": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": null,
@@ -104,42 +104,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
-          },
-          "onSave": "full"
-        },
-        "attack": {
-          "ability": "",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "ranged",
-            "classification": "spell"
-          }
         }
       }
     }
@@ -155,7 +119,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

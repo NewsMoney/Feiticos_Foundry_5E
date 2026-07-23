@@ -37,8 +37,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "3",
+        "type": "object",
         "special": ""
       }
     },
@@ -107,7 +107,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -124,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Conjure apenas à noite sobre cadáveres e crie os mortos-vivos. Controle, reafirmação diária, comandos e tabelas de upcast são manuais."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

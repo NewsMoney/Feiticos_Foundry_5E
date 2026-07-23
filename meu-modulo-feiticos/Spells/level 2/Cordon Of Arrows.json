@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você finca quatro munições não mágicas no chão. Durante 8 horas, quando uma criatura que não foi excluída se aproxima a até 9 metros, uma munição voa contra ela; em falha de Destreza causa 1d6 perfurante. Cada círculo superior prepara duas munições adicionais.</p>",
+      "value": "<p>Você finca quatro munições não mágicas no chão e escolhe as criaturas que não ativam a proteção. Durante 8 horas, quando uma criatura não excluída chega pela primeira vez em um turno a até 9 metros das munições, uma delas voa contra a criatura.</p><p>O alvo realiza uma salvaguarda de Destreza. Em uma falha, sofre 1d6 de dano perfurante; em um sucesso, não sofre dano. Cada munição pode disparar apenas uma vez.</p><p><strong>Em Círculos Superiores.</strong> Você prepara duas munições adicionais para cada círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -57,7 +57,7 @@
     },
     "activities": {
       "1y__6AkXkxDHmPwp": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,6 +108,70 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "trigger-arrow": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Criatura não excluída aproxima-se a 30 ft; gaste uma munição"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Disparo posterior de uma munição preparada."
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "4"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -123,7 +187,7 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
@@ -131,15 +195,6 @@
             "allow": false
           },
           "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -148,19 +203,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione exclusões na conjuração e use Disparar Munição apenas no gatilho, controlando a quantidade de munições."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

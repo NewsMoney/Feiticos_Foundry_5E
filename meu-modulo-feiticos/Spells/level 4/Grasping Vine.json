@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma vinha surge num ponto a até 9 metros por até 1 minuto de concentração. Ao conjurar e como ação bônus posterior, escolha uma criatura a até 9 metros da vinha; em falha de Destreza, ela é puxada 6 metros em direção à planta.</p>",
+      "value": "<p>Você conjura uma vinha em um espaço desocupado que possa ver a até 9 metros. Ela dura por até 1 minuto de concentração.</p><p>Quando conjura a magia, você pode fazer a vinha atacar uma criatura a até 9 metros dela. Faça um ataque corpo a corpo com magia; em um acerto, o alvo é puxado até 6 metros em direção à vinha.</p><p>Até a magia terminar, você pode usar uma ação bônus em cada turno para repetir esse ataque contra a mesma criatura ou outra. Não há salvaguarda e a magia não causa dano diretamente.</p>",
       "chat": ""
     },
     "source": {
@@ -26,7 +26,7 @@
     "range": {
       "value": 30,
       "units": "ft",
-      "special": ""
+      "special": "Vine in an unoccupied point"
     },
     "target": {
       "template": {
@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "-qDQbb2Yebc6Hswv": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,13 +109,71 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
+        "save": null,
+        "damage": null
+      },
+      "vine-attack": {
+        "type": "attack",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Ao conjurar e como ação bônus nos turnos seguintes; alvo a 30 ft da vinha"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Em acerto, puxe o alvo até 20 ft em direção à vinha; sem dano."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "spell"
           }
         }
       }
@@ -134,10 +192,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie a vinha; use Ataque da Vinha, não save. Em acerto puxe até 20 ft em direção à origem."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

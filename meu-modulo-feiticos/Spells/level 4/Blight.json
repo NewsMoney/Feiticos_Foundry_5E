@@ -157,10 +157,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Mortos-vivos e construtos são imunes. Planta criatura salva com desvantagem e recebe dano máximo; planta não criatura murcha sem save. O dano escala +1d8/círculo."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

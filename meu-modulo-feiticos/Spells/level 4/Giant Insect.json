@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Transforme até 10 centopeias, 3 aranhas, 5 vespas ou 1 escorpião nas versões gigantes; reverta a 0 PV, no fim da concentração ou ao dispensar."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

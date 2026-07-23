@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de gravidade de 6 metros de raio surge a até 36 metros. Criaturas fazem resistência de Constituição, sofrendo 5d10 de energia em falha ou metade em sucesso; quem falha também é puxado 6 metros ao centro. O dano aumenta em 1d10 por círculo.</p>",
+      "value": "<p>Uma esfera de força gravitacional com 6 metros de raio surge num ponto que você possa ver a até 36 metros. Cada criatura na esfera realiza uma salvaguarda de Constituição.</p><p>Em uma falha, a criatura sofre 5d10 de dano de força e é puxada em linha reta até 6 metros em direção ao centro. Em um sucesso, sofre metade do dano e é puxada apenas até metade dessa distância, conforme a redação da fonte adotada.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d10 para cada círculo acima do 4º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "20-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -142,6 +142,18 @@
           }
         }
       }
+    },
+    "flags": {
+      "foundry-spell-pack": {
+        "description": {
+          "quality": "reviewed-deep-pt-br",
+          "needsReview": false
+        },
+        "automation": {
+          "needsReview": true,
+          "manual": "Após cada save, puxe 20 ft na falha ou 10 ft no sucesso em direção ao centro; o dano é 5d10/half e escala +1d10."
+        }
+      }
     }
   },
   "effects": [],
@@ -157,10 +169,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Após cada save, puxe 20 ft na falha ou 10 ft no sucesso em direção ao centro; o dano é 5d10/half e escala +1d10."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

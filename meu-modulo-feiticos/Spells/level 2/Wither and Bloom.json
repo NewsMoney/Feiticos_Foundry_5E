@@ -26,18 +26,18 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "10-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,11 +88,11 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
-            "choice": false
+            "choice": true
           },
           "override": false,
           "prompt": true
@@ -140,6 +140,87 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "wither-heal": {
+          "type": "heal",
+          "activation": {
+            "type": "special",
+            "value": null,
+            "override": true,
+            "condition": "Uma criatura escolhida na área gasta Dado de Vida após resolver o dano"
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": true
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "Role um Dado de Vida do alvo e some o modificador de conjuração. Slots superiores permitem gastar um dado adicional."
+          },
+          "duration": {
+            "value": null,
+            "units": "inst",
+            "concentration": false,
+            "override": true
+          },
+          "effects": [],
+          "range": {
+            "override": true
+          },
+          "target": {
+            "template": {
+              "type": "circle",
+              "size": 10,
+              "units": "ft",
+              "contiguous": false
+            },
+            "affects": {
+              "choice": true
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "midiProperties": {},
+          "overTimeProperties": {
+            "saveRemoves": false,
+            "preRemoveConditionText": "",
+            "postRemoveConditionText": ""
+          },
+          "healing": {
+            "number": null,
+            "denomination": null,
+            "bonus": "@mod",
+            "types": [
+              "healing"
+            ],
+            "custom": {
+              "enabled": true,
+              "formula": "Dado de Vida do alvo + @mod"
+            },
+            "scaling": {
+              "mode": "whole",
+              "number": 1
+            }
+          }
+        }
+      }
+    },
+    "flags": {
+      "foundry-spell-pack": {
+        "description": {
+          "quality": "reviewed-deep-pt-br",
+          "needsReview": false
+        },
+        "automation": {
+          "needsReview": true,
+          "manual": "Escolha separadamente os alvos de dano e uma criatura para gastar Dados de Vida; a fórmula depende do dado do ator."
         }
       }
     }

@@ -1,0 +1,408 @@
+{
+  "Animate Dead": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "object" },
+    "item": {
+      "system": { "description": { "value": "<p>Escolha uma pilha de ossos ou o cadáver de um humanoide Médio ou Pequeno a até 3 metros. A magia anima o alvo como esqueleto, se forem ossos, ou zumbi, se for cadáver, usando o bloco de estatísticas correspondente.</p><p>A criatura é amistosa. Em combate tem iniciativa própria. Como ação bônus, você pode comandar mentalmente qualquer criatura criada por esta magia a até 18 metros; pode dar uma ordem geral a várias ou ordens individuais. Sem ordem, ela apenas se defende. O controle dura 24 horas; antes disso, reconjure para reafirmar controle por mais 24 horas.</p><p><strong>Em Círculos Superiores.</strong> Para cada círculo acima do 3º, anima ou reafirma controle sobre dois mortos-vivos adicionais. A conjuração não realiza ataque, save ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Invoque skeleton/zombie ou reafirme controle; gerencie iniciativa e comandos separadamente." } }
+    }
+  },
+  "Antagonize": {
+    "definition": { "mode": "save", "save": "wis", "damage": [[4, 4, "psychic"]], "onSave": "half", "conditions": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Você sussurra palavras mágicas que provocam uma criatura que possa ver a até 9 metros e que possa ouvi-lo e compreendê-lo. O alvo realiza uma salvaguarda de Sabedoria. Em uma falha, sofre 4d4 de dano psíquico e deve usar imediatamente a reação, se disponível, para realizar um ataque corpo a corpo contra outra criatura à sua escolha que você possa ver. Em um sucesso, sofre metade do dano e não realiza o ataque.</p><p>O ataque forçado é consequência exclusiva da falha e nunca deve ser executado contra o próprio alvo ou sem uma criatura válida. Resolva-o com a arma/ação adequada do alvo.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d4 para cada círculo acima do 3º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Após uma falha, faça o alvo gastar a reação e realizar o ataque corpo a corpo; não o faça no sucesso." } }
+    }
+  },
+  "Ashardalon’s Stride": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Chamas dracônicas irrompem de seus pés. Até a magia terminar, sua velocidade aumenta em 6 metros e seu movimento não provoca ataques de oportunidade. Quando você se move a até 1,5 metro de uma criatura ou de um objeto que não esteja vestido nem sendo carregado, ele sofre 1d6 de dano de fogo. Uma criatura ou objeto só pode sofrer esse dano uma vez em cada um de seus turnos.</p><p>A magia exige concentração por até 1 minuto. A conjuração não causa dano: aplique-o apenas após o movimento e controle separadamente o limite por alvo e por turno.</p><p><strong>Em Círculos Superiores.</strong> A velocidade aumenta em mais 1,5 metro e o dano em 1d6 para cada círculo acima do 3º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Não role dano ao conjurar. Após movimento a 5 ft, aplique o dano uma vez por alvo por turno." } }
+    }
+  },
+  "Aura Of Vitality": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": [], "heal": null },
+    "item": {
+      "system": { "description": { "value": "<p>Energia curativa irradia de você numa aura de 9 metros. A aura move-se com você e dura até 1 minuto, exigindo concentração. Quando conjura a magia, ela não restaura pontos de vida.</p><p>Enquanto a magia durar, você pode usar uma ação bônus em cada um de seus turnos para fazer uma criatura na aura, incluindo você, recuperar 2d6 pontos de vida. Escolha apenas uma criatura a cada uso e verifique se ela permanece na aura.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "A conjuração apenas cria a aura. Use uma ação bônus posterior para curar 2d6 de uma criatura na aura." } }
+    }
+  },
+  "Bestow Curse": {
+    "definition": { "mode": "save", "save": "wis", "damage": [], "conditions": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Você toca uma criatura, que realiza uma salvaguarda de Sabedoria. Em uma falha, fica amaldiçoada pela duração. Escolha: desvantagem em testes e salvaguardas de uma habilidade escolhida; desvantagem em ataques contra você; no início de cada turno, uma salvaguarda de Sabedoria, desperdiçando a ação em uma falha; ou seus ataques e magias causam 1d8 de dano necrótico adicional ao alvo. O Mestre pode permitir outra maldição de poder semelhante.</p><p>No 3º círculo a duração é concentração até 1 minuto; no 4º, concentração até 10 minutos; no 5º ou 6º, 8 horas; no 7º ou 8º, 24 horas; no 9º, até dissipada. Usando espaço de 5º círculo ou superior, não exige concentração.</p><p>A conjuração não causa dano. Escolha e aplique apenas uma maldição após a falha.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Após a falha, escolha uma maldição. O 1d8 só ocorre nos acertos posteriores do conjurador." } }
+    }
+  },
+  "Blinding Smite": {
+    "definition": { "mode": "utility", "target": "self", "damage": [], "save": null, "conditions": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Até 1 minuto, exigindo concentração, a magia aguarda seu próximo acerto com um ataque corpo a corpo com arma. Quando esse acerto ocorre, a arma brilha e causa 3d8 de dano radiante adicional; então o alvo realiza uma salvaguarda de Constituição. Em uma falha, fica cego enquanto a magia durar.</p><p>No fim de cada turno, a criatura cega repete a salvaguarda, encerrando a condição em um sucesso. A magia termina após disparar no acerto. Não role ataque, dano ou salvaguarda ao conjurar.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Arme o smite; após o próximo acerto corpo a corpo aplique +3d8, faça CON e repita CON no fim dos turnos." } }
+    }
+  },
+  "Call Lightning": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "range": { "value": 120, "units": "ft", "special": "Nuvem: cilindro de 60 ft de raio e 10 ft de altura; raio: 5 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 60 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Uma nuvem de tempestade cilíndrica, com 18 metros de raio e 3 metros de altura, aparece num ponto visível a até 30 metros acima de você, desde que haja espaço para ela. A magia exige concentração por até 10 minutos.</p><p>Ao conjurar e, depois, como ação em cada turno, escolha um ponto visível sob a nuvem. Um relâmpago atinge esse ponto; cada criatura a até 1,5 metro realiza uma salvaguarda de Destreza, sofrendo 3d10 de dano elétrico na falha ou metade no sucesso. Ao ar livre durante uma tempestade existente, o dano aumenta em 1d10.</p><p><strong>Em Círculos Superiores.</strong> +1d10 por círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Posicione a nuvem. Ao conjurar e em ações posteriores, crie área de 5 ft, faça DEX e aplique 3d10/metade." } }
+    }
+  },
+  "Conjure Barrage": {
+    "definition": { "mode": "save", "save": "dex", "damage": [], "range": { "value": null, "units": "self", "special": "Cone de 60 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cone", "size": 60 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Você arremessa uma arma não mágica ou uma peça de munição, que é destruída e se multiplica numa barragem em cone de 18 metros originado em você. Cada criatura no cone realiza uma salvaguarda de Destreza.</p><p>Em uma falha, a criatura sofre 3d8 de dano; em um sucesso, metade. O tipo do dano é o mesmo da arma ou munição usada. Escolha e role o tipo correto — concussão, perfurante ou cortante — em vez de aplicar um tipo fixo. A magia não possui escalonamento por espaço superior.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "O template e os saves são automáticos; após rolar, aplique 3d8 do tipo da arma/munição, metade no sucesso." } }
+    }
+  },
+  "Conjure Animals": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "space" },
+    "item": {
+      "system": { "description": { "value": "<p>Você invoca espíritos feéricos em espaços desocupados visíveis a até 18 metros. Escolha uma opção: uma besta de ND 2 ou menor; duas de ND 1 ou menor; quatro de ND 1/2 ou menor; ou oito de ND 1/4 ou menor. O Mestre determina as formas adequadas.</p><p>As criaturas são feéricas, amistosas, têm iniciativa própria, obedecem comandos verbais sem exigir sua ação e, sem ordem, defendem-se. Desaparecem a 0 PV ou quando termina a concentração, após até 1 hora.</p><p>Espaço de 5º círculo dobra a quantidade, 7º triplica e 9º quadruplica. A conjuração não realiza os ataques ou danos das fichas invocadas.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha a faixa de ND, invoque atores aprovados e controle seus turnos; não role ataques ao conjurar." } }
+    }
+  },
+  "Crusader’s Mantle": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Poder sagrado irradia de você numa aura de 9 metros que se move com você por até 1 minuto, exigindo concentração. Enquanto estiver na aura, cada criatura não hostil, incluindo você, causa 1d4 de dano radiante adicional quando acerta um ataque com arma.</p><p>A conjuração não causa dano e não seleciona inimigos. O dano adicional deve ser anexado somente a acertos com arma realizados por aliados que estejam dentro da aura no momento do acerto.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Não role dano ao conjurar; adicione 1d4 radiante a cada acerto com arma de criatura não hostil na aura." } }
+    }
+  },
+  "Daylight": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "range": { "value": 60, "units": "ft", "special": "Esfera de luz com raio 60 ft" }, "target": "space" },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 60 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Uma esfera de luz com raio de 18 metros se espalha a partir de um ponto escolhido a até 18 metros. A esfera emite luz plena e, além dela, mais 18 metros de penumbra. A luz dura 1 hora e não exige concentração.</p><p>Se o ponto estiver num objeto segurado ou não vestido nem carregado, a luz emana do objeto e move-se com ele. Cobrir completamente o objeto com algo opaco bloqueia a luz. Se qualquer parte da área sobrepuser escuridão criada por magia de 3º círculo ou menor, a magia que criou a escuridão é dissipada.</p><p>O círculo representa a área de luz plena; não há ataque, salvaguarda ou dano.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Posicione círculo de 60 ft de luz plena; acrescente 60 ft de penumbra e dissipe escuridão mágica de nível 3 ou menor sobreposta." } }
+    }
+  },
+  "Elemental Weapon": {
+    "definition": { "mode": "utility", "damage": [], "target": "object" },
+    "item": {
+      "system": { "description": { "value": "<p>Você toca uma arma não mágica. Por até 1 hora, exigindo concentração, ela se torna mágica, recebe +1 nas jogadas de ataque e causa 1d4 de dano adicional de um tipo escolhido: ácido, frio, fogo, elétrico ou trovejante.</p><p>Com espaço de 5º ou 6º círculo, o bônus é +2 e o dano 2d4. Com espaço de 7º círculo ou superior, o bônus é +3 e o dano 3d4. Escolha o tipo ao conjurar; a atividade inicial apenas encanta a arma e não realiza ataque nem dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique o bônus e o tipo escolhido à arma; o dano adicional só é rolado nos acertos dela." } }
+    }
+  },
+  "Enemies Abound": {
+    "definition": { "mode": "save", "save": "int", "damage": [], "conditions": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Uma criatura visível a 36 metros faz uma salvaguarda de Inteligência. Uma criatura imune a amedrontado obtém sucesso automaticamente. Em uma falha, por até 1 minuto de concentração, perde a capacidade de distinguir aliados de inimigos e considera inimiga toda criatura que possa ver.</p><p>Sempre que sofrer dano, repete a salvaguarda, encerrando a magia em um sucesso. Quando escolher alvo para um ataque, magia ou habilidade, deve selecionar aleatoriamente entre os alvos que possa ver dentro do alcance; se um inimigo provocar ataque de oportunidade, deve realizá-lo se puder. Não há dano ou condição amedrontado aplicada pela conjuração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Após falha, sorteie alvos válidos; repita INT sempre que o alvo sofrer dano." } }
+    }
+  },
+  "Erupting Earth": {
+    "definition": { "mode": "save", "save": "dex", "damage": [[3, 12, "bludgeoning"]], "onSave": "half", "range": { "value": 120, "units": "ft", "special": "Cubo de 20 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 20 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Escolha um ponto no chão a até 36 metros. Uma fonte de terra e pedra explode num cubo de 6 metros centrado ali. Cada criatura na área realiza uma salvaguarda de Destreza, sofrendo 3d12 de dano de concussão na falha ou metade no sucesso.</p><p>O solo da área torna-se terreno difícil até ser limpo; cada porção quadrada de 1,5 metro exige pelo menos 1 minuto de trabalho manual para limpar.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d12 por círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Após o dano, mantenha o cubo como terreno difícil até cada seção ser limpa." } }
+    }
+  },
+  "Fear": {
+    "definition": { "mode": "save", "save": "wis", "damage": [], "conditions": [], "range": { "value": null, "units": "self", "special": "Cone de 30 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cone", "size": 30 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Você projeta uma imagem dos piores medos das criaturas num cone de 9 metros. Cada criatura na área realiza uma salvaguarda de Sabedoria. Em uma falha, larga o que estiver segurando e fica amedrontada por até 1 minuto, exigindo concentração.</p><p>Enquanto amedrontada, em cada turno deve usar Dash e mover-se pela rota mais segura para longe de você, salvo se não houver para onde ir. Se terminar o turno num local onde não tenha linha de visão até você, repete a salvaguarda, encerrando o efeito em um sucesso. Não repita o save apenas por chegar ao fim do turno se ainda houver linha de visão.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique frightened e largar objetos só nas falhas; repita WIS apenas ao terminar turno sem linha de visão." } }
+    }
+  },
+  "Fireball": {
+    "definition": { "mode": "save", "save": "dex", "damage": [[8, 6, "fire"]], "onSave": "half", "range": { "value": 150, "units": "ft", "special": "Esfera de raio 20 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Um facho parte de seu dedo até um ponto à sua escolha a até 45 metros e explode numa esfera de chamas de 6 metros de raio. O fogo se espalha por cantos. Cada criatura na área realiza uma salvaguarda de Destreza, sofrendo 8d6 de dano de fogo na falha ou metade no sucesso.</p><p>O fogo incendeia objetos inflamáveis na área que não estejam vestidos nem sendo carregados.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d6 para cada círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Flame Arrows": {
+    "definition": { "mode": "utility", "damage": [], "target": "object" },
+    "item": {
+      "system": { "description": { "value": "<p>Você toca uma aljava contendo flechas ou virotes. Por até 1 hora de concentração, quando um alvo é atingido por um ataque à distância com arma usando uma munição retirada da aljava, ele sofre 1d6 de dano de fogo adicional. A magia termina depois que doze munições forem retiradas.</p><p>Ao fim da magia, munições retiradas perdem a magia; munições já disparadas não mantêm benefício. A conjuração não causa dano.</p><p><strong>Em Círculos Superiores.</strong> Duas munições adicionais podem ser afetadas por círculo acima do 3º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Controle 12 cargas (+2/slot); gaste ao retirar munição e role +1d6 apenas no acerto." } }
+    }
+  },
+  "Glyph of Warding": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "target": "space" },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Após 1 hora, você inscreve um glifo quase invisível numa superfície ou objeto tocado, consumindo incenso e diamante em pó de 200 PO. Define um gatilho e pode refiná-lo por características físicas observáveis. O glifo se rompe sem disparar se o objeto for movido mais de 3 metros do local da conjuração.</p><p><strong>Runas Explosivas.</strong> Ao disparar, esfera de 6 metros; Destreza; 5d8 de ácido, frio, fogo, elétrico ou trovejante escolhido, metade no sucesso. +1d8 por círculo superior.</p><p><strong>Glifo de Magia.</strong> Armazena magia preparada de até 3º círculo que alveje criatura ou área; ela usa seus parâmetros, não exige concentração e dura até o fim normal. O nível armazenável acompanha o espaço usado.</p><p>A conjuração apenas prepara o glifo: não faça salvaguarda nem dano antes do gatilho.</p>" },
+        "activities": {
+          "glyphExplosiveRunes": {
+            "type": "save",
+            "activation": { "type": "special", "value": null, "override": true, "condition": "Somente quando o gatilho inscrito for satisfeito" },
+            "description": { "chatFlavor": "Disparo posterior de Runas Explosivas. Antes de rolar, escolha ácido, frio, fogo, elétrico ou trovejante e aplique esse tipo ao resultado; a inscrição do glifo não causa dano." },
+            "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] },
+            "duration": { "value": null, "units": "inst", "concentration": false, "override": true },
+            "effects": [],
+            "range": { "override": true },
+            "target": { "template": { "type": "circle", "size": 20, "units": "ft", "contiguous": false }, "affects": { "choice": false, "count": "", "type": "creature" }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "1" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } },
+            "damage": { "parts": [], "critical": { "allow": false }, "onSave": "half" }
+          }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha runa ou magia e registre o gatilho. Execute área/save/dano ou a magia armazenada somente quando disparar." } }
+    }
+  },
+  "Haste": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "conditions": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Escolha uma criatura voluntária visível a até 9 metros. Por até 1 minuto de concentração, a velocidade do alvo dobra, ele recebe +2 na CA, vantagem em salvaguardas de Destreza e uma ação adicional em cada turno.</p><p>Essa ação adicional só pode ser usada para Attack (apenas um ataque com arma), Dash, Disengage, Hide ou Use an Object. Quando a magia termina, o alvo não pode mover-se nem realizar ações até depois do próximo turno dele, enquanto a onda de letargia passa.</p><p>Não há ataque, salvaguarda ou dano na conjuração. A ação extra não concede todos os ataques de Extra Attack.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique os quatro benefícios; ao término aplique a letargia até depois do próximo turno do alvo." } }
+    }
+  },
+  "Hunger of Hadar": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "conditions": [], "range": { "value": 150, "units": "ft", "special": "Esfera de raio 20 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você abre uma região de escuridão preenchida por horrores, uma esfera de 6 metros de raio em ponto a 45 metros. Ela se espalha por cantos, não pode ser iluminada e é terreno difícil; criaturas totalmente dentro ficam cegas. A magia exige concentração por até 1 minuto.</p><p>Uma criatura que começa o turno na área sofre 2d6 de dano de frio, sem salvaguarda. Uma criatura que termina o turno ali realiza salvaguarda de Destreza; em uma falha sofre 2d6 de dano de ácido, e em um sucesso não sofre esse dano. A conjuração por si só não dispara nenhum dos gatilhos.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Início do turno: 2d6 frio sem save. Fim do turno: DEX, 2d6 ácido somente na falha." } }
+    }
+  },
+  "Hypnotic Pattern": {
+    "definition": { "mode": "save", "save": "wis", "damage": [], "conditions": [], "range": { "value": 120, "units": "ft", "special": "Cubo de 30 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 30 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Você cria um padrão de cores num cubo de 9 metros dentro de 36 metros. O padrão aparece por um instante e desaparece. Cada criatura que o veja realiza uma salvaguarda de Sabedoria. Em uma falha, fica enfeitiçada por até 1 minuto de concentração; enquanto enfeitiçada dessa forma, fica incapacitada e tem velocidade 0.</p><p>O efeito termina individualmente se a criatura sofrer dano ou se outra criatura usar uma ação para sacudi-la. Em um sucesso, nenhum efeito é aplicado. A conjuração não causa dano, e criaturas incapazes de ver o padrão não fazem a salvaguarda.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique charmed, incapacitated e velocidade 0 só nas falhas; remova por dano ou ação para sacudir." } }
+    }
+  },
+  "Life Transference": {
+    "definition": { "mode": "utility", "damage": [], "heal": null, "target": "creature" },
+    "item": {
+      "system": { "description": { "value": "<p>Você sacrifica parte de sua vitalidade para curar outra criatura visível a até 9 metros. Você sofre 4d8 de dano necrótico, que não pode ser reduzido de forma alguma, e o alvo recupera uma quantidade de pontos de vida igual ao dobro do dano que você realmente sofreu.</p><p>Role primeiro o dano contra o conjurador e só então calcule a cura; não use o valor potencial ou reduzido por resistência. A magia não tem salvaguarda.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d8 para cada círculo acima do 3º, e a cura continua sendo o dobro do resultado sofrido.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique dano irredutível ao conjurador; cure o alvo em exatamente duas vezes o dano efetivamente sofrido." } }
+    }
+  },
+  "Magic Circle": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "range": { "value": 10, "units": "ft", "special": "Cilindro de 10 ft de raio e 20 ft de altura" }, "target": "space" },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 10 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você cria um cilindro de energia mágica com raio de 3 metros e altura de 6 metros, centrado num ponto do chão visível a até 3 metros. Escolha celestial, elemental, feérico, ínfero ou morto-vivo. Por 1 hora, criaturas do tipo escolhido não entram voluntariamente por meios não mágicos; tentativas por teleporte ou viagem planar exigem salvaguarda de Carisma. Elas têm desvantagem ao atacar alvos no cilindro e não podem encantá-los, amedrontá-los ou possuí-los.</p><p>Ao conjurar, pode inverter o círculo para aprisionar o tipo escolhido e proteger o exterior. A criação do círculo não faz salvaguarda; o save ocorre apenas numa tentativa posterior de travessia mágica.</p><p><strong>Em Círculos Superiores.</strong> A duração aumenta em 1 hora por círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Posicione círculo de 10 ft, escolha tipo e orientação. Faça CHA somente em teleporte/viagem planar através da barreira." } }
+    }
+  },
+  "Major Image": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "range": { "value": 120, "units": "ft", "special": "Cubo de 20 ft" }, "target": "space" },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 20 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Você cria a imagem de um objeto, criatura ou fenômeno visível que caiba num cubo de 6 metros em ponto a até 36 metros. A ilusão inclui sons, cheiros e temperatura apropriados, mas não causa dano. Dura até 10 minutos com concentração. Como ação, você pode movê-la para outro ponto no alcance e adaptar sua aparência e sons ao movimento.</p><p>Interação física revela a ilusão, pois objetos atravessam-na. Uma criatura pode usar ação para examiná-la e fazer Investigação contra sua CD; em sucesso reconhece a ilusão e passa a enxergá-la de forma tênue e ignorar seus demais componentes sensoriais.</p><p>Com espaço de 6º círculo ou superior, dura até ser dissipada e não exige concentração.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Posicione cubo de 20 ft; o teste de Investigação é atividade posterior e opcional, nunca save na conjuração." } }
+    }
+  },
+  "Lightning Arrow": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "target": "self" },
+    "item": {
+      "system": { "description": { "value": "<p>Por até 1 minuto de concentração, a magia aguarda seu próximo ataque à distância com arma. A munição ou arma transforma-se em relâmpago. Em um acerto, o alvo sofre 4d8 elétrico em vez do dano normal; em um erro, sofre metade.</p><p>Acertando ou errando, cada criatura a até 3 metros do alvo realiza salvaguarda de Destreza, sofrendo 2d8 elétrico na falha ou metade no sucesso. A magia termina após o ataque.</p><p><strong>Em Círculos Superiores.</strong> Ambos os danos aumentam em 1d8 por círculo acima do 3º.</p><p>Não role dano ou save ao conjurar; resolva ataque, dano principal e explosão nessa ordem.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Arme a magia; no próximo ataque aplique 4d8/2 no alvo e área de 10 ft com DEX para 2d8/metade." } }
+    }
+  },
+  "Lightning Bolt": {
+    "definition": { "mode": "save", "save": "dex", "damage": [[8, 6, "lightning"]], "onSave": "half", "range": { "value": null, "units": "self", "special": "Linha de 100 ft por 5 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "line", "size": 100, "width": 5 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Um relâmpago forma uma linha de 30 metros de comprimento por 1,5 metro de largura originada em você. Cada criatura na linha realiza uma salvaguarda de Destreza, sofrendo 8d6 de dano elétrico na falha ou metade no sucesso.</p><p>O relâmpago incendeia objetos inflamáveis na área que não estejam vestidos nem sendo carregados.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d6 por círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
+    }
+  },
+  "Melf’s Minute Meteors": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": [], "save": null },
+    "item": {
+      "system": {
+        "description": { "value": "<p>Seis meteoros minúsculos aparecem orbitando você por até 10 minutos de concentração. Ao conjurar e, depois, como ação bônus em cada turno, você pode gastar um ou dois meteoros, enviando cada um a um ponto visível a até 36 metros.</p><p>Cada meteoro explode numa esfera de 1,5 metro de raio. Criaturas na área realizam salvaguarda de Destreza, sofrendo 2d6 de fogo na falha ou metade no sucesso. Meteoros não lançados desaparecem ao terminar a magia.</p><p><strong>Em Círculos Superiores.</strong> Cria dois meteoros adicionais por círculo acima do 3º. A conjuração não deve aplicar seis vezes o dano: escolha até dois pontos por uso e gaste as cargas.</p>" },
+        "activities": {
+          "minuteMeteorExplosion": {
+            "type": "save",
+            "activation": { "type": "bonus", "value": 1, "override": true, "condition": "Ao conjurar ou em turno posterior; gaste um meteoro, no máximo dois por uso" },
+            "description": { "chatFlavor": "Explosão de um meteoro em esfera de raio 5 ft. Repita uma segunda vez se gastar dois meteoros." },
+            "consumption": { "scaling": { "allowed": true }, "spellSlot": false, "targets": [] },
+            "duration": { "value": null, "units": "inst", "concentration": false, "override": true },
+            "effects": [],
+            "range": { "value": 120, "units": "ft", "special": "", "override": true },
+            "target": { "template": { "type": "circle", "size": 5, "units": "ft", "contiguous": false }, "affects": { "choice": false, "count": "", "type": "creature" }, "override": true, "prompt": true },
+            "uses": { "spent": 0, "recovery": [], "max": "6" },
+            "midiProperties": {},
+            "overTimeProperties": { "saveRemoves": false, "preRemoveConditionText": "", "postRemoveConditionText": "" },
+            "save": { "ability": ["dex"], "dc": { "calculation": "spellcasting", "formula": "" } },
+            "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 2, "denomination": 6, "bonus": "", "types": ["fire"], "scaling": { "mode": "none", "number": null } }], "critical": { "allow": false }, "onSave": "half" }
+          }
+        }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Crie 6 cargas (+2/slot). Ao conjurar e como bônus posterior, gaste 1–2 e faça área de 5 ft, DEX, 2d6/metade por meteoro." } }
+    }
+  },
+  "Plant Growth": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "range": { "value": 150, "units": "ft", "special": "Raio de 100 ft (ação) ou meia milha (8 horas)" }, "target": "space" },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 100 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Esta magia possui dois usos. Com 1 ação, escolha um ponto a até 45 metros: plantas normais num raio de 30 metros tornam-se espessas, e cada 30 centímetros de movimento custa 1,2 metro. Você pode excluir uma ou mais áreas de qualquer tamanho dentro da região.</p><p>Conjurando por 8 horas, você enriquece todas as plantas num raio de 800 metros centrado em você; por 1 ano elas produzem o dobro da quantidade normal de alimento. Esse uso não cria terreno difícil.</p><p>A magia é instantânea, não exige concentração e não realiza ataque, salvaguarda ou dano. O círculo de 30 metros representa apenas a modalidade de 1 ação.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha modalidade: círculo de 100 ft com exclusões e custo quádruplo, ou 8 horas para fertilidade em meia milha." } }
+    }
+  },
+  "Phantom Steed": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "space" },
+    "item": {
+      "system": { "description": { "value": "<p>Após 1 minuto, uma criatura equina Grande e quase real aparece no chão em espaço desocupado a até 9 metros. Você decide sua aparência. Uma criatura escolhida pode montá-la. Ela usa as estatísticas de riding horse, exceto velocidade de 30 metros, e percorre 16 quilômetros por hora, ou 21 quilômetros em ritmo rápido.</p><p>Dura 1 hora. Termina se você a dispensar com uma ação ou se ela sofrer dano; quando termina, desaparece gradualmente por 1 minuto, permitindo ao cavaleiro desmontar. A magia pode ser ritual e não faz ataque, save ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Invoque uma montaria com estatísticas próprias; ao dano ou dispensa, mantenha o desaparecimento gradual por 1 minuto." } }
+    }
+  },
+  "Pulse Wave": {
+    "definition": { "mode": "save", "save": "con", "damage": [[6, 6, "force"]], "onSave": "half", "range": { "value": null, "units": "self", "special": "Cone de 30 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cone", "size": 30 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Você libera pressão num cone de 9 metros. Cada criatura realiza salvaguarda de Constituição, sofrendo 6d6 de dano de energia na falha ou metade no sucesso. Para cada criatura que falhar, escolha empurrá-la ou puxá-la 4,5 metros. Mova-a para espaço desocupado; em sucesso não há deslocamento.</p><p>Objetos soltos totalmente na área também são empurrados ou puxados 4,5 metros, conforme a escolha geral da magia.</p><p><strong>Em Círculos Superiores.</strong> +1d6 por círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Após os saves, empurre ou puxe 15 ft somente cada criatura que falhou." } }
+    }
+  },
+  "Sleet Storm": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "conditions": [], "range": { "value": 150, "units": "ft", "special": "Cilindro de 40 ft de raio e 20 ft de altura" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 40 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Granizo cai num cilindro de 12 metros de raio e 6 metros de altura em ponto a 45 metros, por até 1 minuto de concentração. A área fica fortemente obscurecida, chamas expostas se apagam e o chão torna-se terreno difícil.</p><p>Quando uma criatura entra na área pela primeira vez num turno ou começa o turno ali, realiza salvaguarda de Destreza, ficando caída numa falha. Uma criatura que começa o turno na área enquanto concentra faz salvaguarda de Constituição contra sua CD de magia, perdendo a concentração numa falha. A conjuração não realiza esses saves antecipadamente.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "DEX ao entrar pela primeira vez no turno ou começar ali; CON separado para concentração ao começar turno na área." } }
+    }
+  },
+  "Slow": {
+    "definition": { "mode": "save", "save": "wis", "damage": [], "conditions": [], "range": { "value": 120, "units": "ft", "special": "Até 6 criaturas em cubo de 40 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "cube", "size": 40 }, "affects": { "choice": true, "count": "6", "type": "creature" } },
+        "description": { "value": "<p>Escolha até seis criaturas num cubo de 12 metros dentro de 36 metros. Cada uma faz salvaguarda de Sabedoria. Em uma falha, por até 1 minuto de concentração, tem velocidade pela metade, −2 na CA e em salvaguardas de Destreza, não pode usar reações e, no turno, usa ação ou ação bônus, não ambas, e não realiza mais de um ataque.</p><p>Se tentar conjurar magia com tempo de 1 ação, role d20: com 11+, ela só se completa no turno seguinte se usar novamente a ação; caso contrário é desperdiçada. No fim de cada turno, repete a salvaguarda e encerra o efeito em um sucesso.</p><p>Em um sucesso inicial não há efeito. Não use uma única condição genérica para substituir as restrições.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique todas as restrições às falhas; repita WIS no fim de cada turno e resolva separadamente o atraso de magia." } }
+    }
+  },
+  "Spirit Guardians": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "conditions": [], "range": { "value": null, "units": "self", "special": "Aura de raio 15 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 15 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Espíritos rodeiam você a 4,5 metros por até 10 minutos de concentração. Ao conjurar, escolha qualquer número de criaturas visíveis que não serão afetadas. Para as demais, a área é terreno difícil.</p><p>Quando uma criatura afetada entra na área pela primeira vez num turno ou começa o turno ali, faz salvaguarda de Sabedoria: 3d8 radiante, se você for bom ou neutro, ou necrótico, se maligno, na falha; metade no sucesso. A conjuração não causa dano fora desses gatilhos e a aura move-se com você.</p><p><strong>Em Círculos Superiores.</strong> +1d8 por círculo acima do 3º.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Registre excluídos. Ao entrar pela primeira vez no turno ou começar ali: WIS, 3d8/metade do tipo escolhido." } }
+    }
+  },
+  "Spirit Shroud": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": [] },
+    "item": {
+      "system": { "description": { "value": "<p>Espíritos envolvem você por até 1 minuto de concentração. Seus ataques contra criaturas a até 3 metros causam 1d8 adicional de dano radiante, necrótico ou frio, escolhido ao conjurar. Uma criatura que sofra esse dano não recupera pontos de vida até o início do seu próximo turno.</p><p>Além disso, qualquer criatura hostil que você possa ver e que comece o turno a até 3 metros tem a velocidade reduzida em 3 metros até o início do próximo turno dela.</p><p>O dano aumenta para 2d8 com espaço de 5º–6º e 3d8 com espaço de 7º ou superior. Não role dano ao conjurar; ele depende de um acerto posterior e da distância.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Adicione o tipo escolhido apenas a ataques contra alvos a 10 ft; aplique bloqueio de cura e redução de velocidade separadamente." } }
+    }
+  },
+  "Stinking Cloud": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "conditions": [], "range": { "value": 90, "units": "ft", "special": "Esfera de raio 20 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "space" } },
+        "description": { "value": "<p>Uma esfera de gás de 6 metros de raio surge a até 27 metros, espalha-se por cantos e deixa a área fortemente obscurecida por até 1 minuto de concentração.</p><p>Uma criatura totalmente dentro da nuvem no início do turno faz salvaguarda de Constituição contra veneno. Em uma falha, passa o turno vomitando e não realiza ação. Criaturas que não precisam respirar ou são imunes a veneno obtêm sucesso automaticamente. Vento moderado dispersa a nuvem após 4 rodadas; vento forte, após 1 rodada.</p><p>Não há save na conjuração nem dano.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "CON apenas no início do turno de criatura totalmente dentro; falha consome a ação. Respeite imunidades e dispersão por vento." } }
+    }
+  },
+  "Summon Fey": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "space" },
+    "item": {
+      "system": { "description": { "value": "<p>Você invoca um espírito feérico em espaço desocupado visível a até 27 metros, usando o bloco Fey Spirit e o nível do espaço. Escolha Fuming, Mirthful ou Tricksy; a escolha altera Fey Step. Exige componente de 300 PO e concentração por até 1 hora.</p><p>O espírito é amistoso, age imediatamente após você, obedece seus comandos verbais; sem comando por ação bônus, realiza Dodge e usa movimento para evitar perigo. Desaparece a 0 PV ou ao terminar. A conjuração não executa ataques, saves ou dano da ficha.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha humor, invoque Fey Spirit escalado pelo slot e gerencie comando/turno separado." } }
+    }
+  },
+  "Summon Lesser Demons": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "space" },
+    "item": {
+      "system": { "description": { "value": "<p>Você invoca demônios em espaços desocupados visíveis a até 18 metros e rola a composição: dois de ND 1 ou menor, quatro de ND 1/2 ou menor, ou oito de ND 1/4 ou menor. O Mestre escolhe os demônios. Eles são hostis a todas as criaturas, têm iniciativa própria e atacam os não demônios mais próximos.</p><p>Ao conjurar, pode derramar sangue de humanoide morto nas últimas 24 horas para criar um círculo de 1,5 metro que os demônios não atravessam nem atacam através. Concentração até 1 hora. Espaço 6º–7º dobra e 8º–9º triplica a quantidade. A conjuração não rola os ataques das criaturas.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Role o grupo, invoque atores hostis e, se usado sangue, crie o círculo protetor; resolva turnos separadamente." } }
+    }
+  },
+  "Summon Shadowspawn": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "space" },
+    "item": {
+      "system": { "description": { "value": "<p>Você invoca um espírito sombrio em espaço desocupado visível a até 27 metros, usando Shadow Spirit escalado pelo nível do espaço. Escolha Fury, Despair ou Fear; a escolha altera suas características. Exige componente de 300 PO e concentração por até 1 hora.</p><p>É amistoso, age imediatamente após você e obedece comandos verbais; sem comando por ação bônus, usa Dodge e move-se para evitar perigo. Desaparece a 0 PV ou ao término. Ataques, saves e condições pertencem à ficha invocada, não à atividade de conjuração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha emoção, invoque Shadow Spirit escalado pelo slot e use a ficha para seus efeitos." } }
+    }
+  },
+  "Summon Undead": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "space" },
+    "item": {
+      "system": { "description": { "value": "<p>Você invoca um espírito morto-vivo em espaço desocupado visível a até 27 metros, usando Undead Spirit escalado pelo nível do espaço. Escolha Ghostly, Putrid ou Skeletal; a forma altera movimento, ataques e efeitos. Exige componente de 300 PO e concentração por até 1 hora.</p><p>É amistoso, age imediatamente após você e obedece comandos verbais; sem comando por ação bônus, usa Dodge e evita perigo. Desaparece a 0 PV ou ao término. A conjuração não realiza os ataques, saves ou condições da ficha.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Escolha forma, invoque Undead Spirit escalado pelo slot e resolva efeitos pela ficha." } }
+    }
+  },
+  "Thunder Step": {
+    "definition": { "mode": "save", "save": "con", "damage": [[3, 10, "thunder"]], "onSave": "half", "range": { "value": 90, "units": "ft", "special": "Teleporte; explosão de raio 10 ft no ponto de origem" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "circle", "size": 10 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Você se teleporta para um espaço desocupado que possa ver a até 27 metros. Pode levar uma criatura voluntária de seu tamanho ou menor que esteja a 1,5 metro, desde que haja espaço adjacente no destino; ela leva equipamento até a capacidade de carga.</p><p>Imediatamente após você desaparecer, cada criatura a até 3 metros do espaço de origem realiza salvaguarda de Constituição, sofrendo 3d10 de dano trovejante na falha ou metade no sucesso. O estrondo é audível a 90 metros.</p><p><strong>Em Círculos Superiores.</strong> +1d10 por círculo acima do 3º. Posicione a área na origem, não no destino.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Teleporte primeiro; aplique a área de 10 ft no ponto de origem." } }
+    }
+  },
+  "Tidal Wave": {
+    "definition": { "mode": "save", "save": "dex", "damage": [[4, 8, "bludgeoning"]], "onSave": "half", "conditions": [], "range": { "value": 120, "units": "ft", "special": "Até 30×10×10 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "rect", "size": 30, "width": 10 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Você cria uma onda numa área dentro de 36 metros, com até 9 metros de comprimento, 3 metros de largura e 3 metros de altura. Cada criatura na área realiza salvaguarda de Destreza. Em uma falha, sofre 4d8 de dano de concussão e fica caída; em um sucesso, sofre metade e não fica caída.</p><p>A água se espalha pelo chão em todas as direções, extinguindo chamas desprotegidas na área e a até 9 metros dela, e então desaparece. Ajuste o template às dimensões escolhidas, que podem ser menores que os máximos.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Aplique prone apenas às falhas; apague chamas desprotegidas na área e a 30 ft." } }
+    }
+  },
+  "Tiny Servant": {
+    "definition": { "mode": "utility", "damage": [], "save": null, "attack": null, "target": "object" },
+    "item": {
+      "system": { "description": { "value": "<p>Você toca um objeto Miúdo, não mágico e não preso, que cria braços e pernas e usa o bloco Tiny Servant por 8 horas. É amistoso, age imediatamente após você e obedece comandos mentais quando está a até 36 metros.</p><p>Como ação bônus, ordene uma atividade simples; sem comando, ele apenas se defende. A 0 PV ou ao término, volta à forma de objeto. A conjuração não executa os ataques da ficha.</p><p><strong>Em Círculos Superiores.</strong> Anime dois objetos adicionais por círculo acima do 3º, podendo dar a mesma ordem a todos.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Transforme/invoque Tiny Servant, controle-o por comando bônus e use a ficha nos turnos próprios." } }
+    }
+  },
+  "Vampiric Touch": {
+    "definition": { "mode": "utility", "range": "self", "target": "self", "damage": [], "attack": null },
+    "item": {
+      "system": { "description": { "value": "<p>O toque de sua mão torna-se capaz de drenar força vital. Ao conjurar, realize um ataque mágico corpo a corpo contra uma criatura ao alcance. Em um acerto, ela sofre 3d6 de dano necrótico e você recupera pontos de vida iguais à metade do dano necrótico efetivamente causado.</p><p>Por até 1 minuto de concentração, em cada turno posterior você pode usar uma ação para repetir o ataque sem gastar outro espaço. Resistência, imunidade e outros modificadores alteram a cura porque ela usa o dano realmente causado.</p><p><strong>Em Círculos Superiores.</strong> +1d6 por círculo acima do 3º.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Faça ataque corpo a corpo ao conjurar e como ação posterior; em acerto cure metade do dano necrótico efetivo." } }
+    }
+  },
+  "Wind Wall": {
+    "definition": { "mode": "save", "save": "str", "damage": [[3, 8, "bludgeoning"]], "onSave": "half", "range": { "value": 120, "units": "ft", "special": "Parede até 50×15×1 ft" } },
+    "item": {
+      "system": {
+        "target": { "template": { "type": "wall", "size": 50, "width": 1 }, "affects": { "count": "", "type": "creature" } },
+        "description": { "value": "<p>Uma parede de vento surge do chão num ponto a 36 metros. Pode ter até 15 metros de comprimento, 4,5 metros de altura e 30 centímetros de espessura, seguindo caminho contínuo escolhido, e dura até 1 minuto com concentração.</p><p>Quando surge, cada criatura na área faz salvaguarda de Força, sofrendo 3d8 de concussão na falha ou metade no sucesso. Depois disso, a parede mantém gases afastados; criaturas voadoras Pequenas ou menores não atravessam; objetos leves sobem; flechas, virotes e projéteis comuns não atravessam, e outros projéteis têm desvantagem.</p><p>O dano ocorre apenas na criação; a barreira persiste sem novos danos.</p>" }
+      },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Faça STR e dano somente quando a parede aparece; depois mantenha apenas os efeitos da barreira." } }
+    }
+  }
+}

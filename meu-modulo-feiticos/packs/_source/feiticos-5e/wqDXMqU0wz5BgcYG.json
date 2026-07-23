@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por meio deste magia, uma criatura ou objeto voluntário pode ser escondido, protegido da detecção durante o período. Quando você lança a magia e toca o alvo, ele se torna invisível e não pode ser alvo de magias de adivinhação ou percebido através de sensores de vidência criados por magias de adivinhação.</p><p>Se o alvo for uma criatura, ele entra em um estado de animação suspensa. O tempo para de fluir e ele não envelhece.</p><p>Você pode definir uma condição para que a magia termine mais cedo. A condição pode ser qualquer que você escolher, mas deve ocorrer ou ser visível dentro de 1,6 km do alvo.  Os exemplos incluem “depois de 1.000 anos” ou “quando o tarrasque despertar”. Esta magia também termina se o alvo sofrer algum dano.</p>",
+      "value": "<p>Uma criatura voluntária ou objeto tocado fica Invisível e protegido de magias de adivinhação e sensores até a magia ser dissipada. Se for criatura, entra em animação suspensa: o tempo para ela e ela não envelhece.</p><p>Você pode definir uma condição observável a até 1 milha para encerrar a magia, mas ela não pode depender de nível, classe ou PV. Dispel Magic também encerra. Pó de gemas de 5.000 PO é consumido. Sem save, dano ou concentração.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "creatureOrObject",
         "special": ""
       }
     },
@@ -127,10 +127,11 @@
         "needsReview": true,
         "conditions": [
           "invisible"
-        ]
+        ],
+        "manual": "Escolha criatura voluntária ou objeto, aplique invisibilidade/animação suspensa e registre gatilho válido."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura com 100 PV ou menos a até 18 metros sofre dor incapacitante. Seu deslocamento fica limitado, ataques e testes físicos têm desvantagem e tentar conjurar exige resistência de Constituição. Ao fim de cada turno, ela faz resistência de Constituição para encerrar.</p>",
+      "value": "<p>Uma criatura que possa ver a até 18 metros com 100 PV ou menos é dominada por dor intensa, sem salvaguarda inicial. Se tiver mais de 100 PV, nada ocorre. Enquanto afetada, seu deslocamento máximo é 3 metros; ela tem desvantagem em ataques, testes e salvaguardas exceto Constituição.</p><p>Ao tentar conjurar, deve passar em salvaguarda de Constituição ou a magia é desperdiçada. Ao fim de cada turno, repete Constituição e encerra o efeito no sucesso. Não exige concentração e não causa dano.</p><p><strong>Procedimento:</strong> verifique o limiar antes de aplicar; o CON pertence apenas à tentativa de conjurar e ao fim do turno.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "6Aj3WJYArFcU-VMy": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,15 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -134,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Remova CON inicial. Aplique sem save se PV≤100; ofereça CON ao conjurar e no fim de cada turno."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

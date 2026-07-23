@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -109,6 +109,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "occupied-destination": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente se o destino estiver ocupado; o teleporte falha"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Aplique 4d6 força ao conjurador e ao passageiro."
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -124,14 +179,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
         }
       }
     }
@@ -140,19 +195,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Teleporte o conjurador e, opcionalmente, um aliado voluntário adjacente. Role o dano apenas se o destino estiver ocupado."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

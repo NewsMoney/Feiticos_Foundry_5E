@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 18 metros faz resistência de Constituição, sofrendo 5d12 necrótico em falha ou metade em sucesso. Um alvo morto por esse dano se ergue como zumbi no próximo turno. Mortos-vivos, em vez disso, recebem 5d12 PV temporários.</p>",
+      "value": "<p>Uma criatura viva a até 18 metros faz salvaguarda de Constituição, sofrendo 5d12 de dano necrótico em uma falha ou metade em um sucesso. Se um humanoide morrer por esse dano, ergue-se como zumbi no início do seu próximo turno e ataca a criatura mais próxima.</p><p>Se o alvo for morto-vivo, ele não realiza salvaguarda nem sofre dano; em vez disso, recebe pontos de vida temporários iguais à metade da rolagem.</p>",
       "chat": ""
     },
     "source": {
@@ -158,10 +158,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Vivos usam CON 5d12/half. Mortos-vivos recebem metade da rolagem como PV temporários; crie zumbi no turno seguinte se humanoide morrer."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

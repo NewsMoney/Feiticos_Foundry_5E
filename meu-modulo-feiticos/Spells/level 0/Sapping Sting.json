@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Sapping%20Sting.png",
   "system": {
     "description": {
-      "value": "<p>Você drena momentaneamente a vitalidade de uma criatura que possa ver a até 9 metros. Ela faz resistência de Constituição; em uma falha sofre 1d4 de dano necrótico e fica caída. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você drena momentaneamente a vitalidade de uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Constituição. Em uma falha, sofre 1d4 de dano necrótico e fica caído. Em um sucesso, não sofre dano e não fica caído.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d4 no 5º nível, 3d4 no 11º e 4d4 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -151,7 +151,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

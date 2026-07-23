@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você projeta uma imagem fantasmagórica dos piores medos de uma criatura. Cada criatura em um cone de 9 metros deve ser bem sucedida em um teste de resistência de Sabedoria ou deixará cair o que estiver segurando e ficará assustada durante o período.</p><p>Enquanto estiver assustada por esta magia, uma criatura deve realizar a ação Correr e se afastar de você pela rota mais segura disponível em cada um de seus turnos, a menos que não haja para onde se mover. Se a criatura terminar seu turno em um local onde ela não tenha linha de visão para você, a criatura pode fazer um teste de resistência de Sabedoria. Se um teste for bem sucedido, a magia termina para aquela criatura.</p>",
+      "value": "<p>Você projeta uma imagem dos piores medos das criaturas num cone de 9 metros. Cada criatura na área realiza uma salvaguarda de Sabedoria. Em uma falha, larga o que estiver segurando e fica amedrontada por até 1 minuto, exigindo concentração.</p><p>Enquanto amedrontada, em cada turno deve usar Dash e mover-se pela rota mais segura para longe de você, salvo se não houver para onde ir. Se terminar o turno num local onde não tenha linha de visão até você, repete a salvaguarda, encerrando o efeito em um sucesso. Não repita o save apenas por chegar ao fim do turno se ainda houver linha de visão.</p>",
       "chat": ""
     },
     "source": {
@@ -26,7 +26,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (30-foot cone)"
+      "special": "Cone de 30 ft"
     },
     "target": {
       "template": {
@@ -37,8 +37,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -134,29 +134,13 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "frightened"
-        ]
+        "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
-      "status": {
-        "id": "frightened",
-        "ids": [
-          "frightened"
-        ],
-        "label": "frightened",
-        "core": true,
-        "target": "self",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
-      }
+      "manualWorkflow": "Aplique frightened e largar objetos só nas falhas; repita WIS apenas ao terminar turno sem linha de visão."
     },
     "itemacro": {
       "macro": {

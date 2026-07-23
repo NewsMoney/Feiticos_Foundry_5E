@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia transporta instantaneamente você e até oito criaturas voluntárias de sua escolha que você possa ver dentro do alcance, ou um único objeto, que você possa ver dentro do alcance, para um destino que você selecionar. Se você mirar em um objeto, ele deve caber inteiramente dentro de um cubo de 3 metros e não pode ser segurado ou carregado por uma criatura involuntária.</p><p>O destino que você escolher deve ser conhecido por você e deve estar no mesmo plano de existência que você. Sua familiaridade com o destino determina se você chegará lá com sucesso. O Mestre rola d100 e consulta a tabela.</p><pre>| Familiaridade | Acidente | Área semelhante | Fora do alvo | No alvo |<br>|-------------------|--------|--------------|------------|-----------|<br>| Círculo permanente |  --- |      --- |     --- |   01-100 |<br>| Objeto associado |  --- |      --- |     --- |   01-100 |<br>| Muito familiar | 01-05 |     06-13 |    14-24 |   25-100 |<br>| Visto casualmente | 01-33 |     34-43 |    44-53 |   54-100 |<br>| Visto uma vez | 01-43 |     44-53 |    54-73 |   74-100 |<br>| Descrição | 01-43 |     44-53 |    54-73 |   74-100 |<br>| Destino falso | 01-50 |    51-100 |     --- |    --- |</pre><p><strong>Familiaridade.</strong> “Círculo permanente” significa um círculo de teletransporte permanente cuja sequência de sigilo você conhece. “Objeto associado” significa que você possui um objeto retirado do destino desejado nos últimos seis meses, como um livro da biblioteca de um bruxo, roupa de cama de uma suíte real ou um pedaço de mármore da tumba secreta de um lich.</p><p>“Muito familiar” é um lugar onde você esteve com frequência, um lugar que você estudou cuidadosamente ou um lugar que você pode ver quando lançou a magia. “Visto casualmente” é algum lugar que você viu mais de uma vez, mas com o qual não está muito familiarizado. “Visualizado uma vez” é um lugar que você viu uma vez, possivelmente usando magia. “Descrição” é um lugar cuja localização e aparência você conhece através da descrição de outra pessoa, talvez de um mapa.</p><p>“Falso destino” é um lugar que não existe. Talvez você tenha tentado visualizar o santuário de um inimigo, mas em vez disso viu uma ilusão, ou estava tentando se teletransportar para um local familiar que não existe mais.</p><p><strong>No alvo.</strong> Você e seu grupo (ou o objeto alvo) aparecem onde quiserem.</p><p><strong>Fora do alvo.</strong> Você e seu grupo (ou o objeto alvo) aparecem a uma distância aleatória do destino em uma direção aleatória. A distância fora do alvo é 1d10 x 1d10 por cento da distância que deveria ser percorrida. Por exemplo, se você tentasse viajar 190 quilômetros, aterrissasse fora do alvo e obtivesse um 5 e 3 nos dois d10s, então você estaria 15% fora do alvo, ou 18 quilômetros. O Mestre determina a direção fora do alvo aleatoriamente rolando um d8 e designando 1 como norte, 2 como nordeste, 3 como leste e assim por diante em torno dos pontos cardeais. Se você estivesse se teletransportando para uma cidade costeira e acabasse a 29 quilômetros no mar, poderia estar em apuros.</p><p><strong>Área semelhante.</strong> Você e seu grupo (ou o objeto alvo) acabam em uma área diferente que é visual ou tematicamente semelhante à área alvo. Se você estiver indo para o seu laboratório doméstico, por exemplo, você pode acabar no laboratório de outro mago ou em uma loja de suprimentos alquímicos que tenha muitas das mesmas ferramentas e implementos do seu laboratório. Geralmente, você aparece no local mais próximo, mas como a magia não tem limite de alcance, você pode acabar em qualquer lugar do avião.</p><p><strong>Acidente.</strong> A magia imprevisível da magia resulta em uma jornada difícil. Cada criatura teletransportada (ou o objeto alvo) sofre 3d10 de dano de força, e o Mestre rola novamente na mesa para ver onde você vai parar (múltiplos acidentes podem ocorrer, causando dano a cada vez).</p>",
+      "value": "<p>Você transporta instantaneamente a si e até oito criaturas voluntárias visíveis a até 3 metros, ou um objeto visível que caiba num cubo de 3 metros e não seja portado por involuntário, para destino conhecido no mesmo plano. O cubo de 3 metros limita somente as dimensões do objeto transportado; não representa área de efeito e não seleciona automaticamente criaturas dentro dele.</p><p>Círculo permanente ou objeto associado garante chegada. Nos demais casos, role d100 segundo familiaridade: No Alvo, Fora do Alvo, Área Semelhante ou Mishap. Cada Mishap causa 3d10 de energia a cada viajante e exige nova rolagem, podendo repetir.</p><p><strong>Procedimento:</strong> selecione explicitamente os viajantes voluntários ou o objeto. Não aplique 3d10 ao conjurar; use-o somente quando a tabela resultar em Mishap.</p>",
       "chat": ""
     },
     "source": {
@@ -37,9 +37,9 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
-        "special": ""
+        "count": "9",
+        "type": "creatureOrObject",
+        "special": "O cubo de 10 ft limita apenas o tamanho do objeto; não é uma área de efeito."
       }
     },
     "properties": [
@@ -107,30 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 3,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
         }
       }
     }
@@ -139,19 +115,21 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Sem template de área: selecione até 9 voluntários ou um objeto que caiba no cubo de 10 ft. Role tabela conforme familiaridade; 3d10 a todos somente em cada Mishap."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

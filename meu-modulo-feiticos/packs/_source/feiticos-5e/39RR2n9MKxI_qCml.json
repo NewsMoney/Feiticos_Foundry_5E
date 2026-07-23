@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você envia um baú especialmente construído para o Plano Etéreo, usando uma réplica em miniatura. Como ação, pode convocá-lo ou devolvê-lo enquanto tiver a réplica. Após 60 dias cresce o risco cumulativo de a magia terminar e o baú se perder no Etéreo.</p>",
+      "value": "<p>Você esconde um baú Grande e todo seu conteúdo no Plano Etéreo usando uma réplica Miúda. Os dois baús devem cumprir os valores e materiais indicados nos componentes da magia.</p><p>Enquanto segurar a réplica, você pode usar uma ação para enviar o baú ao Etéreo ou trazê-lo de volta a um espaço desocupado no chão a até 1,5 metro. Se uma criatura estiver dentro, há chance de ela ficar presa no Etéreo.</p><p>Após 60 dias, existe chance cumulativa diária de a magia terminar. Destruir ou perder a réplica impede recuperar o baú pela magia; terminar voluntariamente traz o conteúdo de volta conforme a regra, mas não recria um baú destruído.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "object",
         "special": ""
       }
     },
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Vincule baú e réplica, controle envio/retorno e a chance cumulativa após 60 dias. A perda da réplica pode tornar o baú irrecuperável."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

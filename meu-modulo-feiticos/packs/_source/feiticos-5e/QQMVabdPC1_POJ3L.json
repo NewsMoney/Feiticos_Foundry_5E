@@ -126,7 +126,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "O raio de localização é alcance sensorial narrativo, não área de alvos."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Green%20Flame%20Blade.png",
   "system": {
     "description": {
-      "value": "<p>Você realiza um ataque corpo a corpo com a arma usada como componente. Em acerto, fogo verde salta para outra criatura a até 1,5 metro, causando dano igual ao modificador de conjuração. Nos níveis 5, 11 e 17, o ataque e o salto recebem dados de fogo adicionais.</p>",
+      "value": "<p>Você brande a arma usada na conjuração e realiza com ela um ataque corpo a corpo contra uma criatura a até 1,5 metro. Em um acerto, o alvo sofre os efeitos normais do ataque e você pode fazer fogo verde saltar para uma segunda criatura que possa ver a até 1,5 metro do primeiro alvo. A segunda criatura sofre dano de fogo igual ao seu modificador de habilidade de conjuração.</p><p><strong>Procedimento:</strong> role a arma equipada. O salto só ocorre em um acerto e exige uma segunda criatura válida; não há salvaguarda.</p><p><strong>Em Níveis Superiores.</strong> No 5º nível, o primeiro alvo sofre +1d8 de fogo e o segundo sofre 1d8 + modificador. Ambos os danos aumentam em 1d8 no 11º e novamente no 17º nível.</p>",
       "chat": ""
     },
     "source": {
@@ -119,9 +119,10 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Role a arma; em acerto escolha segundo alvo a 1,5 metro e aplique o salto conforme o nível."
     },
     "itemacro": {
       "macro": {

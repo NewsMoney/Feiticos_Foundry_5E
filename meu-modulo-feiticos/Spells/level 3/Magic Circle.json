@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria um cilindro de energia mágica com 3 metros de raio e 6 metros de altura centrado em um ponto no chão que você pode ver dentro do alcance. Runas brilhantes aparecem onde quer que o cilindro cruze o chão ou outra superfície.</p><p>Escolha um ou mais dos seguintes tipos de criaturas: celestiais, elementais, feéricos, demoníacos ou mortos-vivos. O círculo afeta uma criatura do tipo escolhido das seguintes maneiras:</p><p>* A criatura não pode entrar voluntariamente no cilindro por meios não mágicos. Se a criatura tentar usar teletransporte ou viagem interplanar para fazer isso, ela deve primeiro ser bem sucedida em um teste de resistência de Carisma.<br>* A criatura tem desvantagem nas jogadas de ataque contra alvos dentro do cilindro.<br>* Os alvos dentro do cilindro não podem ser encantados, assustados ou possuídos pela criatura.</p><p>Ao lançar esta magia, você pode optar por fazer com que sua magia opere na direção inversa, evitando que uma criatura do tipo especificado deixe o cilindro e protegendo alvos fora do cilindro. </p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 4º nível ou superior, a duração aumenta em 1 hora para cada nível de espaço acima do 3º.</p>",
+      "value": "<p>Você cria um cilindro de energia mágica com raio de 3 metros e altura de 6 metros, centrado num ponto do chão visível a até 3 metros. Escolha celestial, elemental, feérico, ínfero ou morto-vivo. Por 1 hora, criaturas do tipo escolhido não entram voluntariamente por meios não mágicos; tentativas por teleporte ou viagem planar exigem salvaguarda de Carisma. Elas têm desvantagem ao atacar alvos no cilindro e não podem encantá-los, amedrontá-los ou possuí-los.</p><p>Ao conjurar, pode inverter o círculo para aprisionar o tipo escolhido e proteger o exterior. A criação do círculo não faz salvaguarda; o save ocorre apenas numa tentativa posterior de travessia mágica.</p><p><strong>Em Círculos Superiores.</strong> A duração aumenta em 1 hora por círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 10,
       "units": "ft",
-      "special": ""
+      "special": "Cilindro de 10 ft de raio e 20 ft de altura"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "IS4wPryYuSn-VZKz": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "minute",
           "value": 1,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
@@ -107,15 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "cha"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -136,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Posicione círculo de 10 ft, escolha tipo e orientação. Faça CHA somente em teleporte/viagem planar através da barreira."
     },
     "itemacro": {
       "macro": {

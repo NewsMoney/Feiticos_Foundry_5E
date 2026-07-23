@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você altera o tempo em até seis criaturas de sua escolha em um cubo de 12 metros dentro do alcance. Cada alvo deve ser bem sucedido em um teste de resistência de sabedoria ou será afetado por esta magia durante a duração.</p><p>A velocidade de um alvo afetado é reduzida à metade, ele sofre uma penalidade de -2 nos CA e nos testes de resistência de Destreza e não pode usar reações. Por sua vez, ele pode usar uma ação ou uma ação bônus, não ambas. Independentemente das habilidades ou itens mágicos da criatura, ela não pode realizar mais de um ataque corpo a corpo ou de longo alcance durante seu turno.</p><p>Se a criatura tentar lançar uma magia com tempo de lançamento de 1 ação, jogue um d20. Com 11 ou mais, a magia não entra em vigor até o próximo turno da criatura, e a criatura deve usar sua ação naquele turno para completar a magia. Se não puder, a magia é desperdiçada.</p><p>Uma criatura afetada por esta magia faz outro teste de resistência de Sabedoria no final de cada um de seus turnos. Em um teste de resistência bem-sucedido, o efeito termina.</p>",
+      "value": "<p>Escolha até seis criaturas num cubo de 12 metros dentro de 36 metros. Cada uma faz salvaguarda de Sabedoria. Em uma falha, por até 1 minuto de concentração, tem velocidade pela metade, −2 na CA e em salvaguardas de Destreza, não pode usar reações e, no turno, usa ação ou ação bônus, não ambas, e não realiza mais de um ataque.</p><p>Se tentar conjurar magia com tempo de 1 ação, role d20: com 11+, ela só se completa no turno seguinte se usar novamente a ação; caso contrário é desperdiçada. No fim de cada turno, repete a salvaguarda e encerra o efeito em um sucesso.</p><p>Em um sucesso inicial não há efeito. Não use uma única condição genérica para substituir as restrições.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "Até 6 criaturas em cubo de 40 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 40
       },
       "affects": {
-        "choice": false,
-        "count": "1",
+        "choice": true,
+        "count": "6",
         "type": "creature",
         "special": ""
       }
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 40
           },
           "affects": {
             "choice": false
@@ -137,9 +137,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Aplique todas as restrições às falhas; repita WIS no fim de cada turno e resolva separadamente o atraso de magia."
     },
     "itemacro": {
       "macro": {

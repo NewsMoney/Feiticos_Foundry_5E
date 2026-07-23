@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito dracônico cromático, metálico ou gema por até 1 hora de concentração usando foco de 500 PO. Ele concede resistência associada enquanto próximo, possui sopro e ataques próprios e compartilha iniciativa. Espaços superiores fortalecem suas estatísticas.</p>",
+      "value": "<p>Você invoca um espírito dracônico em espaço desocupado visto a até 18 metros e escolhe uma família dracônica e um tipo de dano permitido. O espírito usa o bloco da magia, compartilha sua iniciativa, age logo após você e obedece a comandos verbais; sem comando, usa Esquivar.</p><p>Enquanto estiver a 9 metros, você recebe a resistência escolhida. O espírito possui Mordida e Sopros Múltiplos; somente o sopro pede salvaguarda de Destreza e causa metade no sucesso. CA, PV, quantidade de ataques e dano escalam pelo círculo. Ele desaparece a 0 PV ou no fim da concentração.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "jjUqEQDtbtLIQcRb": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -110,39 +110,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "piercing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -150,19 +119,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie o ator dracônico escalado e escolha família/resistência. A conjuração não faz DEX nem dano; o save pertence ao sopro do espírito."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

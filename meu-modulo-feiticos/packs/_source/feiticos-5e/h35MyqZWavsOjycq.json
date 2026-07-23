@@ -59,7 +59,7 @@
     },
     "activities": {
       "nMqX-_XVGAtfqjXn": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Não role save/dano ao conjurar. No próximo acerto corpo a corpo, cause +1d6 fogo (+1d6/nível) e incendeie o alvo. No início de cada turno dele: CON; sucesso encerra, falha causa 1d6 fogo. Uma criatura pode usar ação para apagar."
         },
         "duration": {
           "value": 1,
@@ -109,39 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -150,9 +117,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.fire_bolt.orange",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },

@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Thaumaturgy.png",
   "system": {
     "description": {
-      "value": "<p>Você manifesta por até 1 minuto um pequeno prodígio: amplia a voz, altera chamas, causa tremores, produz som, abre ou fecha portas destrancadas ou modifica a aparência dos olhos. Até três efeitos duradouros podem coexistir.</p>",
+      "value": "<p>Você manifesta um pequeno prodígio dentro do alcance: sua voz fica até três vezes mais alta; chamas tremulam, clareiam, escurecem ou mudam de cor; tremores inofensivos percorrem o chão; um som instantâneo surge de um ponto; uma porta ou janela destrancada se abre ou fecha instantaneamente; ou seus olhos mudam de aparência.</p><p>Os efeitos persistentes duram até 1 minuto. Você pode manter até três deles simultaneamente e dispensar qualquer um com uma ação. Não há ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -36,7 +36,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -117,7 +117,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

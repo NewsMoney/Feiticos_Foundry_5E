@@ -58,7 +58,7 @@
     },
     "activities": {
       "LPaOcK-xiL9DRG6P": {
-        "type": "utility",
+        "type": "heal",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,6 +108,22 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": null,
+          "bonus": "70",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "70"
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": 10
+          }
         }
       }
     }
@@ -125,10 +141,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Além da cura, remova cegueira, surdez e doenças; não afeta constructos ou mortos-vivos."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma onda de até 9 metros de comprimento, 3 metros de largura e 3 metros de altura surge a até 36 metros. Criaturas fazem resistência de Destreza, sofrendo 4d8 de concussão e ficando caídas em falha, ou metade sem cair em sucesso. A água então se espalha e apaga chamas desprotegidas.</p>",
+      "value": "<p>Você cria uma onda numa área dentro de 36 metros, com até 9 metros de comprimento, 3 metros de largura e 3 metros de altura. Cada criatura na área realiza salvaguarda de Destreza. Em uma falha, sofre 4d8 de dano de concussão e fica caída; em um sucesso, sofre metade e não fica caída.</p><p>A água se espalha pelo chão em todas as direções, extinguindo chamas desprotegidas na área e a até 9 metros dela, e então desaparece. Ajuste o template às dimensões escolhidas, que podem ser menores que os máximos.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,19 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "Até 30×10×10 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "rect",
+        "size": 30,
+        "width": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,8 +89,9 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "rect",
+            "size": 30,
+            "width": 10
           },
           "affects": {
             "choice": false
@@ -157,29 +159,13 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "prone"
-        ]
+        "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
-      "status": {
-        "id": "prone",
-        "ids": [
-          "prone"
-        ],
-        "label": "prone",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": null,
-          "units": "inst",
-          "concentration": false
-        },
-        "specialDuration": []
-      }
+      "manualWorkflow": "Aplique prone apenas às falhas; apague chamas desprotegidas na área e a 30 ft."
     },
     "itemacro": {
       "macro": {

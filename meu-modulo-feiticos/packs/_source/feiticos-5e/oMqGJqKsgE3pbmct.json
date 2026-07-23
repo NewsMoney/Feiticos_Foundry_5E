@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de escuridão de 6 metros de raio surge a até 45 metros por até 1 minuto de concentração. A área é terreno difícil, cega quem está dentro e não pode ser iluminada. Criaturas que começam ali sofrem 2d6 de frio; as que terminam fazem resistência de Destreza ou sofrem 2d6 de ácido.</p>",
+      "value": "<p>Você abre uma região de escuridão preenchida por horrores, uma esfera de 6 metros de raio em ponto a 45 metros. Ela se espalha por cantos, não pode ser iluminada e é terreno difícil; criaturas totalmente dentro ficam cegas. A magia exige concentração por até 1 minuto.</p><p>Uma criatura que começa o turno na área sofre 2d6 de dano de frio, sem salvaguarda. Uma criatura que termina o turno ali realiza salvaguarda de Destreza; em uma falha sofre 2d6 de dano de ácido, e em um sucesso não sofre esse dano. A conjuração por si só não dispara nenhum dos gatilhos.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "Esfera de raio 20 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "k6exCfmtGGj4vOY5": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,8 +90,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -109,55 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "cold"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "acid"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -166,9 +117,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.ray_of_frost.blue",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.frost.blue"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
@@ -178,9 +129,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Início do turno: 2d6 frio sem save. Fim do turno: DEX, 2d6 ácido somente na falha."
     },
     "itemacro": {
       "macro": {

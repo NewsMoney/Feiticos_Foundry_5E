@@ -27,14 +27,14 @@
     "range": {
       "value": 10,
       "units": "ft",
-      "special": ""
+      "special": "5-foot radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 5
       },
       "affects": {
         "choice": false,
@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Posicione uma esfera de raio 5 pés centrada em ponto dentro do alcance de 10 pés. Toda comida e bebida não mágica na área é purificada; não há ataque, salvaguarda ou dano."
         },
         "duration": {
           "value": null,
@@ -90,13 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 5
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -126,7 +126,8 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

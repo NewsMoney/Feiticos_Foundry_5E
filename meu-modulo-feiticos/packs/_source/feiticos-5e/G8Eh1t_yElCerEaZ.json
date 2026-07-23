@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 1 minuto de concentração, uma aura de 9 metros acompanha você. Enquanto estiverem nela, você e criaturas amigáveis causam 1d4 de dano radiante adicional sempre que acertam um ataque com arma.</p>",
+      "value": "<p>Poder sagrado irradia de você numa aura de 9 metros que se move com você por até 1 minuto, exigindo concentração. Enquanto estiver na aura, cada criatura não hostil, incluindo você, causa 1d4 de dano radiante adicional quando acerta um ataque com arma.</p><p>A conjuração não causa dano e não seleciona inimigos. O dano adicional deve ser anexado somente a acertos com arma realizados por aliados que estejam dentro da aura no momento do acerto.</p>",
       "chat": ""
     },
     "source": {
@@ -25,9 +25,7 @@
       "concentration": true
     },
     "range": {
-      "value": null,
-      "units": "self",
-      "special": ""
+      "value": null
     },
     "target": {
       "template": {
@@ -39,7 +37,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "self",
+        "type": "creature",
         "special": ""
       }
     },
@@ -109,30 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 4,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
         }
       }
     }
@@ -141,11 +115,11 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.blue"
         ],
-        "targeted": false
+        "targeted": true
       },
       "automation": {
         "generated": true,
@@ -153,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Não role dano ao conjurar; adicione 1d4 radiante a cada acerto com arma de criatura não hostil na aura."
     },
     "itemacro": {
       "macro": {

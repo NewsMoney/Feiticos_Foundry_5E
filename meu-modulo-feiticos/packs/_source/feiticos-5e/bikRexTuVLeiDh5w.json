@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Luz esverdeada preenche uma esfera de 9 metros de raio por até 10 minutos de concentração. Criaturas que entram ou começam nela fazem resistência de Constituição; em falha sofrem 4d10 radiante, recebem um nível de exaustão e emitem luz. A exaustão desaparece quando a magia termina.</p>",
+      "value": "<p>Luz esverdeada preenche uma esfera de 9 metros de raio centrada num ponto dentro do alcance. A luz fraca se espalha ao redor de cantos e dura por até 10 minutos de concentração.</p><p>Quando uma criatura entra na área pela primeira vez em um turno ou começa o turno nela, realiza uma salvaguarda de Constituição. Em uma falha, sofre 4d10 de dano radiante, recebe um nível de exaustão e emite luz fraca num raio de 1,5 metro, perdendo o benefício de invisibilidade. Em um sucesso, não sofre esses efeitos.</p><p>Todos os níveis de exaustão causados por esta magia desaparecem quando ela termina.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "30-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 30
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "Nke8oeJ-jOLOZ2NS": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,8 +90,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 30
           },
           "affects": {
             "choice": false
@@ -110,6 +110,70 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "radiance-trigger": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Entra pela primeira vez no turno ou começa o turno na esfera"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "CON: em falha, 4d10 radiante, +1 exaustão e emite luz; sucesso sem efeito."
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 30,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -125,7 +189,7 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
@@ -133,15 +197,6 @@
             "allow": false
           },
           "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -150,19 +205,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A criação não rola save. Use o gatilho da região; some exaustão por falhas e remova todos os níveis desta magia ao terminar."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

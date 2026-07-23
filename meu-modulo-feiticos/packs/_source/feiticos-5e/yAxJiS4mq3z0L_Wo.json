@@ -126,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Encaminhe ao Mestre a pergunta sobre evento em até 7 dias e controle a chance cumulativa de resposta aleatória após usos repetidos antes do descanso longo."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

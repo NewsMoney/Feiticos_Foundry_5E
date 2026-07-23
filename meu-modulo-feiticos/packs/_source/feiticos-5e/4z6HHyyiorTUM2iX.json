@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Até dez criaturas a até 27 metros fazem resistência de Inteligência. Em falha sofrem 14d6 psíquico e ficam atordoadas; em sucesso sofrem metade. Alvos atordoados repetem resistência ao fim dos turnos. Uma criatura morta pelo dano pode ter a cabeça destruída.</p>",
+      "value": "<p>Até dez criaturas escolhidas visíveis a 27 metros fazem salvaguarda de Inteligência; criaturas com Inteligência 3 ou menor são imunes. Em falha, o alvo sofre 14d6 psíquico e fica atordoado; em sucesso sofre metade e não fica atordoado.</p><p>Um alvo atordoado repete Inteligência no fim de cada turno, encerrando a condição em sucesso. Se o dano matar uma criatura que tenha cabeça, a cabeça explode. Exclua imunes antes de rolar e aplique atordoamento somente nas falhas.</p>",
       "chat": ""
     },
     "source": {
@@ -142,6 +142,24 @@
             "formula": ""
           }
         }
+      },
+      "psychic-scream-repeat": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Fim de cada turno do alvo atordoado",
+          "override": true
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": null
       }
     }
   },
@@ -158,28 +176,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "stunned"
-        ]
+        "conditions": [],
+        "manual": "Exclua INT 3 ou menor; aplique Stunned só na falha e repita INT no fim do turno."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "stunned",
-        "ids": [
-          "stunned"
-        ],
-        "label": "stunned",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": null,
-          "units": "inst",
-          "concentration": false
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

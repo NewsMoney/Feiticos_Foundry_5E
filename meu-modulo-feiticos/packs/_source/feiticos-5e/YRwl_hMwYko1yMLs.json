@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Escuridão mágica preenche uma esfera de 18 metros de raio por até 10 minutos de concentração, vencendo luz mágica inferior. Criaturas que começam o turno nela fazem resistência de Sabedoria, sofrendo 8d8 psíquico em falha ou metade em sucesso.</p>",
+      "value": "<p>Escuridão mágica preenche uma esfera de 18 metros de raio, num ponto a até 45 metros, contornando cantos por até 10 minutos de concentração. Visão no escuro não atravessa a área, e luz mágica de 8º círculo ou inferior não a ilumina. Gritos, risadas e balbucios podem ser ouvidos dentro dela.</p><p>Uma criatura que começa o turno na esfera realiza salvaguarda de Sabedoria, sofrendo 8d8 de dano psíquico em falha ou metade em sucesso. A conjuração não causa dano imediato por si só.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "60-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 60
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "7F-XTnepweibXOpd": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,11 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 60
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "type": "space",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -110,29 +112,29 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 8,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "psychic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        "save": null,
+        "damage": null
+      },
+      "maddening-darkness-zone": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início do turno da criatura na esfera"
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 60,
+            "units": "ft"
           },
-          "onSave": "half"
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -142,6 +144,30 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 8,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -150,19 +176,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A conjuração só cria a região; role WIS/8d8 apenas no início do turno de cada criatura dentro dela."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

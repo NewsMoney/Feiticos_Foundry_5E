@@ -57,7 +57,7 @@
     },
     "activities": {
       "AnYuKwVUaanacV4M": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "minute",
           "value": 1,
@@ -108,15 +108,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "cha"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -133,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "O save CHA só ocorre na tentativa posterior de possuir; trocas de corpo/alma, morte, alcance e destruição do recipiente são manuais."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

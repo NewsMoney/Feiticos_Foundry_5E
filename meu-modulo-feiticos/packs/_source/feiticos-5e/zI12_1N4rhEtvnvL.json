@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma arma espectral flutuante dentro do alcance que dura pela duração ou até você lançar esta magia novamente. Ao lançar a magia, você pode realizar um ataque mágico corpo a corpo contra uma criatura a até 1,5 metro da arma. Se acertar, o alvo sofre dano de força igual a 1d8 + seu modificador de habilidade de conjuração.</p><p>Como uma ação bônus em seu turno, você pode mover a arma até 6 metros e repetir o ataque contra uma criatura a até 1,5 metro dela. A arma pode assumir a forma que você escolher. Clérigos de divindades associadas a uma arma específica (como St. Cuthbert é conhecido por sua maça e Thor por seu martelo) fazem com que o efeito deste magia se assemelhe a essa arma.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 3º nível ou superior, o dano aumenta em 1d8 para cada dois níveis de espaço acima do 2º.</p>",
+      "value": "<p>Como ação bônus, você cria uma arma espectral no alcance e pode realizar imediatamente um ataque mágico corpo a corpo contra uma criatura a até 1,5 metro dela. Em acerto, causa 1d8 + seu modificador de conjuração de dano de energia.</p><p>Durante 1 minuto, sem concentração, você pode usar uma ação bônus para mover a arma até 6 metros e repetir o ataque.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d8 para cada dois círculos acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "6zTB6Wllw4-alrwT": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,29 +109,60 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
+        "attack": null,
+        "damage": null
+      },
+      "weapon-attack": {
+        "type": "attack",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Ataque inicial ou turno posterior; mova a arma até 20 ft antes"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
           },
-          "onSave": "none"
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Ataque originado na arma espectral contra alvo a 5 ft dela."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "attack": {
           "ability": "",
@@ -144,6 +175,30 @@
             "value": "melee",
             "classification": "spell"
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": [
+                "force"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": true
+          },
+          "onSave": "full"
         }
       }
     }
@@ -152,7 +207,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -161,10 +216,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Use Ataque da Arma na conjuração e em turnos posteriores. O escalonamento real é +1d8 a cada dois níveis de slot, ajuste quando necessário."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

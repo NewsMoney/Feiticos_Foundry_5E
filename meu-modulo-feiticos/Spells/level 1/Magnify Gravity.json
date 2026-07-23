@@ -26,14 +26,14 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "10-foot radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada criatura na esfera de raio 10 pés faz salvaguarda de Inteligência: 2d8 força na falha ou metade no sucesso. O dano aumenta 1d8 por nível. A redução de deslocamento na falha deve ser aplicada separadamente até o início do próximo turno do conjurador."
         },
         "duration": {
           "value": 1,
@@ -88,13 +88,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -134,7 +134,7 @@
         },
         "save": {
           "ability": [
-            "con"
+            "int"
           ],
           "dc": {
             "calculation": "spellcasting",
@@ -157,7 +157,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Aplicar metade do deslocamento apenas às criaturas que falharem."
       },
       "description": {
         "quality": "reviewed-pt-br",

@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Após o acerto, role manualmente 2d8 + 1d6 (+1d6 por nível de espaço acima do 1º). Role os d8 separadamente e escolha como tipo do dano um dos resultados na tabela de energia. O dano foi separado do ataque para nunca aplicar tipo incorreto. Se os d8 coincidirem, execute Salto Caótico."
         },
         "duration": {
           "value": null,
@@ -109,45 +109,43 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        },
         "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
+          "parts": [],
           "critical": {
             "allow": true
           },
           "onSave": "none"
+        }
+      },
+      "chaosBoltJump": {
+        "type": "attack",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente quando os dois d8 do ataque anterior mostrarem o mesmo número"
+        },
+        "description": {
+          "chatFlavor": "Escolha uma criatura diferente a até 30 pés do alvo anterior e faça novo ataque mágico à distância. Em acerto, repita manualmente a fórmula e a escolha de tipo do primeiro raio. Nenhuma criatura pode ser alvo mais de uma vez. O salto pode se repetir se os dois d8 voltarem a coincidir."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
         },
         "attack": {
           "ability": "",
@@ -160,6 +158,13 @@
             "value": "ranged",
             "classification": "spell"
           }
+        },
+        "damage": {
+          "parts": [],
+          "critical": {
+            "allow": true
+          },
+          "onSave": "none"
         }
       }
     }
@@ -168,7 +173,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],

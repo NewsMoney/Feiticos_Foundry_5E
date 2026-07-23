@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 27 metros faz resistência de Constituição. Em falha, escolha ácido, elétrico, fogo, frio ou trovejante: por até 1 minuto de concentração ela perde resistência a esse tipo e sofre 2d6 extra na primeira vez de cada turno em que o recebe. Espaços superiores afetam mais alvos.</p>",
+      "value": "<p>Escolha uma criatura que possa ver dentro do alcance e um tipo entre ácido, elétrico, fogo, frio ou trovejante. O alvo realiza uma salvaguarda de Constituição.</p><p>Em uma falha, até a magia terminar, o alvo perde resistência ao tipo escolhido. Na primeira vez em cada turno que ele sofrer dano desse tipo, também sofre 2d6 de dano adicional do mesmo tipo.</p><p><strong>Em Círculos Superiores.</strong> Você pode afetar uma criatura adicional para cada círculo acima do 4º; todos os alvos usam o mesmo tipo de dano escolhido.</p>",
       "chat": ""
     },
     "source": {
@@ -119,6 +119,87 @@
             "formula": ""
           }
         }
+      },
+      "elemental-bane-trigger": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Primeira vez em cada turno que o alvo recebe o tipo escolhido"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Role 2d6 do tipo escolhido na conjuração."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "full"
+        }
       }
     }
   },
@@ -135,10 +216,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha um único tipo; remova a resistência na falha e use o dano adicional somente uma vez por turno. Selecione apenas o tipo escolhido ao rolar."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

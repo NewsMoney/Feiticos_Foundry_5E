@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Mold%20Earth.png",
   "system": {
     "description": {
-      "value": "<p>Você altera terra ou pedra solta num cubo de 1,5 metro a até 9 metros: escava e move, cria formas ou cores por 1 hora, ou torna o solo difícil ou normal. Apenas dois efeitos não instantâneos podem permanecer simultaneamente.</p>",
+      "value": "<p>Escolha uma porção de terra ou pedra solta que possa ver dentro do alcance e que caiba num cubo de 1,5 metro. Você pode escavá-la e depositá-la suavemente a até 1,5 metro; fazer formas, cores ou palavras aparecerem por 1 hora; ou tornar o terreno difícil, ou normal se já for difícil, por 1 hora.</p><p>Você pode manter até dois efeitos não instantâneos simultaneamente e pode dispensar um deles com uma ação. Escolha o modo manualmente; nenhum causa dano ou exige salvaguarda.</p>",
       "chat": ""
     },
     "source": {
@@ -31,7 +31,8 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": ""
+        "type": "cube",
+        "size": 5
       },
       "affects": {
         "choice": false,
@@ -85,7 +86,9 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "cube",
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -118,7 +121,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

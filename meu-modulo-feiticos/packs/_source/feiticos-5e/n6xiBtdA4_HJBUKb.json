@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 1 minuto de concentração, você assume aspecto celestial ou infernal, recebendo imunidades temáticas, voo, bônus de CA, ataques mágicos e a capacidade de atacar duas vezes usando seu atributo de conjuração.</p>",
+      "value": "<p>Por até 1 minuto de concentração, escolha Planos Superiores ou Inferiores. A forma superior concede imunidade a radiante e necrótico e às condições enfeitiçado; a inferior concede imunidade a fogo e veneno e à condição envenenado.</p><p>Ambas concedem voo de 12 metros, +2 CA, ataques de arma mágicos que podem usar seu atributo de conjuração e dois ataques ao usar a ação Atacar. Essa quantidade substitui, e não se soma, a Ataque Extra existente.</p>",
       "chat": ""
     },
     "source": {
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha uma das duas formas e aplique o conjunto correto de imunidades e alterações de ataque."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 9 metros faz resistência de Constituição. Em uma falha, você escolhe deixá-la cega ou surda por 1 minuto. Ela repete a resistência ao fim de cada turno. Espaços superiores permitem afetar uma criatura adicional por círculo.</p>",
+      "value": "<p>Uma criatura no alcance realiza uma salvaguarda de Constituição. Em uma falha, você escolhe deixá-la cega ou surda por 1 minuto. A magia não exige concentração.</p><p>No fim de cada turno, o alvo repete a salvaguarda, encerrando o efeito em um sucesso.</p><p><strong>Em Círculos Superiores.</strong> Você pode afetar uma criatura adicional para cada círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -118,6 +118,68 @@
             "formula": ""
           }
         }
+      },
+      "repeat-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Repita a salvaguarda de Constituição; em sucesso, remova Cego ou Surdo."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
       }
     }
   },
@@ -134,28 +196,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "blinded"
-        ]
+        "conditions": [],
+        "manual": "Após a falha inicial, escolha Cego ou Surdo e use a atividade de repetição no fim de cada turno."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "blinded",
-        "ids": [
-          "blinded"
-        ],
-        "label": "blinded",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": false
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

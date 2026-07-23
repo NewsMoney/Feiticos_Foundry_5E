@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 10 minutos de concentração, uma aura de 9 metros acompanha você. Criaturas amigáveis nela são imunes a doenças, resistentes a veneno e têm vantagem contra condições como cegueira, encanto, medo, paralisia, envenenamento e atordoamento.</p>",
+      "value": "<p>Energia purificadora irradia de você numa aura de 9 metros, que se move com você por até 10 minutos de concentração.</p><p>Cada criatura não hostil na aura, incluindo você, é imune a doença, tem resistência a dano de veneno e possui vantagem nas salvaguardas para evitar ou encerrar as condições amedrontado, atordoado, cego, enfeitiçado, envenenado e paralisado.</p><p>Os benefícios terminam para uma criatura quando ela deixa a aura ou quando a magia termina.</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (30-foot radius)"
+      "special": "Self (30-foot-radius aura)"
     },
     "target": {
       "template": {
@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "ally",
         "special": ""
       }
     },
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Região móvel: conceda imunidade a doença, resistência a veneno e vantagem nos saves listados enquanto o aliado permanecer dentro."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você assume o controle do clima em um raio de 8 quilômetros de você durante todo o período. Você deve estar ao ar livre para lançar esta magia. Mover-se para um lugar onde você não tem um caminho claro para o céu encerra a magia mais cedo.</p><p>Ao lançar a magia, você altera as condições climáticas atuais, que são determinadas pelo Mestre com base no clima e na estação. Você pode alterar a precipitação, a temperatura e o vento. Leva 1d4 x 10 minutos para que as novas condições entrem em vigor. Depois que eles fizerem isso, você poderá alterar as condições novamente. Quando a magia termina, o clima retorna gradualmente ao normal.</p><p>Quando você altera as condições climáticas, encontre uma condição atual nas tabelas a seguir e mude seu estágio em um, para cima ou para baixo. Ao mudar o vento, você pode mudar sua direção.</p><p><strong>Precipitação</strong></p><pre>|Estágio|Condição|<br>|-|-|<br>| 1 | Claro |<br>| 2 | Nuvens claras |<br>| 3 | Neblina nublada ou terrestre |<br>| 4 | Chuva, granizo ou neve |<br>| 5 | Chuva torrencial, granizo ou nevasca |</pre><p><strong>Temperatura</strong></p><pre>|Estágio|Condição|<br>|-|-|<br>| 1 | Calor insuportável |<br>| 2 | Quente |<br>| 3 | Quente |<br>| 4 | Legal |<br>| 5 | Frio |<br>| 6 | Frio Ártico |</pre><p><strong>Vento</strong></p><pre>|Estágio|Condição|<br>|-|-|<br>| 1 | Calma |<br>| 2 | Vento moderado |<br>| 3 | Vento forte |<br>| 4 | Vendaval |<br>| 5 | Tempestade |</pre>",
+      "value": "<p>Após 10 minutos ao ar livre, você controla o clima num raio de 8 quilômetros por até 8 horas de concentração. A magia termina se você entrar num local sem caminho livre até o céu.</p><p>Escolha precipitação, temperatura e vento conforme as condições atuais definidas pelo Mestre. Para cada categoria, altere apenas um estágio para cima ou para baixo; no vento, também escolha a direção. A mudança leva 1d4 × 10 minutos para entrar em vigor. Depois disso você pode escolher novas alterações, novamente um estágio por vez. Ao terminar, o clima retorna gradualmente ao normal.</p><p>Estágios de precipitação: céu limpo, nuvens leves, encoberto/neblina, chuva/granizo/neve, tempestade intensa. Temperatura: calor insuportável, quente, morna, fresca, fria, ártica. Vento: calmo, moderado, forte, vendaval, tempestade.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (5-mile radius)"
+      "special": "5-mile radius outdoors"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
         "type": "circle",
-        "size": null
+        "size": 26400
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -90,7 +90,7 @@
             "contiguous": false,
             "units": "ft",
             "type": "circle",
-            "size": null
+            "size": 26400
           },
           "affects": {
             "choice": false
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Role 1d4 × 10 minutos por alteração e mude cada categoria no máximo um estágio."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

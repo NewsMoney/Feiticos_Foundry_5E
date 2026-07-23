@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Encode%20Thoughts.png",
   "system": {
     "description": {
-      "value": "<p>Você extrai uma memória, ideia ou mensagem da própria mente como um filamento tangível por 8 horas. Você ou outra criatura pode usar esta magia para ler o conteúdo ao segurar o filamento; inserir uma memória alheia exige magia capaz de modificar pensamentos.</p>",
+      "value": "<p>Você puxa da própria mente uma memória, ideia ou mensagem e a transforma num filamento de energia mental tangível que permanece por 8 horas ou até você conjurar esta magia novamente. O filamento aparece num espaço desocupado a até 1,5 metro de você e é um objeto Miúdo, sem peso, que pode ser segurado e transportado.</p><p>Enquanto segura um filamento, você pode conjurar esta magia para receber o conteúdo dele. Se Detect Thoughts criar o filamento, Encode Thoughts também permite lê-lo. Não há ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -36,7 +36,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "self",
         "special": ""
       }
     },
@@ -117,7 +117,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

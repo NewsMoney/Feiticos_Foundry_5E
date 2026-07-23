@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma prisão imóvel, invisível e em forma de cubo composta de força magia surge em torno de uma área que você escolher dentro do alcance. A prisão pode ser uma gaiola ou uma caixa sólida, conforme você escolher.</p><p>Uma prisão em forma de gaiola pode ter até 6 metros de lado e é feita de barras de 1/2 polegada de diâmetro espaçadas de 1/2 polegada.</p><p>Uma prisão em forma de caixa pode ter até 3 metros de lado, criando uma barreira sólida que impede qualquer matéria de passar por ela e bloqueando quaisquer magias lançadas dentro ou fora da área.</p><p>Quando você lançar a magia, qualquer criatura que estiver completamente dentro da área da jaula ficará presa. Criaturas apenas parcialmente dentro da área, ou aquelas grandes demais para caber dentro da área, são empurradas para longe do centro da área até que estejam completamente fora da área.</p><p>Uma criatura dentro da jaula não pode sair dela por meios não mágicos. Se uma criatura tentar usar teletransporte ou viagem interplanar para sair da jaula, ela deve primeiro fazer um teste de resistência de Carisma. Se obtiver sucesso, a criatura pode usar aquela magia para sair da jaula. Em caso de falha, a criatura não consegue sair da jaula e desperdiça o uso da magia ou efeito. A gaiola também se estende até o Plano Etéreo, bloqueando a viagem etérea.</p><p>Esta magia não pode ser dissipado por <em>Dispel Magic</em>.</p>",
+      "value": "<p>Você cria uma prisão imóvel e invisível a até 30 metros por 1 hora, sem concentração: uma gaiola de até 6 metros de lado, com barras, ou uma caixa sólida de até 3 metros de lado. Criaturas totalmente na área ficam presas; uma parcialmente dentro é empurrada para dentro ou para fora, à sua escolha.</p><p>A gaiola permite ataques e magias entre as barras; a caixa bloqueia matéria e magias. A prisão não pode ser dissipada. Teleporte ou viagem planar para sair exige salvaguarda de Carisma; na falha, o uso da magia/efeito é desperdiçado e a criatura permanece.</p><p><strong>Procedimento:</strong> a criação não exige save. Escolha o modo e use CHA somente quando uma criatura tentar escapar magicamente.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 100,
       "units": "ft",
-      "special": ""
+      "special": "20-foot cage or 10-foot solid box"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "-HhXkydqVFpmj2Nk": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -107,15 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "cha"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -133,10 +124,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Remova CHA inicial. Crie gaiola 20 ft ou caixa 10 ft; ofereça CHA apenas em tentativa posterior de teleporte/viagem planar."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

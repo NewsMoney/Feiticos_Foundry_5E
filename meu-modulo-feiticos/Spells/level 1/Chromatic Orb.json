@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Antes do ataque, escolha ácido, frio, fogo, relâmpago, veneno ou trovão. Após o acerto, role manualmente 3d8 do tipo escolhido, +1d8 por nível de espaço acima do 1º. O dano foi deliberadamente separado do ataque para nunca aplicar um tipo incorreto."
         },
         "duration": {
           "value": null,
@@ -108,30 +108,6 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 3,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "acid"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
-          },
-          "onSave": "none"
-        },
         "attack": {
           "ability": "",
           "bonus": "",
@@ -143,6 +119,13 @@
             "value": "ranged",
             "classification": "spell"
           }
+        },
+        "damage": {
+          "parts": [],
+          "critical": {
+            "allow": true
+          },
+          "onSave": "none"
         }
       }
     }
@@ -151,9 +134,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.liquid.splash.bright_green",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.green"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Sete motes luminosos orbitam sua cabeça por 1 hora. Como ação bônus, lança um mote contra alvo a até 36 metros com ataque mágico à distância, causando 4d12 radiante. Enquanto quatro ou mais restarem, emite luz. Espaços superiores criam dois motes adicionais.</p>",
+      "value": "<p>Sete motes semelhantes a estrelas aparecem e orbitam sua cabeça por 1 hora, sem concentração. Como ação bônus, você pode gastar um mote e realizar um ataque mágico à distância contra uma criatura ou objeto a até 36 metros; em um acerto, o alvo sofre 4d12 de dano radiante.</p><p>Enquanto quatro ou mais motes restarem, eles emitem luz plena em 9 metros e penumbra por mais 9 metros. Com um a três motes, emitem apenas penumbra em 9 metros. Cada espaço acima do 7º cria dois motes adicionais.</p><p><strong>Procedimento:</strong> a conjuração apenas cria a coroa. Use uma atividade bônus posterior, com alcance de 120 ft, ataque separado de 4d12 e consumo de um mote.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "9FyojFS4aJtLN_ov": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,42 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 4,
-              "denomination": 12,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
-          },
-          "onSave": "none"
-        },
-        "attack": {
-          "ability": "",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "ranged",
-            "classification": "spell"
-          }
         }
       }
     }
@@ -152,19 +116,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Registre 7 motes (+2/slot); disparo é atividade bônus posterior, ataque mágico à distância de 4d12."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

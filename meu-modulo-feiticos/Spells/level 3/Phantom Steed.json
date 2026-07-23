@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma grande criatura semelhante a um cavalo, quase real, aparece no chão em um espaço desocupado, à sua escolha, dentro do alcance. Você decide a aparência da criatura, mas ela está equipada com sela, freio e freio. Qualquer equipamento criado pela magia desaparece em uma nuvem de fumaça se for carregado a mais de 3 metros de distância do corcel.</p><p>Durante o período, você ou uma criatura que você escolher pode montar no corcel. A criatura usa as estatísticas de um cavalo de montaria, exceto que ele tem um deslocamento de 30 metros e pode viajar 16 quilômetros em uma hora, ou 21 quilômetros em ritmo acelerado. Quando a magia termina, o corcel desaparece gradualmente, dando ao cavaleiro 1 minuto para desmontar. A magia termina se você usar uma ação para dispensá-la ou se o cavalo sofrer algum dano.</p>",
+      "value": "<p>Após 1 minuto, uma criatura equina Grande e quase real aparece no chão em espaço desocupado a até 9 metros. Você decide sua aparência. Uma criatura escolhida pode montá-la. Ela usa as estatísticas de riding horse, exceto velocidade de 30 metros, e percorre 16 quilômetros por hora, ou 21 quilômetros em ritmo rápido.</p><p>Dura 1 hora. Termina se você a dispensar com uma ação ou se ela sofrer dano; quando termina, desaparece gradualmente por 1 minuto, permitindo ao cavaleiro desmontar. A magia pode ser ritual e não faz ataque, save ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -128,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Invoque uma montaria com estatísticas próprias; ao dano ou dispensa, mantenha o desaparecimento gradual por 1 minuto."
     },
     "itemacro": {
       "macro": {

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 18 metros faz resistência de Sabedoria. Em falha sofre ruptura da realidade por até 1 minuto de concentração; no início de cada turno, um efeito aleatório causa dano psíquico, de energia ou elétrico, teleporta ou incapacita. Ela repete a resistência ao fim dos turnos.</p>",
+      "value": "<p>Uma criatura visível a até 18 metros realiza salvaguarda de Sabedoria. Em sucesso, nada acontece. Em falha, a realidade ao redor dela se rompe por até 1 minuto de concentração. No início de cada turno do alvo, role 1d10 e aplique somente um resultado; no fim do turno, ele repete Sabedoria e encerra a magia em sucesso.</p><p><strong>1–2, Visões do Reino Distante:</strong> 6d12 psíquico e atordoado até o início do próximo turno. <strong>3–5, Fenda Dilacerante:</strong> 8d12 de energia e você teleporta o alvo até 9 metros para espaço visível. <strong>6–8, Buraco de Minhoca:</strong> 10d12 elétrico, teleporte em direção aleatória até 18 metros e queda. <strong>9–10, Frio do Vazio Sombrio:</strong> 10d12 frio e cego até o início do próximo turno.</p><p>Nunca some resultados da tabela e nunca aplique metade no sucesso inicial.</p>",
       "chat": ""
     },
     "source": {
@@ -110,45 +110,196 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": null
+      },
+      "reality-break-psychic": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início do turno; resultado 1–2 no d10"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
+        },
         "damage": {
           "parts": [
             {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
               "number": 6,
               "denomination": 12,
               "bonus": "",
               "types": [
                 "psychic"
               ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 8,
-              "denomination": 12,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "half"
+          "onSave": "full"
+        }
+      },
+      "reality-break-force": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início do turno; resultado 3–5 no d10"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 8,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "full"
+        }
+      },
+      "reality-break-lightning": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início do turno; resultado 6–8 no d10"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 10,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "full"
+        }
+      },
+      "reality-break-cold": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início do turno; resultado 9–10 no d10"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 10,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "full"
+        }
+      },
+      "reality-break-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -166,19 +317,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Após falha inicial, role d10 por turno e execute exatamente uma atividade; aplique teleporte/condição correspondente e WIS no fim."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

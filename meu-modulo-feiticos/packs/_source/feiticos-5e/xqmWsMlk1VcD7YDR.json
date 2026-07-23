@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Energia psíquica explode numa esfera de 6 metros de raio a até 36 metros. Criaturas com Inteligência suficiente fazem resistência de Inteligência, sofrendo 8d6 psíquico ou metade. Quem falha também subtrai 1d6 de ataques, testes e resistências de Constituição por até 1 minuto, repetindo resistência no fim dos turnos.</p>",
+      "value": "<p>Você escolhe um ponto a até 36 metros e cria uma explosão psíquica numa esfera de 6 metros. Criaturas com Inteligência 2 ou menos não são afetadas. Cada outra criatura faz salvaguarda de Inteligência, sofrendo 8d6 psíquico em uma falha ou metade em um sucesso.</p><p>Quem falha também sofre pensamento embaralhado por 1 minuto: subtrai 1d6 de ataques, testes de habilidade e salvaguardas de Constituição para manter concentração. No fim de cada turno, repete a salvaguarda de Inteligência e encerra esse efeito em sucesso.</p>",
       "chat": ""
     },
     "source": {
@@ -27,18 +27,18 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "20-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -158,10 +158,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Exclua INT 2 ou menos; após falha aplique penalidade 1d6 e repita INT no fim dos turnos."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

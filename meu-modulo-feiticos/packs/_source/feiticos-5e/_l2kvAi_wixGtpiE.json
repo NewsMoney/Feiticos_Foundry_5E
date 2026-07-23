@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você sussurra palavras mágicas a uma criatura a até 9 metros. Se falhar em resistência de Sabedoria, ela sofre 4d4 de dano psíquico e usa a reação para realizar imediatamente um ataque corpo a corpo contra outra criatura escolhida por você ao alcance. Em sucesso, sofre metade sem atacar. O dano aumenta em 1d4 por círculo.</p>",
+      "value": "<p>Você sussurra palavras mágicas que provocam uma criatura que possa ver a até 9 metros e que possa ouvi-lo e compreendê-lo. O alvo realiza uma salvaguarda de Sabedoria. Em uma falha, sofre 4d4 de dano psíquico e deve usar imediatamente a reação, se disponível, para realizar um ataque corpo a corpo contra outra criatura à sua escolha que você possa ver. Em um sucesso, sofre metade do dano e não realiza o ataque.</p><p>O ataque forçado é consequência exclusiva da falha e nunca deve ser executado contra o próprio alvo ou sem uma criatura válida. Resolva-o com a arma/ação adequada do alvo.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d4 para cada círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -161,9 +161,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Após uma falha, faça o alvo gastar a reação e realizar o ataque corpo a corpo; não o faça no sucesso."
     },
     "itemacro": {
       "macro": {

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Escolha um humanóide que você possa ver dentro do alcance. O alvo deve ser bem sucedido em um teste de resistência de Sabedoria ou ficará paralisado durante o período. No final de cada um de seus turnos, o alvo pode realizar outro teste de resistência de Sabedoria. Em caso de sucesso, a magia termina no alvo.</p><p><strong>Em Níveis Superiores.</strong> Quando você conjura esta magia usando um espaço de magia de 3º nível ou superior, você pode atingir um humanóide adicional para cada nível de espaço acima do 2º. Os humanóides devem estar a até 9 metros um do outro quando você os mirar.</p>",
+      "value": "<p>Escolha um humanoide no alcance. Ele realiza uma salvaguarda de Sabedoria; em uma falha, fica paralisado enquanto você mantiver concentração, por até 1 minuto.</p><p>No fim de cada turno, o alvo repete a salvaguarda e encerra a condição em um sucesso.</p><p><strong>Em Círculos Superiores.</strong> Você pode escolher um humanoide adicional por círculo acima do 2º; todos devem estar a até 9 metros uns dos outros.</p>",
       "chat": ""
     },
     "source": {
@@ -137,10 +137,11 @@
         "needsReview": true,
         "conditions": [
           "paralyzed"
-        ]
+        ],
+        "manual": "Repita WIS no fim de cada turno; remova Paralisado no sucesso. Adicione um alvo por slot."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

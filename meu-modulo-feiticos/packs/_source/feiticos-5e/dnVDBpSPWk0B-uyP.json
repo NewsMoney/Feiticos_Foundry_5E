@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você faz com que o terreno em uma área de até 2,5 quilômetros quadrados pareça, soe, cheire e até pareça algum outro tipo de terreno. A forma geral do terreno permanece a mesma, no entanto. Campos abertos ou estradas podem ser transformados em pântanos, colinas, fendas ou outros terrenos difíceis ou intransitáveis. Um lago pode parecer um prado gramado, um precipício como uma encosta suave ou um barranco coberto de pedras como uma estrada larga e lisa.</p><p>Da mesma forma, você pode alterar a aparência das estruturas e adicioná-las onde elas não estiverem presentes. A magia não disfarça, oculta ou adiciona criaturas.</p><p>A ilusão inclui elementos sonoros, visuais, táteis e olfativos, portanto pode transformar terreno limpo em terreno difícil (ou vice-versa) ou impedir o movimento pela área. Qualquer pedaço do terreno ilusório (como uma pedra ou um pedaço de pau) que for removido da área da magia desaparece imediatamente.</p><p>As criaturas com visão verdadeira podem ver através da ilusão a verdadeira forma do terreno; no entanto, todos os outros elementos da ilusão permanecem, portanto, embora a criatura esteja ciente da presença da ilusão, a criatura ainda pode interagir fisicamente com a ilusão.</p>",
+      "value": "<p>Após 10 minutos, você faz até 1 milha quadrada de terreno dentro da visão parecer, soar, cheirar e ser sentida como outro terreno por 10 dias. A forma geral permanece, mas estradas, campos, lagos, precipícios e estruturas podem parecer diferentes e tornar-se difíceis ou intransitáveis; criaturas não são ocultadas.</p><p>Visão verdadeira revela a ilusão, mas não remove a interação física. Dispel Magic remove apenas a parte sobreposta à área da dissipação. A magia não exige concentração e não realiza save nem dano.</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
     "range": {
       "value": null,
       "units": "spec",
-      "special": "Sight"
+      "special": "Sight; up to 1 square mile"
     },
     "target": {
       "template": {
@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Defina região e terreno/estruturas ilusórias; mudanças físicas e dissipação parcial exigem adjudicação."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

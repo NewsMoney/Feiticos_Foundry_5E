@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma perturbação sísmica em um ponto do solo que você pode ver dentro do alcance. Durante esse período, um tremor intenso rasga o solo em um círculo de 30 metros de raio centrado naquele ponto e sacode criaturas e estruturas em contato com o solo naquela área.</p><p>O solo na área se torna um terreno difícil. Cada criatura no solo que estiver se concentrando deve realizar um teste de resistência de Constituição. Se falhar na resistência, a concentração da criatura é quebrada.</p><p>Quando você lança esta magia e no final de cada turno que você gasta concentrando-se nela, cada criatura no chão na área deve fazer um teste de resistência de Destreza. Se falhar, a criatura será derrubada.</p><p>Esta magia pode ter efeitos adicionais dependendo do terreno na área, conforme determinado pelo Mestre.</p><p><strong>Fissuras.</strong> Fissuras se abrem em toda a área da magia no início do seu próximo turno após você lançar a magia. Um total de 1d6 dessas fissuras se abrem em locais escolhidos pelo Mestre. Cada um tem 1d10 x 3 metros de profundidade, 3 metros de largura e se estende de uma borda da área da magia até o lado oposto. Uma criatura parada em um local onde uma fissura se abre deve ser bem sucedida em um teste de resistência de Destreza ou cairá. Uma criatura que conseguir salvar se move com a borda da fissura quando ela se abre.</p><p>Uma fissura que se abre abaixo de uma estrutura faz com que ela desmorone automaticamente (veja abaixo).</p><p><strong>Estruturas.</strong> O tremor causa 50 de dano de concussão a qualquer estrutura em contato com o solo na área quando você lança a magia e no início de cada um deles. seus turnos até que a magia termine. Se uma estrutura chegar a 0 pontos de vida, ela entra em colapso e potencialmente causa danos às criaturas próximas. Uma criatura dentro da metade da distância da altura de uma estrutura deve fazer um teste de resistência de Destreza. Se falhar na resistência, a criatura sofre 5d6 de dano de concussão, é derrubada e enterrada nos escombros, exigindo um teste de Força CD 20 (Atletismo) como ação para escapar. O Mestre pode ajustar a CD para mais ou para menos, dependendo da natureza dos escombros. Em um teste bem sucedido, a criatura sofre metade do dano e não cai no chão ou é enterrada.</p>",
+      "value": "<p>Você cria um tremor num círculo de 30 metros de raio centrado num ponto do chão a até 150 metros, por até 1 minuto de concentração. O chão vira terreno difícil. A conjuração não causa 5d6 automaticamente.</p><p>Ao conjurar e ao fim de cada turno em que mantiver concentração, criaturas sobre o chão fazem salvaguarda de Destreza ou caem no chão. Uma criatura no chão que esteja concentrando faz uma salvaguarda separada de Constituição; em falha, perde a concentração.</p><p>No início do seu turno seguinte, surgem 1d6 fissuras escolhidas pelo Mestre, cada uma com 3 metros de largura, `1d10 × 3 metros` de profundidade e cruzando a área. Destreza evita cair. Uma fissura sob estrutura a derruba automaticamente.</p><p>Estruturas em contato com o solo sofrem 50 de concussão ao conjurar e no início de cada um dos seus turnos. Ao colapsar, criaturas próximas fazem Destreza: falha causa 5d6 de concussão, queda e soterramento; sucesso causa metade e evita essas condições.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 500,
       "units": "ft",
-      "special": ""
+      "special": "100-foot-radius circle on ground"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 100
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "N7bIAKe97tbBxBR4": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,11 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 100
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "type": "space",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -110,29 +112,55 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 5,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        "save": null,
+        "damage": null
+      },
+      "earthquake-prone": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Ao conjurar e no fim de cada turno do conjurador"
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 100,
+            "units": "ft"
           },
-          "onSave": "half"
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      },
+      "earthquake-concentration": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Criatura no chão que esteja concentrando"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -143,6 +171,56 @@
             "formula": ""
           }
         }
+      },
+      "earthquake-collapse": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Estrutura chega a 0 PV e colapsa"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        }
       }
     }
   },
@@ -150,37 +228,21 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.boulder.toss.01",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "prone"
-        ]
+        "conditions": [],
+        "manual": "Crie 1d6 fissuras no turno seguinte; aplique 50 a estruturas por rodada. Atividades separam queda, concentração e colapso."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "prone",
-        "ids": [
-          "prone"
-        ],
-        "label": "prone",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

@@ -124,7 +124,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "O alcance de percepção não é uma área de alvos e não deve criar template."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

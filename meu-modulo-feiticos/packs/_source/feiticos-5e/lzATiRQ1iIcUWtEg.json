@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você e até oito criaturas voluntárias dentro do alcance projetam seus corpos astrais no Plano Astral (a magia falha e o lançamento é desperdiçado se você já estiver naquele plano). O corpo material que você deixa para trás está inconsciente e em estado de animação suspensa; não precisa de comida ou ar e não envelhece.</p><p>Seu corpo astral se assemelha à sua forma mortal em quase todos os aspectos, replicando suas estatísticas de jogo e posses. A principal diferença é a adição de um cordão prateado que se estende entre as omoplatas e segue atrás de você, tornando-se invisível após 30 centímetros. Este cordão é a sua ligação ao seu corpo material. Contanto que a corda permaneça intacta, você poderá encontrar o caminho de casa. Se o cordão for cortado - algo que só pode acontecer quando um efeito afirma especificamente que isso acontece - sua alma e corpo serão separados, matando você instantaneamente.</p><p>Sua forma astral pode viajar livremente através do Plano Astral e pode passar por portais que levam a qualquer outro plano. Se você entrar em um novo plano ou retornar ao plano em que estava quando lançou esta magia, seu corpo e seus pertences serão transportados ao longo do cordão prateado, permitindo que você entre novamente em seu corpo ao entrar no novo plano. Sua forma astral é uma encarnação separada. Qualquer dano ou outros efeitos que se apliquem a ele não têm efeito em seu corpo físico, nem persistem quando você retorna a ele.</p><p>A magia termina para você e seus companheiros quando você usa sua ação para dispensá-lo. Quando a magia termina, a criatura afetada retorna ao seu corpo físico e desperta.</p><p>A magia também pode terminar mais cedo para você ou um de seus companheiros. uma magia <em>Dispel Magic</em> bem-sucedido usado contra um corpo astral ou físico encerra a magia daquela criatura. Se o corpo original de uma criatura ou sua forma astral chegar a 0 pontos de vida, a magia termina para aquela criatura. Se a magia terminar e o cordão de prata estiver intacto, o cordão puxa a forma astral da criatura de volta ao seu corpo, encerrando seu estado de animação suspensa.</p><p>Se você retornar ao seu corpo prematuramente, seus companheiros permanecerão em suas formas astrais e deverão encontrar o próprio caminho de volta aos seus corpos, geralmente caindo para 0 pontos de vida.</p>",
+      "value": "<p>Após 1 hora, você e até oito criaturas voluntárias a até 3 metros projetam corpos astrais no Plano Astral. Para cada criatura, são consumidos um jacinto de ao menos 1.000 PO e uma barra de prata entalhada de ao menos 100 PO. Os corpos físicos ficam inconscientes e em animação suspensa, sem precisar de alimento ou ar e sem envelhecer.</p><p>Cada forma astral replica estatísticas e posses e liga-se ao corpo por um cordão de prata. Cortar o cordão mata a criatura. Morte da forma astral devolve alma e cordão ao corpo; morte do corpo físico mata a criatura. Portais astrais permitem chegar a outros planos, onde novo corpo e equipamento se formam.</p><p>A projeção termina individualmente por ação, <em>Dispel Magic</em>, 0 PV ou morte; quando termina para você, termina para todos. Aplique a inconsciência somente aos corpos físicos e administre projeções, cordões e retornos manualmente.</p>",
       "chat": ""
     },
     "source": {
@@ -125,28 +125,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "unconscious"
-        ]
+        "conditions": [],
+        "manual": "Selecione até nove voluntários; consuma componentes por criatura e vincule corpo, projeção e cordão. Não aplique Inconsciente à projeção."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "unconscious",
-        "ids": [
-          "unconscious"
-        ],
-        "label": "unconscious",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": null,
-          "units": "spec",
-          "concentration": false
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

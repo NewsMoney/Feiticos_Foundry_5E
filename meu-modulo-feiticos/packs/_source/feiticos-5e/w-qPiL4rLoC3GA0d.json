@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma nuvem de tempestade agitada se forma, centrada em um ponto que você pode ver e se espalhando por um raio de 108 metros. Relâmpagos brilham na área, trovões estrondosos e ventos fortes rugem. Cada criatura sob a nuvem (não mais que 1.500 metros abaixo da nuvem), quando ela aparecer, deve fazer um teste de resistência de Constituição. Se falhar na resistência, uma criatura sofre 2d6 de dano trovejante e fica surda por 5 minutos.</p><p>A cada rodada que você mantém a concentração nesta magia, a tempestade produz efeitos diferentes no seu turno.</p><p><strong>Rodada 2.</strong> A chuva ácida cai da nuvem. Cada criatura e objeto sob a nuvem sofre 1d6 de dano ácido.</p><p><strong>Rodada 3.</strong> Você invoca seis raios da nuvem para atingir seis criaturas ou objetos de sua escolha sob a nuvem. Uma determinada criatura ou objeto não pode ser atingido por mais de um raio. Uma criatura atingida deve fazer um teste de resistência de Destreza. A criatura sofre 10d6 de dano elétrico se falhar na resistência, ou metade desse dano se obtiver sucesso.</p><p><strong>Rodada 4.</strong> Pedras de granizo caem da nuvem. Cada criatura sob a nuvem sofre 2d6 de dano de concussão.</p><p><strong>Rodada 5-10.</strong> Rajadas e chuva congelante assolam a área sob a nuvem. A área se torna um terreno difícil e está fortemente obscurecida. Cada criatura sofre 1d6 de dano de frio. Ataques com armas de longo alcance na área são impossíveis. O vento e a chuva contam como uma distração severa para fins de manter a concentração nas magias. Finalmente, rajadas de vento forte (variando de 32 a 80 quilômetros por hora) dispersam automaticamente neblina, neblina e fenômenos semelhantes na área, sejam eles mundanos ou mágicos.</p>",
+      "value": "<p>Uma nuvem de tempestade com raio de 108 metros surge num ponto visível por até 1 minuto de concentração. Na conjuração, criaturas sob ela fazem Constituição: 2d6 trovejante e surdez por 5 minutos na falha, metade e sem surdez no sucesso. Na rodada 2, chuva ácida causa 1d6 ácido sem salvaguarda.</p><p>Na rodada 3, você escolhe até seis criaturas ou objetos: cada um faz Destreza, sofrendo 10d6 elétrico em falha ou metade em sucesso. Na rodada 4, granizo exige Destreza, causando 2d6 concussão em falha ou metade em sucesso.</p><p>Nas rodadas 5–10, vento e chuva tornam a área fortemente obscurecida e terreno difícil, impedem ataques à distância, dispersam neblina e exigem salvaguarda de Constituição contra sua CD para manter concentração. Execute somente a atividade da rodada atual.</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
     "range": {
       "value": null,
       "units": "spec",
-      "special": "Sight"
+      "special": "Ponto à vista; nuvem de raio 360 ft"
     },
     "target": {
       "template": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "7FYwb1cOelhi7MUF": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,46 +109,26 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        }
+      },
+      "storm-r1": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Rodada 1 — conjuração",
+          "override": true
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "thunder"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "acid"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 360,
+            "units": "ft"
           },
-          "onSave": "half"
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -158,7 +138,120 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "types": [
+                "thunder"
+              ]
+            }
+          ],
+          "onSave": "half"
         }
+      },
+      "storm-r2": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "condition": "Rodada 2 — sem save",
+          "override": true
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 6,
+              "types": [
+                "acid"
+              ]
+            }
+          ]
+        }
+      },
+      "storm-r3": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Rodada 3 — até seis alvos",
+          "override": true
+        },
+        "target": {
+          "affects": {
+            "type": "creatureOrObject",
+            "count": "6"
+          }
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 10,
+              "denomination": 6,
+              "types": [
+                "lightning"
+              ]
+            }
+          ],
+          "onSave": "half"
+        }
+      },
+      "storm-r4": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Rodada 4",
+          "override": true
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 2,
+              "denomination": 6,
+              "types": [
+                "bludgeoning"
+              ]
+            }
+          ],
+          "onSave": "half"
+        }
+      },
+      "storm-r5-10": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Rodadas 5–10 — somente criaturas concentrando",
+          "override": true
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": null
       }
     }
   },
@@ -166,19 +259,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.thunderwave.center.blue",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.blue"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Execute uma atividade por rodada: CON/2d6, 1d6 sem save, DEX/10d6 em seis alvos, DEX/2d6, depois efeitos ambientais e CON de concentração."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

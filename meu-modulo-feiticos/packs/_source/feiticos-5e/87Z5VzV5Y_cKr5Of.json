@@ -27,14 +27,14 @@
     "range": {
       "value": 30,
       "units": "ft",
-      "special": ""
+      "special": "20-foot cube"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 20
       },
       "affects": {
         "choice": false,
@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Posicione um cubo de 20 pés inteiramente dentro do alcance de 30 pés ou escolha uma porta/janela/objeto que caiba na área. Não há ataque, salvaguarda ou dano."
         },
         "duration": {
           "value": 8,
@@ -90,13 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 20
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -126,7 +126,8 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

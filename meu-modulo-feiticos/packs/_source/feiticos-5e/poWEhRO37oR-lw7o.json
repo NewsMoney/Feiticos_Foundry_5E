@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Após 1 hora e componentes caros, você cria permanentemente um magen obediente de tipo demos, galvan ou hypnos. Seu máximo de PV é reduzido pela ND da criatura enquanto ela existir. Ela age livremente sob suas ordens e não exige concentração.</p>",
+      "value": "<p>Durante 1 hora, você coloca um frasco de mercúrio no peito de um boneco humanoide em tamanho natural recheado com cinza ou pó, costura-o e pinga seu sangue nele. Ao fim, toca o boneco com uma haste de cristal e o transforma permanentemente num magen do tipo demos, galvan ou hypnos, escolhido durante a conjuração e vestido com o que o boneco usava.</p><p>O mercúrio de 500 PO e o boneco são consumidos; a haste de cristal de pelo menos 1.500 PO não é. Quando o magen surge, seu máximo de PV diminui pelo ND dele, com redução mínima de 1; apenas Wish desfaz essa redução. Todo magen criado por você obedece às suas ordens sem questionar.</p><p><strong>Procedimento:</strong> invoque o bloco escolhido e aplique a redução de PV máximo. A conjuração não faz ataque, salvaguarda nem dano; os ataques e danos do magen pertencem ao ator invocado.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "object",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "psM2yNYX8Mva76ea": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "hour",
           "value": 1,
@@ -108,55 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "slashing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "piercing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -165,19 +116,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.slashing_attack.01.white",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Remova qualquer WIS/ataque/dano da conjuração; escolha demos/galvan/hypnos, invoque-o e reduza o máximo de PV pelo ND."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

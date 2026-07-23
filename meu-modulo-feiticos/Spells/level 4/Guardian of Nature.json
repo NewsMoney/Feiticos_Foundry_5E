@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 1 minuto de concentração, você assume forma bestial ou arbórea. A forma bestial aumenta deslocamento, concede visão no escuro e vantagem em ataques baseados em Força com dano de energia adicional; a forma arbórea concede PV temporários, vantagem em Constituição e ataques baseados em Destreza/Sabedoria, além de terreno difícil ao redor.</p>",
+      "value": "<p>Um espírito natural fortalece você por até 1 minuto de concentração. Ao conjurar, escolha uma forma; a conjuração não exige salvaguarda nem causa dano.</p><p><strong>Fera Primordial.</strong> Seu deslocamento de caminhada aumenta em 3 metros; você recebe visão no escuro 36 metros; ataques baseados em Força têm vantagem; e seus ataques corpo a corpo com arma causam 1d6 de dano de força adicional.</p><p><strong>Árvore Grandiosa.</strong> Você recebe 10 pontos de vida temporários; faz salvaguardas de Constituição com vantagem; ataques baseados em Destreza ou Sabedoria têm vantagem; e o solo a 4,5 metros é terreno difícil para seus inimigos.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "DwcBnspIzVquEK_u": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,39 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -149,19 +118,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha Fera ou Árvore e aplique apenas o conjunto correspondente. Não role CON nem 1d6 na conjuração; o 1d6 pertence aos acertos corpo a corpo da Fera."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

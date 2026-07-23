@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma espada de energia surge a até 18 metros por até 1 minuto de concentração. Ao aparecer e como ação bônus posterior, você a move e realiza ataque mágico corpo a corpo contra criatura próxima, causando 3d10 de energia.</p>",
+      "value": "<p>Uma espada de força surge em espaço que possa ver a até 18 metros por até 1 minuto de concentração. Ao aparecer, você realiza um ataque mágico corpo a corpo contra uma criatura a até 1,5 metro dela; no acerto, causa 3d10 de dano de energia.</p><p>Como ação bônus em turnos posteriores, você move a espada até 6 metros e repete o ataque contra criatura a 1,5 metro. Sem escalonamento.</p><p><strong>Procedimento:</strong> a criação é utilitária; ofereça ataque imediato e atividade bônus reutilizável, sem consumir outro slot.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "AAjRswF0sVtJ2S6E": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,42 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 3,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
-          },
-          "onSave": "none"
-        },
-        "attack": {
-          "ability": "",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": "spell"
-          }
         }
       }
     }
@@ -153,7 +117,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -162,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie a espada; execute ataque imediato de 3d10 e, depois, atividade bônus para mover 20 ft e atacar."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

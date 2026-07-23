@@ -126,7 +126,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "O raio de 500 pés serve apenas para localizar uma árvore de destino da mesma espécie; não é área de efeito e não deve criar template."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

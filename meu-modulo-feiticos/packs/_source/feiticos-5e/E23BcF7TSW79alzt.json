@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Pretidigitation.png",
   "system": {
     "description": {
-      "value": "<p>Você realiza um pequeno truque mágico: cria efeito sensorial, acende ou apaga chama, limpa ou suja objeto, altera temperatura ou sabor, marca superfície ou cria pequena bugiganga ilusória. Até três efeitos duradouros podem coexistir.</p>",
+      "value": "<p>Você cria um efeito mágico menor dentro do alcance: um efeito sensorial instantâneo e inofensivo; acende ou apaga uma vela, tocha ou pequena fogueira; limpa ou suja um objeto de até 0,03 m³; esfria, aquece ou tempera até 0,03 m³ de material não vivo por 1 hora; cria uma marca ou símbolo por 1 hora; ou cria uma bugiganga não mágica ou imagem ilusória que caiba em sua mão até o fim do próximo turno.</p><p>Você pode manter até três efeitos não instantâneos simultaneamente e pode dispensá-los com uma ação. Escolha o modo; não há ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -37,7 +37,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -119,7 +119,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera gravitacional de 6 metros de raio surge a até 300 metros por até 1 minuto de concentração. Ela puxa criaturas e objetos numa ampla área; quem entra ou começa próximo faz resistência de Força, sofrendo 5d10 de energia e ficando impedido em falha.</p>",
+      "value": "<p>Uma esfera de vazio com raio de 6 metros surge num ponto visível a até 300 metros por até 1 minuto de concentração. A área a 30 metros do centro é terreno difícil. Ao surgir e no início de cada turno seu, criaturas nessa zona fazem Força, podendo falhar voluntariamente; na falha são puxadas ao espaço desocupado mais próximo do centro. Objetos soltos são puxados automaticamente.</p><p>Ao entrar na esfera pela primeira vez num turno ou começar nela, uma criatura faz Força: 5d10 de energia em falha ou metade em sucesso. Quem termina o turno dentro da esfera fica restrained até sair. Separe criação, puxão, dano e restrição; a conjuração não causa 5d10 automaticamente.</p>",
       "chat": ""
     },
     "source": {
@@ -26,7 +26,7 @@
     "range": {
       "value": 1000,
       "units": "ft",
-      "special": ""
+      "special": "Esfera 20 ft; zona de atração 100 ft"
     },
     "target": {
       "template": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "7sBAsTaDzhNoiv1E": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,30 +108,31 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 5,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        }
+      },
+      "void-create": {
+        "type": "utility",
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20,
+            "units": "ft"
           },
-          "onSave": "none"
+          "affects": {
+            "type": "space",
+            "count": ""
+          },
+          "prompt": true
+        },
+        "damage": null,
+        "save": null
+      },
+      "void-pull": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Ao surgir e início do turno do conjurador; alvos a 100 ft",
+          "override": true
         },
         "save": {
           "ability": [
@@ -141,7 +142,47 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": null
+      },
+      "void-damage": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "condition": "Primeira entrada no turno ou começo do turno na esfera",
+          "override": true
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 5,
+              "denomination": 10,
+              "types": [
+                "force"
+              ]
+            }
+          ],
+          "onSave": "half"
         }
+      },
+      "void-restrain": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "condition": "Termina o turno na esfera; Restrained até sair",
+          "override": true
+        },
+        "damage": null,
+        "save": null
       }
     }
   },
@@ -149,7 +190,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -158,28 +199,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "restrained"
-        ]
+        "conditions": [],
+        "manual": "Use puxão a 100 ft nos gatilhos, 5d10 somente por entrada/início e Restrained somente ao terminar dentro."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "restrained",
-        "ids": [
-          "restrained"
-        ],
-        "label": "restrained",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

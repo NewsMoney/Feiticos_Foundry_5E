@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma fortaleza de pedra equipada e abastecida surge em terreno livre por 7 dias, com muralhas, torres, alojamentos, comida e servos invisíveis. Conjurações semanais no mesmo ponto durante um ano tornam a estrutura permanente.</p>",
+      "value": "<p>Após 1 minuto e consumindo um diamante de 500 PO, uma fortaleza de pedra surge em terreno livre visível a até 1,6 quilômetro e dura 7 dias. Ela ocupa um quadrado de até 36 metros de lado, com portão, muralhas de 24 metros de comprimento, 6 metros de altura e 3 metros de espessura e quatro torres de até 9 metros de altura.</p><p>Você configura o interior com andares, corredores, escadas e salas. A fortaleza vem mobiliada, abastecida para servir diariamente banquete de nove pratos a até 100 pessoas e atendida por 100 servos invisíveis obedientes. Objetos e alimentos criados não persistem fora dela.</p><p>Conjurar a magia no mesmo ponto uma vez a cada 7 dias por um ano torna a fortaleza permanente. Posicionamento, estrutura e servos exigem resolução manual; não há ataque, salvaguarda, dano ou concentração.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Posicione a construção, consuma 500 PO em diamante e registre conjurações semanais rumo à permanência."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

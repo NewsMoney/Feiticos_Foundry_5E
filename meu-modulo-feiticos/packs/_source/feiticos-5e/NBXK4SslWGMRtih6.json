@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 18 metros faz resistência de Inteligência. Em falha sofre 5d10 psíquico e percebe-se presa por até 1 minuto de concentração; fica impedida e não enxerga além da ilusão. Se atravessar ou atacar a prisão, sofre 10d10 e a magia termina. Em sucesso sofre metade inicial.</p>",
+      "value": "<p>Uma criatura visível a até 18 metros faz salvaguarda de Inteligência; criaturas imunes a enfeitiçado não são afetadas. Em falha, sofre 5d10 psíquico e, por até 1 minuto de concentração, fica impedida e não vê nem ouve além da prisão ilusória. Em sucesso, sofre metade e a magia termina.</p><p>Se o alvo for movido para fora da ilusão, fizer um ataque corpo a corpo através dela ou estender parte do corpo para além, sofre 10d10 psíquico e a magia termina. Esse dano é um gatilho posterior, não parte da conjuração.</p>",
       "chat": ""
     },
     "source": {
@@ -159,6 +159,83 @@
             "formula": ""
           }
         }
+      },
+      "mental-prison-trigger": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Alvo atravessa, é movido para fora ou ataca corpo a corpo através da prisão"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "10d10 psíquico e a magia termina."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "1"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "full"
+        }
       }
     }
   },
@@ -177,10 +254,11 @@
         "needsReview": true,
         "conditions": [
           "restrained"
-        ]
+        ],
+        "manual": "Aplique Impedido só na falha inicial; use o dano de gatilho uma vez quando a prisão for atravessada."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

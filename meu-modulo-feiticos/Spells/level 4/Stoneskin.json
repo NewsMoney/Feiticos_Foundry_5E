@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia torna a carne de uma criatura voluntária que você toca tão dura quanto pedra. Até que a magia termine, o alvo terá resistência a danos não mágicos de concussão, perfurantes e cortantes.</p>",
+      "value": "<p>Você toca uma criatura voluntária e torna sua carne dura como pedra por até 1 hora de concentração.</p><p>Enquanto a magia durar, o alvo tem resistência a dano de concussão, perfurante e cortante causado por ataques não mágicos. A resistência não se aplica a dano mágico desses tipos.</p><p>A magia consome o pó de diamante de 100 PO indicado em seus componentes.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique resistência somente a B/P/S não mágicos e consuma o componente de 100 PO."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

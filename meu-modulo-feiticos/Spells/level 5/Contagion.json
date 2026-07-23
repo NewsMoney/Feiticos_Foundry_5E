@@ -57,7 +57,7 @@
     },
     "activities": {
       "04LOZMeDAtHLeH6d": {
-        "type": "save",
+        "type": "attack",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,6 +108,73 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "spell"
+          }
+        },
+        "save": null,
+        "damage": null
+      },
+      "contagion-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno após o ataque acertar, até 3 sucessos ou 3 falhas"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "CON: registre sucessos e falhas; 3 sucessos encerram, 3 falhas aplicam a doença escolhida."
+        },
+        "duration": {
+          "value": 7,
+          "units": "day",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
             "con"
@@ -133,28 +200,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "poisoned"
-        ]
+        "conditions": [],
+        "manual": "O primeiro teste é ataque corpo a corpo de magia. Após acerto, aplique Envenenado e controle 3 sucessos/3 falhas antes de escolher a doença."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "poisoned",
-        "ids": [
-          "poisoned"
-        ],
-        "label": "poisoned",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 7,
-          "units": "day",
-          "concentration": false
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

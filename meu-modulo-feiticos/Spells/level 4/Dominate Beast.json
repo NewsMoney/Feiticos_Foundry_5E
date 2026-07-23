@@ -136,10 +136,11 @@
         "needsReview": true,
         "conditions": [
           "charmed"
-        ]
+        ],
+        "manual": "Vantagem no save se estiver combatendo; aplique Enfeitiçado/vínculo. Repita WIS quando sofrer dano. Duração por upcast: 1 min, 10 min no 5º, 1 h no 6º, 8 h no 7º+."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

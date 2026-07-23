@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>O próximo ataque com arma que acertar durante sua concentração causa 5d10 de energia adicional. Se reduzir o alvo a 50 PV ou menos, ele é banido por até 1 minuto: retorna ao plano natal se extraplanar, ou fica incapacitado num semiplano se for nativo.</p>",
+      "value": "<p>Enquanto você mantiver concentração, o próximo ataque com arma que acertar causa 5d10 de dano de força adicional. A conjuração não causa dano; o efeito é consumido apenas no acerto.</p><p>Se o ataque deixar o alvo com 50 PV ou menos, ele é banido. Um alvo nativo de outro plano retorna ao plano natal; um alvo nativo do plano atual vai para um semiplano inofensivo e fica incapacitado. O segundo retorna quando a magia termina; o extraplanar só retorna se sua concentração terminar antes de 1 minuto.</p>",
       "chat": ""
     },
     "source": {
@@ -109,6 +109,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "banishing-smite-hit": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Próximo acerto com arma durante a concentração"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Cause o dano adicional; após aplicá-lo, verifique se o alvo ficou com 50 PV ou menos e aplique Banido."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "1"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -123,15 +178,15 @@
                 "force"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
         }
       }
     }
@@ -140,9 +195,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.shield.01.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.magic_signs.rune.abjuration.intro.blue"
         ],
         "targeted": false
       },
@@ -151,10 +206,11 @@
         "needsReview": true,
         "conditions": [
           "incapacitated"
-        ]
+        ],
+        "manual": "Use a atividade de acerto somente após acertar; o limiar de 50 PV e o destino planar exigem confirmação."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

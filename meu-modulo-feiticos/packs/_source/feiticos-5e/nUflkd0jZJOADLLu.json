@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de escuridão e gravidade de 12 metros de raio surge por até 1 minuto de concentração. A área silencia, bloqueia visão e é terreno difícil. Criaturas que entram ou terminam nela fazem resistência de Constituição contra 8d10 de energia; objetos destruídos são desintegrados.</p>",
+      "value": "<p>Uma esfera de escuridão esmagadora com 12 metros de raio surge num ponto a até 45 metros por até 1 minuto de concentração. A área é terreno difícil; visão e som não atravessam a esfera. Criaturas nela ficam surdas, e nenhum componente verbal pode ser produzido dentro dela.</p><p>Quando uma criatura entra na esfera pela primeira vez num turno ou termina o turno ali, realiza salvaguarda de Constituição, sofrendo 8d10 de dano de energia em uma falha ou metade em um sucesso. Um objeto não mágico que não esteja vestido nem carregado é desintegrado se esse dano o reduzir a 0 PV.</p><p>A conjuração cria a zona sem rolar dano; use a atividade de zona somente quando um dos gatilhos ocorrer.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "40-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 40
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "KrvjWwi1W5GaUvHg": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,11 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 40
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "type": "space",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -110,29 +112,31 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 8,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        "save": null,
+        "damage": null
+      },
+      "dark-star-zone": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Primeira entrada no turno ou fim do turno na esfera"
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 40,
+            "units": "ft",
+            "contiguous": false
           },
-          "onSave": "half"
+          "affects": {
+            "type": "creature",
+            "count": "",
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -142,6 +146,30 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 8,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -150,7 +178,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -159,10 +187,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique surdez, bloqueio de visão/som/verbal e use o dano somente na primeira entrada ou fim do turno."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

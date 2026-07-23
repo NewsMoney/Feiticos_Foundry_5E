@@ -24,20 +24,21 @@
       "concentration": false
     },
     "range": {
-      "value": 30,
-      "units": "ft",
-      "special": ""
+      "value": null,
+      "units": "self",
+      "special": "Self (30-foot line, 5 feet wide)"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "line",
+        "size": 30,
+        "width": 5
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,8 +89,9 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "line",
+            "size": 30,
+            "width": 5
           },
           "affects": {
             "choice": false
@@ -152,7 +154,7 @@
         "fallbacks": [
           "jb2a.impact.fire.01.orange"
         ],
-        "targeted": true
+        "targeted": false
       },
       "automation": {
         "generated": true,
@@ -160,7 +162,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

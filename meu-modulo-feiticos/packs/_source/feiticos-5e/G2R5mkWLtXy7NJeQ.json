@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito aberrante observador, slaad ou devorador de pensamentos por até 1 hora de concentração, usando foco de 400 PO. Ele compartilha sua iniciativa, obedece comandos e recebe poderes conforme a forma. Espaços superiores aumentam PV, dano e ataques.</p>",
+      "value": "<p>Você invoca um espírito aberrante num espaço desocupado a até 27 metros. Escolha a forma Beholderkin, Slaad ou Star Spawn; ela determina características e ataques do bloco de estatísticas da magia.</p><p>O espírito compartilha sua iniciativa e age imediatamente depois de você. Obedece comandos verbais; sem comando, usa Esquiva e move-se apenas para evitar perigo. Desaparece a 0 PV ou no fim da concentração.</p><p><strong>Em Círculos Superiores.</strong> Use o nível do espaço para calcular CA, PV, quantidade de ataques e dano exatamente como no bloco. A conjuração não pede salvaguarda nem causa dano.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "L0frVY1sP61QCUax": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -110,55 +110,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "psychic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "psychic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -166,19 +119,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha uma das três formas e crie o ator pelo bloco; não role o falso WIS/dano da conjuração."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

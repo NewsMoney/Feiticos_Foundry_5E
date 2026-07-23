@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma nuvem rodopiante de fumaça atravessada por brasas incandescentes aparece a uma distância de 6 metros. A nuvem se espalha pelos cantos e fica fortemente obscurecida. Ela dura pela duração ou até que um vento de velocidade moderada ou maior (pelo menos 16 quilômetros por hora) a disperse.</p><p>Quando a nuvem aparecer, cada criatura nela deve fazer um teste de resistência de Destreza. Uma criatura sofre 10d8 de dano de fogo se falhar na resistência, ou metade desse dano se obtiver sucesso. Uma criatura também deve fazer este teste de resistência quando entrar na área da magia pela primeira vez em um turno ou terminar seu turno lá.</p><p>A nuvem se move 3 metros diretamente para longe de você em uma direção que você escolher no início de cada um de seus turnos.</p>",
+      "value": "<p>Uma esfera de fumaça com brasas, raio de 6 metros, surge a até 45 metros, espalha-se por cantos e deixa a área fortemente obscurecida por até 1 minuto de concentração. Vento moderado ou maior a dispersa.</p><p>Quando aparece, quando uma criatura entra nela pela primeira vez num turno ou termina o turno ali, a criatura faz salvaguarda de Destreza, sofrendo 10d8 de fogo em falha ou metade em sucesso. No início de cada um dos seus turnos, a nuvem move-se 3 metros diretamente para longe de você numa direção escolhida.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "20-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "qbq68uMiZ-s6QcOX": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,11 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "type": "creature",
+            "count": ""
           },
           "override": false,
           "prompt": true
@@ -109,30 +111,28 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        }
+      },
+      "incendiary-cloud-zone": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Primeira entrada no turno ou fim do turno na nuvem"
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 10,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20,
+            "units": "ft"
           },
-          "onSave": "half"
+          "affects": {
+            "type": "creature",
+            "count": ""
+          },
+          "override": true,
+          "prompt": true
         },
         "save": {
           "ability": [
@@ -142,6 +142,30 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 10,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -150,19 +174,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.fire_bolt.orange",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Use a atividade inicial ao criar; depois use a zona só por entrada/fim do turno e mova a nuvem 10 ft no início do turno."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um Celestial com nível de desafio 4 ou inferior, que aparece em um espaço desocupado que você pode ver dentro do alcance. O celestial desaparece quando chega a 0 pontos de vida ou quando a magia termina.</p><p>O celestial é amigável com você e seus companheiros durante todo o período. Role a iniciativa para o celestial, que tem seus próprios turnos. Ele obedece a quaisquer comandos verbais que você emitir (nenhuma ação exigida por você), desde que eles não violem seu alinhamento. Se você não emitir nenhum comando ao celestial, ele se defenderá de criaturas hostis, mas não realizará nenhuma ação.</p><p>O Mestre tem as estatísticas do celestial.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 9º nível, você invoca um celestial com nível de desafio 5 ou inferior.</p>",
+      "value": "<p>Após 1 minuto, você invoca um celestial de ND 4 ou menor em um espaço desocupado que possa ver a até 27 metros. Ele permanece por até 1 hora, enquanto você mantiver concentração, desaparecendo ao chegar a 0 PV ou quando a magia termina.</p><p>O celestial é amistoso, tem iniciativa e turnos próprios e obedece aos seus comandos verbais que não violem o alinhamento dele; sem comando, defende-se, mas não age de outra forma. Com espaço de 9º círculo, o ND máximo é 5.</p><p><strong>Procedimento:</strong> escolha o bloco válido, crie e posicione o ator/token e controle iniciativa e comandos. A conjuração não realiza ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -126,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha celestial ND 4 (ND 5 no 9º), invoque em espaço desocupado e controle iniciativa/comandos."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

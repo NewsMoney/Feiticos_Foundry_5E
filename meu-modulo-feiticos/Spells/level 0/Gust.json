@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Gust.png",
   "system": {
     "description": {
-      "value": "<p>Você produz uma rajada a até 9 metros para empurrar uma criatura Média ou menor 1,5 metro após falha de Força, deslocar um objeto leve ou criar um efeito inofensivo de vento.</p>",
+      "value": "<p>Você captura o ar e o compele a criar um dos efeitos dentro do alcance. Uma criatura Média ou menor escolhida deve vencer uma salvaguarda de Força ou ser empurrada até 1,5 metro para longe de você. Alternativamente, você empurra até 3 metros um objeto não preso nem carregado que pese até 2,25 kg, sem causar dano, ou cria um efeito sensorial inofensivo usando ar.</p><p>A salvaguarda existe somente no modo de empurrar criatura. Os modos de objeto e efeito sensorial não causam dano nem exigem rolagem.</p>",
       "chat": ""
     },
     "source": {
@@ -127,9 +127,10 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Use o save apenas para criatura Média ou menor; os outros modos são utilitários."
     },
     "itemacro": {
       "macro": {

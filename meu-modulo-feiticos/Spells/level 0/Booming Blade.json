@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Booming%20Blade.png",
   "system": {
     "description": {
-      "value": "<p>Você realiza um ataque corpo a corpo com a arma usada como componente. Em acerto, o alvo sofre os efeitos normais e fica envolto em energia até seu próximo turno; se mover voluntariamente antes disso, sofre dano trovejante. O dano inicial e o de movimento aumentam nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você brande a arma usada na conjuração e realiza com ela um ataque corpo a corpo contra uma criatura a até 1,5 metro. Em um acerto, o alvo sofre os efeitos normais do ataque e fica envolto em energia trovejante até o início do seu próximo turno. Se, antes disso, ele se mover voluntariamente 1,5 metro ou mais, sofre 1d8 de dano trovejante e a magia termina.</p><p><strong>Procedimento:</strong> a atividade aciona a arma corpo a corpo equipada. Aplique o dano normal da arma. O dano por movimento é condicional e deve ser aplicado somente quando o alvo se mover voluntariamente; movimento forçado não o dispara.</p><p><strong>Em Níveis Superiores.</strong> No 5º nível, o ataque causa +1d8 trovejante no acerto e o dano por movimento passa a 2d8. Esses danos tornam-se +2d8/3d8 no 11º nível e +3d8/4d8 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -118,7 +118,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {
@@ -127,7 +127,8 @@
         "specialDuration": [
           "turnStartSource"
         ]
-      }
+      },
+      "manualWorkflow": "Role a arma equipada; aplique o dano tardio somente após movimento voluntário de 1,5 metro."
     },
     "itemacro": {
       "macro": {

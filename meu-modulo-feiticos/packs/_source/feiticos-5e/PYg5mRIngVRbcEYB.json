@@ -59,7 +59,7 @@
     },
     "activities": {
       "kP8vdOZiq11MteI7": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Arma o próximo acerto com arma à distância; não role save nem dano ao conjurar. Após o acerto, crie raio de 5 pés centrado no alvo: todas as criaturas, inclusive ele, fazem DES e sofrem 1d10 perfurante/mitade. +1d10 por nível, máximo 6d10. A explosão requer atividade ou macro posterior."
         },
         "duration": {
           "value": 1,
@@ -109,39 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "piercing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -150,9 +117,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": false
       },

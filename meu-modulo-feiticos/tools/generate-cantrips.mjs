@@ -15,6 +15,45 @@ const reviewedDescriptions = {};
 for (const file of (await readdir(path.join(root, "data"))).filter(name => name.startsWith("descriptions-reviewed") && name.endsWith(".json") && name !== translatedDescriptionsFile)) {
   Object.assign(reviewedDescriptions, JSON.parse(await readFile(path.join(root, "data", file), "utf8")));
 }
+let workflowOverrides = {};
+try {
+  workflowOverrides = JSON.parse(await readFile(path.join(root, "data", "workflow-overrides-level-0.json"), "utf8"));
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+
+function deepMerge(base, override) {
+  if (Array.isArray(override)) return structuredClone(override);
+  if (!override || typeof override !== "object") return override;
+  const result = base && typeof base === "object" && !Array.isArray(base) ? structuredClone(base) : {};
+  for (const [key, value] of Object.entries(override)) {
+    result[key] = value && typeof value === "object" && !Array.isArray(value)
+      ? deepMerge(result[key], value)
+      : structuredClone(value);
+  }
+  return result;
+}
+
+function finalizeItem(item) {
+  const activities = Object.values(item.system?.activities ?? {});
+  for (const activity of activities) {
+    if (activity.target?.template?.type && activity.target.prompt === undefined) activity.target.prompt = true;
+  }
+  if (activities.length !== 1) return item;
+  const activity = activities[0];
+  const itemTemplate = item.system?.target?.template;
+  const activityTemplate = activity.target?.template;
+  if (itemTemplate?.type && !activityTemplate?.type) {
+    activity.target ??= {};
+    activity.target.template = structuredClone(itemTemplate);
+  } else if (itemTemplate?.type === activityTemplate?.type && itemTemplate?.size && !activityTemplate?.size) {
+    activity.target.template.size = itemTemplate.size;
+  } else if (activityTemplate?.type && !itemTemplate?.type) {
+    item.system.target ??= {};
+    item.system.target.template = structuredClone(activityTemplate);
+  }
+  return item;
+}
 
 const A = "action";
 const BA = "bonus";
@@ -63,14 +102,14 @@ spell("Shape Water", "trs", "utility", { range: 30, properties: ["somatic"], tar
 spell("Shillelagh", "trs", "utility", { activation: BA, range: "touch", duration: { units: "minute", value: "1" }, properties: ["vocal", "somatic", "material"], target: "object", source: "PHB/SRD", description: "Imbui um bordão ou clava para usar a habilidade de conjuração e causar dano mágico.", animation: { file: "jb2a.weapon_enchantment.green", targeted: true, fallbacks: ["jb2a.magic_signs.rune.transmutation.intro.green"] }, status: { id: "shillelagh", label: "Shillelagh", target: "self", specialDuration: [] } });
 spell("Shocking Grasp", "evo", "attack", { range: "touch", attack: "melee", damage: [1, 8, "lightning"], source: "PHB/SRD", description: "Um toque elétrico causa dano e impede o alvo de realizar reações por uma rodada.", animation: { file: "jb2a.shocking_grasp.blue", targeted: true, fallbacks: ["jb2a.static_electricity.03.blue"] }, status: { id: "shocking-grasp", label: "Sem reações", changes: [{ key: "flags.midi-qol.fail.ability.check.reaction", mode: 5, value: "1", priority: 20 }], specialDuration: ["turnStartSource"] } });
 spell("Spare the Dying", "nec", "utility", { range: "touch", properties: ["vocal", "somatic"], source: "PHB/SRD", description: "Estabiliza uma criatura viva que esteja morrendo.", animation: { file: "jb2a.cure_wounds.400px.blue", targeted: true, fallbacks: ["jb2a.healing_generic.200px.blue"] }, status: { id: "stable", label: "Estável", core: true, duration: {} } });
-spell("Sword Burst", "con", "save", { save: "dex", damage: [1, 6, "force"], range: "self", target: "enemy", count: "", properties: ["vocal"], source: "SCAG/TCE", description: "Lâminas espectrais atingem todas as criaturas próximas que falharem no teste de Destreza.", animation: { file: "jb2a.sword_burst.01.blue", fallbacks: ["jb2a.shrapnel.01.blue"] } });
+spell("Sword Burst", "con", "save", { save: "dex", damage: [1, 6, "force"], range: "self", rangeSpecial: "Self (5-foot radius)", template: { type: "circle", size: 5 }, target: "creature", count: "", properties: ["vocal"], source: "SCAG/TCE", description: "Lâminas espectrais atingem todas as criaturas próximas que falharem no teste de Destreza.", animation: { file: "jb2a.sword_burst.01.blue", fallbacks: ["jb2a.shrapnel.01.blue"] } });
 spell("Thaumaturgy", "trs", "utility", { range: 30, duration: { units: "minute", value: "1" }, properties: ["vocal"], source: "PHB/SRD", description: "Manifesta um pequeno prodígio, alterando voz, chamas, portas ou sinais sensoriais.", animation: { file: "jb2a.magic_signs.rune.transmutation.intro.red", fallbacks: ["jb2a.divine_smite.caster.redyellow"] } });
 spell("Thorn Whip", "trs", "attack", { range: 30, attack: "melee", damage: [1, 6, "piercing"], properties: ["vocal", "somatic", "material"], source: "PHB/SRD", description: "Um chicote espinhoso causa dano e pode puxar uma criatura grande ou menor em sua direção.", animation: { file: "jb2a.thorn_whip.green", targeted: true, fallbacks: ["jb2a.vine_whip.green"] } });
-spell("Thunderclap", "evo", "save", { save: "con", damage: [1, 6, "thunder"], range: "self", target: "enemy", count: "", properties: ["somatic"], source: "EE/XGE", description: "Uma explosão sonora atinge todas as criaturas próximas e pode ser ouvida à distância.", animation: { file: "jb2a.thunderwave.center.blue", fallbacks: ["jb2a.impact.ground_crack.01.blue"] } });
+spell("Thunderclap", "evo", "save", { save: "con", damage: [1, 6, "thunder"], range: "self", rangeSpecial: "Self (5-foot radius)", template: { type: "circle", size: 5 }, target: "creature", count: "", properties: ["somatic"], source: "EE/XGE", description: "Uma explosão sonora atinge todas as criaturas próximas e pode ser ouvida à distância.", animation: { file: "jb2a.thunderwave.center.blue", fallbacks: ["jb2a.impact.ground_crack.01.blue"] } });
 spell("Toll the Dead", "nec", "save", { save: "wis", damage: [1, 8, "necrotic"], source: "XGE", description: "Um sino fúnebre causa dano necrótico, usando d12 se o alvo já tiver perdido pontos de vida.", animation: { file: "jb2a.toll_the_dead.yellow.shockwave", targeted: true, fallbacks: ["jb2a.impact.004.dark_purple"] } });
 spell("True Strike", "div", "utility", { range: 30, duration: { units: "round", value: "1" }, concentration: true, properties: ["somatic"], source: "PHB/SRD", description: "Concede vantagem no primeiro ataque do conjurador contra o alvo no turno seguinte.", animation: { file: "jb2a.markers.target.complete.blue", targeted: true, fallbacks: ["jb2a.magic_signs.rune.divination.intro.blue"] }, status: { id: "true-strike", label: "True Strike", target: "self", changes: [{ key: "flags.midi-qol.advantage.attack.all", mode: 5, value: "1", priority: 20 }], specialDuration: ["1Attack", "turnEndSource"] } });
 spell("Vicious Mockery", "enc", "save", { save: "wis", damage: [1, 4, "psychic"], range: 60, properties: ["vocal"], source: "PHB/SRD", description: "Um insulto encantado causa dano psíquico e prejudica o próximo ataque do alvo.", animation: { file: "jb2a.music_note.01.blue", targeted: true, fallbacks: ["jb2a.impact.004.purple"] }, status: { id: "vicious-mockery", label: "Vicious Mockery", changes: [{ key: "flags.midi-qol.disadvantage.attack.all", mode: 5, value: "1", priority: 20 }], specialDuration: ["1Attack", "turnEndSource"] } });
-spell("Word of Radiance", "evo", "save", { save: "con", damage: [1, 6, "radiant"], range: "self", target: "enemy", count: "", properties: ["vocal", "material"], source: "XGE", description: "Uma palavra divina fere criaturas escolhidas ao redor do conjurador com energia radiante.", animation: { file: "jb2a.divine_smite.caster.yellowwhite", fallbacks: ["jb2a.toll_the_dead.yellow.shockwave"] } });
+spell("Word of Radiance", "evo", "save", { save: "con", damage: [1, 6, "radiant"], range: "self", rangeSpecial: "Self (5-foot radius)", template: { type: "circle", size: 5 }, target: "enemy", count: "", properties: ["vocal", "material"], source: "XGE", description: "Uma palavra divina fere criaturas escolhidas ao redor do conjurador com energia radiante.", animation: { file: "jb2a.divine_smite.caster.yellowwhite", fallbacks: ["jb2a.toll_the_dead.yellow.shockwave"] } });
 
 const normalize = value => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 const aliases = { wordofradiance: "Word of Radience.png", thunderclap: "Thunder Clap.png", resistance: "Resistence.png", guidance: "Guidence.png", prestidigitation: "Pretidigitation.png", minorillusion: "Minor Ilusion.png", message: "Mensage.png", primalsavagery: "Primal.png" };
@@ -82,6 +121,15 @@ function damagePart([number, denomination, type]) {
   return { custom: { enabled: false, formula: "" }, number, denomination, bonus: "", types: [type], scaling: { mode: "whole", number: 1 } };
 }
 
+function targetTemplate(def, { emptyType = false } = {}) {
+  return {
+    contiguous: false,
+    units: "ft",
+    ...(def.template?.type ? { type: def.template.type } : emptyType ? { type: "" } : {}),
+    ...(def.template?.size ? { size: def.template.size } : {})
+  };
+}
+
 function activity(def, activityId) {
   const common = {
     type: def.mode,
@@ -90,7 +138,7 @@ function activity(def, activityId) {
     description: { chatFlavor: "" },
     duration: { units: def.duration.units, value: def.duration.value ?? "", concentration: !!def.concentration, override: false },
     effects: [], range: { override: false },
-    target: { template: { contiguous: false, units: "ft" }, affects: { choice: false }, override: false, prompt: true },
+    target: { template: targetTemplate(def), affects: { choice: false }, override: false, prompt: true },
     uses: { spent: 0, recovery: [], max: "" }, midiProperties: {},
     overTimeProperties: { saveRemoves: true, preRemoveConditionText: "", postRemoveConditionText: "" }
   };
@@ -115,8 +163,8 @@ function item(def) {
       source: { custom: def.source }, level: 0, school: def.school,
       activation: { type: def.activation, value: def.activation === "minute" ? 1 : null, condition: "" },
       duration: def.duration,
-      range: typeof def.range === "number" ? { value: def.range, units: "ft", special: "" } : { value: null, units: def.range, special: "" },
-      target: { template: { contiguous: false, units: "ft", type: "" }, affects: { choice: false, count: def.count, type: def.target, special: "" } },
+      range: typeof def.range === "number" ? { value: def.range, units: "ft", special: def.rangeSpecial ?? "" } : { value: null, units: def.range, special: def.rangeSpecial ?? "" },
+      target: { template: targetTemplate(def, { emptyType: true }), affects: { choice: false, count: def.count, type: def.target, special: "" } },
       properties: [...def.properties, ...(def.concentration ? ["concentration"] : [])],
       materials: { value: "Consulte a fonte indicada.", consumed: false, cost: 0, supply: 0 },
       preparation: { mode: "prepared", prepared: false }, activities: activity(def, activityId)
@@ -131,6 +179,7 @@ function item(def) {
 }
 
 await mkdir(outputDir, { recursive: true });
-const generated = defs.map(item);
+for (const def of defs) Object.assign(def, workflowOverrides[def.name]?.definition ?? {});
+const generated = defs.map(def => finalizeItem(deepMerge(item(def), workflowOverrides[def.name]?.item ?? {})));
 for (const generatedItem of generated) await writeFile(path.join(outputDir, `${generatedItem.name}.json`), `${JSON.stringify(generatedItem, null, 2)}\n`);
 console.log(`Gerados ${defs.length} truques em ${outputDir}`);

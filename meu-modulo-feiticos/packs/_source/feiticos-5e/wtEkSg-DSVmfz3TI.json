@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 1 minuto de concentração, seu deslocamento aumenta em 6 metros, você não provoca ataques de oportunidade e pode atravessar espaços de criaturas. A primeira vez que passa a até 1,5 metro de cada criatura no turno, ela sofre 1d6 de fogo. Espaços superiores aumentam deslocamento e dano.</p>",
+      "value": "<p>Chamas dracônicas irrompem de seus pés. Até a magia terminar, sua velocidade aumenta em 6 metros e seu movimento não provoca ataques de oportunidade. Quando você se move a até 1,5 metro de uma criatura ou de um objeto que não esteja vestido nem sendo carregado, ele sofre 1d6 de dano de fogo. Uma criatura ou objeto só pode sofrer esse dano uma vez em cada um de seus turnos.</p><p>A magia exige concentração por até 1 minuto. A conjuração não causa dano: aplique-o apenas após o movimento e controle separadamente o limite por alvo e por turno.</p><p><strong>Em Círculos Superiores.</strong> A velocidade aumenta em mais 1,5 metro e o dano em 1d6 para cada círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -25,9 +25,7 @@
       "concentration": true
     },
     "range": {
-      "value": null,
-      "units": "self",
-      "special": ""
+      "value": null
     },
     "target": {
       "template": {
@@ -39,7 +37,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "self",
+        "type": "creature",
         "special": ""
       }
     },
@@ -109,30 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
         }
       }
     }
@@ -141,11 +115,11 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.fire_bolt.orange",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.sparkles.01.blue"
         ],
-        "targeted": false
+        "targeted": true
       },
       "automation": {
         "generated": true,
@@ -153,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Não role dano ao conjurar. Após movimento a 5 ft, aplique o dano uma vez por alvo por turno."
     },
     "itemacro": {
       "macro": {

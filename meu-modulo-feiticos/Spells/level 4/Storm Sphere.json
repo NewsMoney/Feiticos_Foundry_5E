@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de vento de 6 metros de raio surge a até 45 metros por até 1 minuto de concentração. Criaturas dentro fazem resistência de Força contra 2d6 de concussão e a área é terreno difícil. Como ação bônus, você lança um raio contra alvo próximo, causando 4d6 elétrico em acerto. Danos aumentam por círculo.</p>",
+      "value": "<p>Uma esfera de ar revolto de 6 metros de raio surge num ponto a até 45 metros e dura por até 1 minuto de concentração. A área é terreno difícil.</p><p>Quando a esfera surge, cada criatura nela faz uma salvaguarda de Força, sofrendo 2d6 de concussão em uma falha ou nenhum dano em um sucesso.</p><p>Como ação bônus em cada turno, você faz um ataque à distância com magia contra uma criatura a até 18 metros do centro; o ataque tem vantagem se o alvo estiver dentro da esfera e causa 4d6 de dano elétrico no acerto.</p><p><strong>Em Círculos Superiores.</strong> Cada um dos dois danos aumenta em 1d6 por círculo acima do 4º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "20-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "YVcu5CG30RuwTjzo": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -109,24 +109,75 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "storm-bolt-attack": {
+        "type": "attack",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Alvo a 60 ft do centro; vantagem se estiver dentro da esfera"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Ataque à distância com magia, 4d6 elétrico no acerto."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        },
         "damage": {
           "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
             {
               "custom": {
                 "enabled": false,
@@ -145,9 +196,62 @@
             }
           ],
           "critical": {
-            "allow": false
+            "allow": true
           },
-          "onSave": "none"
+          "onSave": "full"
+        }
+      },
+      "storm-initial": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente quando a esfera surge"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "STR: 2d6 concussão na falha, zero no sucesso."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 20,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
@@ -157,6 +261,131 @@
             "calculation": "spellcasting",
             "formula": ""
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "storm-bolt": {
+          "type": "attack",
+          "activation": {
+            "type": "bonus",
+            "value": 1,
+            "override": true,
+            "condition": "Alvo a 60 ft do centro; vantagem se estiver dentro da esfera"
+          },
+          "consumption": {
+            "scaling": {
+              "allowed": true
+            },
+            "spellSlot": false,
+            "targets": []
+          },
+          "description": {
+            "chatFlavor": "Ataque à distância com magia, 4d6 elétrico no acerto."
+          },
+          "duration": {
+            "value": 1,
+            "units": "minute",
+            "concentration": true,
+            "override": true
+          },
+          "effects": [],
+          "range": {
+            "override": true
+          },
+          "target": {
+            "template": {
+              "type": "",
+              "size": null,
+              "units": "ft",
+              "contiguous": false
+            },
+            "affects": {
+              "choice": false
+            },
+            "override": true,
+            "prompt": true
+          },
+          "uses": {
+            "spent": 0,
+            "recovery": [],
+            "max": ""
+          },
+          "midiProperties": {},
+          "overTimeProperties": {
+            "saveRemoves": false,
+            "preRemoveConditionText": "",
+            "postRemoveConditionText": ""
+          },
+          "attack": {
+            "ability": "",
+            "bonus": "",
+            "critical": {
+              "threshold": null
+            },
+            "flat": false,
+            "type": {
+              "value": "ranged",
+              "classification": "spell"
+            }
+          },
+          "damage": {
+            "parts": [
+              {
+                "custom": {
+                  "enabled": false,
+                  "formula": ""
+                },
+                "number": 4,
+                "denomination": 6,
+                "bonus": "",
+                "types": [
+                  "lightning"
+                ],
+                "scaling": {
+                  "mode": "whole",
+                  "number": 1
+                }
+              }
+            ],
+            "critical": {
+              "allow": true
+            },
+            "onSave": "full"
+          }
+        }
+      }
+    },
+    "flags": {
+      "foundry-spell-pack": {
+        "description": {
+          "quality": "reviewed-deep-pt-br",
+          "needsReview": false
+        },
+        "automation": {
+          "needsReview": true,
+          "manual": "Crie terreno difícil. Use Impacto apenas ao surgir e Raio como bônus; são rolagens distintas e cada dano escala +1d6."
         }
       }
     }
@@ -165,19 +394,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.boulder.toss.01",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie terreno difícil. Use Impacto apenas ao surgir e Raio como bônus; são rolagens distintas e cada dano escala +1d6."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

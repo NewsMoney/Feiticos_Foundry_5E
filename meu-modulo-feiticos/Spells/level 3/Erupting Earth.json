@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Terra e pedra explodem num cubo de 6 metros a até 36 metros. Criaturas fazem resistência de Destreza, sofrendo 3d12 de concussão em falha ou metade em sucesso. O solo vira terreno difícil até ser limpo. O dano aumenta em 1d12 por círculo.</p>",
+      "value": "<p>Escolha um ponto no chão a até 36 metros. Uma fonte de terra e pedra explode num cubo de 6 metros centrado ali. Cada criatura na área realiza uma salvaguarda de Destreza, sofrendo 3d12 de dano de concussão na falha ou metade no sucesso.</p><p>O solo da área torna-se terreno difícil até ser limpo; cada porção quadrada de 1,5 metro exige pelo menos 1 minuto de trabalho manual para limpar.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d12 por círculo acima do 3º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "Cubo de 20 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -160,9 +160,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Após o dano, mantenha o cubo como terreno difícil até cada seção ser limpa."
     },
     "itemacro": {
       "macro": {

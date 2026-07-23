@@ -150,7 +150,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Não é área: a menção à luz é consequência do próximo acerto com arma."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

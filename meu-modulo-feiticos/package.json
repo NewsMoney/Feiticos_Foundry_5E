@@ -16,9 +16,11 @@
     "validate:levels79": "node tools/validate-levels-7-9.mjs",
     "validate:descriptions": "node tools/validate-descriptions.mjs",
     "validate:foundry14": "node tools/validate-foundry14.mjs",
-    "validate:all": "npm run validate:foundry14 && npm run validate:cantrips && npm run validate:levels12 && npm run validate:levels34 && npm run validate:levels56 && npm run validate:levels79 && npm run validate:descriptions && npm run validate:translations",
+    "validate:all": "npm run validate:foundry14 && npm run validate:cantrips && npm run validate:levels12 && npm run validate:levels34 && npm run validate:levels56 && npm run validate:levels79 && npm run validate:descriptions && npm run validate:translations && npm run validate:workflows",
     "translate:srd": "node tools/translate-srd-pt-br.mjs",
-    "validate:translations": "node tools/validate-srd-translations.mjs"
+    "validate:translations": "node tools/validate-srd-translations.mjs",
+    "audit:workflows": "node tools/audit-spell-workflows.mjs",
+    "validate:workflows": "node tools/audit-spell-workflows.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"

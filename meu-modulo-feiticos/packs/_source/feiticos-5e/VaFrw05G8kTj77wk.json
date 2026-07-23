@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Energia explode num raio de 9 metros. Criaturas escolhidas fazem resistência de Constituição, sofrendo 5d6 trovejante mais 5d6 radiante ou necrótico e ficando caídas em falha; em sucesso sofrem metade sem cair.</p>",
+      "value": "<p>Energia irrompe de você. Cada criatura que você escolher a até 9 metros realiza uma salvaguarda de Constituição. Em uma falha, sofre 5d6 de dano trovejante mais 5d6 de dano radiante ou necrótico, à sua escolha, e fica caída.</p><p>Em um sucesso, sofre metade de ambos os danos e não fica caída. Objetos e criaturas não escolhidas não são afetados.</p>",
       "chat": ""
     },
     "source": {
@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -93,7 +93,7 @@
             "size": 30
           },
           "affects": {
-            "choice": false
+            "choice": true
           },
           "override": false,
           "prompt": true
@@ -160,10 +160,11 @@
         "needsReview": true,
         "conditions": [
           "prone"
-        ]
+        ],
+        "manual": "Aplique Caído somente aos alvos que falharem e selecione apenas radiante ou necrótico para a segunda parcela."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

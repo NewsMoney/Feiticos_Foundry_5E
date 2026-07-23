@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>O próximo ataque corpo a corpo com arma que acertar durante sua concentração causa 4d6 psíquico adicional. O alvo faz resistência de Sabedoria; em falha tem desvantagem em ataques e testes, e não pode usar reações, até o fim do próximo turno dele.</p>",
+      "value": "<p>Até a magia terminar, o próximo ataque corpo a corpo com arma que você acertar causa 4d6 de dano psíquico adicional. A conjuração não causa dano nem exige salvaguarda.</p><p>Depois do acerto, o alvo realiza uma salvaguarda de Sabedoria. Em uma falha, até o fim do próximo turno dele, tem desvantagem em jogadas de ataque e testes de habilidade e não pode realizar reações. Em um sucesso, sofre apenas o dano adicional.</p><p>O efeito é consumido no primeiro acerto válido; errar um ataque não o consome enquanto a concentração permanecer.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "dolyiIvO_IBlpSm_": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,6 +109,70 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "staggering-hit": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Próximo ataque corpo a corpo com arma que acertar durante a concentração"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Aplique 4d6 psíquico; WIS só determina os efeitos debilitantes."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "1"
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -124,23 +188,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
+          "onSave": "full"
         }
       }
     }
@@ -149,19 +204,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Conjuração só arma o smite. Use Acerto do Smite no próximo acerto válido; dano ocorre sempre, efeitos apenas em falha no WIS."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

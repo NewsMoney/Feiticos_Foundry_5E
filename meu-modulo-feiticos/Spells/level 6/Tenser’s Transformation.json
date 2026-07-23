@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 10 minutos de concentração, você perde a capacidade de conjurar, mas recebe 50 PV temporários, vantagem em ataques com armas, proficiências marciais, ataque extra e 2d12 de energia adicional. Ao terminar, faz resistência de Constituição ou sofre exaustão.</p>",
+      "value": "<p>Por até 10 minutos de concentração, você não pode conjurar magias, mas recebe 50 PV temporários, vantagem em ataques com armas simples e marciais, proficiência com todas as armas, armaduras e escudos, dois ataques ao usar Atacar e 2d12 de força adicional em cada acerto com arma.</p><p>Quando a magia terminar, e somente então, faça salvaguarda de Constituição CD 15. Em uma falha, você sofre um nível de exaustão.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "IgtWVN7bTzQ7DVtt": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,37 +109,67 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 12,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
+        "save": null,
+        "damage": null
+      },
+      "tenser-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Quando a magia terminar"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
           },
-          "onSave": "none"
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "CON CD 15; falha causa 1 nível de exaustão."
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
             "con"
           ],
           "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
+            "calculation": "",
+            "formula": "15"
           }
         }
       }
@@ -149,19 +179,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Não role CON na conjuração. Use o save CD 15 apenas no término; 2d12 é rider de cada acerto, não dano inicial."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Eldritch%20Blast.png",
   "system": {
     "description": {
-      "value": "<p>Um raio de energia atinge uma criatura a até 36 metros com ataque mágico à distância, causando 1d10 de energia. Nos níveis 5, 11 e 17 você cria raios adicionais, realizando ataques separados e podendo escolher alvos diferentes.</p>",
+      "value": "<p>Um raio de energia crepitante parte em direção a uma criatura dentro do alcance. Realize um ataque mágico à distância contra o alvo. Em um acerto, ele sofre 1d10 de dano de energia.</p><p><strong>Em Níveis Superiores.</strong> A magia cria dois raios no 5º nível, três no 11º e quatro no 17º. Você pode direcionar os raios ao mesmo alvo ou a alvos diferentes. Faça uma jogada de ataque separada para cada raio; cada acerto causa 1d10, em vez de aumentar os dados de um único ataque.</p>",
       "chat": ""
     },
     "source": {
@@ -34,9 +34,9 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "4",
         "type": "creature",
-        "special": ""
+        "special": "Um ataque separado por raio; 1/2/3/4 raios nos níveis 1/5/11/17."
       }
     },
     "properties": [
@@ -118,8 +118,8 @@
                 "force"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": null
               }
             }
           ],
@@ -154,9 +154,13 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "automation": {
+        "areaReviewed": true
+      },
+      "manualWorkflow": "Repita a atividade uma vez por raio e selecione o alvo de cada ataque."
     },
     "itemacro": {
       "macro": {

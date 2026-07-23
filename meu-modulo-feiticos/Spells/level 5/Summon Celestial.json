@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito celestial vingador ou defensor por até 1 hora de concentração usando foco de 500 PO. Ele compartilha iniciativa, obedece comandos e usa o bloco da magia; a forma define ataques e proteção. Espaços superiores aumentam PV, dano e ataques.</p>",
+      "value": "<p>Você invoca um espírito celestial em espaço desocupado visto a até 27 metros, escolhendo Vingador ou Defensor. Ele usa o bloco da magia, compartilha sua iniciativa, age imediatamente após você e obedece a comandos verbais; sem comando, usa Esquivar.</p><p>A forma define ataques e habilidades, incluindo arco ou maça, Toque Curativo e os pontos de vida temporários do Defensor. CA, PV, bônus, quantidade de ataques e dano usam o círculo do espaço conforme o bloco. O espírito desaparece ao chegar a 0 PV ou quando a concentração termina.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "-CrSrA07vBh4sm1m": {
-        "type": "heal",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,62 +109,9 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "healing": {
-          "number": 2,
-          "denomination": 8,
-          "bonus": "@mod",
-          "types": [
-            "healing"
-          ],
-          "custom": {
-            "enabled": false,
-            "formula": ""
-          },
-          "scaling": {
-            "mode": "whole",
-            "number": 1
-          }
-        }
+        "save": null,
+        "damage": null,
+        "healing": null
       }
     }
   },
@@ -172,19 +119,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha Vingador/Defensor e crie o ator pelo bloco escalado; a conjuração não cura nem causa dano."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

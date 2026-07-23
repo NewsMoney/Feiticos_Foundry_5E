@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma fenda em forma de lâmina surge a até 18 metros por até 1 minuto de concentração. Ao conjurar e como ação bônus, realize dois ataques mágicos corpo a corpo, cada um causando 4d12 de energia. Resultados altos no d20 são críticos e o dano crítico é triplicado.</p>",
+      "value": "<p>Como ação bônus, você cria uma lâmina planar num espaço visível a até 18 metros, mantendo concentração por até 1 minuto. Ao conjurar e, depois, como ação bônus, você pode movê-la até 9 metros e realizar dois ataques corpo a corpo com magia contra criatura, objeto solto ou estrutura a 1,5 metro dela.</p><p>Cada acerto causa 4d12 de dano de energia. A lâmina atravessa e ignora barreiras, inclusive <em>Wall of Force</em>. Ela obtém crítico com 18–20 no d20; nesse crítico causa 12d12, em vez de simplesmente dobrar para 8d12. Execute a atividade de ataque duas vezes por acionamento.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "0lZb-AYbtkUqHXFH": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,58 +109,71 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        }
+      },
+      "blade-create": {
+        "type": "utility",
+        "damage": null,
+        "save": null,
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        }
+      },
+      "blade-attack": {
+        "type": "attack",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Ao conjurar ou após mover a lâmina até 30 ft; execute duas vezes"
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 4,
-              "denomination": 12,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 8,
-              "denomination": 12,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
+        "target": {
+          "affects": {
+            "type": "creatureOrObject",
+            "count": "1"
           },
-          "onSave": "none"
+          "override": true,
+          "prompt": true
         },
         "attack": {
           "ability": "",
           "bonus": "",
           "critical": {
-            "threshold": null
+            "threshold": 18
           },
           "flat": false,
           "type": {
             "value": "melee",
             "classification": "spell"
           }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": true,
+            "bonus": "8d12"
+          },
+          "onSave": "full"
         }
       }
     }
@@ -169,19 +182,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Mova até 30 ft e faça exatamente dois ataques; crítico em 18–20 totaliza 12d12. A criação não causa dano."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

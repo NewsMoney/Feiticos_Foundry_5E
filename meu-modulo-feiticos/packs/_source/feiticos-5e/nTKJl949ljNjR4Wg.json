@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>sua magia fortalece seus aliados com resistência e determinação. Escolha até três criaturas dentro do alcance. O máximo de pontos de vida de cada alvo e os pontos de vida atuais aumentam em 5 durante a duração.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 3º nível ou superior, os pontos de vida de um alvo aumentam em 5 adicionais para cada nível de espaço acima do 2º.</p>",
+      "value": "<p>Você fortalece até três criaturas dentro do alcance. Durante 8 horas, o máximo de pontos de vida e os pontos de vida atuais de cada alvo aumentam em 5.</p><p>Esse aumento não é uma cura comum: ele eleva simultaneamente o máximo e o valor atual, e desaparece quando a magia termina.</p><p><strong>Em Círculos Superiores.</strong> Ambos os aumentos crescem em 5 para cada círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "3",
         "type": "creature",
         "special": ""
       }
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aumente PV atuais e máximos de até três alvos; não trate como cura limitada pelo máximo anterior."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

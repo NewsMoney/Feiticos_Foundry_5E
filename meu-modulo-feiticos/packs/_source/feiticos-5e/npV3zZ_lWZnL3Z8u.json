@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Um campo brilhante aparece e envolve uma criatura de sua escolha dentro do alcance, concedendo-lhe um bônus de +2 na CA enquanto durar.</p>",
+      "value": "<p>Um campo cintilante surge ao redor de uma criatura à sua escolha dentro de 60 pés, protegendo-a enquanto a magia permanecer ativa.</p><p>Durante até 10 minutos, enquanto você mantiver a concentração, o alvo recebe <strong>+2 de bônus na Classe de Armadura</strong>. A magia não exige ataque ou salvaguarda e não recebe benefício adicional quando conjurada com um espaço de nível superior.</p>",
       "chat": ""
     },
     "source": {
@@ -129,7 +129,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

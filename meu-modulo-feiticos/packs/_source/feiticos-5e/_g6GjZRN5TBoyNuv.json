@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 1 minuto de concentração, você recebe resistência a ácido, elétrico, fogo, frio e trovejante. Quando sofre um desses danos, pode usar reação para tornar-se imune àquele tipo até o fim do próximo turno, encerrando a magia.</p>",
+      "value": "<p>Por até 1 minuto de concentração, você recebe resistência a ácido, elétrico, fogo, frio e trovejante.</p><p>Quando sofre um desses tipos de dano, pode usar sua reação para tornar-se imune àquele tipo, inclusive contra o dano que disparou a reação, e permanecer imune até o fim do seu próximo turno. Então a magia termina.</p>",
       "chat": ""
     },
     "source": {
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique resistências; a reação troca uma delas por imunidade, inclui o gatilho e encerra a magia após o próximo turno."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

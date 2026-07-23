@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Dancing%20lights.png",
   "system": {
     "description": {
-      "value": "<p>Você cria até quatro luzes em pontos a até 36 metros por até 1 minuto de concentração. Como ação bônus, pode movê-las até 18 metros mantendo-as próximas entre si, ou reuni-las numa forma humanoide luminosa.</p>",
+      "value": "<p>Você cria até quatro luzes do tamanho de tochas dentro do alcance, fazendo-as parecer tochas, lanternas ou orbes luminosos. Também pode combinar as quatro numa forma humanoide vagamente brilhante de tamanho Médio. Cada luz emite penumbra em um raio de 3 metros.</p><p>Como ação bônus no seu turno, você pode mover as luzes até 18 metros para novos pontos dentro do alcance. Uma luz deve permanecer a até 6 metros de outra luz criada pela magia e desaparece se exceder o alcance. A magia dura até 1 minuto e exige concentração.</p>",
       "chat": ""
     },
     "source": {
@@ -120,9 +120,13 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "automation": {
+        "areaReviewed": true
+      },
+      "manualWorkflow": "A macro cria quatro luzes; mova-as como ação bônus e mantenha a separação máxima de 6 metros."
     },
     "itemacro": {
       "macro": {

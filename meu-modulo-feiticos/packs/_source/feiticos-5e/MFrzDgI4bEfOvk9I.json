@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Nomeie uma criatura conhecida ou escolha uma visível a até 36 metros. Ela faz resistência de Inteligência, sofrendo 7d6 psíquico e ficando incapacitada até seu próximo turno em falha, ou metade sem condição em sucesso. Nomear permite atingir mesmo sem visão, desde que esteja no alcance.</p>",
+      "value": "<p>Escolha uma criatura que possa ver a até 36 metros ou pronuncie o nome de uma criatura conhecida. Um alvo nomeado pode ser atingido mesmo sem visão, desde que esteja dentro do alcance; se não estiver, o espaço não é gasto.</p><p>O alvo realiza uma salvaguarda de Inteligência. Em uma falha, sofre 7d6 de dano psíquico e fica incapacitado até o início de seu próximo turno. Em um sucesso, sofre metade do dano e não fica incapacitado.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d6 para cada círculo acima do 4º.</p>",
       "chat": ""
     },
     "source": {
@@ -160,10 +160,11 @@
         "needsReview": true,
         "conditions": [
           "incapacitated"
-        ]
+        ],
+        "manual": "Aplique incapacitado somente na falha. Alvo nomeado dispensa visão, mas deve estar no alcance; fora dele, não gaste o espaço."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

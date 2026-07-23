@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito feérico por até 1 hora de concentração usando um foco de 300 PO. Escolha humor travesso, alegre ou furioso, que altera sua ação bônus especial. Ele compartilha sua iniciativa, obedece comandos e usa o bloco da magia; espaços superiores melhoram PV e ataques.</p>",
+      "value": "<p>Você invoca um espírito feérico em espaço desocupado visível a até 27 metros, usando o bloco Fey Spirit e o nível do espaço. Escolha Fuming, Mirthful ou Tricksy; a escolha altera Fey Step. Exige componente de 300 PO e concentração por até 1 hora.</p><p>O espírito é amistoso, age imediatamente após você, obedece seus comandos verbais; sem comando por ação bônus, realiza Dodge e usa movimento para evitar perigo. Desaparece a 0 PV ou ao terminar. A conjuração não executa ataques, saves ou dano da ficha.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "AfQRCqgk4QV0lRYn": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,55 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "piercing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -165,9 +116,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
@@ -177,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha humor, invoque Fey Spirit escalado pelo slot e gerencie comando/turno separado."
     },
     "itemacro": {
       "macro": {

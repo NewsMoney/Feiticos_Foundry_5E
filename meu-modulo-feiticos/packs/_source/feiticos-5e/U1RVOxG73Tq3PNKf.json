@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "1 + @item.level - 4",
         "type": "creature",
         "special": ""
       }
@@ -137,10 +137,11 @@
         "needsReview": true,
         "conditions": [
           "incapacitated"
-        ]
+        ],
+        "manual": "Em falha aplique banido/incapacitado. Se o alvo for extraplanar e a concentração completar 1 minuto, ele não retorna. Adicione um alvo por círculo acima do 4º."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

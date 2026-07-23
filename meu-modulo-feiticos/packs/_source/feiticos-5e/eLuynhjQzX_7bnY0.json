@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma linha gravitacional de 30 metros parte de você. Criaturas nela fazem resistência de Constituição, sofrendo 8d8 de energia ou metade. Criaturas próximas à linha também são puxadas em direção a ela. O dano aumenta em 1d8 por círculo.</p>",
+      "value": "<p>Uma fissura de gravidade parte de você em uma linha de 30 metros de comprimento e 1,5 metro de largura. Cada criatura na linha faz salvaguarda de Constituição, sofrendo 8d8 de dano de força em uma falha ou metade em um sucesso.</p><p>Além disso, cada criatura a até 3 metros da linha, mas fora dela, faz uma salvaguarda de Constituição separada. Em uma falha, é puxada para um espaço desocupado na linha; esse efeito não causa dano.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d8 por círculo acima do 6º.</p>",
       "chat": ""
     },
     "source": {
@@ -34,12 +34,13 @@
         "contiguous": false,
         "units": "ft",
         "type": "line",
-        "size": 100
+        "size": 100,
+        "width": 5
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -90,7 +91,8 @@
             "contiguous": false,
             "units": "ft",
             "type": "line",
-            "size": 100
+            "size": 100,
+            "width": 5
           },
           "affects": {
             "choice": false
@@ -158,10 +160,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Resolva dano na linha e, separadamente, saves sem dano para criaturas a até 10 ft dela."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

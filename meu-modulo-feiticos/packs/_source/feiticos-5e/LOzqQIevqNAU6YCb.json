@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria três raios de fogo e os lança em alvos dentro do alcance. Você pode arremessá-los contra um alvo ou vários.</p><p>Faça um ataque mágico à distância para cada raio. Se acertar, o alvo sofre 2d6 de dano de fogo.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 3º nível ou superior, você cria um raio adicional para cada nível de espaço acima do 2º.</p>",
+      "value": "<p>Você cria três raios de fogo e faz um ataque mágico à distância separado para cada raio. Pode dirigi-los ao mesmo alvo ou a alvos diferentes. Cada raio que acerta causa 2d6 de dano de fogo.</p><p><strong>Em Círculos Superiores.</strong> Você cria um raio adicional para cada círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Faça três ataques separados no 2º círculo; acrescente um ataque por círculo superior."
         },
         "duration": {
           "value": null,
@@ -161,10 +161,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Repita a atividade três vezes no 2º círculo e uma vez adicional por círculo superior; escolha o alvo de cada raio separadamente."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

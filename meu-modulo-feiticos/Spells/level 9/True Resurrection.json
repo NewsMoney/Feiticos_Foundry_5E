@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura que não está morta há mais de 200 anos e que morreu por qualquer motivo, exceto velhice. Se a alma da criatura estiver livre e disposta, a criatura volta à vida com todos os seus pontos de vida.</p><p>Esta magia fecha todos os ferimentos, neutraliza qualquer veneno, cura todas as doenças e elimina quaisquer maldições que afetassem a criatura quando ela morresse. A magia substitui órgãos e membros danificados ou ausentes. Se a criatura era morta-viva, ela é restaurada à sua forma não-morta.</p><p>A magia pode até fornecer um novo corpo se o original não existir mais, caso em que você deve falar o nome da criatura. A criatura então aparece em um espaço desocupado, à sua escolha, a até 3 metros de você.</p>",
+      "value": "<p>Após 1 hora e consumindo água benta e diamantes de ao menos 25.000 PO, você toca uma criatura morta há no máximo 200 anos que não tenha morrido de velhice. Se a alma estiver livre e disposta, ela retorna com todos os pontos de vida.</p><p>A magia fecha ferimentos, neutraliza venenos, cura doenças e remove maldições que afetavam o alvo ao morrer; substitui órgãos e membros. Se o corpo não existir, cria um novo e a criatura surge em espaço desocupado a até 3 metros. Valide tempo, causa da morte e vontade da alma antes de restaurar.</p>",
       "chat": ""
     },
     "source": {
@@ -124,10 +124,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Confirme morte ≤200 anos, não por velhice e alma livre/disposta; consuma 25.000 PO, restaure ao máximo e limpe efeitos."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

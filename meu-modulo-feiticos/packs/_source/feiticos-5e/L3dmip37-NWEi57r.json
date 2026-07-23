@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Mensage.png",
   "system": {
     "description": {
-      "value": "<p>Você aponta para uma criatura a até 36 metros e sussurra uma mensagem que somente ela ouve; ela pode responder num sussurro audível apenas para você. A magia atravessa barreiras limitadas, mas pode ser bloqueada por materiais espessos.</p>",
+      "value": "<p>Você aponta para uma criatura dentro do alcance e sussurra uma mensagem. O alvo, e somente ele, ouve a mensagem e pode responder num sussurro que somente você ouve. Você pode conjurar através de objetos sólidos se conhecer o alvo e souber que ele está além da barreira.</p><p>Silêncio mágico, 30 centímetros de pedra, 2,5 centímetros de metal comum, uma folha fina de chumbo ou 90 centímetros de madeira bloqueiam a magia. Ela não precisa seguir uma linha reta e pode contornar cantos e passar por aberturas.</p>",
       "chat": ""
     },
     "source": {
@@ -120,7 +120,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

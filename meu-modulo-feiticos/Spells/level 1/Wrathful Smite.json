@@ -58,7 +58,7 @@
     },
     "activities": {
       "RAyyM21qlKU075I0": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Não role save/dano ao conjurar. No próximo acerto corpo a corpo, cause +1d6 psíquico; então o alvo faz SAB e fica frightened na falha. Para encerrar depois, ele usa ação e faz teste de SAB contra a CD, não salvaguarda."
         },
         "duration": {
           "value": 1,
@@ -108,39 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "psychic"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,9 +116,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },

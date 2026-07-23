@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma aura de 9 metros permanece ao seu redor por até 1 minuto de concentração. Como ação bônus em cada turno, você faz uma criatura na aura, inclusive você, recuperar 2d6 pontos de vida.</p>",
+      "value": "<p>Energia curativa irradia de você numa aura de 9 metros. A aura move-se com você e dura até 1 minuto, exigindo concentração. Quando conjura a magia, ela não restaura pontos de vida.</p><p>Enquanto a magia durar, você pode usar uma ação bônus em cada um de seus turnos para fazer uma criatura na aura, incluindo você, recuperar 2d6 pontos de vida. Escolha apenas uma criatura a cada uso e verifique se ela permanece na aura.</p>",
       "chat": ""
     },
     "source": {
@@ -25,21 +25,19 @@
       "concentration": true
     },
     "range": {
-      "value": null,
-      "units": "self",
-      "special": "Self (30-foot radius)"
+      "value": null
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "circle",
-        "size": 30
+        "type": "",
+        "size": null
       },
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "self",
+        "type": "creature",
         "special": ""
       }
     },
@@ -59,7 +57,7 @@
     },
     "activities": {
       "Nilt_k3v7OMLZBcJ": {
-        "type": "heal",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "circle",
-            "size": 30
+            "type": "",
+            "size": null
           },
           "affects": {
             "choice": false
@@ -109,22 +107,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "healing": {
-          "number": 2,
-          "denomination": 6,
-          "bonus": "@mod",
-          "types": [
-            "healing"
-          ],
-          "custom": {
-            "enabled": false,
-            "formula": ""
-          },
-          "scaling": {
-            "mode": "whole",
-            "number": 1
-          }
         }
       }
     }
@@ -137,7 +119,7 @@
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
-        "targeted": false
+        "targeted": true
       },
       "automation": {
         "generated": true,
@@ -145,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "A conjuração apenas cria a aura. Use uma ação bônus posterior para curar 2d6 de uma criatura na aura."
     },
     "itemacro": {
       "macro": {

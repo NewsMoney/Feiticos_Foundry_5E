@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma arma tocada emite luz e causa 2d8 radiante adicional por até 1 hora de concentração. Como ação bônus, você pode encerrar a magia numa explosão de 9 metros: inimigos fazem resistência de Constituição, sofrendo 4d8 radiante e ficando cegos em falha, ou metade sem cegueira em sucesso.</p>",
+      "value": "<p>Você toca uma arma e a imbui de poder sagrado por até 1 hora de concentração. Enquanto durar, ataques com ela causam 2d8 de dano radiante adicional e ela emite luz plena por 9 metros e penumbra por mais 9.</p><p>Como ação bônus, você pode encerrar a magia para emitir uma explosão. Criaturas escolhidas a 9 metros fazem salvaguarda de Constituição: 4d8 radiante e cegueira por 1 minuto na falha, metade e sem cegueira no sucesso. Uma criatura cega repete a salvaguarda no fim de cada turno.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "lCoATbe7PJGvi7lN": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -110,55 +110,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 4,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -166,19 +119,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Não role dano ao conjurar. Adicione 2d8 aos acertos; a detonação bônus usa CON, 4d8/half e save final contra Cego."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

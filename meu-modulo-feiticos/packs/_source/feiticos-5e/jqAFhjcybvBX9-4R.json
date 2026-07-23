@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você pronuncia uma palavra de poder que pode obrigar uma criatura que você possa ver dentro do alcance a morrer instantaneamente.  Se a criatura que você escolher tiver 100 pontos de vida ou menos, ela morre. Caso contrário, a magia não terá efeito.</p>",
+      "value": "<p>Você pronuncia uma palavra de poder contra uma criatura visível a até 18 metros. Se ela tiver 100 pontos de vida atuais ou menos, morre imediatamente, sem salvaguarda. Se tiver 101 ou mais, a magia não produz efeito.</p><p>Isso não causa dano; resistência e imunidade a dano não interferem. Verifique o limiar de PV e aplique morte com confirmação do Mestre.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Cheque PV atuais: até 100 morre sem save/dano; acima de 100 nada acontece."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

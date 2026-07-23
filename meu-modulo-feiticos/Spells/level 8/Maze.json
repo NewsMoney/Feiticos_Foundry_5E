@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você bane uma criatura que você pode ver dentro do alcance para um semiplano labiríntico. O alvo permanece lá durante ou até escapar do labirinto.</p><p>O alvo pode usar sua ação para tentar escapar. Quando isso acontece, ele faz um teste de Inteligência CD 20. Se tiver sucesso, ele escapa e a magia termina (um minotauro ou demônio goristro obtém sucesso automaticamente).</p><p>Quando a magia termina, o alvo reaparece no espaço que deixou ou, se esse espaço estiver ocupado, no espaço desocupado mais próximo.</p>",
+      "value": "<p>Sem salvaguarda inicial, você bane uma criatura visível a até 18 metros para um semiplano labiríntico por até 10 minutos de concentração. Ela permanece lá até escapar ou a magia terminar.</p><p>O alvo pode usar sua ação para realizar um <strong>teste de Inteligência CD 20</strong>, não uma salvaguarda; em sucesso escapa. Minotauros e demônios goristro têm sucesso automático. Ao retornar, surge no espaço anterior ou, se ocupado, no espaço desocupado mais próximo.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Remova o alvo sem save; em ação posterior role check de INT CD 20 e retorne-o ao escapar ou ao fim."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um espírito sombrio de fúria, desespero ou medo por até 1 hora de concentração usando um foco de 300 PO. Ele compartilha sua iniciativa, obedece comandos e possui aura e poderes conforme a forma. Espaços superiores aumentam PV e número de ataques.</p>",
+      "value": "<p>Você invoca um espírito sombrio em espaço desocupado visível a até 27 metros, usando Shadow Spirit escalado pelo nível do espaço. Escolha Fury, Despair ou Fear; a escolha altera suas características. Exige componente de 300 PO e concentração por até 1 hora.</p><p>É amistoso, age imediatamente após você e obedece comandos verbais; sem comando por ação bônus, usa Dodge e move-se para evitar perigo. Desaparece a 0 PV ou ao término. Ataques, saves e condições pertencem à ficha invocada, não à atividade de conjuração.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "zN6TawQg53te7PC_": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,39 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 12,
-              "bonus": "",
-              "types": [
-                "cold"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,9 +116,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.ray_of_frost.blue",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.frost.blue"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
@@ -161,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha emoção, invoque Shadow Spirit escalado pelo slot e use a ficha para seus efeitos."
     },
     "itemacro": {
       "macro": {

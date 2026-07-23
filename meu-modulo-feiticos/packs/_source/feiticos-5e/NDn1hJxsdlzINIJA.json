@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você fala uma palavra de poder que pode dominar a mente de uma criatura que você possa ver dentro do alcance, deixando-a pasma. Se o alvo tiver 150 pontos de vida ou menos, ele fica atordoado. Caso contrário, a magia não terá efeito.</p><p>O alvo atordoado deve fazer um teste de resistência de Constituição no final de cada um de seus turnos.  Com um teste de resistência bem-sucedido, esse efeito impressionante termina.</p>",
+      "value": "<p>Você pronuncia uma palavra de poder contra uma criatura visível a até 18 metros. Se ela tiver 150 pontos de vida ou menos, fica atordoada sem salvaguarda inicial. Se tiver mais de 150 PV, a magia não produz efeito.</p><p>Uma criatura atordoada por esta magia realiza salvaguarda de Constituição no fim de cada um dos próprios turnos; em sucesso, a condição termina. A conjuração deve apenas verificar PV e aplicar a condição, nunca rolar CON imediatamente.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "hHL6XoEXw0pEpr8r": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,6 +109,25 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "power-word-stun-end-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo atordoado"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          },
+          "override": true,
+          "prompt": true
+        },
         "save": {
           "ability": [
             "con"
@@ -134,28 +153,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "stunned"
-        ]
+        "conditions": [],
+        "manual": "Cheque 150 PV e aplique Atordoado sem save; use CON somente no fim dos turnos seguintes."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "stunned",
-        "ids": [
-          "stunned"
-        ],
-        "label": "stunned",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": null,
-          "units": "inst",
-          "concentration": false
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

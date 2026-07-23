@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura voluntária e aguça sua prontidão durante 8 horas. Enquanto a magia durar, o alvo adiciona 1d8 às próprias jogadas de iniciativa.</p>",
+      "value": "<p>Você toca uma criatura voluntária e aguça magicamente a capacidade dela de reagir antes que o perigo se manifeste. Pela duração de 8 horas, o alvo pode rolar <strong>1d8</strong> e somar o resultado às suas jogadas de iniciativa.</p><p>A magia não exige concentração, não concede bônus a outros testes de Destreza e não possui salvaguarda. Conjurá-la com um espaço de nível superior não aumenta o dado, a duração nem o número de alvos.</p>",
       "chat": ""
     },
     "source": {
@@ -127,7 +127,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

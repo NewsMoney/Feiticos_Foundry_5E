@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você ou uma criatura que você toca fica invisível até o fim da magia. Qualquer coisa que o alvo esteja vestindo ou carregando ficará invisível enquanto estiver com ele.</p>",
+      "value": "<p>Você ou uma criatura que tocar torna-se invisível por até 1 minuto de concentração. Tudo que o alvo estiver vestindo ou carregando também fica invisível enquanto permanecer com ele.</p><p>Diferentemente de Invisibilidade, esta magia não termina quando o alvo ataca, causa dano ou conjura outra magia. A condição termina apenas quando a duração ou a concentração termina.</p>",
       "chat": ""
     },
     "source": {
@@ -128,10 +128,11 @@
         "needsReview": true,
         "conditions": [
           "invisible"
-        ]
+        ],
+        "manual": "Aplique Invisível por concentração; não remova ao atacar ou conjurar."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

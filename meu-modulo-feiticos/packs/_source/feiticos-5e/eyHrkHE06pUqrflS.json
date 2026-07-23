@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Duas criaturas a até 9 metros fazem resistência de Constituição. Enquanto você concentrar, por até 1 hora, quando uma delas sofre dano a outra sofre a mesma quantidade. Se ambas passarem ou ficarem separadas além do alcance permitido, o vínculo termina.</p>",
+      "value": "<p>Duas criaturas que possa ver a até 18 metros fazem salvaguarda de Constituição, com desvantagem se estiverem a até 9 metros uma da outra; qualquer uma pode optar por falhar. Se qualquer uma passar, a magia não produz efeito. Se ambas falharem, ficam ligadas por até 1 hora de concentração, independentemente da distância posterior.</p><p>Dano causado a uma é causado também à outra; PV restaurados a uma são restaurados na mesma quantidade à outra. Se uma cair a 0 PV ou o efeito terminar em uma, termina em ambas. O fio de platina de 250 PO é consumido.</p><p><strong>Procedimento:</strong> selecione exatamente dois alvos e só crie o vínculo se ambos falharem; dano e cura são riders recíprocos, não dano da conjuração.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "2",
         "type": "creature",
         "special": ""
       }
@@ -135,10 +135,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "CON nos 2 alvos, desvantagem se separados ≤30 ft; qualquer sucesso cancela. Distância posterior não encerra; replique dano e cura."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

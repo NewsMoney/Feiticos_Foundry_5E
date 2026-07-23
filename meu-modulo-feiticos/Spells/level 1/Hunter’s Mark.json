@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Marque uma criatura visível. Esta atividade não rola dano: o 1d6 adicional ocorre somente quando você acerta o alvo marcado com um ataque de arma."
         },
         "duration": {
           "value": 1,
@@ -108,6 +108,32 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        }
+      },
+      "huntersMarkDamage": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Após acertar o alvo marcado com um ataque de arma"
+        },
+        "description": {
+          "chatFlavor": "Dano adicional de Hunter’s Mark. Não use ao conjurar. Se o alvo chegar a 0 PV, a marca pode ser transferida com ação bônus em turno posterior."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "damage": {
+          "parts": [],
+          "critical": {
+            "allow": true
+          },
+          "onSave": "none"
         }
       }
     }

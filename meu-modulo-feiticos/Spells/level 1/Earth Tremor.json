@@ -24,22 +24,22 @@
       "concentration": false
     },
     "range": {
-      "value": 10,
-      "units": "ft",
-      "special": ""
+      "value": null,
+      "units": "self",
+      "special": "Self (10-foot radius)"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
-        "special": ""
+        "special": "Todas as outras criaturas na área; exclui o conjurador"
       }
     },
     "properties": [
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada outra criatura no raio de 10 pés faz salvaguarda de Destreza. Em falha sofre o dano e cai prone; no sucesso não sofre dano nem condição. Terra ou pedra solta na área vira terreno difícil."
         },
         "duration": {
           "value": null,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
@@ -152,7 +152,7 @@
         "fallbacks": [
           "jb2a.impact.ground_crack.01.brown"
         ],
-        "targeted": true
+        "targeted": false
       },
       "automation": {
         "generated": true,
@@ -172,7 +172,7 @@
         ],
         "label": "prone",
         "core": true,
-        "target": "targets",
+        "target": "self",
         "duration": {
           "value": null,
           "units": "inst",

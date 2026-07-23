@@ -57,7 +57,7 @@
     },
     "activities": {
       "fmHtgB2WA__sMxc6": {
-        "type": "save",
+        "type": "attack",
         "activation": {
           "type": "action",
           "value": 1,
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Faça primeiro o ataque mágico à distância. Somente depois de um acerto execute a atividade Salvaguarda contra Envenenamento."
         },
         "duration": {
           "value": null,
@@ -128,9 +128,40 @@
             }
           ],
           "critical": {
-            "allow": false
+            "allow": true
           },
           "onSave": "none"
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        }
+      },
+      "rayOfSicknessSave": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Somente após o raio acertar"
+        },
+        "description": {
+          "chatFlavor": "O alvo atingido faz salvaguarda de Constituição. Em falha, fica envenenado até o fim do próximo turno do conjurador; não há dano adicional."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
         },
         "save": {
           "ability": [
@@ -140,7 +171,15 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        }
+        },
+        "damage": {
+          "parts": [],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        },
+        "effects": []
       }
     }
   },
@@ -157,7 +196,10 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [
+          "poisoned"
+        ],
+        "manual": "Aplicar poisoned apenas a quem falhar na atividade rayOfSicknessSave."
       },
       "description": {
         "quality": "reviewed-pt-br",

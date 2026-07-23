@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>O próximo ataque corpo a corpo com arma que acertar durante sua concentração causa 3d8 de dano radiante adicional. O alvo faz resistência de Constituição; em falha fica cego, repetindo a resistência ao fim de cada turno para encerrar o efeito.</p>",
+      "value": "<p>Até 1 minuto, exigindo concentração, a magia aguarda seu próximo acerto com um ataque corpo a corpo com arma. Quando esse acerto ocorre, a arma brilha e causa 3d8 de dano radiante adicional; então o alvo realiza uma salvaguarda de Constituição. Em uma falha, fica cego enquanto a magia durar.</p><p>No fim de cada turno, a criatura cega repete a salvaguarda, encerrando a condição em um sucesso. A magia termina após disparar no acerto. Não role ataque, dano ou salvaguarda ao conjurar.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "QDlbHikgdXUDLunN": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -108,39 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 3,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "radiant"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,9 +116,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.guiding_bolt.01.yellow",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },
@@ -161,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Arme o smite; após o próximo acerto corpo a corpo aplique +3d8, faça CON e repita CON no fim dos turnos."
     },
     "itemacro": {
       "macro": {

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você marca um objeto de até 4,5 quilos e liga-o a uma safira de 1.000 PO. Depois, esmagar a gema convoca o objeto à sua mão se possível; se outra criatura o possuir, você descobre quem e onde está. Pode ser ritual.</p>",
+      "value": "<p>Você toca um objeto de até 4,5 kg e o vincula a uma safira de 1.000 PO, deixando em ambos uma marca invisível. Mais tarde, usando uma ação para esmagar a safira e dizer o nome do objeto, você o convoca instantaneamente à sua mão, mesmo através de planos.</p><p>Se outra criatura estiver segurando ou carregando o objeto, ele não é transportado; em vez disso, você descobre a identidade do portador e sua localização aproximada. Dissipar Magia lançado com sucesso sobre a safira encerra o vínculo. A magia pode ser lançada como ritual.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "object",
         "special": ""
       }
     },
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Marque objeto e safira; a convocação e a revelação de portador são atividades narrativas posteriores."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Faça um ataque mágico à distância contra uma criatura a até 27 metros. Em acerto, ela sofre 4d4 de ácido imediatamente e 2d4 ao fim do próximo turno; em erro, sofre metade do dano inicial e nenhum posterior. Cada círculo superior acrescenta 1d4 a ambos os danos.</p>",
+      "value": "<p>Faça um ataque mágico à distância contra uma criatura no alcance. Em um acerto, ela sofre 4d4 de dano ácido imediatamente e 2d4 adicionais no fim do próximo turno dela.</p><p>Em um erro, o alvo sofre apenas metade do dano inicial — 2d4 — e nenhum dano posterior.</p><p><strong>Em Círculos Superiores.</strong> Tanto o dano inicial quanto o posterior aumentam em 1d4 por círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -126,7 +126,80 @@
                 "mode": "whole",
                 "number": 1
               }
-            },
+            }
+          ],
+          "critical": {
+            "allow": true
+          },
+          "onSave": "full"
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        }
+      },
+      "acid-arrow-later": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim do próximo turno do alvo, somente se o ataque acertou"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Dano tardio; não use se o ataque inicial errou."
+        },
+        "duration": {
+          "value": 1,
+          "units": "round",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
             {
               "custom": {
                 "enabled": false,
@@ -145,21 +218,9 @@
             }
           ],
           "critical": {
-            "allow": true
+            "allow": false
           },
-          "onSave": "none"
-        },
-        "attack": {
-          "ability": "",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "ranged",
-            "classification": "spell"
-          }
+          "onSave": "full"
         }
       }
     }
@@ -177,10 +238,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "No erro, aplique manualmente 2d4 + escalonamento apenas uma vez. No acerto, use Dano Tardio no fim do próximo turno."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

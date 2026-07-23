@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de energia envolve uma criatura ou objeto Grande ou menor a até 9 metros. Um alvo involuntário faz resistência de Destreza. Nada atravessa a barreira, que é imune a dano, embora quem esteja dentro possa rolar a esfera. Exige concentração por até 1 minuto.</p>",
+      "value": "<p>Uma esfera de força envolve uma criatura ou objeto Grande ou menor a até 9 metros. Um alvo voluntário é envolvido sem salvaguarda; um alvo involuntário faz uma salvaguarda de Destreza e, em sucesso, evita a esfera.</p><p>Nada atravessa a barreira. O alvo fica impedido e totalmente protegido de efeitos originados fora, enquanto efeitos internos não alcançam o exterior. A esfera é imune a dano, mas pode ser removida por Desintegrar.</p><p>Uma criatura dentro pode usar uma ação para rolar a esfera até metade de seu deslocamento. Você pode dispensá-la como ação bônus.</p>",
       "chat": ""
     },
     "source": {
@@ -134,10 +134,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Alvo voluntário não salva; no involuntário, DEX nega. Na falha aplique impedido/barreira e permita rolar por ação ou dispensar por bônus."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>O próximo ataque à distância com arma durante sua concentração transforma a munição em raio. O alvo sofre 4d8 elétrico em acerto ou metade em erro; criaturas a até 3 metros fazem resistência de Destreza contra 2d8 elétrico, recebendo metade em sucesso. Ambos os danos aumentam por círculo.</p>",
+      "value": "<p>Por até 1 minuto de concentração, a magia aguarda seu próximo ataque à distância com arma. A munição ou arma transforma-se em relâmpago. Em um acerto, o alvo sofre 4d8 elétrico em vez do dano normal; em um erro, sofre metade.</p><p>Acertando ou errando, cada criatura a até 3 metros do alvo realiza salvaguarda de Destreza, sofrendo 2d8 elétrico na falha ou metade no sucesso. A magia termina após o ataque.</p><p><strong>Em Círculos Superiores.</strong> Ambos os danos aumentam em 1d8 por círculo acima do 3º.</p><p>Não role dano ou save ao conjurar; resolva ataque, dano principal e explosão nessa ordem.</p>",
       "chat": ""
     },
     "source": {
@@ -59,7 +59,7 @@
     },
     "activities": {
       "80LdZfQhNiHhVVzX": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -109,55 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 4,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "lightning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "lightning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -166,9 +117,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.chain_lightning.primary.blue",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.static_electricity.03.blue"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
@@ -178,9 +129,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Arme a magia; no próximo ataque aplique 4d8/2 no alvo e área de 10 ft com DEX para 2d8/metade."
     },
     "itemacro": {
       "macro": {

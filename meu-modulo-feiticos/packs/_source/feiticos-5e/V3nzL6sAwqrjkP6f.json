@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia cria uma duplicata inerte de uma criatura viva como proteção contra a morte. Este clone se forma dentro de um recipiente lacrado e atinge seu tamanho máximo e maturidade após 120 dias; você também pode optar por fazer com que o clone seja uma versão mais jovem da mesma criatura. Ele permanece inerte e dura indefinidamente, enquanto seu recipiente permanecer intacto.</p><p>A qualquer momento após o clone amadurecer, se a criatura original morrer, sua alma será transferida para o clone, desde que a alma esteja livre e disposta a retornar. O clone é fisicamente idêntico ao original e tem a mesma personalidade, memórias e habilidades, mas nenhum equipamento do original. Os restos físicos da criatura original, se ainda existirem, tornam-se inertes e não podem mais ser restaurados à vida, uma vez que a alma da criatura está em outro lugar.</p>",
+      "value": "<p>Durante 1 hora, você deposita ao menos 2,5 cm³ de carne de uma criatura viva, consumidos junto com um diamante de 1.000 PO, num recipiente selável de ao menos 2.000 PO. Uma duplicata inerte cresce ali e atinge tamanho e maturidade após 120 dias; você pode escolher uma versão mais jovem. Ela permanece inerte indefinidamente enquanto o recipiente não for perturbado.</p><p>Depois de madura, se a criatura original morrer e sua alma estiver livre e disposta, a alma transfere-se ao clone. Ele é fisicamente idêntico, com personalidade, memórias e capacidades do original, mas sem equipamento. Os restos físicos originais tornam-se inertes e não podem voltar à vida enquanto a alma estiver no clone.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Registre componentes consumidos, 120 dias de maturação e transferência futura da alma."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

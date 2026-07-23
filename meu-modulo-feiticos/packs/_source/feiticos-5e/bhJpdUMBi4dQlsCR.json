@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você se teleporta até 27 metros para um espaço visível, podendo levar uma criatura voluntária do seu tamanho ou menor e equipamentos suportáveis. Um estrondo no ponto de partida força criaturas a até 3 metros a resistência de Constituição; elas sofrem 3d10 trovejante ou metade. O dano aumenta por círculo.</p>",
+      "value": "<p>Você se teleporta para um espaço desocupado que possa ver a até 27 metros. Pode levar uma criatura voluntária de seu tamanho ou menor que esteja a 1,5 metro, desde que haja espaço adjacente no destino; ela leva equipamento até a capacidade de carga.</p><p>Imediatamente após você desaparecer, cada criatura a até 3 metros do espaço de origem realiza salvaguarda de Constituição, sofrendo 3d10 de dano trovejante na falha ou metade no sucesso. O estrondo é audível a 90 metros.</p><p><strong>Em Círculos Superiores.</strong> +1d10 por círculo acima do 3º. Posicione a área na origem, não no destino.</p>",
       "chat": ""
     },
     "source": {
@@ -27,18 +27,18 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "Teleporte; explosão de raio 10 ft no ponto de origem"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 10
           },
           "affects": {
             "choice": false
@@ -161,9 +161,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Teleporte primeiro; aplique a área de 10 ft no ponto de origem."
     },
     "itemacro": {
       "macro": {

@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Shillelagh.png",
   "system": {
     "description": {
-      "value": "<p>Um bordão ou clava torna-se mágico por 1 minuto. Você usa seu atributo de conjuração nos ataques e danos, e o dado da arma vira d8. A magia termina se você a conjurar novamente ou soltar a arma.</p>",
+      "value": "<p>O bordão ou clava que você segura é imbuído com o poder da natureza por 1 minuto. Durante esse período, você pode usar sua habilidade de conjuração, em vez de Força, nas jogadas de ataque e dano corpo a corpo com a arma; o dado de dano torna-se d8 e a arma é considerada mágica para superar resistência e imunidade.</p><p>A magia termina se você a conjurar novamente ou soltar a arma. A conjuração apenas encanta a arma: ela não realiza um ataque nem causa dano imediato.</p>",
       "chat": ""
     },
     "source": {
@@ -120,7 +120,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

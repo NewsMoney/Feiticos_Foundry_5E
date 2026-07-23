@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Blade%20Ward.png",
   "system": {
     "description": {
-      "value": "<p>Você traça um selo de proteção e, até o fim do seu próximo turno, recebe resistência a dano de concussão, cortante e perfurante causado por ataques com armas.</p>",
+      "value": "<p>Você estende a mão e traça no ar um símbolo de proteção. Até o fim do seu próximo turno, você tem resistência a dano de concussão, cortante e perfurante causado por ataques com armas.</p><p>A resistência não se aplica a dano desses tipos que não seja causado por um ataque com arma. O efeito termina automaticamente no fim do seu próximo turno.</p>",
       "chat": ""
     },
     "source": {
@@ -116,7 +116,7 @@
         "file": "jb2a.shield.01.intro.blue"
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Adagas giratórias ocupam um cubo de 1,5 metro a até 18 metros. Uma criatura sofre 4d4 de dano cortante ao entrar na área pela primeira vez no turno ou começar o turno nela. Exige concentração por até 1 minuto; o dano aumenta em 2d4 a cada dois círculos acima do 2º.</p>",
+      "value": "<p>Você preenche um cubo de 1,5 metro no alcance com adagas giratórias por até 1 minuto de concentração.</p><p>Uma criatura sofre 4d4 de dano cortante, sem salvaguarda, quando entra na área pela primeira vez em um turno ou quando começa o turno nela. A conjuração, por si só, não causa dano fora desses gatilhos.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 2d4 para cada dois círculos acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "5-foot cube"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 5
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -109,6 +109,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "zone-damage": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Ao entrar pela primeira vez no turno ou começar o turno na área"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Dano recorrente da zona; não há salvaguarda."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "cube",
+            "size": 5,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -124,14 +179,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 2
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
         }
       }
     }
@@ -140,19 +195,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.slashing_attack.01.white",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Use Dano da Zona somente quando uma criatura entra pela primeira vez no turno ou começa o turno no cubo."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

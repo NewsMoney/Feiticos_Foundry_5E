@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Dois portais circulares conectam pontos no chão que você veja a até 150 metros. Durante até 10 minutos de concentração, atravessar um deles faz sair pelo outro, em qualquer direção escolhida. Como ação bônus, você gira as faces dos portais.</p>",
+      "value": "<p>Você cria dois portais circulares conectados, com 3 metros de diâmetro, em pontos no chão que possa ver: um a até 3 metros de você e o outro a até 150 metros. Os anéis ficam perpendiculares ao chão e cada um possui um lado opaco que bloqueia passagem e visão.</p><p>Durante até 10 minutos de concentração, uma criatura ou objeto que entre pelo lado aberto de um portal sai pelo lado aberto do outro, no espaço desocupado mais próximo. Como ação bônus, você gira ambos os portais, alterando a direção de suas faces abertas.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 500,
       "units": "ft",
-      "special": ""
+      "special": "Two linked 10-foot-diameter portals"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
         "type": "",
-        "size": null
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "2",
+        "type": "space",
         "special": ""
       }
     },
@@ -90,7 +90,7 @@
             "contiguous": false,
             "units": "ft",
             "type": "",
-            "size": null
+            "size": 10
           },
           "affects": {
             "choice": false
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Posicione dois portais e resolva travessias manualmente; a magia não faz ataque, save ou dano."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

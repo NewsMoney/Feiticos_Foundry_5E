@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria por 24 horas um vínculo telepático com uma criatura conhecida no mesmo plano. Comunicam palavras, imagens, sons e outras sensações a qualquer distância; o alvo compreende mesmo sem idioma comum.</p>",
+      "value": "<p>Você cria por 24 horas, sem concentração, um vínculo telepático com uma criatura voluntária que conheça, desde que ela esteja no mesmo plano. A distância não importa.</p><p>Vocês podem comunicar bidirecionalmente palavras, imagens, sons e outras mensagens sensoriais; o alvo compreende mesmo sem compartilhar idioma. A magia termina se vocês deixarem de estar no mesmo plano.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "ally",
         "special": ""
       }
     },
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Confirme que o alvo é voluntário, conhecido e está no mesmo plano; encerre o vínculo se isso mudar."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

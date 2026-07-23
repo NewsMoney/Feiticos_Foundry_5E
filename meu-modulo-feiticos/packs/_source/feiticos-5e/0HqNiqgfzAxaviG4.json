@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 27 metros faz resistência de Constituição. Em falha sofre 10d12 necrótico, envelhece até os últimos 30 dias de vida e recebe graves penalidades físicas; em sucesso sofre metade sem envelhecer. Apenas magia poderosa pode reverter o envelhecimento.</p>",
+      "value": "<p>Uma criatura visível a até 27 metros faz salvaguarda de Constituição. Em falha sofre 10d12 de dano necrótico, envelhece até restarem apenas 30 dias de vida, tem desvantagem em ataques, testes e salvaguardas e sua velocidade de caminhada é reduzida à metade. Em sucesso sofre metade do dano e não envelhece.</p><p>O alvo envelhecido morre ao fim dos 30 dias. <em>Wish</em> ou <em>Greater Restoration</em> de 9º círculo lançado dentro de 24 horas reverte o envelhecimento. O efeito duradouro aplica-se somente na falha; o dano ocorre em ambos os resultados conforme metade.</p>",
       "chat": ""
     },
     "source": {
@@ -109,6 +109,30 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
         "save": {
           "ability": [
             "con"
@@ -125,19 +149,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "file": "jb2a.energy_strands.range.standard.dark_purple",
         "fallbacks": [
-          "jb2a.energy_strands.in.dark_purple"
+          "jb2a.impact.004.dark_purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Role CON/10d12, metade no sucesso; aplique envelhecimento e penalidades só na falha e registre janelas de 24 h/30 dias."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

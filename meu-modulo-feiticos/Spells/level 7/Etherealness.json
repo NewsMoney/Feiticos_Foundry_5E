@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você entra nas regiões fronteiriças do Plano Etéreo, na área onde ele se sobrepõe ao seu plano atual. Você permanece na Fronteira Etérea enquanto durar ou até usar sua ação para anular a magia. Durante esse tempo, você pode se mover em qualquer direção. Se você subir ou descer, cada metro de movimento custará um metro extra. Você pode ver e ouvir o plano de onde veio, mas tudo lá parece cinza e você não consegue ver nada a mais de 18 metros de distância.</p><p>Enquanto estiver no Plano Etéreo, você só pode afetar e ser afetado por outras criaturas naquele plano. Criaturas que não estão no Plano Etéreo não podem perceber você e não podem interagir com você, a menos que uma habilidade especial ou magia tenha dado a elas a habilidade de fazer isso.</p><p>Você ignora todos os objetos e efeitos que não estão no Plano Etéreo, permitindo que você se mova através de objetos que você percebe no plano de onde você se originou.</p><p>Quando a magia termina, você retorna imediatamente ao plano de origem no local que você ocupa atualmente.  Se você ocupar o mesmo lugar que um objeto sólido ou criatura quando isso acontecer, você será imediatamente desviado para o espaço desocupado mais próximo que você pode ocupar e sofrerá 6 pontos de dano de força para cada metro pelo qual foi deslocado.</p><p>Esta magia não tem efeito se você o lançar enquanto estiver no Plano Etéreo ou em um plano que não o faça fronteira, como um dos Planos Externos.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando uma magia espaço de 8º nível ou superior, você pode escolher até três criaturas voluntárias (incluindo você) para cada nível de espaço acima do 7º. As criaturas devem estar a até 3 metros de você quando você lança a magia.</p>",
+      "value": "<p>Você entra na Fronteira Etérea por até 8 horas, sem concentração, e pode encerrar como ação. Ali, só afeta e é afetado por criaturas etéreas; vê o plano de origem em tons cinzentos até 18 metros e move-se em qualquer direção, pagando movimento dobrado ao subir ou descer.</p><p>Ao terminar sobreposto a criatura ou objeto, você é deslocado ao espaço desocupado mais próximo e sofre dano de energia igual ao dobro da distância em pés. Com espaços de 8º ou 9º círculo, pode levar até três ou seis criaturas voluntárias a 3 metros.</p>",
       "chat": ""
     },
     "source": {
@@ -124,10 +124,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique estado etéreo; no upcast selecione voluntários. Ao fim, resolva sobreposição e dano por deslocamento."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

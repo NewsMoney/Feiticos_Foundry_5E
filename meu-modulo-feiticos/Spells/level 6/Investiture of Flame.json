@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 10 minutos de concentração, você fica imune a fogo, resistente a frio e queima criaturas que se aproximam. Como ação, projeta uma linha de fogo; alvos fazem resistência de Destreza contra 4d8 de fogo ou metade.</p>",
+      "value": "<p>Por até 10 minutos de concentração, você se torna imune a fogo e resistente a frio. Uma criatura que se mova a até 1,5 metro de você pela primeira vez em um turno ou termine o turno ali sofre 1d10 de fogo, sem salvaguarda.</p><p>Como ação, você projeta uma linha de fogo de 4,5 metros por 1,5 metro. Criaturas na linha fazem salvaguarda de Destreza, sofrendo 4d8 de fogo em uma falha ou metade em um sucesso.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "O1tpMY2bognuej-S": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,24 +109,73 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "investiture-flame-line": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Ação reutilizável enquanto a concentração durar"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Linha de fogo: DEX, 4d8 fogo na falha ou metade no sucesso."
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "line",
+            "size": 15,
+            "width": 5,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
         "damage": {
           "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            },
             {
               "custom": {
                 "enabled": false,
@@ -139,8 +188,8 @@
                 "fire"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": 0
               }
             }
           ],
@@ -148,15 +197,6 @@
             "allow": false
           },
           "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -165,19 +205,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.fire_bolt.orange",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie atividades separadas para aura sem save e linha reutilizável DEX; a conjuração não causa dano."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

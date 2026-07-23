@@ -59,7 +59,7 @@
     },
     "activities": {
       "yQcWjEGh5tZuHbap": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "bonus",
           "value": 1,
@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Não role save/dano ao conjurar. No próximo acerto corpo a corpo, cause +2d6 trovão; então o alvo faz FOR e, na falha, é empurrado 10 pés e cai prone. O estrondo é audível a 300 pés."
         },
         "duration": {
           "value": 1,
@@ -109,39 +109,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "thunder"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "str"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -150,37 +117,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.thunderwave.center.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.blue"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "prone"
-        ]
+        "conditions": []
       },
       "description": {
         "quality": "reviewed-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "prone",
-        "ids": [
-          "prone"
-        ],
-        "label": "prone",
-        "core": true,
-        "target": "self",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

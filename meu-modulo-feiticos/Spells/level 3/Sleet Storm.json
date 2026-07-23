@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Até o fim da magia, chuva congelante e granizo caem em um cilindro de 6 metros de altura com um raio de 12 metros centrado em um ponto que você escolher dentro do alcance. A área está fortemente obscurecida e as chamas expostas na área são apagadas.</p><p>O solo na área está coberto com gelo escorregadio, tornando-o um terreno difícil. Quando uma criatura entra na área da magia pela primeira vez em um turno ou começa seu turno lá, ela deve realizar um teste de resistência de Destreza. Se uma criatura falhar, ela cai no chão.</p><p>Se uma criatura começar seu turno na área da magia e estiver se concentrando em uma magia, a criatura deve fazer um teste de resistência de Constituição bem-sucedido contra sua CD de resistência de magia ou perderá a concentração.</p>",
+      "value": "<p>Granizo cai num cilindro de 12 metros de raio e 6 metros de altura em ponto a 45 metros, por até 1 minuto de concentração. A área fica fortemente obscurecida, chamas expostas se apagam e o chão torna-se terreno difícil.</p><p>Quando uma criatura entra na área pela primeira vez num turno ou começa o turno ali, realiza salvaguarda de Destreza, ficando caída numa falha. Uma criatura que começa o turno na área enquanto concentra faz salvaguarda de Constituição contra sua CD de magia, perdendo a concentração numa falha. A conjuração não realiza esses saves antecipadamente.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "Cilindro de 40 ft de raio e 20 ft de altura"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 40
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "NonjsDsYOo18hErt": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 40
           },
           "affects": {
             "choice": false
@@ -108,15 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -137,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "DEX ao entrar pela primeira vez no turno ou começar ali; CON separado para concentração ao começar turno na área."
     },
     "itemacro": {
       "macro": {

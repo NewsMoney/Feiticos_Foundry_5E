@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma zona mágica que protege contra engano em uma esfera de 4,5 metros de raio centrada em um ponto de sua escolha dentro do alcance. Até que a magia termine, uma criatura que entre na área da magia pela primeira vez no turno ou comece seu turno lá deve realizar um teste de resistência de Carisma. Se falhar na resistência, uma criatura não pode falar uma mentira deliberada enquanto estiver no raio. Você sabe se cada criatura foi bem-sucedida ou falhou em seu teste de resistência.</p><p>Uma criatura afetada está ciente da magia e pode, portanto, evitar responder perguntas às quais normalmente responderia com uma mentira. Tal criatura pode ser evasiva em suas respostas, desde que permaneça dentro dos limites da verdade.</p>",
+      "value": "<p>Você cria uma zona mágica num raio de 4,5 metros por 10 minutos. Uma criatura que entra na área pela primeira vez em um turno ou começa o turno nela realiza uma salvaguarda de Carisma. Ela continua realizando a salvaguarda nesses gatilhos até falhar.</p><p>Depois de falhar, a criatura não pode proferir deliberadamente uma mentira enquanto estiver na zona. Você sabe quais criaturas passaram ou falharam. Uma criatura afetada sabe da magia e ainda pode evitar responder ou ser evasiva, desde que não minta deliberadamente.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "15-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 15
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "FkkldHs0PcKWGDBX": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 15
           },
           "affects": {
             "choice": false
@@ -105,6 +105,60 @@
         "midiProperties": {},
         "overTimeProperties": {
           "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": null
+      },
+      "truth-zone-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Criatura entra pela primeira vez no turno ou começa o turno na zona; repita até falhar"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Após falhar uma vez, não repita; o conjurador sabe o resultado."
+        },
+        "duration": {
+          "value": 10,
+          "units": "minute",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 15,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
@@ -133,10 +187,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Role ao entrar/começar turno até a primeira falha. Registre quem falhou; a limitação de fala é interpretativa."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

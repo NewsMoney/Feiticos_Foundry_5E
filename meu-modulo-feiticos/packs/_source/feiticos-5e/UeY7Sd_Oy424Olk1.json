@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma tempestade composta por camadas de chamas crepitantes aparece em um local que você escolher dentro do alcance. A área da tempestade consiste em até dez cubos de 3 metros, que você pode organizar como desejar. Cada cubo deve ter pelo menos uma face adjacente à face de outro cubo. Cada criatura na área deve fazer um teste de resistência de Destreza. Ele sofre 7d10 de dano de fogo se falhar na resistência, ou metade do dano se obtiver sucesso.</p><p>O fogo danifica objetos na área e incendeia objetos inflamáveis ​​que não estão sendo usados ​​ou carregados. Se você escolher, a vida vegetal na área não será afetada por esta magia.</p>",
+      "value": "<p>Uma tempestade de chamas ocupa até dez cubos de 3 metros dentro do alcance, organizados como desejar; cada cubo deve compartilhar ao menos uma face com outro. Cada criatura na área faz salvaguarda de Destreza, sofrendo 7d10 de fogo na falha ou metade no sucesso.</p><p>O fogo danifica objetos e incendeia inflamáveis não vestidos ou carregados. Você pode escolher que a vida vegetal na área não seja afetada. Sem concentração ou escalonamento.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "Up to ten contiguous 10-foot cubes"
     },
     "target": {
       "template": {
-        "contiguous": false,
+        "contiguous": true,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 10
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 10
           },
           "affects": {
             "choice": false
@@ -158,10 +158,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Posicione até 10 cubos contíguos e inclua todas as criaturas; plantas podem ser poupadas."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Escolha uma criatura voluntária que você possa ver dentro do alcance. Até que a magia termine, a velocidade do alvo é duplicada, ele ganha +2 de bônus na CA, tem vantagem em testes de resistência de Destreza e ganha uma ação adicional em cada um de seus turnos. Essa ação pode ser usada apenas para realizar a ação de Ataque (apenas um ataque com arma), Correr, Desengajar, Esconder-se ou Usar um Objeto.</p><p>Quando a magia termina, o alvo não pode se mover ou realizar ações até depois de seu próximo turno, quando uma onda de letargia o atinge.</p>",
+      "value": "<p>Escolha uma criatura voluntária visível a até 9 metros. Por até 1 minuto de concentração, a velocidade do alvo dobra, ele recebe +2 na CA, vantagem em salvaguardas de Destreza e uma ação adicional em cada turno.</p><p>Essa ação adicional só pode ser usada para Attack (apenas um ataque com arma), Dash, Disengage, Hide ou Use an Object. Quando a magia termina, o alvo não pode mover-se nem realizar ações até depois do próximo turno dele, enquanto a onda de letargia passa.</p><p>Não há ataque, salvaguarda ou dano na conjuração. A ação extra não concede todos os ataques de Extra Attack.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "dhPafp_d8Ql4WRvu": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,15 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -137,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Aplique os quatro benefícios; ao término aplique a letargia até depois do próximo turno do alvo."
     },
     "itemacro": {
       "macro": {

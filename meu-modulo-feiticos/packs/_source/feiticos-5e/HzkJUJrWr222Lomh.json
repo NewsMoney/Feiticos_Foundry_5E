@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Acid%20Splash.png",
   "system": {
     "description": {
-      "value": "<p>Você lança uma bolha de ácido contra uma criatura a até 18 metros, ou contra duas que estejam a até 1,5 metro entre si. Cada alvo faz resistência de Destreza, sofrendo 1d6 de ácido em falha. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você arremessa uma bolha de ácido contra uma criatura dentro do alcance ou contra duas criaturas dentro do alcance que estejam a até 1,5 metro uma da outra. Cada alvo deve realizar uma salvaguarda de Destreza; em uma falha, sofre 1d6 de dano ácido, e não sofre dano em um sucesso.</p><p><strong>Seleção de alvos:</strong> ao escolher dois alvos, confirme manualmente a distância máxima de 1,5 metro entre eles.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -149,7 +149,7 @@
         "targeted": true
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

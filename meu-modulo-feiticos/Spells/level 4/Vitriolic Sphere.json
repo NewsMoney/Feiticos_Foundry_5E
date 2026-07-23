@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de ácido explode num raio de 6 metros a até 45 metros. Criaturas fazem resistência de Destreza; em falha sofrem 10d4 de ácido e mais 5d4 no fim do próximo turno, enquanto em sucesso sofrem metade do inicial e nenhum posterior. O dano inicial aumenta em 2d4 por círculo.</p>",
+      "value": "<p>Uma esfera de ácido explode num ponto a até 45 metros, cobrindo uma esfera de 6 metros de raio. Cada criatura na área realiza uma salvaguarda de Destreza.</p><p>Em uma falha, o alvo sofre 10d4 de dano de ácido imediatamente e mais 5d4 no fim do próximo turno dele. Em um sucesso, sofre metade do dano inicial e nenhum dano tardio.</p><p><strong>Em Círculos Superiores.</strong> Apenas o dano inicial aumenta em 2d4 para cada círculo acima do 4º; o dano tardio permanece 5d4.</p>",
       "chat": ""
     },
     "source": {
@@ -26,18 +26,18 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "20-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -123,9 +123,79 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 2
               }
-            },
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      },
+      "vitriolic-delayed": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim do próximo turno de um alvo que falhou na salvaguarda inicial"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Somente alvos que falharam; 5d4 ácido sem nova salvaguarda."
+        },
+        "duration": {
+          "value": 1,
+          "units": "round",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
             {
               "custom": {
                 "enabled": false,
@@ -139,23 +209,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
             "allow": false
           },
-          "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
+          "onSave": "full"
         }
       }
     }
@@ -173,10 +234,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A atividade inicial faz 10d4/half. Use Dano Tardio somente em falhas, no fim do próximo turno; só o inicial escala +2d4."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

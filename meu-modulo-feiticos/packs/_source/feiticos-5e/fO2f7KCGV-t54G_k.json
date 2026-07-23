@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Sua magia transforma outros em feras. Escolha qualquer número de criaturas voluntárias que você possa ver dentro do alcance. Você transforma cada alvo na forma de uma fera Grande ou menor com nível de desafio 4 ou inferior.  Nos turnos subsequentes, você pode usar sua ação para transformar as criaturas afetadas em novas formas.</p><p>A transformação dura a duração de cada alvo ou até que o alvo caia para 0 pontos de vida ou morra.  Você pode escolher um formulário diferente para cada alvo. As estatísticas de jogo de um alvo são substituídas pelas estatísticas da besta escolhida, embora o alvo mantenha sua tendência e valores de Inteligência, Sabedoria e Carisma. O alvo assume os pontos de vida de sua nova forma e, quando volta à sua forma normal, retorna ao número de pontos de vida que tinha antes de ser transformado. Se ele reverter como resultado da queda para 0 pontos de vida, qualquer dano excessivo será transferido para sua forma normal. Contanto que o dano excessivo não reduza a forma normal da criatura a 0 pontos de vida, ela não ficará inconsciente. A criatura é limitada nas ações que pode realizar pela natureza de sua nova forma e não pode falar ou lançar magias.</p><p>O equipamento do alvo se funde na nova forma. O alvo não pode ativar, empunhar ou de outra forma se beneficiar de qualquer um de seus equipamentos.</p>",
+      "value": "<p>Escolha qualquer número de criaturas voluntárias que você possa ver a até 9 metros. Cada alvo assume uma forma, escolhida individualmente, de fera Grande ou menor com ND 4 ou inferior. Enquanto mantiver concentração, por até 24 horas, você pode usar sua ação em turnos posteriores para dar uma nova forma válida a uma ou mais criaturas afetadas.</p><p>As estatísticas de jogo do alvo são substituídas pelas da fera, mas ele conserva alinhamento e valores de Inteligência, Sabedoria e Carisma. Ele assume os pontos de vida da forma; ao voltar, recupera os pontos de vida anteriores, e dano excedente ao reduzir a forma a 0 passa à forma normal. Ele não fica inconsciente se o excedente não reduzir a forma normal a 0.</p><p>As ações ficam limitadas pela anatomia da fera; o alvo não pode falar nem conjurar. Equipamento funde-se à forma e não pode ser ativado, empunhado ou aproveitado. A transformação termina para um alvo quando a magia termina, ele chega a 0 PV ou morre.</p>",
       "chat": ""
     },
     "source": {
@@ -37,9 +37,9 @@
         "size": null
       },
       "affects": {
-        "choice": false,
-        "count": "1",
-        "type": "creature",
+        "choice": true,
+        "count": "",
+        "type": "ally",
         "special": ""
       }
     },
@@ -109,7 +109,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -126,10 +128,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione criaturas voluntárias, aplique atores/formas individuais e permita retransformação por ação; não aplique Inconsciente."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

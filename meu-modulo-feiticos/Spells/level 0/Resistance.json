@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Resistence.png",
   "system": {
     "description": {
-      "value": "<p>Você toca uma criatura e mantém concentração por até 1 minuto. Uma vez antes do fim, ela pode adicionar 1d4 a uma resistência, escolhendo usar o dado antes ou depois da rolagem.</p>",
+      "value": "<p>Você toca uma criatura voluntária. Uma vez antes de a magia terminar, o alvo pode rolar 1d4 e adicionar o resultado a uma salvaguarda à escolha. Pode rolar o dado antes ou depois da salvaguarda, mas antes de o Mestre declarar o resultado.</p><p>A magia dura até 1 minuto, exige concentração e termina após o d4 ser usado.</p>",
       "chat": ""
     },
     "source": {
@@ -121,7 +121,7 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
       "status": {

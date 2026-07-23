@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Modo recipiente: crie ou destrua até 10 galões em recipiente aberto. Não posicione template para este modo."
         },
         "duration": {
           "value": null,
@@ -108,6 +108,45 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         }
+      },
+      "createDestroyWaterRain": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Modo chuva ou destruição de névoa"
+        },
+        "description": {
+          "chatFlavor": "Posicione um cubo de 30 pés para criar chuva que extingue chamas expostas ou destruir névoa dentro da área. O lado do cubo aumenta em 5 pés por nível de espaço acima do 1º. Não há rolagem."
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cube",
+            "size": 30
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "damage": {
+          "parts": [],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        }
       }
     }
   },
@@ -124,7 +163,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "A dimensão do modo chuva aumenta 5 pés por nível; ajuste o template quando usar espaço superior."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

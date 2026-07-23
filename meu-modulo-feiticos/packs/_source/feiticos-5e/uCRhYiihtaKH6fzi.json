@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria a imagem de um objeto, uma criatura ou algum outro fenômeno visível que não seja maior que um cubo de 6 metros. A imagem aparece em um local que você pode ver dentro do alcance e dura enquanto durar. Parece completamente real, incluindo sons, cheiros e temperatura apropriados à coisa retratada. Você não pode criar calor ou frio suficiente para causar dano, um som alto o suficiente para causar dano trovejante ou ensurdecer uma criatura, ou um cheiro que possa enjoar uma criatura (como o fedor de um troglodita).</p><p>Enquanto você estiver dentro do alcance da ilusão, você pode usar sua ação para fazer com que a imagem se mova para qualquer outro local dentro do alcance. À medida que a imagem muda de local, você pode alterar sua aparência para que seus movimentos pareçam naturais para a imagem. Por exemplo, se você criar a imagem de uma criatura e movê-la, poderá alterar a imagem para que ela pareça estar andando. Da mesma forma, você pode fazer com que a ilusão emita sons diferentes em momentos diferentes, até mesmo fazendo com que ela continue uma conversa, por exemplo.</p><p>A interação física com a imagem revela que ela é uma ilusão, porque coisas podem passar por ela. Uma criatura que usa sua ação para examinar a imagem pode determinar que ela é uma ilusão com um teste bem sucedido de Inteligência (Investigação) contra sua CD de resistência de magia. Se uma criatura discernir a ilusão pelo que ela é, a criatura poderá ver através da imagem, e suas outras qualidades sensoriais se tornarão fracas para a criatura.</p><p><strong>Em níveis mais altos.</strong> Quando você conjura esta magia usando um espaço de magia de 6º nível ou superior, a magia dura até ser dissipada, sem exigir sua concentração.</p>",
+      "value": "<p>Você cria a imagem de um objeto, criatura ou fenômeno visível que caiba num cubo de 6 metros em ponto a até 36 metros. A ilusão inclui sons, cheiros e temperatura apropriados, mas não causa dano. Dura até 10 minutos com concentração. Como ação, você pode movê-la para outro ponto no alcance e adaptar sua aparência e sons ao movimento.</p><p>Interação física revela a ilusão, pois objetos atravessam-na. Uma criatura pode usar ação para examiná-la e fazer Investigação contra sua CD; em sucesso reconhece a ilusão e passa a enxergá-la de forma tênue e ignorar seus demais componentes sensoriais.</p><p>Com espaço de 6º círculo ou superior, dura até ser dissipada e não exige concentração.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 120,
       "units": "ft",
-      "special": ""
+      "special": "Cubo de 20 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -90,8 +90,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -129,9 +129,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Posicione cubo de 20 ft; o teste de Investigação é atividade posterior e opcional, nunca save na conjuração."
     },
     "itemacro": {
       "macro": {

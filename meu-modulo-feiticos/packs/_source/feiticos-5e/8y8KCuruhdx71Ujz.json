@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você invoca um pequeno elemental que transporta um recipiente de até 90 centímetros para uma criatura conhecida no mesmo plano. O destinatário tem 10 minutos para aceitar e retirar objetos; depois o mensageiro retorna. Se não encontrar o alvo em 24 horas, retorna com a carga.</p>",
+      "value": "<p>Você invoca um pequeno mensageiro que surge com um baú Miúdo em um espaço desocupado a até 1,5 metro. Você coloca no baú objetos que caibam nele e nomeia um destinatário conhecido no mesmo plano.</p><p>O mensageiro desaparece e reaparece ao lado do destinatário após 10 minutos. Ele abre o baú e permanece por até 3 minutos enquanto o destinatário retira ou deposita objetos, então retorna a você. Se o destinatário recusar ou não puder receber, o mensageiro retorna.</p><p>Se não puder retornar antes de 24 horas, o mensageiro desaparece e o conteúdo reaparece aos seus pés. O Mestre resolve impedimentos de plano, identidade e espaço segundo a fonte adotada.</p>",
       "chat": ""
     },
     "source": {
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Registre conteúdo e destinatário; resolva manualmente viagem de 10 min, janela de 3 min, retorno e limite de 24 h."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

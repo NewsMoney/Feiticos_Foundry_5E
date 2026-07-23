@@ -59,7 +59,7 @@
     },
     "activities": {
       "5wkMXlm4q9wivgTw": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -110,6 +110,61 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "save": null,
+        "damage": null
+      },
+      "eyebite-action": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Escolha uma criatura ainda não imune a esta conjuração e um modo"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "WIS; escolha Adormecido, Apavorado ou Adoentado. Repetições dependem do modo."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
             "wis"
@@ -135,28 +190,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "frightened"
-        ]
+        "conditions": [],
+        "manual": "Use a ação posterior; aplique a condição escolhida e seus saves finais manualmente. Alvo que salva fica imune à conjuração."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "frightened",
-        "ids": [
-          "frightened"
-        ],
-        "label": "frightened",
-        "core": true,
-        "target": "self",
-        "duration": {
-          "value": 1,
-          "units": "minute",
-          "concentration": true
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

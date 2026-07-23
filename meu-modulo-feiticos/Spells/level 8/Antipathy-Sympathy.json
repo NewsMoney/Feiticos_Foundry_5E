@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia atrai ou repele criaturas de sua escolha. Você tem como alvo algo dentro do alcance, seja um objeto ou criatura Enorme ou menor ou uma área que não seja maior que um cubo de 60 metros. Em seguida, especifique um tipo de criatura inteligente, como dragões vermelhos, goblins ou vampiros. Você investe no alvo uma aura que atrai ou repele as criaturas especificadas durante o período. Escolha antipatia ou simpatia como efeito da aura.</p><p><strong>Antipatia.</strong> O encantamento faz com que criaturas do tipo que você designou sintam um desejo intenso de deixar a área e evitar o alvo. Quando tal criatura puder ver o alvo ou chegar a até 18 metros dele, a criatura deve ser bem sucedida em um teste de resistência de Sabedoria ou ficará assustada. A criatura permanece assustada enquanto puder ver o alvo ou estiver a até 18 metros dele. Enquanto estiver assustada com o alvo, a criatura deve usar seu movimento para se mover para o local seguro mais próximo, de onde não possa ver o alvo. Se a criatura se mover a mais de 18 metros do alvo e não puder vê-lo, a criatura não ficará mais assustada, mas ficará assustada novamente se recuperar a visão do alvo ou se mover a até 18 metros dele.</p><p><strong>Simpatia.</strong> O encantamento faz com que as criaturas especificadas sintam um desejo intenso de se aproximar do alvo enquanto estiverem a 18 metros dele ou forem capazes de vê-lo.  Quando tal criatura puder ver o alvo ou chegar a até 18 metros dele, a criatura deve ser bem sucedida em um teste de resistência de Sabedoria ou usar seu movimento em cada um de seus turnos para entrar na área ou se mover ao alcance do alvo. Quando a criatura fizer isso, ela não poderá se afastar voluntariamente do alvo.</p><p>Se o alvo causar dano ou de outra forma prejudicar uma criatura afetada, a criatura afetada pode fazer um teste de resistência de Sabedoria para encerrar o efeito, conforme descrito abaixo.</p><p><strong>Terminar o Efeito.</strong> Se uma criatura afetada terminar seu turno enquanto não estiver a 18 metros do alvo ou não for capaz de vê-lo, a criatura faz um teste de resistência de Sabedoria. Se obtiver sucesso, a criatura não é mais afetada pelo alvo e reconhece o sentimento de repugnância ou atração como mágico. Além disso, uma criatura afetada pela magia pode fazer outro teste de resistência de Sabedoria a cada 24 horas enquanto a magia persistir.</p><p>Uma criatura que obtiver sucesso no teste de resistência contra esse efeito fica imune a ele por 1 minuto, após o qual ela pode ser afetada novamente.</p>",
+      "value": "<p>Após 1 hora, escolha uma criatura ou objeto Enorme ou menor, ou uma área de até 60 metros de lado, a até 18 metros. Designe um tipo de criatura inteligente e escolha Antipatia ou Simpatia; a aura dura 10 dias sem concentração. A conjuração não provoca salvaguarda imediata.</p><p><strong>Antipatia.</strong> Uma criatura designada que veja o alvo ou chegue a 18 metros faz salvaguarda de Sabedoria. Em falha fica amedrontada enquanto vir ou permanecer a 18 metros e deve usar o movimento para alcançar o local seguro mais próximo fora dessas condições.</p><p><strong>Simpatia.</strong> No mesmo gatilho, uma falha força a criatura a usar seu movimento para aproximar-se e impede que se afaste voluntariamente. Se o alvo a ferir, ela pode repetir a salvaguarda.</p><p>Uma criatura afetada pode repetir a salvaguarda a cada 24 horas enquanto estiver a 18 metros e puder ver o alvo. Um sucesso encerra o efeito nela e concede imunidade por 1 minuto, após o qual a aura pode voltar a provocá-la.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "Huge creature/object or up to 200-foot cube"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 200
       },
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "creatureOrObject",
         "special": ""
       }
     },
@@ -57,7 +57,7 @@
     },
     "activities": {
       "7KH6zbsF0fOu-Elv": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "hour",
           "value": 1,
@@ -88,8 +88,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 200
           },
           "affects": {
             "choice": false
@@ -108,15 +108,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -133,28 +126,12 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": [
-          "frightened"
-        ]
+        "conditions": [],
+        "manual": "Escolha Antipatia ou Simpatia e só role WIS quando uma criatura designada vir o alvo ou chegar a 60 ft; controle repetições e imunidade de 1 minuto."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      },
-      "status": {
-        "id": "frightened",
-        "ids": [
-          "frightened"
-        ],
-        "label": "frightened",
-        "core": true,
-        "target": "targets",
-        "duration": {
-          "value": 10,
-          "units": "day",
-          "concentration": false
-        },
-        "specialDuration": []
       }
     },
     "itemacro": {

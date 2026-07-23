@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Um cão de guarda invisível ocupa um espaço a até 9 metros por 8 horas. Ele percebe criaturas a até 9 metros, ignora ilusões, late quando alguém não autorizado se aproxima e, no seu turno, ataca uma criatura hostil próxima causando 4d8 perfurante.</p>",
+      "value": "<p>Você conjura um cão de guarda fantasmagórico em um espaço desocupado a até 9 metros. Ele é invisível para todos, exceto você, e permanece por 8 horas, até você dispensá-lo ou afastar-se mais de 30 metros.</p><p>Ao conjurar, designe criaturas que não serão hostis ao cão. Quando uma criatura Pequena ou maior não designada chega a até 9 metros sem pronunciar a senha escolhida, o cão começa a latir. Ele percebe invisibilidade e o Plano Etéreo e ignora ilusões.</p><p>No início de cada um de seus turnos, o cão tenta morder uma criatura hostil a até 1,5 metro: faça um ataque corpo a corpo com magia; em um acerto, causa 4d8 de dano perfurante.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -108,6 +108,73 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null,
+        "save": null
+      },
+      "hound-bite": {
+        "type": "attack",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início do turno do conjurador; hostil a 5 ft do cão"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Ataque corpo a corpo com magia do cão."
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "spell"
+          }
+        },
         "damage": {
           "parts": [
             {
@@ -123,14 +190,14 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
           "critical": {
-            "allow": false
+            "allow": true
           },
-          "onSave": "none"
+          "onSave": "full"
         }
       }
     }
@@ -139,19 +206,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.arrow.physical.white",
+        "file": "jb2a.magic_signs.rune.conjuration.intro.purple",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.portals.vertical.vortex.purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie o cão e defina senha/excluídos; use Mordida no início do turno apenas contra hostil a 5 ft."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma aura de 9 metros acompanha você por até 10 minutos de concentração. Criaturas amigáveis nela têm vantagem em resistências contra magias e efeitos mágicos; quando uma resistência bem-sucedida normalmente causaria metade do dano, não sofrem dano.</p>",
+      "value": "<p>Energia divina irradia de você numa aura móvel de 9 metros por até 10 minutos de concentração. Você e criaturas amigáveis na aura têm vantagem em salvaguardas contra magias e outros efeitos mágicos.</p><p>Quando uma criatura beneficiada obtém sucesso em uma salvaguarda contra efeito mágico que normalmente causaria metade do dano, ela não sofre dano. O benefício começa ao entrar e termina ao sair da aura.</p>",
       "chat": ""
     },
     "source": {
@@ -26,7 +26,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (30-foot radius)"
+      "special": "30-foot-radius mobile aura"
     },
     "target": {
       "template": {
@@ -37,8 +37,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "ally",
         "special": ""
       }
     },
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A região acompanha o conjurador; aplique vantagem e evasão mágica somente a aliados dentro dela."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

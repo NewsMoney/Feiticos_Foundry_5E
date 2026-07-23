@@ -1,0 +1,198 @@
+{
+  "Conjure Celestial": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "count": "1" },
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "space" } }, "description": { "value": "<p>Após 1 minuto, você invoca um celestial de ND 4 ou menor em um espaço desocupado que possa ver a até 27 metros. Ele permanece por até 1 hora, enquanto você mantiver concentração, desaparecendo ao chegar a 0 PV ou quando a magia termina.</p><p>O celestial é amistoso, tem iniciativa e turnos próprios e obedece aos seus comandos verbais que não violem o alinhamento dele; sem comando, defende-se, mas não age de outra forma. Com espaço de 9º círculo, o ND máximo é 5.</p><p><strong>Procedimento:</strong> escolha o bloco válido, crie e posicione o ator/token e controle iniciativa e comandos. A conjuração não realiza ataque, salvaguarda ou dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Escolha celestial ND 4 (ND 5 no 9º), invoque em espaço desocupado e controle iniciativa/comandos." } } }
+    }
+  },
+  "Create Magen": {
+    "definition": { "mode": "utility", "save": "", "attack": "", "damage": [], "target": "object", "count": "1" },
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "object" } }, "description": { "value": "<p>Durante 1 hora, você coloca um frasco de mercúrio no peito de um boneco humanoide em tamanho natural recheado com cinza ou pó, costura-o e pinga seu sangue nele. Ao fim, toca o boneco com uma haste de cristal e o transforma permanentemente num magen do tipo demos, galvan ou hypnos, escolhido durante a conjuração e vestido com o que o boneco usava.</p><p>O mercúrio de 500 PO e o boneco são consumidos; a haste de cristal de pelo menos 1.500 PO não é. Quando o magen surge, seu máximo de PV diminui pelo ND dele, com redução mínima de 1; apenas Wish desfaz essa redução. Todo magen criado por você obedece às suas ordens sem questionar.</p><p><strong>Procedimento:</strong> invoque o bloco escolhido e aplique a redução de PV máximo. A conjuração não faz ataque, salvaguarda nem dano; os ataques e danos do magen pertencem ao ator invocado.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Remova qualquer WIS/ataque/dano da conjuração; escolha demos/galvan/hypnos, invoque-o e reduza o máximo de PV pelo ND." } } }
+    }
+  },
+  "Crown of Stars": {
+    "definition": { "mode": "utility", "save": "", "attack": "", "damage": [], "target": "self", "count": "1" },
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "self" } }, "description": { "value": "<p>Sete motes semelhantes a estrelas aparecem e orbitam sua cabeça por 1 hora, sem concentração. Como ação bônus, você pode gastar um mote e realizar um ataque mágico à distância contra uma criatura ou objeto a até 36 metros; em um acerto, o alvo sofre 4d12 de dano radiante.</p><p>Enquanto quatro ou mais motes restarem, eles emitem luz plena em 9 metros e penumbra por mais 9 metros. Com um a três motes, emitem apenas penumbra em 9 metros. Cada espaço acima do 7º cria dois motes adicionais.</p><p><strong>Procedimento:</strong> a conjuração apenas cria a coroa. Use uma atividade bônus posterior, com alcance de 120 ft, ataque separado de 4d12 e consumo de um mote.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Registre 7 motes (+2/slot); disparo é atividade bônus posterior, ataque mágico à distância de 4d12." } } }
+    }
+  },
+  "Delayed Blast Fireball": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": 150, "units": "ft", "special": "20-foot-radius sphere" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 20 }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Uma conta brilhante permanece num ponto a até 45 metros por até 1 minuto de concentração. Quando a magia termina, ela explode numa esfera de 6 metros de raio que contorna cantos. Cada criatura na área faz salvaguarda de Destreza, sofrendo 12d6 de fogo na falha ou metade no sucesso.</p><p>No fim de cada um dos seus turnos em que a conta não detonou, o dano aumenta 1d6, até +10d6. Uma criatura pode tocá-la e fazer DEX contra sua CD: no sucesso, arremessa-a até 12 metros; na falha, detona. A explosão incendeia inflamáveis não vestidos ou carregados. O dano-base aumenta 1d6 por círculo acima do 7º.</p><p><strong>Procedimento:</strong> crie a região sem rolar dano; mantenha contador de turnos e use uma atividade separada de detonação para todos na área.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A criação não causa dano. Detone com DEX, 12d6/half +1d6 por turno completo e +1d6 por slot; toque exige DEX separado." } } }
+    }
+  },
+  "Divine Word": {
+    "definition": { "mode": "save", "save": "cha", "damage": [], "target": "creature", "count": "" },
+    "item": {
+      "system": { "target": { "affects": { "count": "", "type": "creature", "special": "Qualquer número de criaturas escolhidas, visíveis e capazes de ouvir a 30 ft." } }, "description": { "value": "<p>Como ação bônus, escolha qualquer número de criaturas que possa ver a até 9 metros. Cada uma que possa ouvi-lo faz salvaguarda de Carisma. Na falha, aplique efeitos cumulativos pelos PV atuais: 50 ou menos, Surdo por 1 minuto; 40 ou menos, também Cego por 10 minutos; 30 ou menos, também Atordoado por 1 hora; 20 ou menos, morre instantaneamente. No sucesso, nada ocorre.</p><p>Independentemente dos PV, celestial, elemental, fada ou ínfero que falhe é forçado a voltar ao plano de origem, se não estiver nele, e não pode retornar ao plano atual por 24 horas salvo por Wish. Não há dano, concentração ou escalonamento.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Role CHA para cada alvo válido e aplique limiares cumulativos de PV; resolva banimento por tipo/plano separadamente." } } }
+    }
+  },
+  "Draconic Transformation": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "self", "range": { "value": null, "units": "self", "special": "60-foot cone for the breath" } },
+    "item": {
+      "system": { "target": { "template": { "type": "cone", "size": 60 }, "affects": { "count": "1", "type": "self" } }, "description": { "value": "<p>Por até 1 minuto de concentração, você manifesta traços dracônicos: visão às cegas em 9 metros, deslocamento de voo de 18 metros e um sopro mágico.</p><p>Ao conjurar e, depois, como ação bônus em cada turno, você expele energia num cone de 18 metros. Cada criatura na área faz salvaguarda de Destreza, sofrendo 6d8 de dano de energia na falha ou metade no sucesso. Não há escalonamento.</p><p><strong>Procedimento:</strong> aplique os efeitos ao conjurador; o sopro imediato e cada sopro posterior são atividades separadas e reutilizáveis, sem novo slot.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "A conjuração aplica blindsight/voo; use atividade separada DEX 6d8/half no cone ao conjurar e como bônus posterior." } } }
+    }
+  },
+  "Dream of the Blue Veil": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "creature", "count": "9", "concentration": false },
+    "item": {
+      "system": { "target": { "affects": { "count": "9", "type": "willing" } }, "description": { "value": "<p>Você e até oito criaturas voluntárias a até 6 metros ficam Inconscientes por 6 horas e vivenciam visões de outro mundo do Plano Material. A magia não exige concentração. Ao completar a duração, todos atravessam um véu azul e são transportados física e mentalmente ao mundo visto.</p><p>É necessário um item mágico originário do mundo de destino ou uma criatura afetada nascida nele. A chegada ocorre em local seguro a até 1 milha da origem do item ou nascimento da criatura. Dano encerra a magia apenas para a criatura atingida, que não viaja; se você sofrer dano, ela termina para todos e ninguém viaja.</p><p><strong>Procedimento:</strong> selecione até nove voluntários, aplique Inconsciente e resolva o teleporte ao fim. Não há ataque, save, dano nem concentração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Sem concentração. Dano remove somente o atingido; dano no conjurador cancela todos. Teleporte apenas após 6 h completas." } } }
+    }
+  },
+  "Etherealness": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "self" },
+    "item": {
+      "system": { "description": { "value": "<p>Você entra na Fronteira Etérea por até 8 horas, sem concentração, e pode encerrar como ação. Ali, só afeta e é afetado por criaturas etéreas; vê o plano de origem em tons cinzentos até 18 metros e move-se em qualquer direção, pagando movimento dobrado ao subir ou descer.</p><p>Ao terminar sobreposto a criatura ou objeto, você é deslocado ao espaço desocupado mais próximo e sofre dano de energia igual ao dobro da distância em pés. Com espaços de 8º ou 9º círculo, pode levar até três ou seis criaturas voluntárias a 3 metros.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Aplique estado etéreo; no upcast selecione voluntários. Ao fim, resolva sobreposição e dano por deslocamento." } } }
+    }
+  },
+  "Finger of Death": {
+    "definition": { "mode": "save", "save": "con", "damage": [[7, 8, "necrotic", "30"]], "onSave": "half", "target": "creature", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Energia negativa atravessa uma criatura que possa ver a até 18 metros. O alvo faz salvaguarda de Constituição, sofrendo 7d8 + 30 de dano necrótico na falha ou metade no sucesso. Não há concentração nem escalonamento.</p><p>Um humanoide morto por esta magia ergue-se no início do seu próximo turno como um zumbi permanentemente sob seu comando e segue suas ordens verbais da melhor maneira possível.</p><p><strong>Procedimento:</strong> inclua obrigatoriamente o bônus fixo +30 no dano e crie o zumbi somente se a magia efetivamente matar um humanoide.</p>" }, "activities": { "SK4vp_bhv8M1mgFi": { "damage": { "parts": [{ "custom": { "enabled": false, "formula": "" }, "number": 7, "denomination": 8, "bonus": "30", "types": ["necrotic"], "scaling": { "mode": "", "number": null } }], "critical": { "allow": false }, "onSave": "half" } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Dano é 7d8+30/half. Se matar humanoide, invoque zumbi comandado no início do próximo turno." } } }
+    }
+  },
+  "Fire Storm": {
+    "definition": { "mode": "save", "save": "dex", "damage": [[7, 10, "fire"]], "onSave": "half", "target": "space", "count": "", "range": { "value": 150, "units": "ft", "special": "Up to ten contiguous 10-foot cubes" } },
+    "item": {
+      "system": { "target": { "template": { "type": "cube", "size": 10, "contiguous": true }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Uma tempestade de chamas ocupa até dez cubos de 3 metros dentro do alcance, organizados como desejar; cada cubo deve compartilhar ao menos uma face com outro. Cada criatura na área faz salvaguarda de Destreza, sofrendo 7d10 de fogo na falha ou metade no sucesso.</p><p>O fogo danifica objetos e incendeia inflamáveis não vestidos ou carregados. Você pode escolher que a vida vegetal na área não seja afetada. Sem concentração ou escalonamento.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Posicione até 10 cubos contíguos e inclua todas as criaturas; plantas podem ser poupadas." } } }
+    }
+  },
+  "Forcecage": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": 100, "units": "ft", "special": "20-foot cage or 10-foot solid box" } },
+    "item": {
+      "system": { "target": { "template": { "type": "cube", "size": 20 }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Você cria uma prisão imóvel e invisível a até 30 metros por 1 hora, sem concentração: uma gaiola de até 6 metros de lado, com barras, ou uma caixa sólida de até 3 metros de lado. Criaturas totalmente na área ficam presas; uma parcialmente dentro é empurrada para dentro ou para fora, à sua escolha.</p><p>A gaiola permite ataques e magias entre as barras; a caixa bloqueia matéria e magias. A prisão não pode ser dissipada. Teleporte ou viagem planar para sair exige salvaguarda de Carisma; na falha, o uso da magia/efeito é desperdiçado e a criatura permanece.</p><p><strong>Procedimento:</strong> a criação não exige save. Escolha o modo e use CHA somente quando uma criatura tentar escapar magicamente.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Remova CHA inicial. Crie gaiola 20 ft ou caixa 10 ft; ofereça CHA apenas em tentativa posterior de teleporte/viagem planar." } } }
+    }
+  },
+  "Mirage Arcane": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": null, "units": "spec", "special": "Sight; up to 1 square mile" } },
+    "item": {
+      "system": { "target": { "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Após 10 minutos, você faz até 1 milha quadrada de terreno dentro da visão parecer, soar, cheirar e ser sentida como outro terreno por 10 dias. A forma geral permanece, mas estradas, campos, lagos, precipícios e estruturas podem parecer diferentes e tornar-se difíceis ou intransitáveis; criaturas não são ocultadas.</p><p>Visão verdadeira revela a ilusão, mas não remove a interação física. Dispel Magic remove apenas a parte sobreposta à área da dissipação. A magia não exige concentração e não realiza save nem dano.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Defina região e terreno/estruturas ilusórias; mudanças físicas e dissipação parcial exigem adjudicação." } } }
+    }
+  },
+  "Mordenkainen’s Magnificent Mansion": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "count": "1" },
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "space" } }, "description": { "value": "<p>Após 1 minuto, uma entrada extradimensional cintilante, de até 1,5 metro de largura e 3 metros de altura, surge num ponto a até 90 metros e permanece 24 horas. Apenas criaturas designadas por você podem entrar; enquanto estiver a 9 metros, você pode abrir ou fechar a porta.</p><p>Você define o interior, composto por até cinquenta cubos de 3 metros, mobiliado e abastecido com comida para cem pessoas. Cem servos espectrais atendem aos visitantes. Objetos e alimentos criados não podem sair; ao fim, criaturas e objetos trazidos são expelidos perto da entrada.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Posicione a entrada, registre convidados e expulse conteúdo trazido ao fim; não há roll." } } }
+    }
+  },
+  "Mordenkainen’s Sword": {
+    "definition": { "mode": "utility", "save": "", "attack": "", "damage": [], "target": "space", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Uma espada de força surge em espaço que possa ver a até 18 metros por até 1 minuto de concentração. Ao aparecer, você realiza um ataque mágico corpo a corpo contra uma criatura a até 1,5 metro dela; no acerto, causa 3d10 de dano de energia.</p><p>Como ação bônus em turnos posteriores, você move a espada até 6 metros e repete o ataque contra criatura a 1,5 metro. Sem escalonamento.</p><p><strong>Procedimento:</strong> a criação é utilitária; ofereça ataque imediato e atividade bônus reutilizável, sem consumir outro slot.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie a espada; execute ataque imediato de 3d10 e, depois, atividade bônus para mover 20 ft e atacar." } } }
+    }
+  },
+  "Plane Shift": {
+    "definition": { "mode": "utility", "save": "", "attack": "", "damage": [], "target": "creature", "count": "9" },
+    "item": {
+      "system": { "target": { "affects": { "count": "9", "type": "creature" } }, "description": { "value": "<p>Há dois modos. Para viajar, você e até oito criaturas voluntárias que deem as mãos em círculo são transportados a um destino geral em outro plano; a chegada exata é decidida pelo Mestre. A haste de afinação deve corresponder ao plano.</p><p>Para banir uma criatura involuntária, faça primeiro um ataque mágico corpo a corpo com a haste. Somente em um acerto o alvo faz salvaguarda de Carisma; na falha, é transportado a um local aleatório no plano escolhido. Não há dano, concentração ou escalonamento.</p><p><strong>Procedimento:</strong> escolha Viagem ou Banimento. Nunca faça CHA sem antes acertar no modo ofensivo.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Viagem: até 9 voluntários, sem save. Banimento: ataque mágico corpo a corpo e somente no acerto CHA." } } }
+    }
+  },
+  "Power Word Pain": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "creature", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Uma criatura que possa ver a até 18 metros com 100 PV ou menos é dominada por dor intensa, sem salvaguarda inicial. Se tiver mais de 100 PV, nada ocorre. Enquanto afetada, seu deslocamento máximo é 3 metros; ela tem desvantagem em ataques, testes e salvaguardas exceto Constituição.</p><p>Ao tentar conjurar, deve passar em salvaguarda de Constituição ou a magia é desperdiçada. Ao fim de cada turno, repete Constituição e encerra o efeito no sucesso. Não exige concentração e não causa dano.</p><p><strong>Procedimento:</strong> verifique o limiar antes de aplicar; o CON pertence apenas à tentativa de conjurar e ao fim do turno.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Remova CON inicial. Aplique sem save se PV≤100; ofereça CON ao conjurar e no fim de cada turno." } } }
+    }
+  },
+  "Prismatic Spray": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": null, "units": "self", "special": "60-foot cone" } },
+    "item": {
+      "system": { "target": { "template": { "type": "cone", "size": 60 }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Cada criatura num cone de 18 metros faz salvaguarda de Destreza e recebe um d8 individual. 1–5 causam 10d6 de fogo, ácido, elétrico, veneno ou frio, metade no sucesso. 6 inicia petrificação: na falha, Restringido e CON ao fim do próximo turno; nova falha petrifica, sucesso encerra. 7 deixa Cego na falha, seguido de WIS no fim do próximo turno; sucesso encerra, falha transporta a outro plano. 8 aplica dois raios distintos, rerrolando resultados 8.</p><p>Não há concentração ou escalonamento. <strong>Procedimento:</strong> não some tipos de dano. Role d8 por alvo, então execute somente a ramificação e os saves posteriores correspondentes.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "DEX e d8 por alvo; 1–5 um dano 10d6/half, 6 petrificação, 7 cegueira/banimento, 8 dois raios. Nunca some fogo+ácido." } } }
+    }
+  },
+  "Project Image": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Uma cópia ilusória sua aparece em local já visto a até 500 milhas e dura até 1 dia de concentração. Ela é intangível e desaparece se sofrer dano. Como ação, você a move até o dobro do seu deslocamento e a faz gesticular, falar e agir; como bônus, alterna seus sentidos entre corpo e imagem.</p><p>Você pode conjurar como se estivesse no espaço da imagem, usando os sentidos dela. Interação física revela a ilusão; uma ação de Investigation contra sua CD permite discerni-la e enxergar através. O teste é posterior, não save da conjuração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie a imagem; mova com ação, alterne sentidos com bônus e peça Investigation apenas quando uma criatura a examinar." } } }
+    }
+  },
+  "Regenerate": {
+    "definition": { "mode": "heal", "save": "", "damage": [], "heal": [4, 8, "15"], "target": "creature", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Após 1 minuto, uma criatura tocada recupera 4d8 + 15 PV. Durante 1 hora, sem concentração, ela recupera 1 PV no início de cada turno, equivalente a 10 PV por minuto fora de combate.</p><p>Membros decepados são restaurados após 2 minutos; se a parte separada for mantida contra o coto, ela se une imediatamente. Não há salvaguarda ou escalonamento.</p><p><strong>Procedimento:</strong> a cura inicial usa bônus fixo +15, nunca o modificador de conjuração; aplique a cura recorrente em atividade/efeito separado.</p>" }, "activities": { "pHLZmaqOSPHirR-r": { "healing": { "number": 4, "denomination": 8, "bonus": "15", "types": ["healing"], "custom": { "enabled": false, "formula": "" }, "scaling": { "mode": "", "number": null } } } } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Cure 4d8+15 ao fim da conjuração e 1 PV no início de cada turno por 1 h; regenere membros conforme o tempo." } } }
+    }
+  },
+  "Resurrection": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "creature", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Após 1 hora, você devolve à vida, com todos os PV, uma criatura tocada morta há no máximo 100 anos, que não morreu de velhice e não é morto-vivo, se a alma estiver livre e disposta. A magia neutraliza venenos, cura doenças normais, fecha feridas e restaura partes perdidas, mas não remove maldições nem doenças mágicas.</p><p>Até completar quatro descansos longos, o alvo sofre −4 em ataques, salvaguardas e testes, reduzindo 1 a cada descanso. Conjurar impõe ao conjurador penalidades próprias até descanso longo. O diamante de 1.000 PO é consumido.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Confirme elegibilidade e alma; ressuscite com PV completos, aplique −4 recuperável e a penalidade do conjurador." } } }
+    }
+  },
+  "Reverse Gravity": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": 100, "units": "ft", "special": "50-foot-radius, 100-foot-high cylinder" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 50 }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>A gravidade é invertida num cilindro de 15 metros de raio e 30 metros de altura por até 1 minuto de concentração. Criaturas e objetos não ancorados caem para cima. Uma criatura só faz salvaguarda de Destreza se houver objeto fixo ao alcance para agarrar e evitar a queda.</p><p>Colisão com teto causa dano normal de queda; quem alcança o topo sem colisão permanece oscilando. Quando a magia termina, todos caem normalmente. Não há dano fixo ou escalonamento.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie cilindro 50×100 ft. DEX somente com apoio alcançável; resolva colisão, suspensão e queda final manualmente." } } }
+    }
+  },
+  "Sequester": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "creatureOrObject", "count": "1" },
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "creatureOrObject" } }, "description": { "value": "<p>Uma criatura voluntária ou objeto tocado fica Invisível e protegido de magias de adivinhação e sensores até a magia ser dissipada. Se for criatura, entra em animação suspensa: o tempo para ela e ela não envelhece.</p><p>Você pode definir uma condição observável a até 1 milha para encerrar a magia, mas ela não pode depender de nível, classe ou PV. Dispel Magic também encerra. Pó de gemas de 5.000 PO é consumido. Sem save, dano ou concentração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Escolha criatura voluntária ou objeto, aplique invisibilidade/animação suspensa e registre gatilho válido." } } }
+    }
+  },
+  "Simulacrum": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "creature", "count": "1" },
+    "item": {
+      "system": { "description": { "value": "<p>Durante 12 horas, você molda em neve ou gelo uma duplicata de uma besta ou humanoide presente. O simulacro é um constructo amistoso sem equipamento, tem metade do máximo de PV do original e usa as demais estatísticas dele. Obedece às suas ordens, mas não aprende, não aumenta nível e não recupera espaços de magia.</p><p>Ele pode ser reparado em laboratório por 100 PO e 1 hora por PV. Criar outro simulacro com esta magia destrói imediatamente o anterior. Neve/gelo e rubi em pó de 1.500 PO são consumidos.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Duplique ator elegível como constructo, reduza PV máximo à metade, remova equipamento e bloqueie recuperação de slots." } } }
+    }
+  },
+  "Symbol": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "object", "count": "1", "range": { "value": null, "units": "touch", "special": "60-foot-radius triggered sphere" } },
+    "item": {
+      "system": { "target": { "affects": { "count": "1", "type": "object" } }, "description": { "value": "<p>Após 1 minuto, você inscreve um glifo quase invisível numa superfície de até 3 metros de diâmetro ou em objeto que não pode ser movido mais de 3 metros. Define gatilho e exceções. Quando disparado, o símbolo afeta uma esfera de 18 metros por 10 minutos.</p><p>Escolha um modo: <strong>Morte</strong>, CON, 10d10 necrótico/metade; <strong>Discórdia</strong>, CON e hostilidade; <strong>Desespero</strong>, CHA e incapacidade; <strong>Insanidade</strong>, INT e comportamento aleatório; <strong>Dor</strong>, CON e incapacitação; <strong>Sono</strong>, WIS e inconsciência; <strong>Atordoamento</strong>, WIS e Atordoado. Cada modo conserva sua duração e repetições próprias.</p><p><strong>Procedimento:</strong> a inscrição não rola CON nem dano. Escolha o símbolo ao preparar e execute somente a atividade correspondente quando o gatilho ocorrer.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Neutralize CON/10d10 inicial. Registre gatilho e escolha entre 8 modos; resolva save, condição e recorrência próprios só ao disparar." } } }
+    }
+  },
+  "Teleport": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "creatureOrObject", "count": "9" },
+    "item": {
+      "system": { "target": { "template": { "contiguous": false, "units": "ft", "type": "", "size": null }, "affects": { "count": "9", "type": "creatureOrObject", "special": "O cubo de 10 ft limita apenas o tamanho do objeto; não é uma área de efeito." } }, "description": { "value": "<p>Você transporta instantaneamente a si e até oito criaturas voluntárias visíveis a até 3 metros, ou um objeto visível que caiba num cubo de 3 metros e não seja portado por involuntário, para destino conhecido no mesmo plano. O cubo de 3 metros limita somente as dimensões do objeto transportado; não representa área de efeito e não seleciona automaticamente criaturas dentro dele.</p><p>Círculo permanente ou objeto associado garante chegada. Nos demais casos, role d100 segundo familiaridade: No Alvo, Fora do Alvo, Área Semelhante ou Mishap. Cada Mishap causa 3d10 de energia a cada viajante e exige nova rolagem, podendo repetir.</p><p><strong>Procedimento:</strong> selecione explicitamente os viajantes voluntários ou o objeto. Não aplique 3d10 ao conjurar; use-o somente quando a tabela resultar em Mishap.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "areaReviewed": true, "manual": "Sem template de área: selecione até 9 voluntários ou um objeto que caiba no cubo de 10 ft. Role tabela conforme familiaridade; 3d10 a todos somente em cada Mishap." } } }
+    }
+  },
+  "Temple of the Gods": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": 120, "units": "ft", "special": "Up to a 120-foot cube" } },
+    "item": {
+      "system": { "target": { "template": { "type": "cube", "size": 120 }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Após 1 hora, um templo surge em chão visível a até 36 metros, dentro de cubo desocupado de até 36 metros por lado, e permanece 24 horas. Você define aparência, iluminação e criaturas que controlam a porta.</p><p>Escolha celestiais, elementais, fadas, ínferos e/ou mortos-vivos como oponentes. Um oponente que tenta entrar faz CHA; na falha, não entra por 24 horas. Mesmo entrando, subtrai 1d4 de ataques, testes e salvaguardas. O templo bloqueia adivinhação e viagem etérea; cura por magia de 1º+ recebe seu modificador de Sabedoria, mínimo 1. Disintegrate o destrói; conjuração diária por um ano torna-o permanente.</p><p><strong>Procedimento:</strong> a criação não faz save; CHA ocorre somente numa tentativa posterior de entrada.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Crie cubo até 120 ft, escolha tipos e aliados. CHA só na entrada; aplique −1d4 e bônus de cura dentro." } } }
+    }
+  },
+  "Tether Essence": {
+    "definition": { "mode": "save", "save": "con", "damage": [], "target": "creature", "count": "2", "onSave": "none" },
+    "item": {
+      "system": { "target": { "affects": { "count": "2", "type": "creature" } }, "description": { "value": "<p>Duas criaturas que possa ver a até 18 metros fazem salvaguarda de Constituição, com desvantagem se estiverem a até 9 metros uma da outra; qualquer uma pode optar por falhar. Se qualquer uma passar, a magia não produz efeito. Se ambas falharem, ficam ligadas por até 1 hora de concentração, independentemente da distância posterior.</p><p>Dano causado a uma é causado também à outra; PV restaurados a uma são restaurados na mesma quantidade à outra. Se uma cair a 0 PV ou o efeito terminar em uma, termina em ambas. O fio de platina de 250 PO é consumido.</p><p><strong>Procedimento:</strong> selecione exatamente dois alvos e só crie o vínculo se ambos falharem; dano e cura são riders recíprocos, não dano da conjuração.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "CON nos 2 alvos, desvantagem se separados ≤30 ft; qualquer sucesso cancela. Distância posterior não encerra; replique dano e cura." } } }
+    }
+  },
+  "Whirlwind": {
+    "definition": { "mode": "utility", "save": "", "damage": [], "target": "space", "range": { "value": 300, "units": "ft", "special": "10-foot-radius, 30-foot-high cylinder" } },
+    "item": {
+      "system": { "target": { "template": { "type": "circle", "size": 10 }, "affects": { "count": "", "type": "space" } }, "description": { "value": "<p>Um redemoinho ocupa cilindro de 3 metros de raio e 9 metros de altura em ponto no chão a até 90 metros por até 1 minuto de concentração. Como ação, você o move até 9 metros.</p><p>Quando criatura entra pela primeira vez num turno ou começa o turno ali, faz DEX: 10d6 concussão na falha, metade no sucesso. Large ou menor que falha também fica Restringida e suspensa; no início do turno sobe 1,5 metro e no fim repete DEX. No sucesso é arremessada 3d6 × 3 metros em direção aleatória, cai Caída e sofre dano de queda. Objetos soltos Medium ou menores são sugados.</p><p><strong>Procedimento:</strong> a criação não causa dano; use atividade de zona recorrente e atividade separada de escape/arremesso.</p>" } },
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "automation": { "needsReview": true, "manual": "Região móvel 10×30 ft. DEX 10d6/half na entrada/início; falha prende Large−; save final arremessa 3d6×10 ft e derruba." } } }
+    }
+  }
+}

@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia canaliza vitalidade para plantas dentro de uma área específica. Existem dois usos possíveis para a magia, garantindo benefícios imediatos ou de longo prazo.</p><p>Se você lançar esta magia usando 1 ação, escolha um ponto dentro do alcance. Todas as plantas normais em um raio de 30 metros centrado nesse ponto tornam-se densas e cobertas de vegetação. Uma criatura que se move pela área deve gastar 1,2 metro de movimento para cada 30 centímetros que ela se mover.</p><p>Você pode excluir uma ou mais áreas de qualquer tamanho dentro da área da magia de serem afetadas.</p><p>Se você lançar esta magia durante 8 horas, você enriquece o terreno. Todas as plantas em um raio de oitocentos metros centradas em um ponto dentro do alcance ficam enriquecidas por 1 ano. As plantas produzem o dobro da quantidade normal de alimento quando colhidas.</p>",
+      "value": "<p>Esta magia possui dois usos. Com 1 ação, escolha um ponto a até 45 metros: plantas normais num raio de 30 metros tornam-se espessas, e cada 30 centímetros de movimento custa 1,2 metro. Você pode excluir uma ou mais áreas de qualquer tamanho dentro da região.</p><p>Conjurando por 8 horas, você enriquece todas as plantas num raio de 800 metros centrado em você; por 1 ano elas produzem o dobro da quantidade normal de alimento. Esse uso não cria terreno difícil.</p><p>A magia é instantânea, não exige concentração e não realiza ataque, salvaguarda ou dano. O círculo de 30 metros representa apenas a modalidade de 1 ação.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "Raio de 100 ft (ação) ou meia milha (8 horas)"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 100
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 100
           },
           "affects": {
             "choice": false
@@ -128,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha modalidade: círculo de 100 ft com exclusões e custo quádruplo, ou 8 horas para fertilidade em meia milha."
     },
     "itemacro": {
       "macro": {

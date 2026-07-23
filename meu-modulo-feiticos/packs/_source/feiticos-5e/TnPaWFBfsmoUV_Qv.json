@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Por até 10 minutos de concentração, ataques à distância contra você têm desvantagem e você ganha voo. Como ação, cria um cubo de vento que causa 2d10 de concussão e empurra criaturas em falha de Constituição.</p>",
+      "value": "<p>Por até 10 minutos de concentração, ataques de arma à distância contra você têm desvantagem e você recebe deslocamento de voo de 18 metros. Se ainda estiver voando quando a magia terminar, você cai.</p><p>Como ação, escolha um cubo de 4,5 metros centrado em ponto a até 18 metros. Cada criatura nele faz salvaguarda de Constituição: em falha sofre 2d10 de concussão e é empurrada 3 metros; em sucesso sofre metade e não é empurrada.</p>",
       "chat": ""
     },
     "source": {
@@ -33,13 +33,13 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 15
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -59,7 +59,7 @@
     },
     "activities": {
       "5qfs7-t41TDv-XaM": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -90,8 +90,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 15
           },
           "affects": {
             "choice": false
@@ -110,39 +110,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "half"
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        }
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -150,19 +119,20 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.boulder.toss.01",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "A conjuração aplica efeitos passivos; use atividade separada para o cubo reutilizável."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

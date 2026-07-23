@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você toca uma arma não mágica e a torna mágica por até 1 hora de concentração. Escolha ácido, elétrico, fogo, frio ou trovejante: a arma recebe +1 em ataques e causa 1d4 adicional do tipo escolhido. Espaços superiores elevam o bônus e o dano em patamares.</p>",
+      "value": "<p>Você toca uma arma não mágica. Por até 1 hora, exigindo concentração, ela se torna mágica, recebe +1 nas jogadas de ataque e causa 1d4 de dano adicional de um tipo escolhido: ácido, frio, fogo, elétrico ou trovejante.</p><p>Com espaço de 5º ou 6º círculo, o bônus é +2 e o dano 2d4. Com espaço de 7º círculo ou superior, o bônus é +3 e o dano 3d4. Escolha o tipo ao conjurar; a atividade inicial apenas encanta a arma e não realiza ataque nem dano.</p>",
       "chat": ""
     },
     "source": {
@@ -128,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Aplique o bônus e o tipo escolhido à arma; o dano adicional só é rolado nos acertos dela."
     },
     "itemacro": {
       "macro": {

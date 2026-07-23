@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Esta magia dá à criatura voluntária que você toca a habilidade de ver as coisas como elas realmente são. Durante esse tempo, a criatura tem visão verdadeira, percebe portas secretas escondidas por magia e pode ver o Plano Etéreo, tudo num alcance de 36 metros.</p>",
+      "value": "<p>Você toca uma criatura voluntária e unge seus olhos com pomada de cogumelos, açafrão e gordura no valor de 25 PO, consumida. Por 1 hora, ela recebe visão verdadeira a 36 metros, percebe portas secretas ocultas por magia e enxerga o Plano Etéreo dentro desse alcance.</p>",
       "chat": ""
     },
     "source": {
@@ -107,7 +107,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -123,11 +125,12 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique visão verdadeira de 120 ft ao alvo voluntário."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

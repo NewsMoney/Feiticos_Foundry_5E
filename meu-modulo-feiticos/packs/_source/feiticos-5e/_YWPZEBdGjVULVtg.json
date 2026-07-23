@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Espíritos envolvem você por até 1 minuto de concentração. Seus ataques contra criaturas a até 3 metros causam 1d8 adicional radiante, necrótico ou frio; alvos danificados não recuperam PV até seu próximo turno. Inimigos que começam a até 3 metros têm deslocamento reduzido. O dano cresce em espaços maiores.</p>",
+      "value": "<p>Espíritos envolvem você por até 1 minuto de concentração. Seus ataques contra criaturas a até 3 metros causam 1d8 adicional de dano radiante, necrótico ou frio, escolhido ao conjurar. Uma criatura que sofra esse dano não recupera pontos de vida até o início do seu próximo turno.</p><p>Além disso, qualquer criatura hostil que você possa ver e que comece o turno a até 3 metros tem a velocidade reduzida em 3 metros até o início do próximo turno dela.</p><p>O dano aumenta para 2d8 com espaço de 5º–6º e 3d8 com espaço de 7º ou superior. Não role dano ao conjurar; ele depende de um acerto posterior e da distância.</p>",
       "chat": ""
     },
     "source": {
@@ -25,9 +25,7 @@
       "concentration": true
     },
     "range": {
-      "value": null,
-      "units": "self",
-      "special": ""
+      "value": null
     },
     "target": {
       "template": {
@@ -39,7 +37,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "self",
+        "type": "creature",
         "special": ""
       }
     },
@@ -121,7 +119,7 @@
         "fallbacks": [
           "jb2a.energy_strands.in.dark_purple"
         ],
-        "targeted": false
+        "targeted": true
       },
       "automation": {
         "generated": true,
@@ -129,9 +127,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Adicione o tipo escolhido apenas a ataques contra alvos a 10 ft; aplique bloqueio de cura e redução de velocidade separadamente."
     },
     "itemacro": {
       "macro": {

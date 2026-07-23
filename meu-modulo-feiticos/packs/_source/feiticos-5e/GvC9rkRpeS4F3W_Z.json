@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você pronuncia uma palavra divina, imbuída do poder que moldou o mundo no início da criação. Escolha qualquer número de criaturas que você possa ver dentro do alcance. Cada criatura que puder ouvir você deve fazer um teste de resistência de Carisma. Se falhar no teste, a criatura sofre um efeito com base em seus pontos de vida atuais:</p><p>* 50 pontos de vida ou menos: ensurdecido por 1 minuto<br>* 40 pontos de vida ou menos: ensurdecido e cego por 10 minutos<br>* 30 pontos de vida ou menos: cego, ensurdecido e atordoado por 1 hora<br>* 20 pontos de vida ou menos: morto instantaneamente</p><p>Independentemente de seus pontos de vida atuais, um celestial, um elemento, uma fada ou um demônio que falhar em seu teste de resistência é forçado a voltar ao seu plano de origem (se ainda não estiver lá) e não pode retornar ao seu plano atual por 24 horas por qualquer meio que não seja uma magia <em>Desejo</em>.</p>",
+      "value": "<p>Como ação bônus, escolha qualquer número de criaturas que possa ver a até 9 metros. Cada uma que possa ouvi-lo faz salvaguarda de Carisma. Na falha, aplique efeitos cumulativos pelos PV atuais: 50 ou menos, Surdo por 1 minuto; 40 ou menos, também Cego por 10 minutos; 30 ou menos, também Atordoado por 1 hora; 20 ou menos, morre instantaneamente. No sucesso, nada ocorre.</p><p>Independentemente dos PV, celestial, elemental, fada ou ínfero que falhe é forçado a voltar ao plano de origem, se não estiver nele, e não pode retornar ao plano atual por 24 horas salvo por Wish. Não há dano, concentração ou escalonamento.</p>",
       "chat": ""
     },
     "source": {
@@ -38,9 +38,9 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
-        "special": ""
+        "special": "Qualquer número de criaturas escolhidas, visíveis e capazes de ouvir a 30 ft."
       }
     },
     "properties": [
@@ -134,10 +134,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Role CHA para cada alvo válido e aplique limiares cumulativos de PV; resolva banimento por tipo/plano separadamente."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

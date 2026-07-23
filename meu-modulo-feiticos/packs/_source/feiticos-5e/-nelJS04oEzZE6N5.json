@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você conjura um portal ligando um espaço desocupado que você pode ver dentro do alcance a um local preciso em um plano de existência diferente. O portal é uma abertura circular, que pode ser feita com 1,5 a 6 metros de diâmetro. Você pode orientar o portal em qualquer direção que desejar. O portal dura enquanto durar.</p><p>O portal tem uma frente e um verso em cada plano onde aparece. Viajar pelo portal só é possível passando pela sua frente. Qualquer coisa que faça isso é instantaneamente transportada para o outro plano, aparecendo no espaço desocupado mais próximo do portal.</p><p>Divindades e outros governantes planares podem impedir que portais criados por esta magia se abram em sua presença ou em qualquer lugar dentro de seus domínios.</p><p>Ao lançar esta magia, você pode falar o nome de uma criatura específica (um pseudônimo, título ou apelido não funciona). Se aquela criatura estiver em um plano diferente daquele em que você está, o portal se abre nas imediações da criatura nomeada e atrai a criatura através dele até o espaço desocupado mais próximo do seu lado do portal. Você não ganha nenhum poder especial sobre a criatura, e ela é livre para agir como o Mestre considerar apropriado. Ele pode sair, atacá-lo ou ajudá-lo.</p>",
+      "value": "<p>Você cria num espaço desocupado visível a até 18 metros um portal circular de 1,5 a 6 metros de diâmetro, orientado como escolher, ligando a localização precisa de outro plano. Ele permanece por até 1 minuto de concentração e a passagem é bidirecional. Divindades e governantes planares podem impedir portais em seus domínios.</p><p>Ao conjurar, você também pode pronunciar o nome de uma criatura específica em outro plano. Ela é puxada sem salvaguarda para o espaço desocupado mais próximo do portal do seu lado, salvo intervenção de divindade ou governante planar; a magia não concede controle sobre ela. Posicione o portal e decida a chamada manualmente.</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "Portal circular de 5 a 20 ft de diâmetro"
     },
     "target": {
       "template": {
@@ -126,10 +126,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Escolha destino, diâmetro e orientação; chamada nominal não tem save nem controla a criatura e pode ser bloqueada pelo governante planar."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

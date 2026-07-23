@@ -26,18 +26,18 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "30-foot-radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 30
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "6",
         "type": "creature",
         "special": ""
       }
@@ -88,11 +88,11 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 30
           },
           "affects": {
-            "choice": false
+            "choice": true
           },
           "override": false,
           "prompt": true
@@ -143,7 +143,7 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

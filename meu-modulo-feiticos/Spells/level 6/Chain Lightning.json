@@ -26,7 +26,7 @@
     "range": {
       "value": 150,
       "units": "ft",
-      "special": ""
+      "special": "Primary target plus three targets within 30 feet of it"
     },
     "target": {
       "template": {
@@ -37,8 +37,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "4",
+        "type": "creatureOrObject",
         "special": ""
       }
     },
@@ -157,10 +157,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione um alvo primário e até três secundários a 30 ft dele; cada alvo só pode receber um raio. Upcast adiciona alvos, não dano."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

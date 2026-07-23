@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Até dez criaturas visíveis a até 36 metros são transformadas em bestas por até 1 hora de concentração; alvos involuntários fazem resistência de Sabedoria. Cada forma deve ter ND compatível. PV da forma substituem os normais e o alvo retorna ao chegar a 0 PV.</p>",
+      "value": "<p>Até dez criaturas visíveis a 36 metros assumem, individualmente, formas de fera por até 1 hora de concentração. Uma criatura involuntária faz salvaguarda de Sabedoria para evitar. O ND da forma não pode exceder o ND do alvo ou metade do nível dele se não possuir ND.</p><p>Cada alvo recebe pontos de vida temporários iguais aos PV da forma. Enquanto os tiver, usa as estatísticas da fera, não pode falar nem conjurar, e o equipamento funde ou cai conforme a escolha. Ao perder todos esses PV temporários, usar uma ação para reverter ou a magia terminar, volta à forma normal; dano excedente não passa aos PV normais.</p><p>Escolha forma, voluntariedade e equipamento por alvo. A conjuração não causa dano e não deve forçar salvaguarda de alvos voluntários.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "Yi738QWYQXatTMLH": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -108,15 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -134,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione até dez criaturas; role WIS só para involuntárias e aplique forma/PV temporários/reversão individualmente."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

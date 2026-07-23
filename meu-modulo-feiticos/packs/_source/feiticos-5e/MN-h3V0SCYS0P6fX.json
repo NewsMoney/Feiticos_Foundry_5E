@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma esfera de luz com 18 metros de raio se espalha a partir de um ponto que você escolher dentro do alcance. A esfera é luz brilhante e emite luz fraca por mais 18 metros.</p><p>Se você escolher um ponto em um objeto que está segurando ou que não esteja sendo usado ou carregado, a luz brilhará no objeto e se moverá com ele. Cobrir completamente o objeto afetado com um objeto opaco, como uma tigela ou um elmo, bloqueia a luz.</p><p>Se alguma área desta magia se sobrepõe a uma área de escuridão criada por uma magia de 3º nível ou inferior, a magia que criou a escuridão é dissipada.</p>",
+      "value": "<p>Uma esfera de luz com raio de 18 metros se espalha a partir de um ponto escolhido a até 18 metros. A esfera emite luz plena e, além dela, mais 18 metros de penumbra. A luz dura 1 hora e não exige concentração.</p><p>Se o ponto estiver num objeto segurado ou não vestido nem carregado, a luz emana do objeto e move-se com ele. Cobrir completamente o objeto com algo opaco bloqueia a luz. Se qualquer parte da área sobrepuser escuridão criada por magia de 3º círculo ou menor, a magia que criou a escuridão é dissipada.</p><p>O círculo representa a área de luz plena; não há ataque, salvaguarda ou dano.</p>",
       "chat": ""
     },
     "source": {
@@ -27,19 +27,19 @@
     "range": {
       "value": 60,
       "units": "ft",
-      "special": ""
+      "special": "Esfera de luz com raio 60 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 60
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 60
           },
           "affects": {
             "choice": false
@@ -128,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Posicione círculo de 60 ft de luz plena; acrescente 60 ft de penumbra e dissipe escuridão mágica de nível 3 ou menor sobreposta."
     },
     "itemacro": {
       "macro": {

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Escolha um objeto de metal fabricado, como uma arma de metal ou uma armadura de metal pesado ou médio, que você possa ver dentro do alcance. Você faz com que o objeto brilhe em brasa. Qualquer criatura em contato físico com o objeto sofre 2d8 de dano de fogo quando você lança a magia. Até que a magia termine, você pode usar uma ação bônus em cada um de seus turnos subsequentes para causar esse dano novamente.</p><p>Se uma criatura estiver segurando ou vestindo o objeto e sofrer o dano dele, a criatura deve ser bem sucedida em um teste de resistência de Constituição ou largar o objeto, se puder. Se não deixar cair o objeto, ele terá desvantagem em jogadas de ataque e testes de habilidade até o início do seu próximo turno.</p><p><strong>Em níveis mais altos.</strong> Quando você lança esta magia usando um espaço de magia de 3º nível ou superior, o dano aumenta em 1d8 para cada nível de espaço acima do 2º.</p>",
+      "value": "<p>Escolha um objeto metálico manufaturado no alcance. Ele brilha em calor e qualquer criatura em contato com ele sofre 2d8 de dano de fogo imediatamente, sem salvaguarda.</p><p>Até a magia terminar, você pode usar uma ação bônus em turnos posteriores para causar o dano novamente. Se uma criatura estiver segurando ou vestindo o objeto, ela realiza uma salvaguarda de Constituição apenas para evitar soltá-lo quando puder. Se não puder ou não soltar, terá desvantagem em ataques e testes até o início do seu próximo turno.</p><p><strong>Em Círculos Superiores.</strong> O dano aumenta em 1d8 para cada círculo acima do 2º.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "J8n3TOlVi87TuDSf": {
-        "type": "save",
+        "type": "damage",
         "activation": {
           "type": "action",
           "value": 1,
@@ -131,16 +131,85 @@
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "full"
         },
-        "save": {
-          "ability": [
-            "con"
+        "save": null
+      },
+      "heat-again": {
+        "type": "damage",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": true,
+          "condition": "Turno posterior, enquanto mantiver concentração"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Repete o dano sem save. Se o objeto puder ser largado, faça CON separadamente para decidir se é largado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
           ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
+          "critical": {
+            "allow": false
+          },
+          "onSave": "full"
         }
       }
     }
@@ -158,10 +227,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "O save de CON nunca reduz o dano; ele serve somente para largar o objeto. A desvantagem quando não larga exige aplicação manual."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

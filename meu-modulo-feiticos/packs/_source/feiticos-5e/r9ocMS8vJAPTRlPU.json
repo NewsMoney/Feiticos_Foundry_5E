@@ -162,7 +162,9 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "A menção à luz e o alcance do ataque da lâmina não são área de resolução."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma criatura a até 36 metros faz resistência de Inteligência. Em falha, perde a capacidade de distinguir aliados de inimigos por até 1 minuto de concentração, escolhendo alvos aleatoriamente quando ataca. Repete a resistência sempre que sofre dano. Criaturas imunes a medo não são afetadas.</p>",
+      "value": "<p>Uma criatura visível a 36 metros faz uma salvaguarda de Inteligência. Uma criatura imune a amedrontado obtém sucesso automaticamente. Em uma falha, por até 1 minuto de concentração, perde a capacidade de distinguir aliados de inimigos e considera inimiga toda criatura que possa ver.</p><p>Sempre que sofrer dano, repete a salvaguarda, encerrando a magia em um sucesso. Quando escolher alvo para um ataque, magia ou habilidade, deve selecionar aleatoriamente entre os alvos que possa ver dentro do alcance; se um inimigo provocar ataque de oportunidade, deve realizá-lo se puder. Não há dano ou condição amedrontado aplicada pela conjuração.</p>",
       "chat": ""
     },
     "source": {
@@ -137,9 +137,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Após falha, sorteie alvos válidos; repita INT sempre que o alvo sofrer dano."
     },
     "itemacro": {
       "macro": {

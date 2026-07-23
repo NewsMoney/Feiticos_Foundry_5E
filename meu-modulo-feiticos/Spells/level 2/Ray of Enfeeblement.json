@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Um raio negro de energia enervante sai do seu dedo em direção a uma criatura dentro do alcance. Faça um ataque mágico à distância contra o alvo. Se acertar, o alvo causa apenas metade do dano com ataques de arma que usam Força até a magia terminar.</p><p>No final de cada turno do alvo, ele pode fazer um teste de resistência de Constituição contra a magia. Com um sucesso, a magia termina.</p>",
+      "value": "<p>Faça um ataque mágico à distância contra uma criatura no alcance. Em um acerto, enquanto você mantiver concentração, os ataques com arma do alvo que usem Força causam apenas metade do dano.</p><p>No fim de cada turno, o alvo realiza uma salvaguarda de Constituição, encerrando a magia em um sucesso. Não existe salvaguarda inicial: um ataque errado não aplica o efeito.</p>",
       "chat": ""
     },
     "source": {
@@ -58,7 +58,7 @@
     },
     "activities": {
       "nLuEnzmoeU6rvxE2": {
-        "type": "save",
+        "type": "attack",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,6 +109,72 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        },
+        "save": null
+      },
+      "enfeeblement-save": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo após um acerto"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Sucesso encerra o efeito."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "save": {
           "ability": [
             "con"
@@ -134,10 +200,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Após acertar, aplique a redução de dano de ataques com arma baseados em STR. Use o save apenas no fim dos turnos."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

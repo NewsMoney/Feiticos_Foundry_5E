@@ -6,7 +6,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Minor%20Ilusion.png",
   "system": {
     "description": {
-      "value": "<p>Você cria por 1 minuto um som ou uma imagem imóvel de objeto num cubo de 1,5 metro a até 9 metros. Interação física revela a imagem; uma criatura pode usar ação e Investigação contra sua CD para reconhecer a ilusão.</p>",
+      "value": "<p>Você cria por 1 minuto um som ou a imagem de um objeto dentro do alcance. Um som pode variar de volume e continuar pela duração. Uma imagem deve caber num cubo de 1,5 metro; ela não produz som, luz, cheiro nem outro efeito sensorial. Interação física revela a imagem, pois coisas atravessam-na.</p><p>Uma criatura pode usar sua ação para examinar o som ou a imagem e realizar um teste de Inteligência (Investigação) contra sua CD de magia. Em sucesso, ela reconhece a ilusão, que se torna tênue para ela. Se uma criatura discernir a ilusão pelo exame ou interação, o efeito não a engana.</p>",
       "chat": ""
     },
     "source": {
@@ -32,7 +32,8 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": ""
+        "type": "cube",
+        "size": 5
       },
       "affects": {
         "choice": false,
@@ -87,7 +88,9 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "cube",
+            "size": 5
           },
           "affects": {
             "choice": false
@@ -120,9 +123,10 @@
         ]
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "Escolha som ou imagem; testes de Investigação são feitos somente por criaturas que examinem a ilusão."
     },
     "itemacro": {
       "macro": {

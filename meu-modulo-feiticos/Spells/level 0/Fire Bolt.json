@@ -5,7 +5,7 @@
   "img": "modules/meu-modulo-feiticos/icons/Fire%20bolt.png",
   "system": {
     "description": {
-      "value": "<p>Você lança fogo contra uma criatura ou objeto a até 36 metros. Em acerto causa 1d10 de fogo; objetos inflamáveis desprotegidos podem incendiar. O dano aumenta nos níveis 5, 11 e 17.</p>",
+      "value": "<p>Você arremessa uma fagulha de fogo contra uma criatura ou objeto dentro do alcance. Realize um ataque mágico à distância. Em um acerto, o alvo sofre 1d10 de dano de fogo.</p><p>Um objeto inflamável atingido pela magia pega fogo se não estiver vestido nem sendo carregado. Essa ignição não se aplica automaticamente a criaturas ou a objetos protegidos.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d10 no 5º nível, 3d10 no 11º e 4d10 no 17º.</p>",
       "chat": ""
     },
     "source": {
@@ -35,7 +35,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "creatureOrObject",
         "special": ""
       }
     },
@@ -151,7 +151,7 @@
         "targeted": true
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

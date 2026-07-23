@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma esfera de gás amarelo e nauseante com 6 metros de raio centrada em um ponto dentro do alcance. A nuvem se espalha pelos cantos e sua área fica fortemente obscurecida. A nuvem permanece no ar enquanto durar.</p><p>Cada criatura que estiver completamente dentro da nuvem no início de seu turno deve fazer um teste de resistência de Constituição contra veneno. Se falhar na resistência, a criatura gasta sua ação vomitando e cambaleando. Criaturas que não precisam respirar ou que são imunes a veneno são automaticamente bem-sucedidas neste teste de resistência.</p><p>Um vento moderado (pelo menos 16 quilômetros por hora) dispersa a nuvem após 4 rodadas. Um vento forte (pelo menos 32 quilômetros por hora) o dispersa após 1 rodada.</p>",
+      "value": "<p>Uma esfera de gás de 6 metros de raio surge a até 27 metros, espalha-se por cantos e deixa a área fortemente obscurecida por até 1 minuto de concentração.</p><p>Uma criatura totalmente dentro da nuvem no início do turno faz salvaguarda de Constituição contra veneno. Em uma falha, passa o turno vomitando e não realiza ação. Criaturas que não precisam respirar ou são imunes a veneno obtêm sucesso automaticamente. Vento moderado dispersa a nuvem após 4 rodadas; vento forte, após 1 rodada.</p><p>Não há save na conjuração nem dano.</p>",
       "chat": ""
     },
     "source": {
@@ -26,19 +26,19 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "Esfera de raio 20 ft"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "creature",
+        "count": "",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "fcUnSdi0QU0e_qlg": {
-        "type": "save",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -89,8 +89,8 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
@@ -108,15 +108,6 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        },
-        "save": {
-          "ability": [
-            "con"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -137,9 +128,10 @@
         "conditions": []
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
-      }
+      },
+      "manualWorkflow": "CON apenas no início do turno de criatura totalmente dentro; falha consome a ação. Respeite imunidades e dispersão por vento."
     },
     "itemacro": {
       "macro": {

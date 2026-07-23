@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma mão Grande de energia aparece a até 36 metros por até 1 minuto de concentração. Como ação bônus, você a move e escolhe socar, agarrar, empurrar ou proteger. Ela possui CA e PV próprios; ataques, testes e dano usam sua habilidade de conjuração e melhoram com espaços superiores.</p>",
+      "value": "<p>Uma mão de força Grande surge em espaço desocupado visto a 36 metros. Ela tem CA 20, pontos de vida iguais ao seu máximo, imunidades apropriadas e usa sua Força de conjuração. Ao conjurar e como ação bônus em turnos posteriores, mova-a até 18 metros e escolha um modo.</p><p><strong>Punho Cerrado:</strong> ataque corpo a corpo de magia, 4d8 de força. <strong>Mão Poderosa:</strong> disputa para empurrar até 1,5 metro mais cinco vezes seu modificador. <strong>Mão Agarradora:</strong> disputa para agarrar e, em turnos posteriores, 2d6 + modificador de força. <strong>Mão Interposta:</strong> concede meia cobertura e impede aproximação conforme a diferença de Força.</p><p><strong>Em Círculos Superiores.</strong> Punho aumenta 2d8 e esmagamento 2d6 por círculo acima do 5º.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -58,7 +58,7 @@
     },
     "activities": {
       "aDpRqkUOpeJ0XFfw": {
-        "type": "attack",
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": 1,
@@ -109,42 +109,8 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 4,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "force"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "critical": {
-            "allow": true
-          },
-          "onSave": "none"
-        },
-        "attack": {
-          "ability": "",
-          "bonus": "",
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": "spell"
-          }
-        }
+        "attack": null,
+        "damage": null
       }
     }
   },
@@ -152,7 +118,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -161,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Crie a mão e use atividades/rolagens separadas para os quatro modos; a conjuração não ataca automaticamente."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

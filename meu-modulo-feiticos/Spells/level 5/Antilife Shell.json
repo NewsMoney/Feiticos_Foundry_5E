@@ -5,7 +5,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Uma barreira cintilante se estende a partir de você em um raio de 3 metros e se move com você, permanecendo centrada em você e protegendo outras criaturas além de mortos-vivos e constructos. A barreira dura enquanto durar.</p><p>A barreira impede que uma criatura afetada passe ou alcance. Uma criatura afetada pode lançar magias ou fazer ataques com armas de longo alcance ou de alcance através da barreira.</p><p>Se você se mover de forma que uma criatura afetada seja forçada a passar pela barreira, a magia termina.</p>",
+      "value": "<p>Uma barreira móvel de 3 metros de raio envolve você por até 1 hora de concentração. Ela impede que criaturas que não sejam mortos-vivos ou constructos atravessem a barreira para dentro, embora criaturas que já estejam dentro possam permanecer e sair.</p><p>A barreira move-se com você. Ela não pode ser usada para empurrar uma criatura: se você se mover de modo a forçar a barreira contra uma criatura afetada, a magia termina.</p>",
       "chat": ""
     },
     "source": {
@@ -26,7 +26,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (10-foot radius)"
+      "special": "10-foot-radius mobile barrier"
     },
     "target": {
       "template": {
@@ -108,7 +108,9 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null,
+        "damage": null
       }
     }
   },
@@ -125,10 +127,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Aplique colisão somente contra entrada de criaturas vivas; mortos-vivos e constructos atravessam normalmente."
       },
       "description": {
-        "quality": "technical-reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

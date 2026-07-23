@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você cria uma porta para uma mansão extradimensional por 24 horas. O interior possui cinquenta aposentos, comida para cem pessoas e cem servos espectrais obedientes. Somente criaturas designadas entram; tudo criado pela magia desaparece ao sair.</p>",
+      "value": "<p>Após 1 minuto, uma entrada extradimensional cintilante, de até 1,5 metro de largura e 3 metros de altura, surge num ponto a até 90 metros e permanece 24 horas. Apenas criaturas designadas por você podem entrar; enquanto estiver a 9 metros, você pode abrir ou fechar a porta.</p><p>Você define o interior, composto por até cinquenta cubos de 3 metros, mobiliado e abastecido com comida para cem pessoas. Cem servos espectrais atendem aos visitantes. Objetos e alimentos criados não podem sair; ao fim, criaturas e objetos trazidos são expelidos perto da entrada.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "space",
         "special": ""
       }
     },
@@ -125,10 +125,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Posicione a entrada, registre convidados e expulse conteúdo trazido ao fim; não há roll."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },

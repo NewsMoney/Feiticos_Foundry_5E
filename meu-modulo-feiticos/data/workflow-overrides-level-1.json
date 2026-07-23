@@ -1,0 +1,781 @@
+{
+  "Chaos Bolt": {
+    "definition": {
+      "mode": "attack",
+      "attack": "ranged",
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "bjH5mppDeh8FYy_W": {
+            "description": {
+              "chatFlavor": "Após o acerto, role manualmente 2d8 + 1d6 (+1d6 por nível de espaço acima do 1º). Role os d8 separadamente e escolha como tipo do dano um dos resultados na tabela de energia. O dano foi separado do ataque para nunca aplicar tipo incorreto. Se os d8 coincidirem, execute Salto Caótico."
+            },
+            "damage": { "parts": [], "critical": { "allow": true }, "onSave": "none" }
+          },
+          "chaosBoltJump": {
+            "type": "attack",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Somente quando os dois d8 do ataque anterior mostrarem o mesmo número"
+            },
+            "description": {
+              "chatFlavor": "Escolha uma criatura diferente a até 30 pés do alvo anterior e faça novo ataque mágico à distância. Em acerto, repita manualmente a fórmula e a escolha de tipo do primeiro raio. Nenhuma criatura pode ser alvo mais de uma vez. O salto pode se repetir se os dois d8 voltarem a coincidir."
+            },
+            "consumption": {
+              "scaling": { "allowed": false },
+              "spellSlot": false,
+              "targets": []
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": { "threshold": null },
+              "flat": false,
+              "type": { "value": "ranged", "classification": "spell" }
+            },
+            "damage": { "parts": [], "critical": { "allow": true }, "onSave": "none" }
+          }
+        }
+      }
+    }
+  },
+  "Chromatic Orb": {
+    "definition": {
+      "mode": "attack",
+      "attack": "ranged",
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "3i0FclVjlwE4X3Pn": {
+            "description": {
+              "chatFlavor": "Antes do ataque, escolha ácido, frio, fogo, relâmpago, veneno ou trovão. Após o acerto, role manualmente 3d8 do tipo escolhido, +1d8 por nível de espaço acima do 1º. O dano foi deliberadamente separado do ataque para nunca aplicar um tipo incorreto."
+            },
+            "damage": { "parts": [], "critical": { "allow": true }, "onSave": "none" }
+          }
+        }
+      }
+    }
+  },
+  "Hunter’s Mark": {
+    "definition": {
+      "mode": "utility",
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "xCB3hN1FZNfeqnfN": {
+            "description": {
+              "chatFlavor": "Marque uma criatura visível. Esta atividade não rola dano: o 1d6 adicional ocorre somente quando você acerta o alvo marcado com um ataque de arma."
+            }
+          },
+          "huntersMarkDamage": {
+            "type": "damage",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Após acertar o alvo marcado com um ataque de arma"
+            },
+            "description": {
+              "chatFlavor": "Dano adicional de Hunter’s Mark. Não use ao conjurar. Se o alvo chegar a 0 PV, a marca pode ser transferida com ação bônus em turno posterior."
+            },
+            "consumption": {
+              "scaling": { "allowed": false },
+              "spellSlot": false,
+              "targets": []
+            },
+            "damage": { "parts": [], "critical": { "allow": true }, "onSave": "none" }
+          }
+        }
+      }
+    }
+  },
+  "Magic Missile": {
+    "definition": {
+      "mode": "utility",
+      "damage": [
+        [1, 4, "force"]
+      ]
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "choice": true,
+            "count": "3",
+            "type": "creature",
+            "special": "Distribua três dardos; cada espaço acima do 1º cria um dardo adicional"
+          }
+        },
+        "activities": {
+          "tHu-bexVG9qtbAPj": {
+            "description": {
+              "chatFlavor": "Cada dardo acerta automaticamente e causa 1d4 + 1 de força. Distribua três dardos entre criaturas visíveis; todos atingem simultaneamente. Crie um dardo adicional por nível de espaço acima do 1º."
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": { "enabled": true, "formula": "1d4 + 1" },
+                  "number": null,
+                  "denomination": null,
+                  "bonus": "",
+                  "types": ["force"],
+                  "scaling": { "mode": "none", "number": null }
+                }
+              ],
+              "critical": { "allow": false },
+              "onSave": "none"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Ray of Sickness": {
+    "definition": {
+      "mode": "attack",
+      "attack": "ranged",
+      "save": null,
+      "damage": [
+        [2, 8, "poison"]
+      ],
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "fmHtgB2WA__sMxc6": {
+            "description": {
+              "chatFlavor": "Faça primeiro o ataque mágico à distância. Somente depois de um acerto execute a atividade Salvaguarda contra Envenenamento."
+            }
+          },
+          "rayOfSicknessSave": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Somente após o raio acertar"
+            },
+            "description": {
+              "chatFlavor": "O alvo atingido faz salvaguarda de Constituição. Em falha, fica envenenado até o fim do próximo turno do conjurador; não há dano adicional."
+            },
+            "consumption": {
+              "scaling": { "allowed": false },
+              "spellSlot": false,
+              "targets": []
+            },
+            "save": {
+              "ability": ["con"],
+              "dc": { "calculation": "spellcasting", "formula": "" }
+            },
+            "damage": { "parts": [], "critical": { "allow": false }, "onSave": "none" },
+            "effects": []
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "generated": true,
+            "needsReview": true,
+            "conditions": ["poisoned"],
+            "manual": "Aplicar poisoned apenas a quem falhar na atividade rayOfSicknessSave."
+          }
+        }
+      }
+    }
+  },
+  "Earth Tremor": {
+    "definition": {
+      "range": {
+        "value": null,
+        "units": "self",
+        "special": "Self (10-foot radius)"
+      },
+      "mode": "save",
+      "save": "dex",
+      "damage": [
+        [1, 6, "bludgeoning"]
+      ],
+      "onSave": "none",
+      "conditions": ["prone"]
+    },
+    "item": {
+      "system": {
+        "target": {
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": "Todas as outras criaturas na área; exclui o conjurador"
+          }
+        },
+        "activities": {
+          "cP2g-Z-zfiN_JZze": {
+            "description": {
+              "chatFlavor": "Cada outra criatura no raio de 10 pés faz salvaguarda de Destreza. Em falha sofre o dano e cai prone; no sucesso não sofre dano nem condição. Terra ou pedra solta na área vira terreno difícil."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Ice Knife": {
+    "definition": {
+      "mode": "attack",
+      "attack": "ranged",
+      "save": null,
+      "damage": [
+        [1, 10, "piercing"]
+      ],
+      "onSave": "none"
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "8s5brTzgo4EspkTe": {
+            "description": {
+              "chatFlavor": "Ataque inicial: 1d10 perfurante somente no acerto. Acertando ou errando, execute em seguida a atividade Explosão de Gelo."
+            }
+          },
+          "iceKnifeBurst": {
+            "type": "save",
+            "activation": {
+              "type": "special",
+              "value": null,
+              "override": true,
+              "condition": "Após o ataque inicial, acertando ou errando"
+            },
+            "description": {
+              "chatFlavor": "Crie uma explosão de raio 5 pés centrada no alvo do ataque. Todas as criaturas na área, inclusive o alvo, fazem Destreza; somente as que falharem sofrem 2d6 frio. +1d6 frio por nível de espaço acima do 1º."
+            },
+            "consumption": {
+              "scaling": { "allowed": true },
+              "spellSlot": false,
+              "targets": []
+            },
+            "target": {
+              "template": { "contiguous": false, "units": "ft", "type": "circle", "size": 5 },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            },
+            "save": {
+              "ability": ["dex"],
+              "dc": { "calculation": "spellcasting", "formula": "" }
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": { "enabled": false, "formula": "" },
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": ["cold"],
+                  "scaling": { "mode": "whole", "number": 1 }
+                }
+              ],
+              "critical": { "allow": false },
+              "onSave": "none"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Sanctuary": {
+    "definition": {
+      "mode": "utility",
+      "save": null,
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "UZFDONaeOBcBGgkQ": {
+            "description": {
+              "chatFlavor": "Não role salvaguarda no alvo ao conjurar. Sempre que outra criatura tentar atacar ou usar magia nociva contra o protegido, o atacante faz SAB; em falha escolhe outro alvo ou perde o ataque/magia. Áreas ignoram esta proteção. Controle o gatilho como reação/efeito."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Hail of Thorns": {
+    "definition": {
+      "mode": "utility",
+      "save": null,
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "kP8vdOZiq11MteI7": {
+            "description": {
+              "chatFlavor": "Arma o próximo acerto com arma à distância; não role save nem dano ao conjurar. Após o acerto, crie raio de 5 pés centrado no alvo: todas as criaturas, inclusive ele, fazem DES e sofrem 1d10 perfurante/mitade. +1d10 por nível, máximo 6d10. A explosão requer atividade ou macro posterior."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Searing Smite": {
+    "definition": {
+      "mode": "utility",
+      "save": null,
+      "damage": [],
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "nMqX-_XVGAtfqjXn": {
+            "description": {
+              "chatFlavor": "Não role save/dano ao conjurar. No próximo acerto corpo a corpo, cause +1d6 fogo (+1d6/nível) e incendeie o alvo. No início de cada turno dele: CON; sucesso encerra, falha causa 1d6 fogo. Uma criatura pode usar ação para apagar."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Thunderous Smite": {
+    "definition": {
+      "mode": "utility",
+      "save": null,
+      "damage": [],
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "yQcWjEGh5tZuHbap": {
+            "description": {
+              "chatFlavor": "Não role save/dano ao conjurar. No próximo acerto corpo a corpo, cause +2d6 trovão; então o alvo faz FOR e, na falha, é empurrado 10 pés e cai prone. O estrondo é audível a 300 pés."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Wrathful Smite": {
+    "definition": {
+      "mode": "utility",
+      "save": null,
+      "damage": [],
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "RAyyM21qlKU075I0": {
+            "description": {
+              "chatFlavor": "Não role save/dano ao conjurar. No próximo acerto corpo a corpo, cause +1d6 psíquico; então o alvo faz SAB e fica frightened na falha. Para encerrar depois, ele usa ação e faz teste de SAB contra a CD, não salvaguarda."
+            }
+          }
+        }
+      }
+    }
+  },
+  "Alarm": {
+    "definition": {
+      "range": {
+        "value": 30,
+        "units": "ft",
+        "special": "20-foot cube"
+      },
+      "mode": "utility",
+      "save": null,
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "0CLHychdOAsitwJf": {
+            "description": {
+              "chatFlavor": "Posicione um cubo de 20 pés inteiramente dentro do alcance de 30 pés ou escolha uma porta/janela/objeto que caiba na área. Não há ataque, salvaguarda ou dano."
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "cube",
+                "size": 20
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true
+          }
+        }
+      }
+    }
+  },
+  "Create or Destroy Water": {
+    "item": {
+      "system": {
+        "activities": {
+          "aNrtFWOqXiElJukv": {
+            "description": {
+              "chatFlavor": "Modo recipiente: crie ou destrua até 10 galões em recipiente aberto. Não posicione template para este modo."
+            }
+          },
+          "createDestroyWaterRain": {
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "override": true,
+              "condition": "Modo chuva ou destruição de névoa"
+            },
+            "description": {
+              "chatFlavor": "Posicione um cubo de 30 pés para criar chuva que extingue chamas expostas ou destruir névoa dentro da área. O lado do cubo aumenta em 5 pés por nível de espaço acima do 1º. Não há rolagem."
+            },
+            "consumption": {
+              "scaling": { "allowed": true },
+              "spellSlot": true,
+              "targets": []
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "cube",
+                "size": 30
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            },
+            "damage": {
+              "parts": [],
+              "critical": { "allow": false },
+              "onSave": "none"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true,
+            "manual": "A dimensão do modo chuva aumenta 5 pés por nível; ajuste o template quando usar espaço superior."
+          }
+        }
+      }
+    }
+  },
+  "Faerie Fire": {
+    "definition": {
+      "range": {
+        "value": 60,
+        "units": "ft",
+        "special": "20-foot cube"
+      },
+      "mode": "save",
+      "save": "dex",
+      "damage": [],
+      "onSave": "none",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "9uEw07G4CzTHPg8Y": {
+            "description": {
+              "chatFlavor": "Cada criatura no cubo de 20 pés faz salvaguarda de Destreza. Em falha fica delineada; não há dano. Objetos são delineados automaticamente. Aplique manualmente luz, negação da invisibilidade e vantagem para ataques que possam ver o alvo."
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "cube",
+                "size": 20
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            },
+            "damage": {
+              "parts": [],
+              "critical": { "allow": false },
+              "onSave": "none"
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true,
+            "manual": "Aplicar os benefícios visuais e de ataque somente às criaturas que falharem."
+          }
+        }
+      }
+    }
+  },
+  "Fog Cloud": {
+    "definition": {
+      "range": {
+        "value": 120,
+        "units": "ft",
+        "special": "20-foot radius sphere"
+      },
+      "mode": "utility",
+      "save": null,
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "i2X8BAgd_Z2ZTg93": {
+            "description": {
+              "chatFlavor": "Posicione uma esfera de raio 20 pés. Ela é fortemente obscurecida e não exige salvaguarda. O raio aumenta 20 pés por nível de espaço acima do 1º; ajuste manualmente o template no upcast."
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "circle",
+                "size": 20
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true
+          }
+        }
+      }
+    }
+  },
+  "Magnify Gravity": {
+    "definition": {
+      "range": {
+        "value": 60,
+        "units": "ft",
+        "special": "10-foot radius sphere"
+      },
+      "mode": "save",
+      "save": "int",
+      "damage": [
+        [2, 8, "force"]
+      ],
+      "onSave": "half",
+      "conditions": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "tx1ZPh5FqI1dNe6Q": {
+            "description": {
+              "chatFlavor": "Cada criatura na esfera de raio 10 pés faz salvaguarda de Inteligência: 2d8 força na falha ou metade no sucesso. O dano aumenta 1d8 por nível. A redução de deslocamento na falha deve ser aplicada separadamente até o início do próximo turno do conjurador."
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "circle",
+                "size": 10
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true,
+            "manual": "Aplicar metade do deslocamento apenas às criaturas que falharem."
+          }
+        }
+      }
+    }
+  },
+  "Purify Food and Drink": {
+    "definition": {
+      "range": {
+        "value": 10,
+        "units": "ft",
+        "special": "5-foot radius sphere"
+      },
+      "mode": "utility",
+      "save": null,
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "N0dU-9D2RLVSE261": {
+            "description": {
+              "chatFlavor": "Posicione uma esfera de raio 5 pés centrada em ponto dentro do alcance de 10 pés. Toda comida e bebida não mágica na área é purificada; não há ataque, salvaguarda ou dano."
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "circle",
+                "size": 5
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true
+          }
+        }
+      }
+    }
+  },
+  "Silent Image": {
+    "definition": {
+      "range": {
+        "value": 60,
+        "units": "ft",
+        "special": "15-foot cube"
+      },
+      "mode": "utility",
+      "save": null,
+      "damage": []
+    },
+    "item": {
+      "system": {
+        "activities": {
+          "_QMyDndRm_QkHiUk": {
+            "description": {
+              "chatFlavor": "Posicione um cubo de 15 pés para delimitar a imagem. Não há salvaguarda inicial. Uma criatura que use ação para examinar faz Investigação contra a CD da magia; interação física também revela a ilusão."
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "cube",
+                "size": 15
+              },
+              "affects": { "choice": false },
+              "override": true,
+              "prompt": true
+            }
+          }
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true,
+            "manual": "Investigação é um teste opcional posterior, nunca salvaguarda no lançamento."
+          }
+        }
+      }
+    }
+  },
+  "Catapult": {
+    "item": {
+      "flags": {
+        "foundry-spell-pack": {
+          "automation": {
+            "areaReviewed": true,
+            "manual": "Trajetória linear de um objeto contra a primeira criatura atingida; alvo único, sem template de área."
+          }
+        }
+      }
+    }
+  },
+  "Divine Favor": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Sua prece fortalece seus golpes com radiância divina. Até a magia terminar, sempre que você acertar um ataque com arma, o ataque causa <strong>1d4 de dano radiante adicional</strong>.</p><p>O dano não é rolado quando a magia é conjurada: ele é acrescentado separadamente a cada ataque com arma que acertar enquanto você mantiver a concentração, por até 1 minuto. A magia não possui salvaguarda e não recebe benefício adicional ao usar espaços de nível superior.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          }
+        }
+      }
+    }
+  },
+  "Gift of Alacrity": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você toca uma criatura voluntária e aguça magicamente a capacidade dela de reagir antes que o perigo se manifeste. Pela duração de 8 horas, o alvo pode rolar <strong>1d8</strong> e somar o resultado às suas jogadas de iniciativa.</p><p>A magia não exige concentração, não concede bônus a outros testes de Destreza e não possui salvaguarda. Conjurá-la com um espaço de nível superior não aumenta o dado, a duração nem o número de alvos.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          }
+        }
+      }
+    }
+  },
+  "Jump": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Você toca uma criatura. Até a magia terminar, por 1 minuto, a distância dos saltos do alvo é triplicada.</p><p>A magia altera a distância que a criatura pode cobrir com seus saltos, mas não concede deslocamento adicional: cada pé saltado ainda consome movimento normalmente. Ela não exige concentração, não possui salvaguarda e não recebe benefício ao ser conjurada com espaços de nível superior.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          }
+        }
+      }
+    }
+  },
+  "Shield of Faith": {
+    "item": {
+      "system": {
+        "description": {
+          "value": "<p>Um campo cintilante surge ao redor de uma criatura à sua escolha dentro de 60 pés, protegendo-a enquanto a magia permanecer ativa.</p><p>Durante até 10 minutos, enquanto você mantiver a concentração, o alvo recebe <strong>+2 de bônus na Classe de Armadura</strong>. A magia não exige ataque ou salvaguarda e não recebe benefício adicional quando conjurada com um espaço de nível superior.</p>"
+        }
+      },
+      "flags": {
+        "foundry-spell-pack": {
+          "description": {
+            "quality": "reviewed-deep-pt-br",
+            "needsReview": false
+          }
+        }
+      }
+    }
+  }
+}

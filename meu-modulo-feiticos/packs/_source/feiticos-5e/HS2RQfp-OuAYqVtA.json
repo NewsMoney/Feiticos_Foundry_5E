@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": {
-      "value": "<p>Você desaparece e realiza até cinco ataques mágicos corpo a corpo, um contra cada criatura escolhida a até 9 metros. Cada acerto causa 6d10 de energia. Depois você aparece num espaço desocupado próximo de um dos alvos, independentemente dos acertos.</p>",
+      "value": "<p>Você brande a arma usada como componente e desaparece, atacando até cinco criaturas que possa ver a 9 metros. Faça um ataque corpo a corpo de magia separado contra cada alvo. Cada acerto causa 6d10 de dano de força; um erro não causa dano.</p><p>Depois de resolver todos os ataques, você pode se teleportar para um espaço desocupado visível a até 1,5 metro de qualquer um dos alvos, tenha o ataque acertado ou não.</p>",
       "chat": ""
     },
     "source": {
@@ -38,7 +38,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "5",
         "type": "creature",
         "special": ""
       }
@@ -161,10 +161,11 @@
       "automation": {
         "generated": true,
         "needsReview": true,
-        "conditions": []
+        "conditions": [],
+        "manual": "Selecione até cinco alvos e execute um ataque por alvo; teleporte opcionalmente somente depois de todos os ataques."
       },
       "description": {
-        "quality": "reviewed-pt-br",
+        "quality": "reviewed-deep-pt-br",
         "needsReview": false
       }
     },
