@@ -105,7 +105,28 @@ spell("Spare the Dying", "nec", "utility", { range: "touch", properties: ["vocal
 spell("Sword Burst", "con", "save", { save: "dex", damage: [1, 6, "force"], range: "self", rangeSpecial: "Self (5-foot radius)", template: { type: "circle", size: 5 }, target: "creature", count: "", properties: ["vocal"], source: "SCAG/TCE", description: "Lâminas espectrais atingem todas as criaturas próximas que falharem no teste de Destreza.", animation: { file: "jb2a.sword_burst.01.blue", fallbacks: ["jb2a.shrapnel.01.blue"] } });
 spell("Thaumaturgy", "trs", "utility", { range: 30, duration: { units: "minute", value: "1" }, properties: ["vocal"], source: "PHB/SRD", description: "Manifesta um pequeno prodígio, alterando voz, chamas, portas ou sinais sensoriais.", animation: { file: "jb2a.magic_signs.rune.transmutation.intro.red", fallbacks: ["jb2a.divine_smite.caster.redyellow"] } });
 spell("Thorn Whip", "trs", "attack", { range: 30, attack: "melee", damage: [1, 6, "piercing"], properties: ["vocal", "somatic", "material"], source: "PHB/SRD", description: "Um chicote espinhoso causa dano e pode puxar uma criatura grande ou menor em sua direção.", animation: { file: "jb2a.thorn_whip.green", targeted: true, fallbacks: ["jb2a.vine_whip.green"] } });
-spell("Thunderclap", "evo", "save", { save: "con", damage: [1, 6, "thunder"], range: "self", rangeSpecial: "Self (5-foot radius)", template: { type: "circle", size: 5 }, target: "creature", count: "", properties: ["somatic"], source: "EE/XGE", description: "Uma explosão sonora atinge todas as criaturas próximas e pode ser ouvida à distância.", animation: { file: "jb2a.thunderwave.center.blue", fallbacks: ["jb2a.impact.ground_crack.01.blue"] } });
+spell("Thunderclap", "evo", "save", {
+  save: "con",
+  damage: [1, 6, "thunder"],
+  range: "self",
+  rangeSpecial: "Self (5-foot radius)",
+  target: "creature",
+  count: "",
+  properties: ["somatic"],
+  source: "EE/XGE",
+  description: "Uma explosão sonora atinge todas as criaturas próximas e pode ser ouvida à distância.",
+  emanation: { radius: 5, excludeSelf: true },
+  animation: {
+    file: "jb2a.thunderwave.center.blue",
+    scale: 0.5,
+    layers: [
+      { file: "jb2a.impact.boulder.01", scale: 1, belowTokens: true, duration: 2000 },
+      { file: "jb2a.thunderwave.center.blue", scale: 0.5, duration: 1043 }
+    ],
+    sound: "modules/meu-modulo-feiticos/sounds/thunderclap.wav",
+    volume: 0.5
+  }
+});
 spell("Toll the Dead", "nec", "save", { save: "wis", damage: [1, 8, "necrotic"], source: "XGE", description: "Um sino fúnebre causa dano necrótico, usando d12 se o alvo já tiver perdido pontos de vida.", animation: { file: "jb2a.toll_the_dead.yellow.shockwave", targeted: true, fallbacks: ["jb2a.impact.004.dark_purple"] } });
 spell("True Strike", "div", "utility", { range: 30, duration: { units: "round", value: "1" }, concentration: true, properties: ["somatic"], source: "PHB/SRD", description: "Concede vantagem no primeiro ataque do conjurador contra o alvo no turno seguinte.", animation: { file: "jb2a.markers.target.complete.blue", targeted: true, fallbacks: ["jb2a.magic_signs.rune.divination.intro.blue"] }, status: { id: "true-strike", label: "True Strike", target: "self", changes: [{ key: "flags.midi-qol.advantage.attack.all", mode: 5, value: "1", priority: 20 }], specialDuration: ["1Attack", "turnEndSource"] } });
 spell("Vicious Mockery", "enc", "save", { save: "wis", damage: [1, 4, "psychic"], range: 60, properties: ["vocal"], source: "PHB/SRD", description: "Um insulto encantado causa dano psíquico e prejudica o próximo ataque do alvo.", animation: { file: "jb2a.music_note.01.blue", targeted: true, fallbacks: ["jb2a.impact.004.purple"] }, status: { id: "vicious-mockery", label: "Vicious Mockery", changes: [{ key: "flags.midi-qol.disadvantage.attack.all", mode: 5, value: "1", priority: 20 }], specialDuration: ["1Attack", "turnEndSource"] } });
@@ -138,7 +159,7 @@ function activity(def, activityId) {
     description: { chatFlavor: "" },
     duration: { units: def.duration.units, value: def.duration.value ?? "", concentration: !!def.concentration, override: false },
     effects: [], range: { override: false },
-    target: { template: targetTemplate(def), affects: { choice: false }, override: false, prompt: true },
+    target: { template: targetTemplate(def), affects: { choice: false }, override: false, prompt: !def.emanation },
     uses: { spent: 0, recovery: [], max: "" }, midiProperties: {},
     overTimeProperties: { saveRemoves: true, preRemoveConditionText: "", postRemoveConditionText: "" }
   };
@@ -171,9 +192,26 @@ function item(def) {
     },
     effects: [],
     flags: {
-      ["foundry-spell-pack"]: { animation: def.animation, description: { quality: reviewed ? "reviewed-pt-br" : translated ? "technical-reviewed-pt-br" : srd ? "srd-full+summary-pt-br" : "summary-pt-br", needsReview: !reviewed && !translated && !srd }, ...(def.status ? { status: def.status } : {}) },
-      itemacro: { macro: { command: `const workflow = typeof args !== "undefined" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get("meu-modulo-feiticos")?.api?.runCantrip({ item, token, workflow });`, name: def.name, img, type: "script", scope: "global", ownership: { default: 3 }, flags: {} } },
-      "midi-qol": { onUseMacroName: "[postActiveEffects]ItemMacro" }
+      ["foundry-spell-pack"]: {
+        animation: def.animation,
+        description: { quality: reviewed ? "reviewed-pt-br" : translated ? "technical-reviewed-pt-br" : srd ? "srd-full+summary-pt-br" : "summary-pt-br", needsReview: !reviewed && !translated && !srd },
+        ...(def.emanation ? { automation: { areaReviewed: true, area: { type: "emanation", ...def.emanation } } } : {}),
+        ...(def.status ? { status: def.status } : {})
+      },
+      itemacro: { macro: {
+        command: def.emanation
+          ? `const context = typeof args !== "undefined" ? args[0] : null;
+const module = game.modules.get("meu-modulo-feiticos");
+const workflow = globalThis.MidiQOL?.Workflow?.getWorkflow?.(context?.uuid) ?? context?.workflow ?? context;
+await module?.api?.runCantrip({ item, token, workflow, context });`
+          : `const workflow = typeof args !== "undefined" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get("meu-modulo-feiticos")?.api?.runCantrip({ item, token, workflow });`,
+        name: def.name, img, type: "script", scope: "global", ownership: { default: 3 }, flags: {}
+      } },
+      "midi-qol": {
+        onUseMacroName: def.emanation
+          ? "[preSave]ItemMacro"
+          : "[postActiveEffects]ItemMacro"
+      }
     }
   };
 }

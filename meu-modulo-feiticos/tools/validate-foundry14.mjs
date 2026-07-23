@@ -13,7 +13,7 @@ if (manifest.compatibility?.minimum !== "14" || manifest.compatibility?.verified
 const dnd5e = manifest.relationships?.systems?.find(entry => entry.id === "dnd5e");
 if (!dnd5e || dnd5e.compatibility?.minimum !== "5.3.0") errors.push("dependência do D&D5e 5.3+ ausente");
 const requiredModules = new Map((manifest.relationships?.requires ?? []).map(entry => [entry.id, entry]));
-for (const id of ["sequencer", "JB2A_DnD5e", "midi-qol", "dae", "itemacro"]) {
+for (const id of ["sequencer", "midi-qol", "dae", "itemacro"]) {
   const dependency = requiredModules.get(id);
   if (!dependency || dependency.type !== "module" || !dependency.manifest || !dependency.compatibility?.minimum) {
     errors.push(`dependência obrigatória ${id} ausente ou incompleta`);

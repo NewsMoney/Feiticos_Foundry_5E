@@ -1,6 +1,11 @@
 const MODULE_ID = "meu-modulo-feiticos";
 const FLAG_SCOPE = "foundry-spell-pack";
 
+function spellFlag(document, key) {
+  return document?.flags?.[FLAG_SCOPE]?.[key]
+    ?? document?._source?.flags?.[FLAG_SCOPE]?.[key];
+}
+
 function selectedTargets() {
   return [...(game.user?.targets ?? [])];
 }
@@ -18,40 +23,87 @@ function resolveToken(candidate) {
   return candidate?.object ?? candidate ?? canvas.tokens?.controlled?.[0] ?? null;
 }
 
-function animationExists(file) {
-  if (!file) return false;
-  const database = globalThis.Sequencer?.Database;
-  return typeof database?.entryExists !== "function" || database.entryExists(file);
-}
-
 async function playAnimation({ item, token, targets = selectedTargets() } = {}) {
-  const config = item?.getFlag?.(FLAG_SCOPE, "animation");
+  const config = spellFlag(item, "animation");
   const source = resolveToken(token);
   if (!config || !source || !globalThis.Sequence) return false;
 
-  const file = [config.file, ...(config.fallbacks ?? [])].find(animationExists);
-  if (!file) {
-    console.warn(`${MODULE_ID} | Nenhuma animação disponível para ${item.name}.`);
-    return false;
-  }
-
   const destinations = config.targeted && targets.length ? targets : [source];
   for (const destination of destinations) {
+    const jobs = [];
+    const soundFile = item?.name === "Thunderclap"
+      ? "modules/meu-modulo-feiticos/sounds/thunderclap.wav"
+      : config.sound;
+    if (soundFile) {
+      jobs.push(new Sequence()
+        .sound()
+        .file(soundFile)
+        .volume(config.volume ?? 0.25)
+        .play());
+    }
+
+    const layers = config.layers?.length ? config.layers : [config];
     const sequence = new Sequence();
-    let effect = sequence.effect().file(file);
-    if (config.targeted) effect = effect.atLocation(source).stretchTo(destination);
-    else effect = effect.atLocation(destination);
-    if (config.scale) effect.scale(config.scale);
-    if (config.belowTokens) effect.belowTokens();
-    effect.fadeIn(150).fadeOut(300);
-    if (config.sound) sequence.sound().file(config.sound).volume(config.volume ?? 0.25);
-    await sequence.play();
+    for (const layer of layers) {
+      if (!layer.file) continue;
+      let effect = sequence.effect().file(layer.file);
+      if (layer.targeted ?? config.targeted) effect = effect.atLocation(source).stretchTo(destination);
+      else effect = effect.atLocation(destination);
+      if (layer.scale ?? config.scale) effect.scale(layer.scale ?? config.scale);
+      if (layer.belowTokens ?? config.belowTokens) effect.belowTokens();
+      if (layer.duration) effect.duration(layer.duration);
+      effect.fadeIn(layer.fadeIn ?? 150).fadeOut(layer.fadeOut ?? 300);
+    }
+    jobs.push(sequence.play());
+    await Promise.allSettled(jobs);
   }
   return true;
 }
 
+function tokenDistance(source, target) {
+  try {
+    const distance = globalThis.MidiQOL?.computeDistance?.(source, target, { wallsBlock: false });
+    if (Number.isFinite(distance) && distance >= 0) return distance;
+  } catch (error) {}
+  const measurement = canvas.grid?.measurePath?.([source.center, target.center]);
+  return Number(measurement?.distance ?? Number.POSITIVE_INFINITY);
+}
+
+function setUserTargets(targets) {
+  const user = game.user;
+  for (const current of [...(user?.targets ?? [])]) {
+    current.setTarget?.(false, { user, releaseOthers: false, groupSelection: true });
+  }
+  targets.forEach((target, index) => {
+    target.setTarget?.(true, {
+      user,
+      releaseOthers: index === 0,
+      groupSelection: true
+    });
+  });
+}
+
+async function targetEmanation({ item, token, workflow } = {}) {
+  const source = resolveToken(token);
+  const area = spellFlag(item, "automation")?.area;
+  if (!source || area?.type !== "emanation") return [];
+
+  const targets = (canvas.tokens?.placeables ?? []).filter(candidate => {
+    return !!candidate?.actor
+      && !(area.excludeSelf && candidate.id === source.id)
+      && tokenDistance(source, candidate) <= Number(area.radius ?? 0);
+  });
+  setUserTargets(targets);
+  if (typeof workflow?.setTargets === "function") {
+    workflow.setTargets(new Set(targets));
+  } else if (workflow && "targets" in workflow) {
+    workflow.targets = new Set(targets);
+  }
+  return targets;
+}
+
 async function applyStatus({ item, token, targets = selectedTargets() } = {}) {
-  const config = item?.getFlag?.(FLAG_SCOPE, "status");
+  const config = spellFlag(item, "status");
   if (!config?.id) return false;
 
   const affected = config.target === "self" ? [resolveToken(token)] : targets;
@@ -121,8 +173,8 @@ async function placeCircleTemplate(token, distance, color, flags = {}) {
   const source = resolveToken(token);
   if (!source || !canvas.scene) return null;
   const previous = canvas.scene.templates?.filter(document =>
-    document.getFlag?.(FLAG_SCOPE, "sourceSpell") === flags.sourceSpell
-    && document.getFlag?.(FLAG_SCOPE, "sourceToken") === source.id
+    spellFlag(document, "sourceSpell") === flags.sourceSpell
+    && spellFlag(document, "sourceToken") === source.id
   ) ?? [];
   if (previous.length) await canvas.scene.deleteEmbeddedDocuments("MeasuredTemplate", previous.map(document => document.id));
   const data = {
@@ -139,8 +191,8 @@ async function createAmbientLights(token, count = 1) {
   if (!source || !canvas.scene) return [];
   const radius = gridDistanceToPixels(5);
   const previous = canvas.scene.lights?.filter(document =>
-    document.getFlag?.(FLAG_SCOPE, "sourceSpell") === "Dancing Lights"
-    && document.getFlag?.(FLAG_SCOPE, "sourceToken") === source.id
+    spellFlag(document, "sourceSpell") === "Dancing Lights"
+    && spellFlag(document, "sourceToken") === source.id
   ) ?? [];
   if (previous.length) await canvas.scene.deleteEmbeddedDocuments("AmbientLight", previous.map(document => document.id));
   const data = Array.from({ length: count }, (_, index) => {
@@ -157,7 +209,7 @@ async function createAmbientLights(token, count = 1) {
 
 async function createTemporaryItem(actor, data) {
   if (!actor) return null;
-  const old = actor.items?.filter(entry => entry.getFlag?.(FLAG_SCOPE, "temporaryCantrip") === data.name);
+  const old = actor.items?.filter(entry => spellFlag(entry, "temporaryCantrip") === data.name);
   if (old?.length) await actor.deleteEmbeddedDocuments("Item", old.map(entry => entry.id));
   const [created] = await actor.createEmbeddedDocuments("Item", [{
     ...data,
@@ -253,12 +305,74 @@ async function runSpecialAutomation({ item, token, targets }) {
 
 async function runCantrip(options = {}) {
   const item = options.item ?? globalThis.item;
-  const token = options.token ?? globalThis.token;
-  const targets = affectedTargets(item, options.workflow, options.targets ?? selectedTargets());
+  const token = options.token ?? options.workflow?.token ?? globalThis.token;
+  const macroPass = options.context?.macroPass ?? options.workflow?.macroPass;
   if (!item) return false;
+  const area = spellFlag(item, "automation")?.area;
+  if (area?.type === "emanation" && options.workflow?._foundrySpellPackEmanationHandled) {
+    return true;
+  }
+  if (area?.type === "emanation" && macroPass && !["preTargetingV2", "preSave"].includes(macroPass)) return true;
+  const emanationTargets = area?.type === "emanation"
+    ? await targetEmanation({ item, token, workflow: options.workflow })
+    : null;
+  const targets = emanationTargets
+    ?? affectedTargets(item, options.workflow, options.targets ?? selectedTargets());
   await playAnimation({ item, token, targets });
   await applyStatus({ item, token, targets });
   await runSpecialAutomation({ item, token, targets });
+  if (area?.type === "emanation" && options.workflow) {
+    options.workflow._foundrySpellPackEmanationHandled = true;
+  }
+  return true;
+}
+
+async function handleMidiPreTargeting({ workflow } = {}) {
+  const item = workflow?.item;
+  if (item?.name !== "Thunderclap") return true;
+  try {
+    await runCantrip({
+      item,
+      token: workflow.token,
+      workflow,
+      context: { macroPass: "preTargetingV2", source: "module-hook" }
+    });
+  } catch (error) {
+    console.warn(`${MODULE_ID} | A emanação visual do Thunderclap não pôde ser executada.`, error);
+  }
+  return true;
+}
+
+async function handleMidiPreWaitForSaves(workflow) {
+  const item = workflow?.item;
+  if (item?.name !== "Thunderclap") return true;
+  try {
+    const targets = await targetEmanation({
+      item,
+      token: workflow.token,
+      workflow
+    });
+    workflow.workflowOptions ??= {};
+    workflow.workflowOptions.ignoreUserTargets = true;
+    workflow.hitTargets = new Set(targets);
+    workflow._foundrySpellPackEmanationTargetIds = targets.map(target => target.id);
+  } catch (error) {
+    console.warn(`${MODULE_ID} | Os alvos do Thunderclap não puderam ser definidos.`, error);
+  }
+  return true;
+}
+
+function clearEmanationTargets(workflow) {
+  if (workflow?.item?.name !== "Thunderclap") return true;
+  const targetIds = new Set(workflow._foundrySpellPackEmanationTargetIds ?? []);
+  if (!targetIds.size) return true;
+  const user = game.user;
+  for (const target of [...(user?.targets ?? [])]) {
+    if (targetIds.has(target.id)) {
+      target.setTarget?.(false, { user, releaseOthers: false, groupSelection: true });
+    }
+  }
+  delete workflow._foundrySpellPackEmanationTargetIds;
   return true;
 }
 
@@ -300,5 +414,9 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", () => {
-  console.info(`${MODULE_ID} | Automação de truques carregada.`);
+  Hooks.on("midi-qol.preTargetingV2", handleMidiPreTargeting);
+  Hooks.on("midi-qol.preWaitForSaves", handleMidiPreWaitForSaves);
+  Hooks.on("midi-qol.preCompleted", clearEmanationTargets);
+  Hooks.on("midi-qol.preAbort", clearEmanationTargets);
+  Hooks.on("midi-qol.preCancel", clearEmanationTargets);
 });

@@ -9,7 +9,7 @@ const expected = 46;
 const allFiles = (await readdir(spellDir)).filter(file => file.endsWith(".json"));
 const errors = [];
 const names = new Set();
-const selfAreaCantrips = new Set(["Sword Burst", "Thunderclap", "Word of Radiance"]);
+const selfTemplateCantrips = new Set(["Sword Burst", "Word of Radiance"]);
 let officialCount = 0;
 
 for (const file of allFiles) {
@@ -22,7 +22,7 @@ for (const file of allFiles) {
   if (names.has(item.name)) errors.push(`${file}: nome duplicado (${item.name})`);
   names.add(item.name);
   if (!Object.keys(item.system?.activities ?? {}).length) errors.push(`${file}: sem atividade`);
-  if (selfAreaCantrips.has(item.name)) {
+  if (selfTemplateCantrips.has(item.name)) {
     const activity = Object.values(item.system.activities ?? {})[0];
     const itemTemplate = item.system?.target?.template;
     const activityTemplate = activity?.target?.template;
@@ -33,6 +33,27 @@ for (const file of allFiles) {
     }
     if (activity?.type !== "save" || !activity.save?.ability?.length || !activity.damage?.parts?.length) {
       errors.push(`${file}: fluxo de salvaguarda e dano incompleto`);
+    }
+  }
+  if (item.name === "Thunderclap") {
+    const activity = Object.values(item.system.activities ?? {})[0];
+    const automation = item.flags?.["foundry-spell-pack"]?.automation;
+    if (item.system?.range?.units !== "self"
+      || item.system?.target?.template?.type
+      || activity?.target?.template?.type
+      || activity?.target?.prompt !== false) {
+      errors.push(`${file}: Thunderclap deve ser uma emanação sem template posicionável`);
+    }
+    if (automation?.area?.type !== "emanation"
+      || automation.area.radius !== 5
+      || automation.area.excludeSelf !== true) {
+      errors.push(`${file}: automação da emanação do Thunderclap está incompleta`);
+    }
+    if (activity?.type !== "save" || !activity.save?.ability?.includes("con") || !activity.damage?.parts?.length) {
+      errors.push(`${file}: fluxo de salvaguarda e dano incompleto`);
+    }
+    if (item.flags?.["midi-qol"]?.onUseMacroName !== "[preSave]ItemMacro") {
+      errors.push(`${file}: seleção da emanação não ocorre antes das salvaguardas`);
     }
   }
   if (!item.flags?.["foundry-spell-pack"]?.animation?.file) errors.push(`${file}: sem animação`);

@@ -30,8 +30,7 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "circle",
-        "size": 5
+        "type": ""
       },
       "affects": {
         "choice": false,
@@ -86,14 +85,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "circle",
-            "size": 5
+            "type": ""
           },
           "affects": {
             "choice": false
           },
           "override": false,
-          "prompt": true
+          "prompt": false
         },
         "uses": {
           "spent": 0,
@@ -147,18 +145,39 @@
     "foundry-spell-pack": {
       "animation": {
         "file": "jb2a.thunderwave.center.blue",
-        "fallbacks": [
-          "jb2a.impact.ground_crack.01.blue"
-        ]
+        "scale": 0.5,
+        "layers": [
+          {
+            "file": "jb2a.impact.boulder.01",
+            "scale": 1,
+            "belowTokens": true,
+            "duration": 2000
+          },
+          {
+            "file": "jb2a.thunderwave.center.blue",
+            "scale": 0.5,
+            "duration": 1043
+          }
+        ],
+        "sound": "modules/meu-modulo-feiticos/sounds/thunderclap.wav",
+        "volume": 0.5
       },
       "description": {
         "quality": "reviewed-deep-pt-br",
         "needsReview": false
+      },
+      "automation": {
+        "areaReviewed": true,
+        "area": {
+          "type": "emanation",
+          "radius": 5,
+          "excludeSelf": true
+        }
       }
     },
     "itemacro": {
       "macro": {
-        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runCantrip({ item, token, workflow });",
+        "command": "const context = typeof args !== \"undefined\" ? args[0] : null;\nconst module = game.modules.get(\"meu-modulo-feiticos\");\nconst workflow = globalThis.MidiQOL?.Workflow?.getWorkflow?.(context?.uuid) ?? context?.workflow ?? context;\nawait module?.api?.runCantrip({ item, token, workflow, context });",
         "name": "Thunderclap",
         "img": "modules/meu-modulo-feiticos/icons/Thunder%20Clap.png",
         "type": "script",
@@ -170,7 +189,7 @@
       }
     },
     "midi-qol": {
-      "onUseMacroName": "[postActiveEffects]ItemMacro"
+      "onUseMacroName": "[preSave]ItemMacro"
     }
   }
 }

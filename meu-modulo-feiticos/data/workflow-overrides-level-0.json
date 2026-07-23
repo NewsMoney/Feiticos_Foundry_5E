@@ -280,6 +280,19 @@
   },
   "Thunderclap": {
     "item": {
+      "system": {
+        "target": {
+          "template": { "contiguous": false, "units": "ft", "type": "" }
+        },
+        "activities": {
+          "gTNLII9PuauetV3x": {
+            "target": {
+              "template": { "contiguous": false, "units": "ft", "type": "" },
+              "prompt": false
+            }
+          }
+        }
+      },
       "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
     }
   },

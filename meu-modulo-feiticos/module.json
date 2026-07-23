@@ -37,14 +37,6 @@
         }
       },
       {
-        "id": "JB2A_DnD5e",
-        "type": "module",
-        "manifest": "https://github.com/Jules-Bens-Aa/JB2A_DnD5e/releases/latest/download/module.json",
-        "compatibility": {
-          "minimum": "0.9.1"
-        }
-      },
-      {
         "id": "midi-qol",
         "type": "module",
         "manifest": "https://gitlab.com/tposney/midi-qol/raw/v14/package/module.json",
