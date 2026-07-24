@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Antes do ataque, escolha ácido, frio, fogo, relâmpago, veneno ou trovão. Após o acerto, role manualmente 3d8 do tipo escolhido, +1d8 por nível de espaço acima do 1º. O dano foi deliberadamente separado do ataque para nunca aplicar um tipo incorreto."
+          "chatFlavor": "Antes do ataque escolha ácido/frio/fogo/relâmpago/veneno/trovão. No acerto role 3d8 do tipo escolhido (+1d8 por espaço acima do 1º)."
         },
         "duration": {
           "value": null,
@@ -143,8 +143,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Componente: diamante de 50 gp. Escolha o tipo de dano antes de rolar; role 3d8 do tipo escolhido no acerto."
       },
       "description": {
         "quality": "reviewed-pt-br",

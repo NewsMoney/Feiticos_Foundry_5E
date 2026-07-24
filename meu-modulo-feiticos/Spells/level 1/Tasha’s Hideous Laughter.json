@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma criatura visível a 30 pés (INT 4+) faz salvaguarda de Sabedoria; em falha cai prone, fica incapacitada e não consegue se levantar, rindo, por até 1 min de concentração."
         },
         "duration": {
           "value": 1,
@@ -118,6 +118,68 @@
             "formula": ""
           }
         }
+      },
+      "laughter-repeat": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo e sempre que sofrer dano (com vantagem)"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Repita a Sabedoria (vantagem se acabou de sofrer dano); em sucesso, encerra."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
       }
     }
   },
@@ -127,17 +189,18 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "prone",
           "incapacitated"
-        ]
+        ],
+        "manual": "Alvos com INT abaixo de 4 são imunes. Aplique prone + incapacitated só na falha; repita a Sabedoria no fim de cada turno e quando sofrer dano (com vantagem); sucesso encerra."
       },
       "description": {
         "quality": "reviewed-pt-br",

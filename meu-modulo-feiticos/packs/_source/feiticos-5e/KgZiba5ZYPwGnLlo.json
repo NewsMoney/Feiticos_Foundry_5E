@@ -119,14 +119,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.sparkles.01.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ação bônus, concentração até 10 min. Ao conjurar e como ação bônus em cada turno posterior você pode usar a ação Disparada (Dash). Aplique o efeito que concede/expõe a ação bônus; não mova automaticamente."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

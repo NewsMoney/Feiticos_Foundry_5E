@@ -149,7 +149,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.bullet.01.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],

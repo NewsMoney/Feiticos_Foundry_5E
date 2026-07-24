@@ -58,7 +58,7 @@
     },
     "activities": {
       "hKp5kh05hc1uK4-1": {
-        "type": "utility",
+        "type": "heal",
         "activation": {
           "type": "action",
           "value": 1,
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cria 10 bagas que duram 24 h. Como ação, comer uma restaura exatamente 1 PV e alimenta uma criatura por um dia."
         },
         "duration": {
           "value": null,
@@ -101,13 +101,30 @@
         "uses": {
           "spent": 0,
           "recovery": [],
-          "max": ""
+          "max": "10"
         },
         "midiProperties": {},
         "overTimeProperties": {
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "save": null,
+        "healing": {
+          "number": null,
+          "denomination": null,
+          "bonus": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "1"
+          },
+          "scaling": {
+            "mode": "none",
+            "number": null
+          }
         }
       }
     }
@@ -118,14 +135,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.sparkles.01.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Idealmente um consumível com 10 cargas. Cada baga cura exatamente 1 PV (sem modificador) e alimenta por um dia; as bagas duram 24 h. Sem cura ao conjurar."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

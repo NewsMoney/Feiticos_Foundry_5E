@@ -37,7 +37,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "self",
         "special": ""
       }
     },
@@ -91,7 +91,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "self",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -114,7 +117,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.markers.heart.complete.pink",
+        "file": "jb2a.markers.heart.pink",
         "fallbacks": [
           "jb2a.magic_signs.rune.enchantment.intro.pink"
         ]

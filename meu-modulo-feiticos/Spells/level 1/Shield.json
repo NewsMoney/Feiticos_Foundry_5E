@@ -123,8 +123,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Reação ao ser atingido por um ataque ou alvo de Míssil Mágico. Aplique +5 de CA (inclusive contra o ataque gatilho) e imunidade a Míssil Mágico até o início do seu próximo turno."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

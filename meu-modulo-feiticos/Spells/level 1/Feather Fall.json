@@ -36,8 +36,8 @@
         "size": null
       },
       "affects": {
-        "choice": false,
-        "count": "1",
+        "choice": true,
+        "count": "5",
         "type": "creature",
         "special": ""
       }
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Reação quando você ou uma criatura a 60 pés cai. Até 5 criaturas em queda têm velocidade de queda reduzida a 60 pés/rodada e não sofrem dano se pousarem antes do fim (1 min)."
         },
         "duration": {
           "value": 1,
@@ -117,14 +117,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.sparkles.01.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Selecione até 5 alvos em queda. Efeito de movimento (queda lenta, sem dano); sem salvaguarda, dano ou concentração."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

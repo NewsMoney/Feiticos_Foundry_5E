@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma criatura visível faz salvaguarda de Sabedoria; em falha fica amedrontada por até 1 min de concentração. Constructos e mortos-vivos são imunes."
         },
         "duration": {
           "value": 1,
@@ -119,6 +119,68 @@
             "formula": ""
           }
         }
+      },
+      "cause-fear-repeat": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno do alvo"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Repita a salvaguarda de Sabedoria; em sucesso, remova Amedrontado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
       }
     }
   },
@@ -126,18 +188,19 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.purple",
         "fallbacks": [
-          "jb2a.energy_strands.in.dark_purple"
+          "jb2a.energy_strands.complete.dark_purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "frightened"
-        ]
+        ],
+        "manual": "Constructos e mortos-vivos são imunes. Aplique frightened só na falha e use a atividade de repetição no fim de cada turno do alvo. +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "reviewed-pt-br",

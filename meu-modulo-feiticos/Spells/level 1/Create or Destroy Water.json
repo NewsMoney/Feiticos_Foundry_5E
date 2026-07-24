@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Modo recipiente: crie ou destrua até 10 galões em recipiente aberto. Não posicione template para este modo."
+          "chatFlavor": "Modo recipiente: crie ou destrua até 10 galões de água em recipiente aberto. Sem template."
         },
         "duration": {
           "value": null,
@@ -117,9 +117,6 @@
           "override": true,
           "condition": "Modo chuva ou destruição de névoa"
         },
-        "description": {
-          "chatFlavor": "Posicione um cubo de 30 pés para criar chuva que extingue chamas expostas ou destruir névoa dentro da área. O lado do cubo aumenta em 5 pés por nível de espaço acima do 1º. Não há rolagem."
-        },
         "consumption": {
           "scaling": {
             "allowed": true
@@ -127,18 +124,42 @@
           "spellSlot": true,
           "targets": []
         },
+        "description": {
+          "chatFlavor": "Cubo de 30 pés: crie chuva que extingue chamas expostas ou destrua névoa na área. Lado +5 pés por espaço acima do 1º."
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
         "target": {
           "template": {
-            "contiguous": false,
-            "units": "ft",
             "type": "cube",
-            "size": 30
+            "size": 30,
+            "units": "ft",
+            "contiguous": false
           },
           "affects": {
             "choice": false
           },
           "override": true,
           "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "damage": {
           "parts": [],
@@ -156,16 +177,16 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.sparkles.01.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
         "areaReviewed": true,
-        "manual": "A dimensão do modo chuva aumenta 5 pés por nível; ajuste o template quando usar espaço superior."
+        "manual": "A dimensão do modo chuva/névoa aumenta 5 pés por espaço acima do 1º; ajuste o template no upcast. Criar/destruir 10 galões +10 por espaço."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

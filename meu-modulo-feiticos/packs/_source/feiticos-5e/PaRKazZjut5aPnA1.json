@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -137,7 +140,8 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -145,7 +149,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.energy_strands.in.dark_purple",
+        "file": "jb2a.energy_strands.complete.dark_purple",
         "targeted": true,
         "fallbacks": [
           "jb2a.impact.004.dark_purple"
@@ -159,9 +163,7 @@
         "id": "prone",
         "label": "Caído",
         "core": true,
-        "duration": {
-          "turns": 1
-        }
+        "duration": {}
       }
     },
     "itemacro": {

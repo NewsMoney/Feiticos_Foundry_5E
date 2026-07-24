@@ -93,7 +93,10 @@
             "size": 5
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -150,7 +153,8 @@
     "foundry-spell-pack": {
       "animation": {
         "file": "jb2a.bonfire.01.orange",
-        "targeted": true,
+        "persistent": true,
+        "belowTokens": true,
         "fallbacks": [
           "jb2a.fire_trap.02.single.orange"
         ]
@@ -159,7 +163,7 @@
         "quality": "reviewed-deep-pt-br",
         "needsReview": false
       },
-      "manualWorkflow": "Repetir DEX save ao entrar pela primeira vez no turno ou terminar o turno na fogueira."
+      "manualWorkflow": "Automatizado: ao entrar pela primeira vez no turno ou terminar o turno na area, o modulo rola a salvaguarda de DEX e aplica o dano (com carta de chat de fallback se a API do sistema falhar). Requer combate ativo para o gatilho de fim de turno."
     },
     "itemacro": {
       "macro": {

@@ -87,7 +87,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -138,7 +141,8 @@
             "value": "melee",
             "classification": "spell"
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -146,7 +150,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.claws.400px.green",
+        "file": "jb2a.claws.400px.bright_green",
         "targeted": true,
         "fallbacks": [
           "jb2a.liquid.splash.bright_green"

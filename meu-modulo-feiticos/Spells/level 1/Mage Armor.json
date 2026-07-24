@@ -123,8 +123,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique um Efeito Ativo em uma criatura voluntária sem armadura: CA base = 13 + modificador de Destreza por 8 horas. Termina se ela vestir armadura ou for dissipada."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual utilitário: compreender e comunicar-se verbalmente com bestas por 10 min. Informação limitada pela INT da besta; você pode persuadi-la de pequeno favor (a critério do mestre). Sem rolagem automática."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

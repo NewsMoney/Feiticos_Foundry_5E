@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "4",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -140,7 +143,8 @@
             "value": "ranged",
             "classification": "spell"
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -151,7 +155,7 @@
         "file": "jb2a.eldritch_blast.purple",
         "targeted": true,
         "fallbacks": [
-          "jb2a.energy_beam.normal.dark_purple"
+          "jb2a.eldritch_blast.dark_purple"
         ]
       },
       "description": {

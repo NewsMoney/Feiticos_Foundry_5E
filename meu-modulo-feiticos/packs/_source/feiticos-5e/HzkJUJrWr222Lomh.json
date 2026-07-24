@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "2",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -137,7 +140,8 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },

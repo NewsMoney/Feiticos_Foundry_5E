@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Círculo de 5 pés e corda consumida, dura 8 h. A primeira criatura Pequena ou Média que entrar faz salvaguarda de Destreza ou fica presa (restrained) suspensa de cabeça para baixo."
         },
         "duration": {
           "value": 8,
@@ -117,6 +117,68 @@
             "formula": ""
           }
         }
+      },
+      "snare-repeat": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Fim de cada turno da criatura presa"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Repita a Destreza; em sucesso, encerra o efeito."
+        },
+        "duration": {
+          "value": 8,
+          "units": "hour",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
       }
     }
   },
@@ -132,10 +194,11 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "restrained"
-        ]
+        ],
+        "manual": "Conjuração de 1 min. Aplique restrained só na falha; novos saves de Destreza no fim dos turnos encerram. Um aliado pode usar ação e teste de Arcana contra sua CD para libertar (CA/PV da corda). Detectar a armadilha exige Investigação. Sem escalonamento."
       },
       "description": {
         "quality": "reviewed-pt-br",

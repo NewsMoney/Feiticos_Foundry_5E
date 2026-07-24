@@ -125,8 +125,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual. Cria um disco flutuante de ~90 cm de diâmetro a 3 pés do chão, capaz de carregar 500 lb, por 1 h. Fica imóvel enquanto você estiver a 20 pés; senão segue você mantendo 20 pés, contornando terreno. Termina se ficar a mais de 100 pés. Requer objeto/ator próprio — automação manual."
       },
       "description": {
         "quality": "reviewed-pt-br",

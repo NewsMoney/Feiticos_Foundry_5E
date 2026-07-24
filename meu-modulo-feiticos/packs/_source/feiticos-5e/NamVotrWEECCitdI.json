@@ -118,14 +118,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.sparkles.01.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique um Efeito Ativo de +10 pés de deslocamento por 1 hora (system.attributes.movement). +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

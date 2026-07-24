@@ -142,7 +142,7 @@
       "animation": {
         "file": "jb2a.boulder.toss.01",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.impact.ground_crack.orange.01"
         ],
         "targeted": true
       },

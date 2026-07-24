@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Reação após ser ferido por uma criatura visível a 60 pés. Ela faz salvaguarda de Destreza: 2d10 fogo na falha, metade no sucesso. +1d10 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -151,14 +151,15 @@
       "animation": {
         "file": "jb2a.fire_bolt.orange",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.impact.004.orange"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Gatilho de reação: só pode ser conjurada logo após sofrer dano da criatura."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

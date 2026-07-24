@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -137,7 +140,8 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -160,7 +164,13 @@
         "label": "Frostbite",
         "changes": [
           {
-            "key": "flags.midi-qol.disadvantage.attack.wak",
+            "key": "flags.midi-qol.disadvantage.attack.mwak",
+            "mode": 5,
+            "value": "1",
+            "priority": 20
+          },
+          {
+            "key": "flags.midi-qol.disadvantage.attack.rwak",
             "mode": 5,
             "value": "1",
             "priority": 20

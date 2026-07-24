@@ -90,7 +90,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -115,7 +118,7 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.purple",
         "fallbacks": [
-          "jb2a.sparkles.01.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ]
       },
       "description": {

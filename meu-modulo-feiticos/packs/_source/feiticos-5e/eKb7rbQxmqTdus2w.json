@@ -179,7 +179,7 @@
       "animation": {
         "file": "jb2a.guiding_bolt.01.yellow",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.yellow"
         ],
         "targeted": true
       },

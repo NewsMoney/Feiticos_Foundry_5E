@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ataque mágico à distância a 120 pés: 4d6 radiante no acerto. O próximo ataque contra o alvo antes do fim do seu próximo turno tem vantagem e consome o efeito. +1d6 por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -154,14 +154,15 @@
       "animation": {
         "file": "jb2a.guiding_bolt.01.yellow",
         "fallbacks": [
-          "jb2a.impact.010.yellow"
+          "jb2a.impact.004.yellow"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "No acerto, aplique um Efeito Ativo que dá vantagem ao próximo ataque contra o alvo até o fim do seu próximo turno; consuma-o ao ser usado."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

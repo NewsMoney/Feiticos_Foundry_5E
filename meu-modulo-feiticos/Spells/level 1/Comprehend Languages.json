@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual utilitário: entende o sentido literal de qualquer idioma ouvido e lê texto tocando a superfície (1 página/min). Não decodifica mensagens secretas/glifos. Sem rolagem."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

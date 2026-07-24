@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ação bônus. Marque uma criatura visível a 90 pés e escolha uma característica: testes dela com essa característica têm desvantagem. Não role dano ao conjurar."
         },
         "duration": {
           "value": 1,
@@ -110,6 +110,60 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null
+      },
+      "hex-hit": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Quando você acertar o alvo marcado com um ataque"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "+1d6 de dano necrótico no acerto contra o alvo marcado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -125,7 +179,7 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
@@ -141,16 +195,17 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.energy_strands.range.standard.dark_purple",
+        "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.impact.004.dark_purple"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique desvantagem nos testes da característica escolhida (Efeito Ativo). +1d6 necrótico nos seus acertos contra o alvo. Se o alvo cair a 0 PV, use ação bônus em turno posterior para transferir a marca. Duração: 1 h (1º-2º), 8 h (3º-4º), 24 h (5º+)."
       },
       "description": {
         "quality": "reviewed-pt-br",

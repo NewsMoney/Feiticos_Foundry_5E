@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual (1 min), pérola de 100 gp. Escolha um objeto (revela propriedades, uso, sintonização, cargas e magias que o afetam) ou toque uma criatura (revela magias ativas). Não identifica necessariamente artefatos. Sem rolagem."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

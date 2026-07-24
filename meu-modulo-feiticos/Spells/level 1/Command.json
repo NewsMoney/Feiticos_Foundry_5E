@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma criatura que ouça e entenda você faz salvaguarda de Sabedoria; em falha obedece uma ordem de uma palavra no próximo turno. Sem efeito em mortos-vivos, se não entender o idioma ou se a ordem for diretamente nociva."
         },
         "duration": {
           "value": 1,
@@ -126,14 +126,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Sem condição automática. Escolha a ordem (Aproxime-se, Largue, Fuja, Prostre-se, Pare ou outra de uma palavra). Ineficaz em mortos-vivos, sem idioma comum ou ordem diretamente nociva. +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

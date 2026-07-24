@@ -118,14 +118,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.illusion.intro.purple",
         "fallbacks": [
-          "jb2a.smoke.puff.centered.purple"
+          "jb2a.markers.smoke.ring.loop"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual, pergaminho/tinta de 10 gp consumidos, dura 10 dias. Só os leitores designados leem o texto real; os demais veem uma mensagem alternativa. Visão verdadeira lê ambos. Sem alvo/rolagem."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

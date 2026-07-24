@@ -19,6 +19,7 @@
     "validate:all": "npm run validate:foundry14 && npm run validate:cantrips && npm run validate:levels12 && npm run validate:levels34 && npm run validate:levels56 && npm run validate:levels79 && npm run validate:descriptions && npm run validate:translations && npm run validate:workflows",
     "translate:srd": "node tools/translate-srd-pt-br.mjs",
     "validate:translations": "node tools/validate-srd-translations.mjs",
+    "sync:foundry": "node tools/sync-foundry.mjs",
     "audit:workflows": "node tools/audit-spell-workflows.mjs",
     "validate:workflows": "node tools/audit-spell-workflows.mjs"
   },

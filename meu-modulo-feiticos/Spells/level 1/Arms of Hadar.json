@@ -32,13 +32,13 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "circle",
-        "size": 10
+        "type": "",
+        "size": null
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada criatura no raio de 10 pés (exceto você) faz salvaguarda de Força: 2d6 necrótico na falha, metade no sucesso. +1d6 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -88,14 +88,14 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "circle",
-            "size": 10
+            "type": "",
+            "size": null
           },
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": true,
+          "prompt": false
         },
         "uses": {
           "spent": 0,
@@ -130,7 +130,7 @@
           "critical": {
             "allow": false
           },
-          "onSave": "none"
+          "onSave": "half"
         },
         "save": {
           "ability": [
@@ -156,8 +156,16 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "area": {
+          "type": "emanation",
+          "radius": 10,
+          "radiusSquares": 2,
+          "excludeSelf": true
+        },
+        "manual": "Emanação de 10 pés centrada em você, resolvida como no Thunderclap (auto-alvo de todas as criaturas no raio, exceto você). Criaturas que falharem também não podem usar reações até o início do seu próximo turno (aplicar manualmente)."
       },
       "description": {
         "quality": "reviewed-pt-br",
@@ -178,7 +186,7 @@
       }
     },
     "midi-qol": {
-      "onUseMacroName": "[postActiveEffects]ItemMacro"
+      "onUseMacroName": "[preSave]ItemMacro"
     }
   }
 }

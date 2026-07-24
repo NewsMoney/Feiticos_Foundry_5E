@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual. Cria um servo invisível, sem forma, Médio, CA 10, 1 PV, Força 2, que não pode atacar. Como ação bônus você o comanda a mover-se 15 pés e interagir com objetos; ele desaparece se ficar a mais de 60 pés de você ou ao fim de 1 h. Idealmente um ator de invocação — automação manual."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

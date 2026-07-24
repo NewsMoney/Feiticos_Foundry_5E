@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Cada criatura no cubo de 20 pés faz salvaguarda de Destreza. Em falha fica delineada; não há dano. Objetos são delineados automaticamente. Aplique manualmente luz, negação da invisibilidade e vantagem para ataques que possam ver o alvo."
+          "chatFlavor": "Cada criatura no cubo de 20 pés faz salvaguarda de Destreza; em falha fica delineada por luz colorida (concentração até 1 min). Objetos são delineados automaticamente."
         },
         "duration": {
           "value": 1,
@@ -141,10 +141,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
         "areaReviewed": true,
-        "manual": "Aplicar os benefícios visuais e de ataque somente às criaturas que falharem."
+        "manual": "Aplique só a quem falhar: a criatura não se beneficia de invisibilidade e ataques contra ela têm vantagem se o atacante puder vê-la; emite luz fraca em raio de 10 pés."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

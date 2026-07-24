@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ação bônus, concentração 1 min. Seu movimento não provoca ataques de oportunidade. Uma vez antes de terminar, você pode dar vantagem a um ataque com arma."
         },
         "duration": {
           "value": 1,
@@ -110,6 +110,60 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
+        "damage": null
+      },
+      "zephyr-hit": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "No ataque com arma potencializado (uma vez)"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "+1d8 de dano de força no acerto; seu deslocamento aumenta 30 pés até o fim do turno. Consome esta parte."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
           "parts": [
             {
@@ -125,7 +179,7 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 0
               }
             }
           ],
@@ -141,16 +195,17 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.magic_signs.rune.transmutation.intro.yellow",
         "fallbacks": [
-          "jb2a.impact.004.blue"
+          "jb2a.swirling_sparkles.01.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Efeito passivo: movimento não provoca ataques de oportunidade durante a concentração. Uma única vez: conceda vantagem a um ataque com arma; no acerto some 1d8 de força e +30 pés de deslocamento até o fim do turno, consumindo esse benefício."
       },
       "description": {
         "quality": "reviewed-pt-br",

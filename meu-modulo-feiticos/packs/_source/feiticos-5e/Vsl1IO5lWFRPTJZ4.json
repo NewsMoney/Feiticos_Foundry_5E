@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique um Efeito Ativo que soma 1d8 às jogadas de iniciativa do alvo por 8 horas."
       },
       "description": {
         "quality": "reviewed-deep-pt-br",

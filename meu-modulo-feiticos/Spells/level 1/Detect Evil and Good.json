@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aura de 30 pés por 10 min de concentração. Detecta localização de aberrações/celestiais/elementais/fadas/ínferos/mortos-vivos e locais/objetos consagrados ou profanados. Bloqueada por 30 cm de pedra, 2,5 cm de metal comum, folha de chumbo ou 90 cm de madeira/terra. Sem rolagem."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

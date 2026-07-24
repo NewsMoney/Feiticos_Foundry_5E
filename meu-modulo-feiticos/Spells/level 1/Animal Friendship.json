@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma besta que veja e ouça você faz salvaguarda de Sabedoria. Em falha fica enfeitiçada por 24 horas. Bestas com INT 4+ são imunes (a magia falha)."
         },
         "duration": {
           "value": 24,
@@ -126,18 +126,36 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [
+          "charmed"
+        ],
+        "manual": "Só afeta bestas; bestas com INT 4 ou mais são imunes. Aplique charmed apenas a quem falhar. +1 besta por espaço acima do 1º. Termina se você ou seus companheiros ferirem a besta."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",
         "needsReview": false
+      },
+      "status": {
+        "id": "charmed",
+        "ids": [
+          "charmed"
+        ],
+        "label": "charmed",
+        "core": true,
+        "target": "targets",
+        "duration": {
+          "value": 24,
+          "units": "hour",
+          "concentration": false
+        },
+        "specialDuration": []
       }
     },
     "itemacro": {

@@ -92,7 +92,10 @@
             "size": 5
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true

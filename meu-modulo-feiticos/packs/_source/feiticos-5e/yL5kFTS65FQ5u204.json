@@ -154,7 +154,7 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },

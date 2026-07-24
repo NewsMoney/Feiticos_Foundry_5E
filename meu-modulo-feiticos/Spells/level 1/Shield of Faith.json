@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique um Efeito Ativo de +2 na CA do alvo por até 10 min de concentração."
       },
       "description": {
         "quality": "reviewed-deep-pt-br",

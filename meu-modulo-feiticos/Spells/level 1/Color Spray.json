@@ -37,8 +37,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Role uma reserva de 6d10. Afete criaturas no cone de 15 pés em ordem crescente de PV atuais (ignorando inconscientes e quem não pode ver), subtraindo os PV atuais de cada uma da reserva; a criatura fica cega até o fim do seu próximo turno. Pare quando a reserva não cobrir a próxima criatura. +2d10 por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -94,7 +94,7 @@
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -117,16 +117,18 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.illusion.intro.purple",
         "fallbacks": [
-          "jb2a.smoke.puff.centered.purple"
+          "jb2a.markers.smoke.ring.loop"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "blinded"
-        ]
+        ],
+        "areaReviewed": true,
+        "manual": "Sem salvaguarda. Requer distribuição manual/macro: role 6d10 (+2d10/espaço), afete em ordem crescente de PV atuais e aplique cego até o fim do próximo turno da criatura."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

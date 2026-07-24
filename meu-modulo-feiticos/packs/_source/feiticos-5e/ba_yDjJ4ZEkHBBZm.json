@@ -150,9 +150,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.lasershot.pink",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.impact.004.dark_purple"
         ],
         "targeted": true
       },

@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual (1 h), componentes consumidos (carvão, incenso, ervas 10 gp). Invoque um familiar (aparência de besta escolhida) como ator separado com iniciativa própria: não ataca, telepatia a 100 pés, você pode usar ação para ver pelos sentidos dele até seu próximo turno, e ele pode entregar suas magias de toque. Some/dispense com nova conjuração. Requer ator de invocação — automação de summon manual."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

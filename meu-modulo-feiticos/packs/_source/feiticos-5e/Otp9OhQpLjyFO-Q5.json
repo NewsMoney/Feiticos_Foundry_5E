@@ -88,7 +88,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -136,7 +139,8 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -144,10 +148,10 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.music_note.01.blue",
+        "file": "jb2a.icon.music_note.blue",
         "targeted": true,
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.impact.004.dark_purple"
         ]
       },
       "description": {

@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -112,10 +115,10 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mage_hand.blue",
+        "file": "jb2a.arcane_hand.blue",
         "targeted": true,
         "fallbacks": [
-          "jb2a.markers.hand.complete.blue"
+          "jb2a.markers.light.complete.blue"
         ]
       },
       "description": {

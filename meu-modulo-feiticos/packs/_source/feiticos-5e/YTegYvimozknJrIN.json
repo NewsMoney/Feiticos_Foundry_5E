@@ -90,7 +90,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -138,7 +141,8 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -146,10 +150,10 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.insect_swarm.01.loop.green",
+        "file": "jb2a.bats.loop.01",
         "targeted": true,
         "fallbacks": [
-          "jb2a.swarm_of_insects.many.01.green"
+          "jb2a.bats.complete.01"
         ]
       },
       "description": {

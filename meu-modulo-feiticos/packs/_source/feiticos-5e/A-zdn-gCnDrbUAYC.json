@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada criatura no cubo de 15 pés a partir de você faz salvaguarda de Constituição: 2d8 trovão e empurrão de 10 pés na falha; metade e sem empurrão no sucesso. Objetos soltos também são empurrados; estrondo audível a 300 pés. +1d8 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -95,7 +95,7 @@
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -157,8 +157,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Empurrão de 10 pés só a quem falhar. Objetos soltos não vestidos/carregados também são empurrados."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

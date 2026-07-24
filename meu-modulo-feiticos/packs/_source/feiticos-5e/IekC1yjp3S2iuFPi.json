@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Escolha um objeto solto de 1–5 lb dentro de 60 pés e uma linha de 90 pés. A primeira criatura na trajetória faz Destreza: 3d8 contundente na falha (o objeto sofre o mesmo dano); passando, o objeto continua. +5 lb e +1d8 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -151,16 +151,16 @@
       "animation": {
         "file": "jb2a.boulder.toss.01",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.impact.ground_crack.orange.01"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
         "areaReviewed": true,
-        "manual": "Trajetória linear de um objeto contra a primeira criatura atingida; alvo único, sem template de área."
+        "manual": "Trajetória linear de um objeto contra a primeira criatura atingida; alvo único, sem template de área. O objeto também sofre o dano."
       },
       "description": {
         "quality": "reviewed-pt-br",

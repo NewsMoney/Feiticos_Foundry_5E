@@ -37,8 +37,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada criatura no cone de 15 pés faz salvaguarda de Destreza: 3d6 fogo na falha, metade no sucesso. +1d6 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -94,7 +94,7 @@
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -150,14 +150,16 @@
       "animation": {
         "file": "jb2a.fire_bolt.orange",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.impact.004.orange"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Incendeia objetos inflamáveis não vestidos/carregados na área (narrativo)."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

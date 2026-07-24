@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Após o acerto, role manualmente 2d8 + 1d6 (+1d6 por nível de espaço acima do 1º). Role os d8 separadamente e escolha como tipo do dano um dos resultados na tabela de energia. O dano foi separado do ataque para nunca aplicar tipo incorreto. Se os d8 coincidirem, execute Salto Caótico."
+          "chatFlavor": "Após o acerto, role 2d8 + 1d6 (+1d6 por espaço acima do 1º). Role os d8 separadamente e escolha como tipo um dos resultados na tabela de energia. Se os d8 coincidirem, execute Salto Caótico."
         },
         "duration": {
           "value": null,
@@ -136,15 +136,49 @@
           "override": true,
           "condition": "Somente quando os dois d8 do ataque anterior mostrarem o mesmo número"
         },
-        "description": {
-          "chatFlavor": "Escolha uma criatura diferente a até 30 pés do alvo anterior e faça novo ataque mágico à distância. Em acerto, repita manualmente a fórmula e a escolha de tipo do primeiro raio. Nenhuma criatura pode ser alvo mais de uma vez. O salto pode se repetir se os dois d8 voltarem a coincidir."
-        },
         "consumption": {
           "scaling": {
             "allowed": false
           },
           "spellSlot": false,
           "targets": []
+        },
+        "description": {
+          "chatFlavor": "Escolha uma criatura diferente a até 30 pés do alvo anterior e faça novo ataque à distância. Em acerto, repita a fórmula e a escolha de tipo. Nenhuma criatura pode ser alvo mais de uma vez; o salto pode repetir."
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "attack": {
           "ability": "",
@@ -180,8 +214,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Role 2d8+1d6 separadamente e escolha o tipo por um dos d8. Se os dois d8 coincidirem, use a atividade Salto Caótico contra outra criatura a 30 pés (sem repetir alvo)."
       },
       "description": {
         "quality": "reviewed-pt-br",

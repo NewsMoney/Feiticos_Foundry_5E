@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma criatura a 30 pés faz salvaguarda de Sabedoria. Em falha, tem desvantagem em ataques contra alvos que não sejam você e precisa passar em Sabedoria para se afastar a mais de 30 pés de você. Concentração até 1 min."
         },
         "duration": {
           "value": 1,
@@ -127,14 +127,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique na falha o Efeito Ativo de desvantagem para atacar outros que não você. Termina se você atacar outra criatura, conjurar magia hostil a outra, ferir o alvo por meio de outra criatura, ou ficar a mais de 30 pés dele no fim do seu turno."
       },
       "description": {
         "quality": "reviewed-pt-br",

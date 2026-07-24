@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Marque uma criatura visível. Esta atividade não rola dano: o 1d6 adicional ocorre somente quando você acerta o alvo marcado com um ataque de arma."
+          "chatFlavor": "Ação bônus. Marque uma criatura visível a 90 pés. Não role dano ao conjurar: o 1d6 ocorre quando você acerta o alvo com um ataque de arma."
         },
         "duration": {
           "value": 1,
@@ -116,10 +116,7 @@
           "type": "special",
           "value": null,
           "override": true,
-          "condition": "Após acertar o alvo marcado com um ataque de arma"
-        },
-        "description": {
-          "chatFlavor": "Dano adicional de Hunter’s Mark. Não use ao conjurar. Se o alvo chegar a 0 PV, a marca pode ser transferida com ação bônus em turno posterior."
+          "condition": "Quando você acertar o alvo marcado com um ataque de arma"
         },
         "consumption": {
           "scaling": {
@@ -128,10 +125,62 @@
           "spellSlot": false,
           "targets": []
         },
+        "description": {
+          "chatFlavor": "+1d6 de dano no acerto de arma contra o alvo marcado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
         "damage": {
-          "parts": [],
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [],
+              "scaling": {
+                "mode": "whole",
+                "number": 0
+              }
+            }
+          ],
           "critical": {
-            "allow": true
+            "allow": false
           },
           "onSave": "none"
         }
@@ -150,8 +199,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Você tem vantagem em testes de Percepção e Sobrevivência para localizar o alvo. Se o alvo cair a 0 PV, use ação bônus em turno posterior para transferir a marca. Duração: 1 h (1º-2º), 8 h (3º-4º), 24 h (5º+)."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

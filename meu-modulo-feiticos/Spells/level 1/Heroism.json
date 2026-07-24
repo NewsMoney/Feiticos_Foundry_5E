@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma criatura voluntária tocada fica imune a amedrontado e recebe PV temporários iguais ao seu modificador de conjuração no início de cada turno dela, por até 1 min de concentração. +1 alvo por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -118,14 +118,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique Efeito Ativo de imunidade a frightened; no início de cada turno do alvo conceda PV temporários = seu modificador de conjuração (recorrente); ao terminar, os PV temporários da magia são perdidos. +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

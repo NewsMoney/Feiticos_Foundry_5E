@@ -90,7 +90,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "object",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -105,7 +108,8 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -113,7 +117,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.weapon_enchantment.green",
+        "file": "jb2a.swirling_sparkles.01.greenorange",
         "targeted": true,
         "fallbacks": [
           "jb2a.magic_signs.rune.transmutation.intro.green"

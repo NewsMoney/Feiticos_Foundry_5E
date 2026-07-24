@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Posicione um cubo de 20 pés inteiramente dentro do alcance de 30 pés ou escolha uma porta/janela/objeto que caiba na área. Não há ataque, salvaguarda ou dano."
+          "chatFlavor": "Posicione um cubo de 20 pés dentro de 30 pés ou escolha uma porta/janela/objeto. Sem ataque, salvaguarda ou dano."
         },
         "duration": {
           "value": 8,
@@ -125,9 +125,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
-        "areaReviewed": true
+        "areaReviewed": true,
+        "manual": "Ritual utilitário. Escolha alarme audível (sino por 10 s) ou mental (alerta silencioso, alcance planar). Nenhuma automação de rolagem."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

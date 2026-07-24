@@ -154,7 +154,7 @@
       "animation": {
         "file": "jb2a.fire_bolt.orange",
         "fallbacks": [
-          "jb2a.impact.fire.01.orange"
+          "jb2a.impact.004.orange"
         ],
         "targeted": true
       },

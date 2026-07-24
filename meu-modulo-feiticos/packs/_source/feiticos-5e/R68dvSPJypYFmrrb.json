@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ação bônus. Uma criatura visível a 60 pés recupera 1d4 + seu modificador de conjuração em PV. +1d4 por espaço acima do 1º. Sem efeito em constructos e mortos-vivos."
         },
         "duration": {
           "value": null,
@@ -140,8 +140,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Sem efeito em constructos e mortos-vivos."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

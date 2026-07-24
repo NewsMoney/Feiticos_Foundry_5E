@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Faça primeiro o ataque mágico à distância. Somente depois de um acerto execute a atividade Salvaguarda contra Envenenamento."
+          "chatFlavor": "Ataque à distância a 60 pés: 2d8 veneno no acerto. Somente após o acerto execute a Salvaguarda de Envenenamento. +1d8 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -153,15 +153,49 @@
           "override": true,
           "condition": "Somente após o raio acertar"
         },
-        "description": {
-          "chatFlavor": "O alvo atingido faz salvaguarda de Constituição. Em falha, fica envenenado até o fim do próximo turno do conjurador; não há dano adicional."
-        },
         "consumption": {
           "scaling": {
             "allowed": false
           },
           "spellSlot": false,
           "targets": []
+        },
+        "description": {
+          "chatFlavor": "O alvo atingido faz Constituição; em falha fica envenenado até o fim do seu próximo turno. Sem dano adicional."
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
@@ -171,15 +205,7 @@
             "calculation": "spellcasting",
             "formula": ""
           }
-        },
-        "damage": {
-          "parts": [],
-          "critical": {
-            "allow": false
-          },
-          "onSave": "none"
-        },
-        "effects": []
+        }
       }
     }
   },
@@ -187,7 +213,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.poison_spray.dark_green",
+        "file": "jb2a.breath_weapons.poison.cone.green",
         "fallbacks": [
           "jb2a.impact.004.green"
         ],
@@ -195,11 +221,11 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "poisoned"
         ],
-        "manual": "Aplicar poisoned apenas a quem falhar na atividade rayOfSicknessSave."
+        "manual": "Aplique poisoned apenas a quem falhar na atividade rayOfSicknessSave; o dano 2d8 ocorre no acerto do ataque."
       },
       "description": {
         "quality": "reviewed-pt-br",

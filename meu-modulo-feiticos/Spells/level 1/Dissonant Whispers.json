@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Uma criatura que possa ouvir faz salvaguarda de Sabedoria: 3d6 psíquico na falha e usa imediatamente a reação para fugir o máximo possível (movimento provoca ataques de oportunidade); no sucesso, metade e não foge. Criaturas surdas passam automaticamente. +1d6 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -148,16 +148,17 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.mind_sliver.pink",
+        "file": "jb2a.lasershot.pink",
         "fallbacks": [
-          "jb2a.impact.004.purple"
+          "jb2a.impact.004.dark_purple"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Surdos são imunes (passam automaticamente). Na falha, a criatura usa a reação para se afastar sem entrar em terreno obviamente perigoso, provocando ataques de oportunidade (movimento manual)."
       },
       "description": {
         "quality": "reviewed-pt-br",

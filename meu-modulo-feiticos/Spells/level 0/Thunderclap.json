@@ -24,7 +24,7 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (5-foot radius)"
+      "special": "Emanação de 1,5 metro (1 quadrado)"
     },
     "target": {
       "template": {
@@ -88,7 +88,10 @@
             "type": ""
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": false
@@ -160,7 +163,10 @@
           }
         ],
         "sound": "modules/meu-modulo-feiticos/sounds/thunderclap.wav",
-        "volume": 0.5
+        "volume": 0.5,
+        "audibleRadiusMeters": 30,
+        "audibleRadiusFeet": 100,
+        "restrictVisualToVision": true
       },
       "description": {
         "quality": "reviewed-deep-pt-br",
@@ -171,6 +177,7 @@
         "area": {
           "type": "emanation",
           "radius": 5,
+          "radiusSquares": 1,
           "excludeSelf": true
         }
       }

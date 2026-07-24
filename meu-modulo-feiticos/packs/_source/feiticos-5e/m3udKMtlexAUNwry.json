@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Você toca uma besta amigável ou enfeitiçada com INT abaixo de 4. Cria um elo telepático em linha de visão por até 10 min de concentração; enquanto vinculada, a besta tem vantagem em ataques contra criaturas a até 5 pés de você que você possa ver."
         },
         "duration": {
           "value": 10,
@@ -125,8 +125,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Só funciona em besta com INT abaixo de 4 que seja amigável ou esteja enfeitiçada. Sem salvaguarda. Aplique o elo telepático e a vantagem condicional da besta (Efeito Ativo/narrativo); termina se você deixar de vê-la ou perder concentração."
       },
       "description": {
         "quality": "reviewed-pt-br",

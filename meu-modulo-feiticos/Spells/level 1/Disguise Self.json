@@ -117,14 +117,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.illusion.intro.purple",
         "fallbacks": [
-          "jb2a.smoke.puff.centered.purple"
+          "jb2a.markers.smoke.ring.loop"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Efeito visual por 1 h (altura ±30 cm, mesmo arranjo corporal). Mudanças falham a inspeção física; uma criatura pode usar ação e teste de Investigação contra sua CD para discernir a ilusão. Sem salvaguarda no lançamento."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

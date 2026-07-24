@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Posicione um cubo de 15 pés para delimitar a imagem. Não há salvaguarda inicial. Uma criatura que use ação para examinar faz Investigação contra a CD da magia; interação física também revela a ilusão."
+          "chatFlavor": "Cubo de 15 pés dentro de 60 pés delimita a imagem ilusória (concentração até 10 min). Sem salvaguarda inicial; ação para movê-la."
         },
         "duration": {
           "value": 10,
@@ -119,16 +119,16 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.illusion.intro.purple",
         "fallbacks": [
-          "jb2a.smoke.puff.centered.purple"
+          "jb2a.markers.smoke.ring.loop"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
         "areaReviewed": true,
-        "manual": "Investigação é um teste opcional posterior, nunca salvaguarda no lançamento."
+        "manual": "Sem save no lançamento. Interação física revela a ilusão; uma criatura pode usar ação e teste de Investigação contra sua CD para reconhecê-la como ilusão."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

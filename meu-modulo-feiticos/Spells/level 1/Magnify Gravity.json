@@ -37,7 +37,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Cada criatura na esfera de raio 10 pés faz salvaguarda de Inteligência: 2d8 força na falha ou metade no sucesso. O dano aumenta 1d8 por nível. A redução de deslocamento na falha deve ser aplicada separadamente até o início do próximo turno do conjurador."
+          "chatFlavor": "Cada criatura na esfera de raio 10 pés faz salvaguarda de Constituição: 2d8 força na falha, metade no sucesso. +1d8 por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -134,7 +134,7 @@
         },
         "save": {
           "ability": [
-            "int"
+            "con"
           ],
           "dc": {
             "calculation": "spellcasting",
@@ -148,7 +148,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.bullet.01.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -156,10 +156,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
         "areaReviewed": true,
-        "manual": "Aplicar metade do deslocamento apenas às criaturas que falharem."
+        "manual": "Até o início do seu próximo turno, quem falhar tem o deslocamento reduzido à metade (aplicar manualmente só aos que falharem)."
       },
       "description": {
         "quality": "reviewed-pt-br",

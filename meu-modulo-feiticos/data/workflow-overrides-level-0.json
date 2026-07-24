@@ -41,7 +41,7 @@
         "target": { "template": { "contiguous": false, "units": "ft", "type": "cube", "size": 5 }, "affects": { "choice": false, "count": "", "type": "space", "special": "" } },
         "description": { "value": "<p>Você cria uma fogueira no chão em um ponto que possa ver dentro do alcance. Até a magia terminar, ela preenche um cubo de 1,5 metro. Uma criatura no espaço da fogueira quando ela aparece deve realizar uma salvaguarda de Destreza; em uma falha, sofre 1d8 de dano de fogo, e não sofre dano em um sucesso.</p><p>A criatura repete a salvaguarda quando entra no espaço da fogueira pela primeira vez em um turno ou termina seu turno ali. Objetos inflamáveis no espaço que não estejam vestidos ou carregados pegam fogo. A área persiste por até 1 minuto, exigindo concentração; os gatilhos posteriores devem ser resolvidos quando ocorrerem.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d8 no 5º nível, 3d8 no 11º e 4d8 no 17º.</p>" }
       },
-      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Repetir DEX save ao entrar pela primeira vez no turno ou terminar o turno na fogueira." } }
+      "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false }, "manualWorkflow": "Automatizado: ao entrar pela primeira vez no turno ou terminar o turno na area, o modulo rola a salvaguarda de DEX e aplica o dano (com carta de chat de fallback se a API do sistema falhar). Requer combate ativo para o gatilho de fim de turno." } }
     }
   },
   "Dancing Lights": {
@@ -261,7 +261,7 @@
   },
   "Sword Burst": {
     "item": {
-      "system": { "description": { "value": "<p>Você cria um círculo momentâneo de lâminas espectrais que varrem ao seu redor. Todas as outras criaturas a até 1,5 metro de você devem realizar uma salvaguarda de Destreza. Em uma falha, uma criatura sofre 1d6 de dano de energia; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "system": { "target": { "template": { "contiguous": false, "units": "ft", "type": "" } }, "description": { "value": "<p>Você cria um círculo momentâneo de lâminas espectrais que varrem ao seu redor. Todas as outras criaturas a até 1,5 metro de você devem realizar uma salvaguarda de Destreza. Em uma falha, uma criatura sofre 1d6 de dano de energia; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
       "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
     }
   },
@@ -323,7 +323,7 @@
   "Word of Radiance": {
     "definition": { "target": "creature", "count": "" },
     "item": {
-      "system": { "target": { "template": { "contiguous": false, "units": "ft", "type": "circle", "size": 5 }, "affects": { "choice": true, "count": "", "type": "creature", "special": "Criaturas que você possa ver e escolher; exclui o conjurador." } }, "description": { "value": "<p>Você pronuncia uma palavra divina e uma radiância ardente irrompe de você. Cada criatura à sua escolha que você possa ver a até 1,5 metro deve realizar uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano radiante; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
+      "system": { "target": { "template": { "contiguous": false, "units": "ft", "type": "" }, "affects": { "choice": true, "count": "", "type": "creature", "special": "Criaturas hostis que você possa ver; exclui o conjurador." } }, "description": { "value": "<p>Você pronuncia uma palavra divina e uma radiância ardente irrompe de você. Cada criatura à sua escolha que você possa ver a até 1,5 metro deve realizar uma salvaguarda de Constituição. Em uma falha, sofre 1d6 de dano radiante; em um sucesso, não sofre dano. Você não é alvo da própria magia.</p><p><strong>Em Níveis Superiores.</strong> O dano é 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.</p>" } },
       "flags": { "foundry-spell-pack": { "description": { "quality": "reviewed-deep-pt-br", "needsReview": false } } }
     }
   }

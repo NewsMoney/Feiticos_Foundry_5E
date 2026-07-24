@@ -88,7 +88,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -139,7 +142,8 @@
             "value": "ranged",
             "classification": "spell"
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -147,7 +151,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.ranged.03.projectile.01.dark_purple",
+        "file": "jb2a.ranged.01.projectile.01.dark_purple",
         "targeted": true,
         "fallbacks": [
           "jb2a.energy_strands.range.standard.dark_purple"

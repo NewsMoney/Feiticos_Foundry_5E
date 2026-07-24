@@ -88,7 +88,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "3",
+            "type": "object",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -103,7 +106,8 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -111,7 +115,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.throwable.throw.stone",
+        "file": "jb2a.boulder.toss.01",
         "targeted": true,
         "fallbacks": [
           "jb2a.boulder.toss.01"

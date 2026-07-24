@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Arma o próximo acerto com arma à distância; não role save nem dano ao conjurar. Após o acerto, crie raio de 5 pés centrado no alvo: todas as criaturas, inclusive ele, fazem DES e sofrem 1d10 perfurante/mitade. +1d10 por nível, máximo 6d10. A explosão requer atividade ou macro posterior."
+          "chatFlavor": "Ação bônus. Arma o próximo acerto com arma à distância antes do fim da concentração (1 min); não role save nem dano ao conjurar."
         },
         "duration": {
           "value": 1,
@@ -108,6 +108,94 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "save": null,
+        "damage": null
+      },
+      "hail-burst": {
+        "type": "save",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "No próximo acerto com arma à distância"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Explosão de raio 5 pés centrada no alvo: cada criatura (inclusive ele) faz Destreza e sofre 1d10 perfurante/mitade. +1d10 por espaço acima do 1º (máx 6d10)."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "circle",
+            "size": 5,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "half"
         }
       }
     }
@@ -124,8 +212,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Não role dano ao conjurar. Use a explosão só após o acerto com arma à distância; máximo de 6d10 no upcast."
       },
       "description": {
         "quality": "reviewed-pt-br",

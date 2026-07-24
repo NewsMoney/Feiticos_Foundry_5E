@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Não role salvaguarda no alvo ao conjurar. Sempre que outra criatura tentar atacar ou usar magia nociva contra o protegido, o atacante faz SAB; em falha escolhe outro alvo ou perde o ataque/magia. Áreas ignoram esta proteção. Controle o gatilho como reação/efeito."
+          "chatFlavor": "Ação bônus. Não role salvaguarda no alvo ao conjurar. Enquanto durar (1 min), quem tentar atacar o protegido ou mirá-lo com magia nociva faz salvaguarda de Sabedoria; em falha deve escolher outro alvo ou perde o ataque/magia. Áreas ignoram a proteção."
         },
         "duration": {
           "value": 1,
@@ -108,7 +108,8 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "save": null
       }
     }
   },
@@ -124,8 +125,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "O save de Sabedoria pertence ao ATACANTE, não ao alvo na conjuração (efeito reativo). Termina se o protegido atacar, conjurar magia que afete um inimigo ou causar dano."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

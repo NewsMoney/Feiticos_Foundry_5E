@@ -142,7 +142,7 @@
       "animation": {
         "file": "jb2a.arrow.physical.white",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.impact.ground_crack.white.01"
         ],
         "targeted": true
       },

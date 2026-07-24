@@ -126,8 +126,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Ritual. Aura de 30 pés por 10 min de concentração; detecta e identifica venenos, criaturas venenosas e doenças. Mesmas barreiras de bloqueio. Sem rolagem."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

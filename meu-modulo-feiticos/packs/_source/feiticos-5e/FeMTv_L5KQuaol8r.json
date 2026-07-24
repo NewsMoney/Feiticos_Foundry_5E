@@ -118,14 +118,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Reação quando uma criatura visível a 60 pés tem SUCESSO em um ataque, teste de habilidade ou salvaguarda: ela deve rerrolar o d20 e usar o resultado menor. Depois escolha outra criatura a 60 pés (pode ser você) que ganha vantagem no próximo ataque, teste ou save em até 1 min, consumida ao usar. Sem automação de rerrolagem."
       },
       "description": {
         "quality": "reviewed-pt-br",

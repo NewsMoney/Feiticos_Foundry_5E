@@ -90,7 +90,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -105,7 +108,8 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -116,7 +120,7 @@
         "file": "jb2a.energy_strands.range.standard.blue",
         "targeted": true,
         "fallbacks": [
-          "jb2a.sending.blue"
+          "jb2a.icon.music_note.blue"
         ]
       },
       "description": {

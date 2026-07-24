@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ataque à distância a 30 pés: 1d12 relâmpago no acerto e cria um vínculo (concentração até 1 min). +1d12 por espaço acima do 1º (só o dano inicial)."
         },
         "duration": {
           "value": 1,
@@ -146,6 +146,83 @@
             "classification": "spell"
           }
         }
+      },
+      "witch-bolt-tick": {
+        "type": "damage",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": true,
+          "condition": "Em turnos seguintes, enquanto o vínculo persistir"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Use sua ação para causar 1d12 relâmpago automático ao alvo vinculado."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        }
       }
     }
   },
@@ -161,8 +238,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "O escalonamento (+1d12) vale só no dano inicial. Em turnos seguintes use a ação para 1d12 automático (sem ataque). O vínculo termina se o alvo sair do alcance de 30 pés, ganhar cobertura total ou você não usar a ação para o dano."
       },
       "description": {
         "quality": "reviewed-pt-br",

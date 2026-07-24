@@ -37,7 +37,7 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "3",
         "type": "creature",
         "special": ""
       }
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Até 3 criaturas fazem salvaguarda de Carisma. Quem falhar subtrai 1d4 de ataques e salvaguardas enquanto durar a concentração (até 1 min)."
         },
         "duration": {
           "value": 1,
@@ -127,14 +127,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique o Efeito Ativo de -1d4 (bane) apenas às criaturas que falharem no save. +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

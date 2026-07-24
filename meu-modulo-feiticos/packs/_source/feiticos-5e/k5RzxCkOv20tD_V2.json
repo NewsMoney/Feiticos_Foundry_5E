@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Um humanoide faz salvaguarda de Sabedoria (com vantagem se você ou seus aliados estiverem lutando com ele). Em falha fica enfeitiçado por 1 hora ou até você/aliados o ferirem."
         },
         "duration": {
           "value": 1,
@@ -127,16 +127,17 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "charmed"
-        ]
+        ],
+        "manual": "Só afeta humanoides; vantagem no save se estiver em combate com você/aliados. Aplique charmed só na falha; termina se ferido; ao terminar ele sabe que foi enfeitiçado. +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

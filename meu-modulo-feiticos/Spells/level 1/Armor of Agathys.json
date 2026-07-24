@@ -57,7 +57,7 @@
     },
     "activities": {
       "OcBjlOWDZ266sYEy": {
-        "type": "utility",
+        "type": "heal",
         "activation": {
           "type": "action",
           "value": 1,
@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Você recebe 5 pontos de vida temporários por 1 hora. +5 PV temporários por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -107,6 +107,100 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "save": null,
+        "healing": {
+          "number": null,
+          "denomination": null,
+          "bonus": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "5"
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": 0
+          }
+        }
+      },
+      "agathys-retaliate": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Quando uma criatura acerta você com um ataque corpo a corpo enquanto os PV temporários da magia existirem"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "A criatura que o acertou sofre 5 de dano de frio. +5 por espaço acima do 1º."
+        },
+        "duration": {
+          "value": 1,
+          "units": "hour",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "5"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 0
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
         }
       }
     }
@@ -123,8 +217,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Conceda 5 PV temporários (Efeito Ativo). Enquanto esses PV existirem, cada criatura que acertar você com ataque corpo a corpo sofre 5 de frio (use a atividade de retaliação). Ambos aumentam +5 por espaço acima do 1º."
       },
       "description": {
         "quality": "reviewed-pt-br",

@@ -88,7 +88,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -103,7 +106,8 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -111,7 +115,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.melee_generic.sword.one_handed",
+        "file": "jb2a.melee_generic.slashing.one_handed",
         "targeted": true,
         "fallbacks": [
           "jb2a.static_electricity.03.blue"

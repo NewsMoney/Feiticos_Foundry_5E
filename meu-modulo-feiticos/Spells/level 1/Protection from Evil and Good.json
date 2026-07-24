@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Concentração até 10 min, componente (água benta/pó de prata e ferro) consumido. Contra aberrações, celestiais, elementais, fadas, ínferos e mortos-vivos: essas criaturas têm desvantagem para atacar o alvo, não podem enfeitiçá-lo, amedrontá-lo nem possuí-lo; se já afetado por uma dessas condições por elas, o alvo tem vantagem em novos saves. Aplique como Efeito Ativo defensivo."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

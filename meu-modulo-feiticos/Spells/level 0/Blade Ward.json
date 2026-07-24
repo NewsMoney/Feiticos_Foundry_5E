@@ -36,7 +36,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "self",
         "special": ""
       }
     },
@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "self",
+            "special": ""
           },
           "override": false,
           "prompt": true

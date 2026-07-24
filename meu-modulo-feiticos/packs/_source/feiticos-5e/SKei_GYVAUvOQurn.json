@@ -93,7 +93,10 @@
             "size": 5
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -119,7 +122,7 @@
         "file": "jb2a.magic_signs.rune.illusion.intro.purple",
         "targeted": true,
         "fallbacks": [
-          "jb2a.smoke.puff.centered.purple"
+          "jb2a.markers.smoke.ring.loop"
         ]
       },
       "description": {

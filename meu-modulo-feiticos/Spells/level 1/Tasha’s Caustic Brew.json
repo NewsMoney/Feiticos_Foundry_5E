@@ -33,12 +33,13 @@
         "contiguous": false,
         "units": "ft",
         "type": "line",
-        "size": 30
+        "size": 30,
+        "width": 5
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -73,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Linha de 30 pés por 5 pés a partir de você. Cada criatura na linha faz salvaguarda de Destreza; em falha fica coberta de ácido (sem dano imediato)."
         },
         "duration": {
           "value": 1,
@@ -90,12 +91,13 @@
             "contiguous": false,
             "units": "ft",
             "type": "line",
-            "size": 30
+            "size": 30,
+            "width": 5
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -106,6 +108,69 @@
         "midiProperties": {},
         "overTimeProperties": {
           "saveRemoves": true,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "damage": null
+      },
+      "caustic-tick": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Início de cada turno enquanto coberto de ácido"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "2d4 ácido no início de cada turno enquanto coberto. +2d4 por espaço acima do 1º."
+        },
+        "duration": {
+          "value": 1,
+          "units": "minute",
+          "concentration": true,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         },
@@ -124,7 +189,7 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 2
               }
             }
           ],
@@ -132,15 +197,6 @@
             "allow": false
           },
           "onSave": "none"
-        },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
         }
       }
     }
@@ -149,16 +205,18 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.liquid.splash.bright_green",
+        "file": "jb2a.magic_signs.rune.evocation.intro.blue",
         "fallbacks": [
-          "jb2a.impact.004.green"
+          "jb2a.impact.004.blue"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "O dano NÃO é imediato: só na falha o alvo fica coberto e sofre 2d4 ácido no início de cada turno. Uma criatura pode usar ação para limpar o ácido de si ou de outra, encerrando o efeito. +2d4 por espaço acima do 1º."
       },
       "description": {
         "quality": "reviewed-pt-br",

@@ -36,8 +36,8 @@
         "size": null
       },
       "affects": {
-        "choice": false,
-        "count": "1",
+        "choice": true,
+        "count": "3",
         "type": "creature",
         "special": ""
       }
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Até 3 criaturas recebem +1d4 em ataques e salvaguardas enquanto durar a concentração (até 1 min). Sem salvaguarda."
         },
         "duration": {
           "value": 1,
@@ -118,14 +118,15 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique o Efeito Ativo +1d4 (bless) aos alvos escolhidos. +1 alvo por espaço acima do 1º."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

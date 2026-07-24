@@ -27,18 +27,18 @@
     "range": {
       "value": 90,
       "units": "ft",
-      "special": ""
+      "special": "20-foot radius sphere"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "circle",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ponto a 90 pés; criaturas em esfera de raio 20 pés. Role uma reserva de 5d8 e afete criaturas em ordem crescente de PV atuais (ignorando inconscientes, mortos-vivos e imunes a encantamento), subtraindo os PV de cada uma; a criatura afetada fica inconsciente por 1 min ou até sofrer dano/alguém usar ação para acordá-la. +2d8 por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -89,13 +89,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "circle",
+            "size": 20
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -118,16 +118,18 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.enchantment.intro.pink",
         "fallbacks": [
-          "jb2a.markers.heart.complete.pink"
+          "jb2a.markers.heart.pink"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "unconscious"
-        ]
+        ],
+        "areaReviewed": true,
+        "manual": "Sem salvaguarda. Requer distribuição manual/macro: role 5d8 (+2d8/espaço), afete em ordem crescente de PV atuais ignorando inconscientes/mortos-vivos/imunes a encantamento; aplique unconscious e desperte com dano ou ação."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

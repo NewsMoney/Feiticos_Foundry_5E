@@ -33,12 +33,12 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "",
-        "size": null
+        "type": "cube",
+        "size": 20
       },
       "affects": {
         "choice": false,
-        "count": "1",
+        "count": "",
         "type": "creature",
         "special": ""
       }
@@ -74,7 +74,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Plantas agarram um quadrado de 20 pés no chão dentro de 90 pés (terreno difícil). Cada criatura na área ao conjurar faz salvaguarda de Força ou fica restrained. Concentração até 1 min."
         },
         "duration": {
           "value": 1,
@@ -90,13 +90,13 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "",
-            "size": null
+            "type": "cube",
+            "size": 20
           },
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -134,10 +134,12 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "restrained"
-        ]
+        ],
+        "areaReviewed": true,
+        "manual": "Aplique restrained só na falha. A área é terreno difícil. Criatura contida usa ação e teste de Força contra sua CD para escapar (teste, não salvaguarda). Sem escalonamento."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

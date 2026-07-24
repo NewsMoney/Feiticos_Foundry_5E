@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Posicione uma esfera de raio 20 pés. Ela é fortemente obscurecida e não exige salvaguarda. O raio aumenta 20 pés por nível de espaço acima do 1º; ajuste manualmente o template no upcast."
+          "chatFlavor": "Esfera de raio 20 pés de névoa, fortemente obscurecida, concentração até 1 h. Vento moderado ou mais dispersa. Raio +20 pés por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -124,9 +124,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [],
-        "areaReviewed": true
+        "areaReviewed": true,
+        "manual": "O raio aumenta 20 pés por espaço acima do 1º; ajuste o template no upcast. Vento moderado (>=10 mph) dispersa em 4 rodadas; vento forte (>=20 mph), em 1 rodada."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

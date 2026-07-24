@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Ataque mágico corpo a corpo (toque): 3d10 necrótico no acerto. +1d10 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -160,7 +160,7 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": []
       },
       "description": {

@@ -108,26 +108,26 @@ for (const def of catalog) {
 
 const animations = {
   acid: ["jb2a.liquid.splash.bright_green", "jb2a.impact.004.green"],
-  bludgeoning: ["jb2a.boulder.toss.01", "jb2a.impact.ground_crack.01.brown"],
+  bludgeoning: ["jb2a.boulder.toss.01", "jb2a.impact.ground_crack.orange.01"],
   cold: ["jb2a.ray_of_frost.blue", "jb2a.impact.frost.blue"],
-  fire: ["jb2a.fire_bolt.orange", "jb2a.impact.fire.01.orange"],
-  force: ["jb2a.magic_missile.blue", "jb2a.impact.004.blue"],
+  fire: ["jb2a.fire_bolt.orange", "jb2a.impact.004.orange"],
+  force: ["jb2a.bullet.01.blue", "jb2a.impact.004.blue"],
   lightning: ["jb2a.chain_lightning.primary.blue", "jb2a.static_electricity.03.blue"],
   necrotic: ["jb2a.energy_strands.range.standard.dark_purple", "jb2a.impact.004.dark_purple"],
-  piercing: ["jb2a.arrow.physical.white", "jb2a.impact.004.white"],
-  poison: ["jb2a.poison_spray.dark_green", "jb2a.impact.004.green"],
-  psychic: ["jb2a.mind_sliver.pink", "jb2a.impact.004.purple"],
-  radiant: ["jb2a.guiding_bolt.01.yellow", "jb2a.impact.010.yellow"],
-  slashing: ["jb2a.slashing_attack.01.white", "jb2a.impact.004.white"],
+  piercing: ["jb2a.arrow.physical.white", "jb2a.impact.ground_crack.white.01"],
+  poison: ["jb2a.breath_weapons.poison.cone.green", "jb2a.impact.004.green"],
+  psychic: ["jb2a.lasershot.pink", "jb2a.impact.004.dark_purple"],
+  radiant: ["jb2a.guiding_bolt.01.yellow", "jb2a.impact.004.yellow"],
+  slashing: ["jb2a.melee_generic.slashing.one_handed", "jb2a.impact.ground_crack.white.01"],
   thunder: ["jb2a.thunderwave.center.blue", "jb2a.impact.ground_crack.01.blue"],
   abj: ["jb2a.shield.01.intro.blue", "jb2a.magic_signs.rune.abjuration.intro.blue"],
   con: ["jb2a.magic_signs.rune.conjuration.intro.purple", "jb2a.portals.vertical.vortex.purple"],
   div: ["jb2a.detect_magic.circle.blue", "jb2a.magic_signs.rune.divination.intro.blue"],
-  enc: ["jb2a.magic_signs.rune.enchantment.intro.pink", "jb2a.markers.heart.complete.pink"],
+  enc: ["jb2a.magic_signs.rune.enchantment.intro.pink", "jb2a.markers.heart.pink"],
   evo: ["jb2a.magic_signs.rune.evocation.intro.blue", "jb2a.impact.004.blue"],
-  ill: ["jb2a.magic_signs.rune.illusion.intro.purple", "jb2a.smoke.puff.centered.purple"],
-  nec: ["jb2a.magic_signs.rune.necromancy.intro.dark_purple", "jb2a.energy_strands.in.dark_purple"],
-  trs: ["jb2a.magic_signs.rune.transmutation.intro.yellow", "jb2a.sparkles.01.blue"]
+  ill: ["jb2a.magic_signs.rune.illusion.intro.purple", "jb2a.markers.smoke.ring.loop"],
+  nec: ["jb2a.magic_signs.rune.necromancy.intro.purple", "jb2a.energy_strands.complete.dark_purple"],
+  trs: ["jb2a.magic_signs.rune.transmutation.intro.yellow", "jb2a.swirling_sparkles.01.blue"]
 };
 
 function parseDuration(raw, concentration) {

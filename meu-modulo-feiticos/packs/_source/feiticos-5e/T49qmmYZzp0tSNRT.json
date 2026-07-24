@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Ataque inicial: 1d10 perfurante somente no acerto. Acertando ou errando, execute em seguida a atividade Explosão de Gelo."
+          "chatFlavor": "Ataque à distância a 60 pés: 1d10 perfurante só no acerto. Acertando ou errando, execute em seguida a Explosão de Gelo."
         },
         "duration": {
           "value": null,
@@ -154,9 +154,6 @@
           "override": true,
           "condition": "Após o ataque inicial, acertando ou errando"
         },
-        "description": {
-          "chatFlavor": "Crie uma explosão de raio 5 pés centrada no alvo do ataque. Todas as criaturas na área, inclusive o alvo, fazem Destreza; somente as que falharem sofrem 2d6 frio. +1d6 frio por nível de espaço acima do 1º."
-        },
         "consumption": {
           "scaling": {
             "allowed": true
@@ -164,18 +161,42 @@
           "spellSlot": false,
           "targets": []
         },
+        "description": {
+          "chatFlavor": "Explosão de raio 5 pés centrada no alvo: todas as criaturas (inclusive o alvo) fazem Destreza; só quem falha sofre 2d6 frio. +1d6 frio por espaço acima do 1º."
+        },
+        "duration": {
+          "value": null,
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
         "target": {
           "template": {
-            "contiguous": false,
-            "units": "ft",
             "type": "circle",
-            "size": 5
+            "size": 5,
+            "units": "ft",
+            "contiguous": false
           },
           "affects": {
             "choice": false
           },
           "override": true,
           "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
         },
         "save": {
           "ability": [
@@ -219,14 +240,16 @@
       "animation": {
         "file": "jb2a.arrow.physical.white",
         "fallbacks": [
-          "jb2a.impact.004.white"
+          "jb2a.impact.ground_crack.white.01"
         ],
         "targeted": true
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "O dano de 2d6 frio da explosão só se aplica a quem falhar na Destreza (onSave none); a flecha inicial só causa dano no acerto."
       },
       "description": {
         "quality": "reviewed-pt-br",

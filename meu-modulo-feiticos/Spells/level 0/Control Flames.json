@@ -91,7 +91,10 @@
             "size": 5
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -116,7 +119,7 @@
       "animation": {
         "file": "jb2a.fireflies.few.01.orange",
         "fallbacks": [
-          "jb2a.cast_generic.fire.01"
+          "jb2a.cast_shape.circle.01.yellow"
         ]
       },
       "description": {

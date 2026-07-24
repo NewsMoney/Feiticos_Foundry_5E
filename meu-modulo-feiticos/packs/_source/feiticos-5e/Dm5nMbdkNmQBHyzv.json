@@ -38,8 +38,8 @@
       },
       "affects": {
         "choice": false,
-        "count": "1",
-        "type": "self",
+        "count": "",
+        "type": "creature",
         "special": ""
       }
     },
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Cada criatura no cone de 15 pés faz salvaguarda de Constituição: 2d8 frio na falha, metade no sucesso. +1d8 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -95,7 +95,7 @@
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -157,8 +157,10 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "areaReviewed": true,
+        "manual": "Congela líquidos não mágicos não vestidos/carregados na área (narrativo)."
       },
       "description": {
         "quality": "reviewed-pt-br",

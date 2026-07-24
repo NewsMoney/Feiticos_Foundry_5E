@@ -58,7 +58,7 @@
     },
     "activities": {
       "-ouciFeydseBkweb": {
-        "type": "utility",
+        "type": "heal",
         "activation": {
           "type": "action",
           "value": 1,
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Você recebe 1d4 + 4 pontos de vida temporários por 1 hora. +5 PV temporários por espaço acima do 1º."
         },
         "duration": {
           "value": 1,
@@ -108,6 +108,23 @@
           "saveRemoves": true,
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
+        },
+        "save": null,
+        "healing": {
+          "number": 1,
+          "denomination": 4,
+          "bonus": "4",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": 0
+          }
         }
       }
     }
@@ -116,16 +133,17 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.purple",
         "fallbacks": [
-          "jb2a.energy_strands.in.dark_purple"
+          "jb2a.energy_strands.complete.dark_purple"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "São PV temporários (não cura normal). +5 PV temporários por espaço acima do 1º; ajuste manualmente o bônus no upcast."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

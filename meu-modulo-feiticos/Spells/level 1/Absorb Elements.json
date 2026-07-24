@@ -108,6 +108,81 @@
           "preRemoveConditionText": "",
           "postRemoveConditionText": ""
         }
+      },
+      "absorb-store": {
+        "type": "damage",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": true,
+          "condition": "Primeiro ataque corpo a corpo que você acertar no seu próximo turno"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Some 1d6 do MESMO tipo do dano que disparou a magia (+1d6 por espaço acima do 1º). Escolha na tabela apenas o tipo recebido."
+        },
+        "duration": {
+          "value": 1,
+          "units": "round",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true
+        },
+        "target": {
+          "template": {
+            "type": "",
+            "size": null,
+            "units": "ft",
+            "contiguous": false
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "midiProperties": {},
+        "overTimeProperties": {
+          "saveRemoves": false,
+          "preRemoveConditionText": "",
+          "postRemoveConditionText": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "critical": {
+            "allow": false
+          },
+          "onSave": "none"
+        }
       }
     }
   },
@@ -123,8 +198,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Aplique resistência ao tipo de dano recebido (ácido/frio/fogo/relâmpago/trovão) até o início do seu próximo turno. Use a atividade de armazenamento no primeiro ataque corpo a corpo do próximo turno, escolhendo o mesmo tipo."
       },
       "description": {
         "quality": "reviewed-pt-br",

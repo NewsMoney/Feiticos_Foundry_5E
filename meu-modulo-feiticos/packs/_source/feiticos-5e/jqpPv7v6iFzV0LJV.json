@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -140,7 +143,8 @@
             "value": "melee",
             "classification": "spell"
           }
-        }
+        },
+        "forcedTargetConfirmation": "always"
       }
     }
   },
@@ -148,7 +152,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.shocking_grasp.blue",
+        "file": "jb2a.static_electricity.03.blue",
         "targeted": true,
         "fallbacks": [
           "jb2a.static_electricity.03.blue"

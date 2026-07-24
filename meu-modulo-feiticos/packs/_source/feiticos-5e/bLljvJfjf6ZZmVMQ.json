@@ -120,9 +120,9 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_signs.rune.necromancy.intro.dark_purple",
+        "file": "jb2a.magic_signs.rune.necromancy.intro.purple",
         "fallbacks": [
-          "jb2a.energy_strands.in.dark_purple"
+          "jb2a.energy_strands.complete.dark_purple"
         ],
         "targeted": true
       },

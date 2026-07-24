@@ -124,8 +124,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Componente de prata (25 gp) consumido. Escolha um rito: Atonement (a criatura faz Sabedoria CD 20; sucesso remove um efeito de encantamento), Bless Water (cria água benta), Coming of Age, Dedication, Funeral Rite (protege contra tornar-se morto-vivo por 7 dias) ou Wedding (alvos ganham +2 CA por 7 dias enquanto a 30 pés um do outro). Aplique manualmente os efeitos do rito escolhido."
       },
       "description": {
         "quality": "reviewed-pt-br",

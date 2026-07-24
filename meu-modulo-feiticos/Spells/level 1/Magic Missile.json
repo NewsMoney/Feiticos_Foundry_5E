@@ -72,7 +72,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Cada dardo acerta automaticamente e causa 1d4 + 1 de força. Distribua três dardos entre criaturas visíveis; todos atingem simultaneamente. Crie um dardo adicional por nível de espaço acima do 1º."
+          "chatFlavor": "Três dardos, cada um 1d4 + 1 de força, acertam automaticamente alvos visíveis a 120 pés (simultâneos). +1 dardo por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -139,7 +139,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.magic_missile.blue",
+        "file": "jb2a.bullet.01.blue",
         "fallbacks": [
           "jb2a.impact.004.blue"
         ],
@@ -147,8 +147,9 @@
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
-        "conditions": []
+        "needsReview": false,
+        "conditions": [],
+        "manual": "Acerto automático (sem ataque/save). Distribua três dardos entre alvos visíveis; +1 dardo por espaço acima do 1º. Cada dardo causa 1d4+1."
       },
       "description": {
         "quality": "technical-reviewed-pt-br",

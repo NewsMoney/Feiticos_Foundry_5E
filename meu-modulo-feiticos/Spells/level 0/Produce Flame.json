@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "self",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -209,7 +212,7 @@
   "flags": {
     "foundry-spell-pack": {
       "animation": {
-        "file": "jb2a.produce_flame.01.orange",
+        "file": "jb2a.flames.01.orange",
         "targeted": true,
         "fallbacks": [
           "jb2a.fire_bolt.orange"

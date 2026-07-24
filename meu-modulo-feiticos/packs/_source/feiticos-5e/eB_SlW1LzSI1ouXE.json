@@ -33,14 +33,14 @@
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "circle",
-        "size": 10
+        "type": "",
+        "size": null
       },
       "affects": {
         "choice": false,
         "count": "",
         "type": "creature",
-        "special": "Todas as outras criaturas na área; exclui o conjurador"
+        "special": ""
       }
     },
     "properties": [
@@ -73,7 +73,7 @@
           "targets": []
         },
         "description": {
-          "chatFlavor": "Cada outra criatura no raio de 10 pés faz salvaguarda de Destreza. Em falha sofre o dano e cai prone; no sucesso não sofre dano nem condição. Terra ou pedra solta na área vira terreno difícil."
+          "chatFlavor": "Cada outra criatura no raio de 10 pés faz salvaguarda de Destreza: em falha sofre 1d6 contundente e cai prone; no sucesso, nada. Terra/pedra solta na área vira terreno difícil. +1d6 por espaço acima do 1º."
         },
         "duration": {
           "value": null,
@@ -89,14 +89,14 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "circle",
-            "size": 10
+            "type": "",
+            "size": null
           },
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": true,
+          "prompt": false
         },
         "uses": {
           "spent": 0,
@@ -151,16 +151,24 @@
       "animation": {
         "file": "jb2a.boulder.toss.01",
         "fallbacks": [
-          "jb2a.impact.ground_crack.01.brown"
+          "jb2a.impact.ground_crack.orange.01"
         ],
         "targeted": false
       },
       "automation": {
         "generated": true,
-        "needsReview": true,
+        "needsReview": false,
         "conditions": [
           "prone"
-        ]
+        ],
+        "areaReviewed": true,
+        "area": {
+          "type": "emanation",
+          "radius": 10,
+          "radiusSquares": 2,
+          "excludeSelf": true
+        },
+        "manual": "Emanação de 10 pés centrada em você, resolvida como no Thunderclap (auto-alvo de todas as criaturas no raio, exceto você). Aplique dano e prone só a quem falhar. Terra/pedra solta na área torna-se terreno difícil."
       },
       "description": {
         "quality": "reviewed-pt-br",
@@ -196,7 +204,7 @@
       }
     },
     "midi-qol": {
-      "onUseMacroName": "[postActiveEffects]ItemMacro"
+      "onUseMacroName": "[preSave]ItemMacro"
     }
   },
   "folder": "spellLevel01Fldr"

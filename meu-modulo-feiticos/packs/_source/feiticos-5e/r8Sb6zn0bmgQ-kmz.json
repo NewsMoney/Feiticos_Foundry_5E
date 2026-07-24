@@ -360,7 +360,7 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.illusion.intro.purple",
         "fallbacks": [
-          "jb2a.smoke.puff.centered.purple"
+          "jb2a.markers.smoke.ring.loop"
         ],
         "targeted": true
       },

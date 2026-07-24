@@ -25,20 +25,19 @@
     "range": {
       "value": null,
       "units": "self",
-      "special": "Self (5-foot radius)"
+      "special": "Emanação de 1,5 metro (1 quadrado)"
     },
     "target": {
       "template": {
         "contiguous": false,
         "units": "ft",
-        "type": "circle",
-        "size": 5
+        "type": ""
       },
       "affects": {
         "choice": true,
         "count": "",
         "type": "creature",
-        "special": "Criaturas que você possa ver e escolher; exclui o conjurador."
+        "special": "Criaturas hostis que você possa ver; exclui o conjurador."
       }
     },
     "properties": [
@@ -87,15 +86,16 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": "circle",
-            "size": 5
+            "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": true,
+            "count": "",
+            "type": "creature",
+            "special": ""
           },
           "override": false,
-          "prompt": true
+          "prompt": false
         },
         "uses": {
           "spent": 0,
@@ -156,11 +156,22 @@
       "description": {
         "quality": "reviewed-deep-pt-br",
         "needsReview": false
+      },
+      "automation": {
+        "areaReviewed": true,
+        "area": {
+          "type": "emanation",
+          "radius": 5,
+          "radiusSquares": 1,
+          "excludeSelf": true,
+          "disposition": "enemy",
+          "requireVision": true
+        }
       }
     },
     "itemacro": {
       "macro": {
-        "command": "const workflow = typeof args !== \"undefined\" ? (args[0]?.workflow ?? args[0]) : null;\nawait game.modules.get(\"meu-modulo-feiticos\")?.api?.runCantrip({ item, token, workflow });",
+        "command": "const context = typeof args !== \"undefined\" ? args[0] : null;\nconst module = game.modules.get(\"meu-modulo-feiticos\");\nconst workflow = globalThis.MidiQOL?.Workflow?.getWorkflow?.(context?.uuid) ?? context?.workflow ?? context;\nawait module?.api?.runCantrip({ item, token, workflow, context });",
         "name": "Word of Radiance",
         "img": "modules/meu-modulo-feiticos/icons/Word%20of%20Radience.png",
         "type": "script",
@@ -172,7 +183,7 @@
       }
     },
     "midi-qol": {
-      "onUseMacroName": "[postActiveEffects]ItemMacro"
+      "onUseMacroName": "[preSave]ItemMacro"
     }
   },
   "folder": "spellLevel00Fldr"

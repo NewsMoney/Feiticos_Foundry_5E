@@ -89,7 +89,10 @@
             "units": "ft"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -114,7 +117,7 @@
       "animation": {
         "file": "jb2a.magic_signs.rune.transmutation.intro.red",
         "fallbacks": [
-          "jb2a.divine_smite.caster.redyellow"
+          "jb2a.divine_smite.caster.standard"
         ]
       },
       "description": {
